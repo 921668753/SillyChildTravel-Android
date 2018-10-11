@@ -7,14 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.sillykid.app.R;
-import com.sillykid.app.entity.community.dynamic.DynamicDetailsImgBean;
-import com.sillykid.app.utils.GlideImageLoader;
+import com.yinglan.sct.R;
+import com.yinglan.sct.entity.community.dynamic.DynamicDetailsImgBean;
+import com.yinglan.sct.utils.GlideImageLoader;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.bingoogolapple.androidcommon.adapter.BGAAdapterUtil;
+import cn.bingoogolapple.baseadapter.BGABaseAdapterUtil;
+
 
 public class DynamicImgPagerAdapter extends PagerAdapter {
 
@@ -73,7 +74,7 @@ public class DynamicImgPagerAdapter extends PagerAdapter {
      * @param data
      */
     public void setData(List<DynamicDetailsImgBean> data) {
-        if (BGAAdapterUtil.isListNotEmpty(data)) {
+        if (BGABaseAdapterUtil.isListNotEmpty(data)) {
             list = data;
         } else {
             list.clear();

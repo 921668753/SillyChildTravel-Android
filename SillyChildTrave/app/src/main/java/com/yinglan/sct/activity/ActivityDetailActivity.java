@@ -14,7 +14,7 @@ import com.kymjs.common.StringUtils;
 import com.yinglan.sct.R;
 import com.yinglan.sct.constant.URLConstants;
 import com.yinglan.sct.message.interactivemessage.imuitl.RongIMUtil;
-import com.yinglan.sct.mine.sharingceremony.dialog.ShareBouncedDialog;
+import com.yinglan.sct.mine.sharepolite.dialog.ShareBouncedDialog;
 import com.yinglan.sct.utils.SoftKeyboardUtils;
 import com.umeng.socialize.ShareAction;
 import com.umeng.socialize.UMShareAPI;

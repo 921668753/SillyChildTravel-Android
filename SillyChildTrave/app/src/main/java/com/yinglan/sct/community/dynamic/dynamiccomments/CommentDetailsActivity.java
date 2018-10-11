@@ -17,16 +17,17 @@ import com.common.cklibrary.utils.myview.ChildListView;
 import com.common.cklibrary.utils.rx.MsgEvent;
 import com.common.cklibrary.utils.rx.RxBus;
 import com.kymjs.common.StringUtils;
-import com.sillykid.app.R;
-import com.sillykid.app.adapter.community.dynamic.dynamiccomments.CommentDetailsViewAdapter;
-import com.sillykid.app.community.DisplayPageActivity;
-import com.sillykid.app.community.dynamic.dialog.RevertBouncedDialog;
-import com.sillykid.app.entity.community.dynamic.dynamiccomments.CommentDetailsBean;
-import com.sillykid.app.entity.community.dynamic.dynamiccomments.CommentDetailsBean.DataBean;
-import com.sillykid.app.loginregister.LoginActivity;
-import com.sillykid.app.utils.GlideImageLoader;
+import com.yinglan.sct.R;
+import com.yinglan.sct.adapter.community.dynamic.dynamiccomments.CommentDetailsViewAdapter;
+import com.yinglan.sct.community.DisplayPageActivity;
+import com.yinglan.sct.community.dynamic.dialog.RevertBouncedDialog;
+import com.yinglan.sct.entity.community.dynamic.dynamiccomments.CommentDetailsBean;
+import com.yinglan.sct.entity.community.dynamic.dynamiccomments.CommentDetailsBean.DataBean;
+import com.yinglan.sct.loginregister.LoginActivity;
+import com.yinglan.sct.utils.GlideImageLoader;
 
-import cn.bingoogolapple.androidcommon.adapter.BGAOnItemChildClickListener;
+import cn.bingoogolapple.baseadapter.BGAOnItemChildClickListener;
+
 
 /**
  * 单条动态评论详情

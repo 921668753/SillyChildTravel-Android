@@ -1,4 +1,4 @@
-package com.sillykid.app.entity.homepage.airporttransportation;
+package com.yinglan.sct.entity.homepage.airporttransportation;
 
 import com.common.cklibrary.entity.BaseResult;
 

@@ -26,18 +26,18 @@ import com.kymjs.common.DensityUtils;
 import com.kymjs.common.Log;
 import com.kymjs.common.PreferenceHelper;
 import com.kymjs.common.StringUtils;
-import com.sillykid.app.R;
-import com.sillykid.app.adapter.community.dynamic.UserEvaluationViewAdapter;
-import com.sillykid.app.community.DisplayPageActivity;
-import com.sillykid.app.community.dynamic.dialog.ReportBouncedDialog;
-import com.sillykid.app.community.dynamic.dialog.RevertBouncedDialog;
-import com.sillykid.app.community.dynamic.dialog.ShareBouncedDialog;
-import com.sillykid.app.community.dynamic.dynamiccomments.CommentDetailsActivity;
-import com.sillykid.app.community.dynamic.dynamiccomments.DynamicCommentsActivity;
-import com.sillykid.app.constant.URLConstants;
-import com.sillykid.app.entity.community.dynamic.DynamicDetailsBean;
-import com.sillykid.app.loginregister.LoginActivity;
-import com.sillykid.app.utils.GlideImageLoader;
+import com.yinglan.sct.R;
+import com.yinglan.sct.adapter.community.dynamic.UserEvaluationViewAdapter;
+import com.yinglan.sct.community.DisplayPageActivity;
+import com.yinglan.sct.community.dynamic.dialog.ReportBouncedDialog;
+import com.yinglan.sct.community.dynamic.dialog.RevertBouncedDialog;
+import com.yinglan.sct.community.dynamic.dialog.ShareBouncedDialog;
+import com.yinglan.sct.community.dynamic.dynamiccomments.CommentDetailsActivity;
+import com.yinglan.sct.community.dynamic.dynamiccomments.DynamicCommentsActivity;
+import com.yinglan.sct.constant.URLConstants;
+import com.yinglan.sct.entity.community.dynamic.DynamicDetailsBean;
+import com.yinglan.sct.loginregister.LoginActivity;
+import com.yinglan.sct.utils.GlideImageLoader;
 import com.umeng.socialize.ShareAction;
 import com.umeng.socialize.UMShareAPI;
 import com.umeng.socialize.UMShareListener;
@@ -45,11 +45,11 @@ import com.umeng.socialize.bean.SHARE_MEDIA;
 import com.umeng.socialize.media.UMImage;
 import com.umeng.socialize.media.UMWeb;
 
-import cn.bingoogolapple.androidcommon.adapter.BGAOnItemChildClickListener;
+import cn.bingoogolapple.baseadapter.BGAOnItemChildClickListener;
 import cn.jzvd.Jzvd;
 import cn.jzvd.JzvdStd;
 
-import static com.sillykid.app.constant.NumericConstants.REQUEST_CODE;
+import static com.yinglan.sct.constant.NumericConstants.REQUEST_CODE;
 
 /**
  * 动态视频详情

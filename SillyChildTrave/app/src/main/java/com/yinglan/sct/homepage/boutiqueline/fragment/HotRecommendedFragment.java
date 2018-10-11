@@ -16,23 +16,23 @@ import com.common.cklibrary.common.BindView;
 import com.common.cklibrary.common.ViewInject;
 import com.common.cklibrary.utils.JsonUtil;
 import com.common.cklibrary.utils.RefreshLayoutUtil;
-import com.sillykid.app.R;
-import com.sillykid.app.constant.NumericConstants;
-import com.sillykid.app.entity.homepage.boutiqueline.fragment.BoutiqueLineBean;
-import com.sillykid.app.homepage.boutiqueline.BoutiqueLineActivity;
-import com.sillykid.app.homepage.boutiqueline.LineDetailsActivity;
-import com.sillykid.app.homepage.boutiqueline.selectcity.SelectCityActivity;
-import com.sillykid.app.loginregister.LoginActivity;
-import com.sillykid.app.utils.SpacesItemDecoration;
+import com.yinglan.sct.R;
+import com.yinglan.sct.constant.NumericConstants;
+import com.yinglan.sct.entity.homepage.boutiqueline.fragment.BoutiqueLineBean;
+import com.yinglan.sct.homepage.boutiqueline.BoutiqueLineActivity;
+import com.yinglan.sct.homepage.boutiqueline.LineDetailsActivity;
+import com.yinglan.sct.homepage.boutiqueline.selectcity.SelectCityActivity;
+import com.yinglan.sct.loginregister.LoginActivity;
+import com.yinglan.sct.utils.SpacesItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.bingoogolapple.androidcommon.adapter.BGAOnRVItemClickListener;
+import cn.bingoogolapple.baseadapter.BGAOnRVItemClickListener;
 import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
 
 import static android.app.Activity.RESULT_OK;
-import static com.sillykid.app.constant.NumericConstants.RESULT_CODE_GET;
+import static com.yinglan.sct.constant.NumericConstants.RESULT_CODE_GET;
 
 /**
  * 热门推荐列表
@@ -91,7 +91,7 @@ public class HotRecommendedFragment extends BaseFragment implements BoutiqueLine
 
     private List<BoutiqueLineBean.DataBean.ResultBean> list = null;
 
-    private com.sillykid.app.adapter.homepage.boutiqueline.BoutiqueLineViewAdapter mAdapter;
+    private com.yinglan.sct.adapter.homepage.boutiqueline.BoutiqueLineViewAdapter mAdapter;
 
     private int region_id = 0;
 
@@ -110,7 +110,7 @@ public class HotRecommendedFragment extends BaseFragment implements BoutiqueLine
         list = new ArrayList<BoutiqueLineBean.DataBean.ResultBean>();
         mPresenter = new BoutiqueLinePresenter(this);
         spacesItemDecoration = new SpacesItemDecoration(7, 14);
-        mAdapter = new com.sillykid.app.adapter.homepage.boutiqueline.BoutiqueLineViewAdapter(recyclerview);
+        mAdapter = new com.yinglan.sct.adapter.homepage.boutiqueline.BoutiqueLineViewAdapter(recyclerview);
     }
 
 
@@ -208,7 +208,7 @@ public class HotRecommendedFragment extends BaseFragment implements BoutiqueLine
         ll_commonError.setVisibility(View.GONE);
         mRefreshLayout.setVisibility(View.VISIBLE);
         mRefreshLayout.setPullDownRefreshEnable(true);
-        com.sillykid.app.entity.homepage.boutiqueline.fragment.BoutiqueLineBean boutiqueLineBean = (com.sillykid.app.entity.homepage.boutiqueline.fragment.BoutiqueLineBean) JsonUtil.getInstance().json2Obj(success, com.sillykid.app.entity.homepage.boutiqueline.fragment.BoutiqueLineBean.class);
+        com.yinglan.sct.entity.homepage.boutiqueline.fragment.BoutiqueLineBean boutiqueLineBean = (com.yinglan.sct.entity.homepage.boutiqueline.fragment.BoutiqueLineBean) JsonUtil.getInstance().json2Obj(success, com.yinglan.sct.entity.homepage.boutiqueline.fragment.BoutiqueLineBean.class);
 //        if (boutiqueLineBean.getData() == null && mMorePageNumber == NumericConstants.START_PAGE_NUMBER ||
 //                boutiqueLineBean.getData().getResult() == null && mMorePageNumber == NumericConstants.START_PAGE_NUMBER ||
 //                boutiqueLineBean.getData().getResult().size() <= 0 && mMorePageNumber == NumericConstants.START_PAGE_NUMBER) {

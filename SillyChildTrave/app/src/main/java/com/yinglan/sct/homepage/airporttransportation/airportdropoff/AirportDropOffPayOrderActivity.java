@@ -11,22 +11,21 @@ import com.common.cklibrary.common.BindView;
 import com.common.cklibrary.common.KJActivityStack;
 import com.common.cklibrary.common.ViewInject;
 import com.common.cklibrary.utils.ActivityTitleUtils;
+import com.common.cklibrary.utils.DataUtil;
 import com.common.cklibrary.utils.JsonUtil;
 import com.common.cklibrary.utils.MathUtil;
 import com.common.cklibrary.utils.myview.WebViewLayout;
 import com.kymjs.common.StringUtils;
-import com.sillykid.app.R;
-import com.sillykid.app.homepage.airporttransportation.AirportTransportationClassificationActivity;
-import com.sillykid.app.homepage.airporttransportation.PriceInformationActivity;
-import com.sillykid.app.homepage.airporttransportation.SelectProductAirportTransportationActivity;
-import com.sillykid.app.homepage.airporttransportation.paymentorder.PaymentTravelOrderActivity;
-import com.sillykid.app.homepage.airporttransportation.search.ProductSearchActivity;
-import com.sillykid.app.homepage.airporttransportation.search.ProductSearchListActivity;
-import com.sillykid.app.mine.mywallet.coupons.CouponsActivity;
-import com.sillykid.app.utils.DataUtil;
-import com.sillykid.app.utils.GlideImageLoader;
+import com.yinglan.sct.R;
+import com.yinglan.sct.homepage.airporttransportation.AirportTransportationClassificationActivity;
+import com.yinglan.sct.homepage.airporttransportation.PriceInformationActivity;
+import com.yinglan.sct.homepage.airporttransportation.SelectProductAirportTransportationActivity;
+import com.yinglan.sct.homepage.airporttransportation.paymentorder.PaymentTravelOrderActivity;
+import com.yinglan.sct.homepage.airporttransportation.search.ProductSearchActivity;
+import com.yinglan.sct.homepage.airporttransportation.search.ProductSearchListActivity;
+import com.yinglan.sct.utils.GlideImageLoader;
 
-import static com.sillykid.app.constant.NumericConstants.RESULT_CODE_GET;
+import static com.yinglan.sct.constant.NumericConstants.RESULT_CODE_GET;
 
 /**
  * 送机支付订单
@@ -123,10 +122,10 @@ public class AirportDropOffPayOrderActivity extends BaseActivity implements Airp
         super.widgetClick(v);
         switch (v.getId()) {
             case R.id.tv_vouchers:
-                Intent intent1 = new Intent(aty, CouponsActivity.class);
-                intent1.putExtra("type", -1);
-                intent1.putExtra("money", totalPrice);
-                startActivityForResult(intent1, RESULT_CODE_GET);
+//                Intent intent1 = new Intent(aty, CouponsActivity.class);
+//                intent1.putExtra("type", -1);
+//                intent1.putExtra("money", totalPrice);
+//                startActivityForResult(intent1, RESULT_CODE_GET);
                 break;
             case R.id.tv_confirmPayment:
                 showLoadingDialog(getString(R.string.submissionLoad));
@@ -144,7 +143,7 @@ public class AirportDropOffPayOrderActivity extends BaseActivity implements Airp
     public void getSuccess(String success, int flag) {
         dismissLoadingDialog();
         if (flag == 0) {
-            com.sillykid.app.entity.homepage.airporttransportation.airportpickup.AirportPickupPayOrderBean airportPickupPayOrderBean = (com.sillykid.app.entity.homepage.airporttransportation.airportpickup.AirportPickupPayOrderBean) JsonUtil.getInstance().json2Obj(success, com.sillykid.app.entity.homepage.airporttransportation.airportpickup.AirportPickupPayOrderBean.class);
+            com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.AirportPickupPayOrderBean airportPickupPayOrderBean = (com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.AirportPickupPayOrderBean) JsonUtil.getInstance().json2Obj(success, com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.AirportPickupPayOrderBean.class);
             GlideImageLoader.glideOrdinaryLoader(aty, airportPickupPayOrderBean.getData().getMain_picture(), img_airportDropOff, R.mipmap.placeholderfigure2);
             tv_deliveredAirport.setText(airportPickupPayOrderBean.getData().getAirport_name());
             tv_placeDeparture.setText(airportPickupPayOrderBean.getData().getDelivery_location());
@@ -186,7 +185,7 @@ public class AirportDropOffPayOrderActivity extends BaseActivity implements Airp
             KJActivityStack.create().finishActivity(ProductSearchActivity.class);
             KJActivityStack.create().finishActivity(PriceInformationActivity.class);
             KJActivityStack.create().finishActivity(SelectProductAirportTransportationActivity.class);
-            com.sillykid.app.entity.homepage.airporttransportation.airportpickup.CreateTravelOrderBean createTravelOrderBean = (com.sillykid.app.entity.homepage.airporttransportation.airportpickup.CreateTravelOrderBean) JsonUtil.getInstance().json2Obj(success, com.sillykid.app.entity.homepage.airporttransportation.airportpickup.CreateTravelOrderBean.class);
+            com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.CreateTravelOrderBean createTravelOrderBean = (com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.CreateTravelOrderBean) JsonUtil.getInstance().json2Obj(success, com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.CreateTravelOrderBean.class);
             /**
              * 发送消息
              */

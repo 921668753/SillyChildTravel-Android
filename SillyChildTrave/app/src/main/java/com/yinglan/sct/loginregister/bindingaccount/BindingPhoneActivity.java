@@ -120,7 +120,7 @@ public class BindingPhoneActivity extends BaseActivity implements BindingPhoneCo
             case R.id.tv_binding:
                 tv_binding.setEnabled(false);
                 showLoadingDialog(getString(R.string.submissionLoad));
-                ((BindingPhoneContract.Presenter) mPresenter).postBindingPhone(getIntent().getStringExtra("openid"),
+                ((BindingPhoneContract.Presenter) mPresenter).postBindingPhone(getIntent().getStringExtra("openid"), getIntent().getStringExtra("head_pic"),
                         getIntent().getStringExtra("from"), et_phone.getText().toString(), et_code.getText().toString(), "");
                 break;
             case R.id.tv_agreement:

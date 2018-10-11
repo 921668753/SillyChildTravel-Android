@@ -1,4 +1,4 @@
-package com.sillykid.app.entity.homepage.privatecustom;
+package com.yinglan.sct.entity.homepage.privatecustom;
 
 import com.common.cklibrary.entity.BaseResult;
 import com.contrarywind.interfaces.IPickerViewData;

@@ -1,12 +1,13 @@
-package com.sillykid.app.adapter.homepage.bythedaycharter;
+package com.yinglan.sct.adapter.homepage.bythedaycharter;
 
 import android.content.Context;
 
-import com.sillykid.app.R;
-import com.sillykid.app.entity.homepage.bythedaycharter.PriceInformationBean.DataBean.ServiceBean;
+import com.yinglan.sct.R;
+import com.yinglan.sct.entity.homepage.bythedaycharter.PriceInformationBean.DataBean.ServiceBean;
 
-import cn.bingoogolapple.androidcommon.adapter.BGAAdapterViewAdapter;
-import cn.bingoogolapple.androidcommon.adapter.BGAViewHolderHelper;
+import cn.bingoogolapple.baseadapter.BGAAdapterViewAdapter;
+import cn.bingoogolapple.baseadapter.BGAViewHolderHelper;
+
 
 public class PriceInformationViewAdapter extends BGAAdapterViewAdapter<ServiceBean> {
 

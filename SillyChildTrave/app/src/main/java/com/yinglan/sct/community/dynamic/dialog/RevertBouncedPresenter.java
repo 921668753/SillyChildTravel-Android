@@ -7,9 +7,9 @@ import com.common.cklibrary.utils.httputil.HttpUtilParams;
 import com.common.cklibrary.utils.httputil.ResponseListener;
 import com.kymjs.common.StringUtils;
 import com.kymjs.rxvolley.client.HttpParams;
-import com.sillykid.app.R;
-import com.sillykid.app.homepage.message.interactivemessage.imuitl.UserUtil;
-import com.sillykid.app.retrofit.RequestClient;
+import com.yinglan.sct.R;
+import com.yinglan.sct.message.interactivemessage.imuitl.UserUtil;
+import com.yinglan.sct.retrofit.RequestClient;
 
 /**
  * Created by ruitu on 2018/9/24.

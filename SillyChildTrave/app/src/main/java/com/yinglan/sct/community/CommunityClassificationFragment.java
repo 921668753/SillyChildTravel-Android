@@ -19,26 +19,25 @@ import com.common.cklibrary.common.ViewInject;
 import com.common.cklibrary.utils.JsonUtil;
 import com.common.cklibrary.utils.RefreshLayoutUtil;
 import com.common.cklibrary.utils.rx.MsgEvent;
-import com.sillykid.app.R;
-import com.sillykid.app.adapter.main.community.CommunityViewAdapter;
-import com.sillykid.app.community.dynamic.DynamicDetailsActivity;
-import com.sillykid.app.community.dynamic.DynamicVideoDetailsActivity;
-import com.sillykid.app.constant.NumericConstants;
-import com.sillykid.app.entity.main.community.CommunityBean;
-import com.sillykid.app.loginregister.LoginActivity;
-import com.sillykid.app.main.MainActivity;
-import com.sillykid.app.mine.myrelease.mydynamic.ReleaseDynamicActivity;
-import com.sillykid.app.utils.GlideImageLoader;
-import com.sillykid.app.utils.SpacesItemDecoration;
+import com.yinglan.sct.R;
+import com.yinglan.sct.adapter.main.community.CommunityViewAdapter;
+import com.yinglan.sct.community.dynamic.DynamicDetailsActivity;
+import com.yinglan.sct.community.dynamic.DynamicVideoDetailsActivity;
+import com.yinglan.sct.constant.NumericConstants;
+import com.yinglan.sct.entity.main.community.CommunityBean;
+import com.yinglan.sct.loginregister.LoginActivity;
+import com.yinglan.sct.main.MainActivity;
+import com.yinglan.sct.utils.GlideImageLoader;
+import com.yinglan.sct.utils.SpacesItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.bingoogolapple.androidcommon.adapter.BGAOnRVItemClickListener;
+import cn.bingoogolapple.baseadapter.BGAOnRVItemClickListener;
 import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
 
 import static android.app.Activity.RESULT_OK;
-import static com.sillykid.app.constant.NumericConstants.REQUEST_CODE;
+import static com.yinglan.sct.constant.NumericConstants.REQUEST_CODE;
 
 /**
  * 社区分类列表
@@ -304,7 +303,7 @@ public class CommunityClassificationFragment extends BaseFragment implements Com
             intent.putExtra("title", mAdapter.getItem(selectPosition).getPost_title());
             aty.showActivity(aty, intent);
         } else if (flag == 4) {
-            aty.showActivity(aty, ReleaseDynamicActivity.class);
+           // aty.showActivity(aty, ReleaseDynamicActivity.class);
         }
     }
 

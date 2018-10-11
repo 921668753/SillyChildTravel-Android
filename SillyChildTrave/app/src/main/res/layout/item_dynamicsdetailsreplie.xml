@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MatchWrap"
+    android:orientation="vertical">
+
+    <LinearLayout
+        style="@style/MatchWrap"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/img_head"
+            android:layout_width="@dimen/dimen20"
+            android:layout_height="@dimen/dimen20"
+            android:layout_marginBottom="@dimen/dimen7"
+            android:layout_marginLeft="@dimen/dimen6"
+            android:layout_marginTop="@dimen/dimen7"
+            android:src="@mipmap/avatar" />
+
+
+        <TextView
+            android:id="@+id/tv_nickName1"
+            style="@style/WrapMatch"
+            android:layout_marginLeft="@dimen/dimen6"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:text="用户昵称用户昵称用户"
+            android:textColor="@color/greenColors"
+            android:textSize="@dimen/textsize9" />
+
+        <TextView
+            style="@style/WrapWrap"
+            android:paddingLeft="@dimen/dimen2"
+            android:paddingRight="@dimen/dimen2"
+            android:text="@string/revert"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/textsize9"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_nickName2"
+            style="@style/WrapMatch"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:text="昵称用户昵称用户昵称"
+            android:textColor="@color/greenColors"
+            android:textSize="@dimen/textsize9"
+            android:visibility="visible" />
+
+
+        <TextView
+            android:id="@+id/tv_time1"
+            style="@style/AutoWrap"
+            android:gravity="right"
+            android:paddingLeft="@dimen/dimen10"
+            android:paddingRight="@dimen/dimen10"
+            android:text="2018.03.06"
+            android:textColor="@color/tabColors"
+            android:textSize="@dimen/textsize9" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_content1"
+        style="@style/MatchWrap"
+        android:paddingBottom="@dimen/dimen8"
+        android:paddingLeft="@dimen/dimen10"
+        android:paddingRight="@dimen/dimen10"
+        android:text="如果你无法表达的你的想法，那么说明你还不够了解它，如果你无法表达的你的想法。"
+        android:textColor="@color/hintColors"
+        android:textSize="@dimen/textsize10" />
+
+</LinearLayout>

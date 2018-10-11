@@ -16,19 +16,19 @@ import com.common.cklibrary.common.BindView;
 import com.common.cklibrary.common.ViewInject;
 import com.common.cklibrary.utils.JsonUtil;
 import com.common.cklibrary.utils.RefreshLayoutUtil;
-import com.sillykid.app.R;
-import com.sillykid.app.constant.NumericConstants;
-import com.sillykid.app.homepage.boutiqueline.BoutiqueLineActivity;
-import com.sillykid.app.homepage.boutiqueline.LineDetailsActivity;
-import com.sillykid.app.homepage.boutiqueline.selectcity.SelectCityActivity;
-import com.sillykid.app.loginregister.LoginActivity;
+import com.yinglan.sct.R;
+import com.yinglan.sct.constant.NumericConstants;
+import com.yinglan.sct.homepage.boutiqueline.BoutiqueLineActivity;
+import com.yinglan.sct.homepage.boutiqueline.LineDetailsActivity;
+import com.yinglan.sct.homepage.boutiqueline.selectcity.SelectCityActivity;
+import com.yinglan.sct.loginregister.LoginActivity;
 
-import cn.bingoogolapple.androidcommon.adapter.BGADivider;
-import cn.bingoogolapple.androidcommon.adapter.BGAOnRVItemClickListener;
+import cn.bingoogolapple.baseadapter.BGADivider;
+import cn.bingoogolapple.baseadapter.BGAOnRVItemClickListener;
 import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
 
 import static android.app.Activity.RESULT_OK;
-import static com.sillykid.app.constant.NumericConstants.RESULT_CODE_GET;
+import static com.yinglan.sct.constant.NumericConstants.RESULT_CODE_GET;
 
 /**
  * 城市选择列表
@@ -81,7 +81,7 @@ public class CitySelectionFragment extends BaseFragment implements BoutiqueLineC
 
     private int is_recommand = 1;
 
-    private com.sillykid.app.adapter.homepage.boutiqueline.BoutiqueLineViewAdapter mAdapter;
+    private com.yinglan.sct.adapter.homepage.boutiqueline.BoutiqueLineViewAdapter mAdapter;
 
     private int region_id = 0;
 
@@ -98,7 +98,7 @@ public class CitySelectionFragment extends BaseFragment implements BoutiqueLineC
     protected void initData() {
         super.initData();
         mPresenter = new BoutiqueLinePresenter(this);
-        mAdapter = new com.sillykid.app.adapter.homepage.boutiqueline.BoutiqueLineViewAdapter(recyclerview);
+        mAdapter = new com.yinglan.sct.adapter.homepage.boutiqueline.BoutiqueLineViewAdapter(recyclerview);
     }
 
     @Override
@@ -189,7 +189,7 @@ public class CitySelectionFragment extends BaseFragment implements BoutiqueLineC
         ll_commonError.setVisibility(View.GONE);
         mRefreshLayout.setVisibility(View.VISIBLE);
         mRefreshLayout.setPullDownRefreshEnable(true);
-        com.sillykid.app.entity.homepage.boutiqueline.fragment.BoutiqueLineBean boutiqueLineBean = (com.sillykid.app.entity.homepage.boutiqueline.fragment.BoutiqueLineBean) JsonUtil.getInstance().json2Obj(success, com.sillykid.app.entity.homepage.boutiqueline.fragment.BoutiqueLineBean.class);
+        com.yinglan.sct.entity.homepage.boutiqueline.fragment.BoutiqueLineBean boutiqueLineBean = (com.yinglan.sct.entity.homepage.boutiqueline.fragment.BoutiqueLineBean) JsonUtil.getInstance().json2Obj(success, com.yinglan.sct.entity.homepage.boutiqueline.fragment.BoutiqueLineBean.class);
         if (boutiqueLineBean.getData() == null && mMorePageNumber == NumericConstants.START_PAGE_NUMBER ||
                 boutiqueLineBean.getData().getResultX() == null && mMorePageNumber == NumericConstants.START_PAGE_NUMBER ||
                 boutiqueLineBean.getData().getResultX().size() <= 0 && mMorePageNumber == NumericConstants.START_PAGE_NUMBER) {

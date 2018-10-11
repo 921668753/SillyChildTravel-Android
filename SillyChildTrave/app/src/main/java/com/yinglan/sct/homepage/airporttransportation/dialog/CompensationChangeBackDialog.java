@@ -12,7 +12,7 @@ import android.widget.ImageView;
 
 import com.common.cklibrary.common.BaseDialog;
 import com.kymjs.common.StringUtils;
-import com.sillykid.app.R;
+import com.yinglan.sct.R;
 
 
 /**

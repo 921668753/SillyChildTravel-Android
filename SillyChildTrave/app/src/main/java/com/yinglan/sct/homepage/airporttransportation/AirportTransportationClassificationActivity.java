@@ -14,9 +14,9 @@ import com.common.cklibrary.common.BaseActivity;
 import com.common.cklibrary.common.BindView;
 import com.common.cklibrary.common.ViewInject;
 import com.common.cklibrary.utils.JsonUtil;
-import com.sillykid.app.R;
-import com.sillykid.app.entity.homepage.airporttransportation.AirportCountryListBean;
-import com.sillykid.app.homepage.airporttransportation.search.ProductSearchActivity;
+import com.yinglan.sct.R;
+import com.yinglan.sct.entity.homepage.airporttransportation.AirportCountryListBean;
+import com.yinglan.sct.homepage.airporttransportation.search.ProductSearchActivity;
 
 import java.util.List;
 
@@ -51,13 +51,13 @@ public class AirportTransportationClassificationActivity extends BaseActivity im
     @BindView(id = R.id.tv_button, click = true)
     private TextView tv_button;
 
-    private com.sillykid.app.adapter.homepage.airporttransportation.AirportTransportationClassificationListViewAdapter mListViewAdapter = null;
+    private com.yinglan.sct.adapter.homepage.airporttransportation.AirportTransportationClassificationListViewAdapter mListViewAdapter = null;
 
-    private com.sillykid.app.adapter.homepage.airporttransportation.AirportTransportationClassificationGridViewAdapter mGridViewAdapter = null;
+    private com.yinglan.sct.adapter.homepage.airporttransportation.AirportTransportationClassificationGridViewAdapter mGridViewAdapter = null;
 
     private List<AirportCountryListBean.DataBean> airportCountryList;
 
-    private com.sillykid.app.entity.homepage.airporttransportation.AirportCountryListBean.DataBean airportCountryBean = null;
+    private com.yinglan.sct.entity.homepage.airporttransportation.AirportCountryListBean.DataBean airportCountryBean = null;
 
     private String title = "";
     private int type = 0;
@@ -72,8 +72,8 @@ public class AirportTransportationClassificationActivity extends BaseActivity im
     public void initData() {
         super.initData();
         mPresenter = new AirportTransportationClassificationPresenter(this);
-        mListViewAdapter = new com.sillykid.app.adapter.homepage.airporttransportation.AirportTransportationClassificationListViewAdapter(this);
-        mGridViewAdapter = new com.sillykid.app.adapter.homepage.airporttransportation.AirportTransportationClassificationGridViewAdapter(this);
+        mListViewAdapter = new com.yinglan.sct.adapter.homepage.airporttransportation.AirportTransportationClassificationListViewAdapter(this);
+        mGridViewAdapter = new com.yinglan.sct.adapter.homepage.airporttransportation.AirportTransportationClassificationGridViewAdapter(this);
         title = getIntent().getStringExtra("title");
         type = getIntent().getIntExtra("type", 0);
     }
@@ -142,13 +142,13 @@ public class AirportTransportationClassificationActivity extends BaseActivity im
     @Override
     public void getSuccess(String success, int flag) {
         if (flag == 0) {
-            com.sillykid.app.entity.homepage.airporttransportation.AirportCountryListBean airportCountryListBean = (com.sillykid.app.entity.homepage.airporttransportation.AirportCountryListBean) JsonUtil.getInstance().json2Obj(success, com.sillykid.app.entity.homepage.airporttransportation.AirportCountryListBean.class);
+            com.yinglan.sct.entity.homepage.airporttransportation.AirportCountryListBean airportCountryListBean = (com.yinglan.sct.entity.homepage.airporttransportation.AirportCountryListBean) JsonUtil.getInstance().json2Obj(success, com.yinglan.sct.entity.homepage.airporttransportation.AirportCountryListBean.class);
             airportCountryList = airportCountryListBean.getData();
             if (airportCountryListBean != null && airportCountryList.size() > 0) {
                 selectClassification(0);
             }
         } else if (flag == 1) {
-            com.sillykid.app.entity.homepage.airporttransportation.AirportByCountryIdBean airportByCountryIdBean = (com.sillykid.app.entity.homepage.airporttransportation.AirportByCountryIdBean) JsonUtil.getInstance().json2Obj(success, com.sillykid.app.entity.homepage.airporttransportation.AirportByCountryIdBean.class);
+            com.yinglan.sct.entity.homepage.airporttransportation.AirportByCountryIdBean airportByCountryIdBean = (com.yinglan.sct.entity.homepage.airporttransportation.AirportByCountryIdBean) JsonUtil.getInstance().json2Obj(success, com.yinglan.sct.entity.homepage.airporttransportation.AirportByCountryIdBean.class);
             if (airportByCountryIdBean.getData() == null || airportByCountryIdBean.getData().size() <= 0) {
                 errorMsg(getString(R.string.noData), 1);
                 return;

@@ -7,7 +7,7 @@ import com.common.cklibrary.common.BaseActivity;
 import com.common.cklibrary.common.BaseFragment;
 import com.common.cklibrary.common.BindView;
 import com.common.cklibrary.utils.ActivityTitleUtils;
-import com.sillykid.app.R;
+import com.yinglan.sct.R;
 
 import cn.bingoogolapple.titlebar.BGATitleBar;
 

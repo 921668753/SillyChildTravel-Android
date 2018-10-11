@@ -5,7 +5,7 @@ import com.common.cklibrary.common.BaseActivity;
 import com.common.cklibrary.common.BindView;
 import com.common.cklibrary.utils.myview.WebViewLayout;
 import com.kymjs.common.StringUtils;
-import com.sillykid.app.R;
+import com.yinglan.sct.R;
 
 
 /**

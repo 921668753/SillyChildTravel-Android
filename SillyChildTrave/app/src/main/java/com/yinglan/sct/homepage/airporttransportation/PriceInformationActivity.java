@@ -9,19 +9,19 @@ import android.widget.TextView;
 import com.common.cklibrary.common.BaseActivity;
 import com.common.cklibrary.common.BindView;
 import com.common.cklibrary.common.ViewInject;
+import com.common.cklibrary.utils.DataUtil;
 import com.common.cklibrary.utils.JsonUtil;
 import com.common.cklibrary.utils.MathUtil;
 import com.common.cklibrary.utils.myview.NoScrollGridView;
 import com.kymjs.common.StringUtils;
-import com.sillykid.app.R;
-import com.sillykid.app.homepage.airporttransportation.airportdropoff.AirportDropOffActivity;
-import com.sillykid.app.homepage.airporttransportation.airportpickup.AirportPickupActivity;
-import com.sillykid.app.homepage.airporttransportation.comments.CharterCommentsActivity;
-import com.sillykid.app.homepage.airporttransportation.dialog.CompensationChangeBackDialog;
-import com.sillykid.app.homepage.message.interactivemessage.imuitl.RongIMUtil;
-import com.sillykid.app.loginregister.LoginActivity;
-import com.sillykid.app.utils.DataUtil;
-import com.sillykid.app.utils.GlideImageLoader;
+import com.yinglan.sct.R;
+import com.yinglan.sct.homepage.airporttransportation.airportdropoff.AirportDropOffActivity;
+import com.yinglan.sct.homepage.airporttransportation.airportpickup.AirportPickupActivity;
+import com.yinglan.sct.homepage.airporttransportation.comments.CharterCommentsActivity;
+import com.yinglan.sct.homepage.airporttransportation.dialog.CompensationChangeBackDialog;
+import com.yinglan.sct.loginregister.LoginActivity;
+import com.yinglan.sct.message.interactivemessage.imuitl.RongIMUtil;
+import com.yinglan.sct.utils.GlideImageLoader;
 
 import java.util.List;
 
@@ -113,9 +113,9 @@ public class PriceInformationActivity extends BaseActivity implements PriceInfor
     private int product_id = 0;
     private int type = 0;
 
-    private com.sillykid.app.adapter.homepage.airporttransportation.PriceInformationViewAdapter mAdapter;
+    private com.yinglan.sct.adapter.homepage.airporttransportation.PriceInformationViewAdapter mAdapter;
 
-    private com.sillykid.app.entity.homepage.airporttransportation.PriceInformationBean priceInformationBean;
+    private com.yinglan.sct.entity.homepage.airporttransportation.PriceInformationBean priceInformationBean;
     private CompensationChangeBackDialog compensationChangeBackDialog;
 
     @Override
@@ -129,7 +129,7 @@ public class PriceInformationActivity extends BaseActivity implements PriceInfor
         mPresenter = new PriceInformationPresenter(this);
         product_id = getIntent().getIntExtra("product_id", 0);
         type = getIntent().getIntExtra("type", 0);
-        mAdapter = new com.sillykid.app.adapter.homepage.airporttransportation.PriceInformationViewAdapter(this);
+        mAdapter = new com.yinglan.sct.adapter.homepage.airporttransportation.PriceInformationViewAdapter(this);
         showLoadingDialog(getString(R.string.dataLoad));
         ((PriceInformationContract.Presenter) mPresenter).getProductDetails(product_id);
         initDialog();
@@ -267,7 +267,7 @@ public class PriceInformationActivity extends BaseActivity implements PriceInfor
     public void getSuccess(String success, int flag) {
         dismissLoadingDialog();
         if (flag == 0) {
-            priceInformationBean = (com.sillykid.app.entity.homepage.airporttransportation.PriceInformationBean) JsonUtil.getInstance().json2Obj(success, com.sillykid.app.entity.homepage.airporttransportation.PriceInformationBean.class);
+            priceInformationBean = (com.yinglan.sct.entity.homepage.airporttransportation.PriceInformationBean) JsonUtil.getInstance().json2Obj(success, com.yinglan.sct.entity.homepage.airporttransportation.PriceInformationBean.class);
             tv_productName.setText(priceInformationBean.getData().getTitle());
             if (priceInformationBean.getData().getPicture() != null && priceInformationBean.getData().getPicture().size() > 0) {
                 mForegroundBanner.setVisibility(View.VISIBLE);

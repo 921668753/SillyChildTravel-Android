@@ -1,4 +1,4 @@
-package com.sillykid.app.entity.homepage.privatecustom.cityselect.fragment;
+package com.yinglan.sct.entity.homepage.privatecustom.cityselect.fragment;
 
 import com.common.cklibrary.entity.BaseResult;
 import com.mcxtzhang.indexlib.IndexBar.bean.BaseIndexPinyinBean;

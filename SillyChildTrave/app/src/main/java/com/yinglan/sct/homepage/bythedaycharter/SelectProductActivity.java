@@ -12,9 +12,9 @@ import com.common.cklibrary.common.BindView;
 import com.common.cklibrary.utils.ActivityTitleUtils;
 import com.common.cklibrary.utils.JsonUtil;
 import com.common.cklibrary.utils.myview.NoScrollGridView;
-import com.sillykid.app.R;
-import com.sillykid.app.entity.homepage.airporttransportation.SelectProductAirportTransportationBean;
-import com.sillykid.app.loginregister.LoginActivity;
+import com.yinglan.sct.R;
+import com.yinglan.sct.entity.homepage.airporttransportation.SelectProductAirportTransportationBean;
+import com.yinglan.sct.loginregister.LoginActivity;
 
 import java.util.List;
 
@@ -30,7 +30,7 @@ public class SelectProductActivity extends BaseActivity implements SelectProduct
     @BindView(id = R.id.gv_productAirportTransportation)
     private NoScrollGridView gv_productAirportTransportation;
 
-    private com.sillykid.app.adapter.homepage.airporttransportation.SelectProductAirportTransportationViewAdapter mAdapter;
+    private com.yinglan.sct.adapter.homepage.airporttransportation.SelectProductAirportTransportationViewAdapter mAdapter;
 
     /**
      * 错误提示页
@@ -60,7 +60,7 @@ public class SelectProductActivity extends BaseActivity implements SelectProduct
     public void initData() {
         super.initData();
         mPresenter = new SelectProductPresenter(this);
-        mAdapter = new com.sillykid.app.adapter.homepage.airporttransportation.SelectProductAirportTransportationViewAdapter(this);
+        mAdapter = new com.yinglan.sct.adapter.homepage.airporttransportation.SelectProductAirportTransportationViewAdapter(this);
         region_id = getIntent().getIntExtra("region_id", 0);
         type = getIntent().getIntExtra("type", 0);
         showLoadingDialog(getString(R.string.dataLoad));
@@ -107,7 +107,7 @@ public class SelectProductActivity extends BaseActivity implements SelectProduct
 
     @Override
     public void getSuccess(String success, int flag) {
-        com.sillykid.app.entity.homepage.airporttransportation.SelectProductAirportTransportationBean selectProductAirportTransportationBean = (com.sillykid.app.entity.homepage.airporttransportation.SelectProductAirportTransportationBean) JsonUtil.getInstance().json2Obj(success, com.sillykid.app.entity.homepage.airporttransportation.SelectProductAirportTransportationBean.class);
+        com.yinglan.sct.entity.homepage.airporttransportation.SelectProductAirportTransportationBean selectProductAirportTransportationBean = (com.yinglan.sct.entity.homepage.airporttransportation.SelectProductAirportTransportationBean) JsonUtil.getInstance().json2Obj(success, com.yinglan.sct.entity.homepage.airporttransportation.SelectProductAirportTransportationBean.class);
         List<SelectProductAirportTransportationBean.DataBean> selectProductAirportTransportationList = selectProductAirportTransportationBean.getData();
         if (selectProductAirportTransportationList == null || selectProductAirportTransportationList.size() <= 0) {
             errorMsg(getString(R.string.noProduct), 0);

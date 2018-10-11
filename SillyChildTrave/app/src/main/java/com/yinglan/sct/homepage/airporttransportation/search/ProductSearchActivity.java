@@ -17,11 +17,11 @@ import com.common.cklibrary.entity.BaseResult;
 import com.common.cklibrary.utils.JsonUtil;
 import com.kymjs.common.PreferenceHelper;
 import com.kymjs.common.StringUtils;
-import com.sillykid.app.R;
-import com.sillykid.app.community.search.dialog.ClearSearchDialog;
-import com.sillykid.app.entity.community.search.RecentSearchBean;
-import com.sillykid.app.entity.community.search.RecentSearchBean.DataBean;
-import com.sillykid.app.utils.SoftKeyboardUtils;
+import com.yinglan.sct.R;
+import com.yinglan.sct.community.search.dialog.ClearSearchDialog;
+import com.yinglan.sct.entity.community.search.RecentSearchBean;
+import com.yinglan.sct.entity.community.search.RecentSearchBean.DataBean;
+import com.yinglan.sct.utils.SoftKeyboardUtils;
 import com.zhy.view.flowlayout.FlowLayout;
 import com.zhy.view.flowlayout.TagFlowLayout;
 
@@ -58,7 +58,7 @@ public class ProductSearchActivity extends BaseActivity implements TagFlowLayout
 
     private List<DataBean> recentSearchList = null;
 
-    private com.sillykid.app.adapter.homepage.airporttransportation.search.RecentSearchTagAdapter recentSearchTagAdapter = null;
+    private com.yinglan.sct.adapter.homepage.airporttransportation.search.RecentSearchTagAdapter recentSearchTagAdapter = null;
 
     private ClearSearchDialog clearSearchDialog = null;
 
@@ -75,7 +75,7 @@ public class ProductSearchActivity extends BaseActivity implements TagFlowLayout
         super.initData();
         recentSearchList = new ArrayList<DataBean>();
         type = getIntent().getIntExtra("type", 0);
-        recentSearchTagAdapter = new com.sillykid.app.adapter.homepage.airporttransportation.search.RecentSearchTagAdapter(this, recentSearchList);
+        recentSearchTagAdapter = new com.yinglan.sct.adapter.homepage.airporttransportation.search.RecentSearchTagAdapter(this, recentSearchList);
         initClearSearchDialog();
     }
 

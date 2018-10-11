@@ -18,12 +18,14 @@ import com.common.cklibrary.common.BaseActivity;
 import com.common.cklibrary.common.BindView;
 import com.common.cklibrary.common.ViewInject;
 import com.common.cklibrary.utils.ActivityTitleUtils;
+import com.common.cklibrary.utils.DataUtil;
 import com.common.cklibrary.utils.JsonUtil;
-import com.sillykid.app.R;
-import com.sillykid.app.loginregister.LoginActivity;
-import com.sillykid.app.utils.DataUtil;
-import com.sillykid.app.utils.GlideImageLoader;
-import com.sillykid.app.utils.SoftKeyboardUtils;
+import com.yinglan.sct.R;
+import com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.AirportPickupBean;
+import com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.PeopleBean;
+import com.yinglan.sct.loginregister.LoginActivity;
+import com.yinglan.sct.utils.GlideImageLoader;
+import com.yinglan.sct.utils.SoftKeyboardUtils;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -149,9 +151,9 @@ public class AirportPickupActivity extends BaseActivity implements AirportPickup
 
 
     private void initOptions(int passenger_number, int baggage_number) {
-        List<com.sillykid.app.entity.homepage.airporttransportation.airportpickup.PeopleBean> list = new ArrayList<com.sillykid.app.entity.homepage.airporttransportation.airportpickup.PeopleBean>();
+        List<PeopleBean> list = new ArrayList<PeopleBean>();
         for (int i = 0; i < passenger_number; i++) {
-            com.sillykid.app.entity.homepage.airporttransportation.airportpickup.PeopleBean peopleBean = new com.sillykid.app.entity.homepage.airporttransportation.airportpickup.PeopleBean();
+            PeopleBean peopleBean = new PeopleBean();
             peopleBean.setNum(i + 1);
             peopleBean.setName(i + 1 + getString(R.string.people));
             list.add(peopleBean);
@@ -165,9 +167,9 @@ public class AirportPickupActivity extends BaseActivity implements AirportPickup
             }
         }).build();
         adultOptions.setPicker(list);
-        List<com.sillykid.app.entity.homepage.airporttransportation.airportpickup.PeopleBean> childrenList = new ArrayList<com.sillykid.app.entity.homepage.airporttransportation.airportpickup.PeopleBean>();
+        List<PeopleBean> childrenList = new ArrayList<PeopleBean>();
         for (int i = 0; i < passenger_number; i++) {
-            com.sillykid.app.entity.homepage.airporttransportation.airportpickup.PeopleBean peopleBean = new com.sillykid.app.entity.homepage.airporttransportation.airportpickup.PeopleBean();
+            PeopleBean peopleBean = new PeopleBean();
             peopleBean.setNum(i );
             peopleBean.setName(i  + getString(R.string.people));
             childrenList.add(peopleBean);
@@ -181,9 +183,9 @@ public class AirportPickupActivity extends BaseActivity implements AirportPickup
             }
         }).build();
         childrenOptions.setPicker(childrenList);
-        List<com.sillykid.app.entity.homepage.airporttransportation.airportpickup.PeopleBean> list1 = new ArrayList<com.sillykid.app.entity.homepage.airporttransportation.airportpickup.PeopleBean>();
+        List<PeopleBean> list1 = new ArrayList<PeopleBean>();
         for (int i = 0; i < baggage_number; i++) {
-            com.sillykid.app.entity.homepage.airporttransportation.airportpickup.PeopleBean peopleBean = new com.sillykid.app.entity.homepage.airporttransportation.airportpickup.PeopleBean();
+            PeopleBean peopleBean = new PeopleBean();
             peopleBean.setNum(i + 1);
             peopleBean.setName(i + 1 + getString(R.string.jian));
             list1.add(peopleBean);
@@ -247,7 +249,7 @@ public class AirportPickupActivity extends BaseActivity implements AirportPickup
     @Override
     public void getSuccess(String success, int flag) {
         dismissLoadingDialog();
-        com.sillykid.app.entity.homepage.airporttransportation.airportpickup.AirportPickupBean airportPickupBean = (com.sillykid.app.entity.homepage.airporttransportation.airportpickup.AirportPickupBean) JsonUtil.getInstance().json2Obj(success, com.sillykid.app.entity.homepage.airporttransportation.airportpickup.AirportPickupBean.class);
+        AirportPickupBean airportPickupBean = (AirportPickupBean) JsonUtil.getInstance().json2Obj(success, AirportPickupBean.class);
         Intent intent = new Intent(aty, AirportPickupPayOrderActivity.class);
         intent.putExtra("requirement_id", airportPickupBean.getData().getRequirement_id());
         intent.putExtra("baggage_passenger", getString(R.string.pickUpNumber) + "≤" + passenger_number + "  " + getString(R.string.baggageNumber1) + "≤" + baggage_number);

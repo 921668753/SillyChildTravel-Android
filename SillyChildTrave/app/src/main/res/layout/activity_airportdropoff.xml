@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MatchMatch"
+    android:background="@color/background"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_title" />
+
+
+    <ScrollView
+        style="@style/MatchMatch"
+        android:scrollbars="none">
+
+        <LinearLayout
+            style="@style/MatchMatch"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/img_airportDropOff"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen143"
+                android:layout_marginTop="@dimen/dimen6"
+                android:background="@color/whiteColors"
+                android:scaleType="centerInside"
+                android:src="@mipmap/placeholderfigure" />
+
+            <TextView
+                android:id="@+id/tv_selectProduct"
+                style="@style/MatchWrap"
+                android:layout_marginTop="@dimen/dimen6"
+                android:background="@color/whiteColors"
+                android:paddingBottom="@dimen/dimen12"
+                android:paddingLeft="@dimen/dimen17"
+                android:paddingRight="@dimen/dimen17"
+                android:paddingTop="@dimen/dimen12"
+                android:text="成田机场东京室内接机"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/textsize15" />
+
+            <TextView
+                android:id="@+id/tv_travelConfiguration"
+                style="@style/MatchWrap"
+                android:background="@color/whiteColors"
+                android:paddingBottom="@dimen/dimen10"
+                android:paddingLeft="@dimen/dimen17"
+                android:paddingRight="@dimen/dimen17"
+                android:text="接机人数5人 行李件数2件"
+                android:textColor="@color/hintColors"
+                android:textSize="@dimen/textsize13" />
+
+
+            <TextView
+                style="@style/MatchWrap"
+                android:paddingBottom="@dimen/dimen10"
+                android:paddingLeft="@dimen/dimen17"
+                android:paddingTop="@dimen/dimen10"
+                android:text="@string/customerInformation"
+                android:textColor="@color/tabColors"
+                android:textSize="@dimen/textsize15" />
+
+            <LinearLayout
+                style="@style/MatchWrap"
+                android:background="@color/whiteColors"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/dimen12">
+
+                <ImageView
+                    android:layout_width="@dimen/dimen8"
+                    android:layout_height="@dimen/dimen8"
+                    android:layout_marginLeft="@dimen/dimen17"
+                    android:src="@mipmap/xingimg" />
+
+                <TextView
+                    style="@style/WrapWrap"
+                    android:layout_marginRight="@dimen/dimen6"
+                    android:text="@string/deliveredAirport"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/textsize15" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_deliveredAirport"
+                style="@style/MatchWrap"
+                android:background="@color/whiteColors"
+                android:hint="@string/fillServiceAirport"
+                android:paddingBottom="@dimen/dimen10"
+                android:paddingLeft="@dimen/dimen17"
+                android:paddingRight="@dimen/dimen17"
+                android:paddingTop="@dimen/dimen12"
+                android:singleLine="true"
+                android:textColor="@color/hintColors"
+                android:textColorHint="@color/hintColors"
+                android:textSize="@dimen/textsize13" />
+
+
+            <LinearLayout
+                style="@style/MatchWrap"
+                android:layout_marginTop="@dimen/dimen1"
+                android:background="@color/whiteColors"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/dimen12">
+
+
+                <ImageView
+                    android:layout_width="@dimen/dimen8"
+                    android:layout_height="@dimen/dimen8"
+                    android:layout_marginLeft="@dimen/dimen17"
+                    android:src="@mipmap/xingimg" />
+
+                <TextView
+                    style="@style/WrapWrap"
+                    android:layout_marginRight="@dimen/dimen6"
+                    android:text="@string/placeDeparture"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/textsize15" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/et_placeDeparture"
+                style="@style/MatchWrap"
+                android:background="@color/whiteColors"
+                android:hint="@string/placeDeparture2"
+                android:paddingBottom="@dimen/dimen10"
+                android:paddingLeft="@dimen/dimen17"
+                android:paddingRight="@dimen/dimen17"
+                android:paddingTop="@dimen/dimen12"
+                android:singleLine="true"
+                android:textColor="@color/textColor"
+                android:textColorHint="@color/hintColors"
+                android:textCursorDrawable="@drawable/shape_cursor"
+                android:textSize="@dimen/textsize13" />
+
+            <LinearLayout
+                style="@style/MatchWrap"
+                android:layout_marginTop="@dimen/dimen6"
+                android:background="@color/whiteColors"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/dimen12">
+
+
+                <ImageView
+                    android:layout_width="@dimen/dimen8"
+                    android:layout_height="@dimen/dimen8"
+                    android:layout_marginLeft="@dimen/dimen17"
+                    android:src="@mipmap/xingimg" />
+
+                <TextView
+                    style="@style/WrapWrap"
+                    android:layout_marginRight="@dimen/dimen6"
+                    android:text="@string/timeDeparture"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/textsize15" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_timeDeparture"
+                style="@style/MatchWrap"
+                android:background="@color/whiteColors"
+                android:hint="@string/selectDepartureTime"
+                android:paddingBottom="@dimen/dimen10"
+                android:paddingLeft="@dimen/dimen17"
+                android:paddingRight="@dimen/dimen17"
+                android:paddingTop="@dimen/dimen12"
+                android:singleLine="true"
+                android:textColor="@color/textColor"
+                android:textColorHint="@color/hintColors"
+                android:textCursorDrawable="@drawable/shape_cursor"
+                android:textSize="@dimen/textsize13" />
+
+
+            <LinearLayout
+                style="@style/MatchWrap"
+                android:layout_marginTop="@dimen/dimen6"
+                android:background="@color/whiteColors"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/dimen12">
+
+                <ImageView
+                    android:layout_width="@dimen/dimen8"
+                    android:layout_height="@dimen/dimen8"
+                    android:layout_marginLeft="@dimen/dimen17"
+                    android:src="@mipmap/xingimg" />
+
+                <TextView
+                    style="@style/WrapWrap"
+                    android:layout_marginRight="@dimen/dimen6"
+                    android:text="@string/contact"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/textsize15" />
+
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/et_contact"
+                style="@style/MatchWrap"
+                android:background="@color/whiteColors"
+                android:hint="@string/ContactName"
+                android:paddingBottom="@dimen/dimen10"
+                android:paddingLeft="@dimen/dimen17"
+                android:paddingRight="@dimen/dimen17"
+                android:paddingTop="@dimen/dimen12"
+                android:singleLine="true"
+                android:textColor="@color/textColor"
+                android:textColorHint="@color/hintColors"
+                android:textCursorDrawable="@drawable/shape_cursor"
+                android:textSize="@dimen/textsize13" />
+
+
+            <LinearLayout
+                style="@style/MatchWrap"
+                android:layout_marginTop="@dimen/dimen1"
+                android:background="@color/whiteColors"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/dimen12">
+
+                <ImageView
+                    android:layout_width="@dimen/dimen8"
+                    android:layout_height="@dimen/dimen8"
+                    android:layout_marginLeft="@dimen/dimen17"
+                    android:src="@mipmap/xingimg" />
+
+                <TextView
+                    style="@style/WrapWrap"
+                    android:layout_marginRight="@dimen/dimen6"
+                    android:text="@string/contactWay3"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/textsize15" />
+
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/et_contactWay"
+                style="@style/MatchWrap"
+                android:background="@color/whiteColors"
+                android:hint="@string/ContactNumber"
+                android:inputType="phone"
+                android:paddingBottom="@dimen/dimen10"
+                android:paddingLeft="@dimen/dimen17"
+                android:paddingRight="@dimen/dimen17"
+                android:paddingTop="@dimen/dimen12"
+                android:singleLine="true"
+                android:textColor="@color/textColor"
+                android:textColorHint="@color/hintColors"
+                android:textCursorDrawable="@drawable/shape_cursor"
+                android:textSize="@dimen/textsize13" />
+
+            <LinearLayout
+                style="@style/MatchWrap"
+                android:layout_marginTop="@dimen/dimen6"
+                android:background="@color/whiteColors"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/dimen12">
+
+                <ImageView
+                    android:layout_width="@dimen/dimen8"
+                    android:layout_height="@dimen/dimen8"
+                    android:layout_marginLeft="@dimen/dimen17"
+                    android:src="@mipmap/xingimg" />
+
+                <TextView
+                    style="@style/WrapWrap"
+                    android:layout_marginRight="@dimen/dimen6"
+                    android:text="@string/dueDemand"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/textsize15" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/MatchWrap"
+                android:background="@color/whiteColors"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/dimen17">
+
+                <LinearLayout
+                    android:id="@+id/ll_adult"
+                    style="@style/AutoWrap"
+                    android:layout_marginLeft="@dimen/dimen17"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/WrapWrap"
+                        android:text="@string/adult1"
+                        android:textColor="@color/hintColors"
+                        android:textSize="@dimen/textsize13" />
+
+                    <LinearLayout
+                        style="@style/AutoWrap"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_adult"
+                            style="@style/MatchAuto"
+                            android:background="@android:color/transparent"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="@string/pleaseSelect"
+                            android:textColor="@color/textColor"
+                            android:textSize="@dimen/textsize15" />
+
+                        <TextView style="@style/DividerWidth" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="@dimen/dimen13"
+                        android:layout_height="@dimen/dimen7"
+                        android:src="@mipmap/downarrow" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_children"
+                    style="@style/AutoWrap"
+                    android:layout_marginLeft="@dimen/dimen52"
+                    android:layout_marginRight="@dimen/dimen40"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/WrapWrap"
+                        android:text="@string/children1"
+                        android:textColor="@color/hintColors"
+                        android:textSize="@dimen/textsize13" />
+
+
+                    <LinearLayout
+                        style="@style/AutoWrap"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_children"
+                            style="@style/MatchAuto"
+                            android:background="@android:color/transparent"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="@string/pleaseSelect"
+                            android:textColor="@color/textColor"
+                            android:textSize="@dimen/textsize15" />
+
+                        <TextView style="@style/DividerWidth" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="@dimen/dimen13"
+                        android:layout_height="@dimen/dimen7"
+                        android:src="@mipmap/downarrow" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/MatchWrap"
+                android:background="@color/whiteColors"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/dimen13"
+                android:paddingTop="@dimen/dimen25">
+
+                <LinearLayout
+                    android:id="@+id/ll_luggage"
+                    style="@style/AutoWrap"
+                    android:layout_marginLeft="@dimen/dimen17"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/WrapWrap"
+                        android:text="@string/luggage1"
+                        android:textColor="@color/hintColors"
+                        android:textSize="@dimen/textsize13" />
+
+                    <LinearLayout
+                        style="@style/AutoWrap"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_luggage"
+                            style="@style/MatchAuto"
+                            android:background="@android:color/transparent"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="@string/pleaseSelect"
+                            android:textColor="@color/textColor"
+                            android:textSize="@dimen/textsize15" />
+
+                        <TextView style="@style/DividerWidth" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="@dimen/dimen13"
+                        android:layout_height="@dimen/dimen7"
+                        android:src="@mipmap/downarrow" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/AutoWrap"
+                    android:layout_marginLeft="@dimen/dimen52"
+                    android:layout_marginRight="@dimen/dimen40"
+                    android:orientation="horizontal">
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/et_remark"
+                style="@style/MatchWrap"
+                android:layout_marginTop="@dimen/dimen6"
+                android:background="@color/whiteColors"
+                android:gravity="left"
+                android:hint="@string/remark1"
+                android:minHeight="@dimen/dimen133"
+                android:paddingBottom="@dimen/dimen12"
+                android:paddingLeft="@dimen/dimen17"
+                android:paddingRight="@dimen/dimen17"
+                android:paddingTop="@dimen/dimen12"
+                android:textColor="@color/textColor"
+                android:textColorHint="@color/hintColors"
+                android:textCursorDrawable="@drawable/shape_cursor"
+                android:textSize="@dimen/textsize15" />
+
+            <TextView
+                android:id="@+id/tv_submitOrder"
+                style="@style/Match40"
+                android:layout_marginBottom="@dimen/dimen20"
+                android:layout_marginLeft="@dimen/dimen100"
+                android:layout_marginRight="@dimen/dimen100"
+                android:layout_marginTop="@dimen/dimen29"
+                android:background="@drawable/shape_charter1"
+                android:gravity="center"
+                android:text="@string/submitOrder"
+                android:textColor="@color/whiteColors"
+                android:textSize="@dimen/textsize16" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

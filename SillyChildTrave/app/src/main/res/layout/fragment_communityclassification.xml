@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/MatchMatch"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        style="@style/MatchMatch">
+
+        <cn.bingoogolapple.refreshlayout.BGARefreshLayout
+            android:id="@+id/mRefreshLayout"
+            style="@style/MatchMatch">
+
+            <ScrollView
+                style="@style/MatchMatch"
+                android:scrollbars="none">
+
+                <RelativeLayout
+                    style="@style/MatchMatch"
+                    android:descendantFocusability="blocksDescendants">
+
+                    <TextView
+                        android:id="@+id/tv_top"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen5" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv"
+                        style="@style/MatchMatch"
+                        android:layout_below="@id/tv_top"
+                        android:overScrollMode="never"
+                        android:paddingLeft="@dimen/dimen2"
+                        android:paddingRight="@dimen/dimen2"
+                        android:scrollbars="none"
+                        tools:listitem="@layout/item_mystrategy" />
+
+                </RelativeLayout>
+
+
+            </ScrollView>
+
+        </cn.bingoogolapple.refreshlayout.BGARefreshLayout>
+
+        <TextView
+            android:id="@+id/tv_newTrends"
+            android:layout_width="@dimen/dimen104"
+            android:layout_height="@dimen/dimen35"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dimen10"
+            android:background="@drawable/shape_newstrategy1"
+            android:gravity="center"
+            android:text="@string/newTrends"
+            android:textColor="@color/whiteColors"
+            android:textSize="@dimen/textsize13" />
+
+
+    </RelativeLayout>
+
+
+    <include layout="@layout/common_error" />
+
+</LinearLayout>

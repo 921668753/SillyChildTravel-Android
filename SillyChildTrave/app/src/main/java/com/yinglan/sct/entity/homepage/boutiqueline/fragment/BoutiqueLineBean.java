@@ -1,4 +1,4 @@
-package com.sillykid.app.entity.homepage.boutiqueline.fragment;
+package com.yinglan.sct.entity.homepage.boutiqueline.fragment;
 
 import com.common.cklibrary.entity.BaseResult;
 import com.google.gson.annotations.SerializedName;

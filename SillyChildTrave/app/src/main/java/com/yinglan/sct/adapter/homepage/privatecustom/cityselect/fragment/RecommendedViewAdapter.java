@@ -1,4 +1,4 @@
-package com.sillykid.app.adapter.homepage.privatecustom.cityselect.fragment;
+package com.yinglan.sct.adapter.homepage.privatecustom.cityselect.fragment;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -8,9 +8,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.sillykid.app.R;
-import com.sillykid.app.entity.homepage.privatecustom.cityselect.fragment.RecommendedBean.DataBean;
-import com.sillykid.app.utils.GlideImageLoader;
+import com.yinglan.sct.R;
+import com.yinglan.sct.entity.homepage.privatecustom.cityselect.fragment.RecommendedBean.DataBean;
+import com.yinglan.sct.utils.GlideImageLoader;
 
 import java.util.List;
 

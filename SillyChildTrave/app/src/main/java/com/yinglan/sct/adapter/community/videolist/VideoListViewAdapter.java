@@ -3,12 +3,12 @@ package com.yinglan.sct.adapter.community.videolist;
 import android.support.v7.widget.RecyclerView;
 
 import com.common.cklibrary.utils.custommediaplayer.JZPLMediaPlayer;
-import com.sillykid.app.R;
-import com.sillykid.app.entity.main.community.CommunityBean.DataBean.ResultBean;
-import com.sillykid.app.utils.GlideImageLoader;
+import com.yinglan.sct.R;
+import com.yinglan.sct.entity.main.community.CommunityBean.DataBean.ResultBean;
+import com.yinglan.sct.utils.GlideImageLoader;
 
-import cn.bingoogolapple.androidcommon.adapter.BGARecyclerViewAdapter;
-import cn.bingoogolapple.androidcommon.adapter.BGAViewHolderHelper;
+import cn.bingoogolapple.baseadapter.BGARecyclerViewAdapter;
+import cn.bingoogolapple.baseadapter.BGAViewHolderHelper;
 import cn.jzvd.JZDataSource;
 import cn.jzvd.Jzvd;
 import cn.jzvd.JzvdStd;

@@ -2,11 +2,12 @@ package com.yinglan.sct.adapter.community.search;
 
 import android.content.Context;
 
-import com.sillykid.app.R;
-import com.sillykid.app.entity.community.search.RecentSearchBean.DataBean;
+import com.yinglan.sct.R;
+import com.yinglan.sct.entity.community.search.RecentSearchBean.DataBean;
 
-import cn.bingoogolapple.androidcommon.adapter.BGAAdapterViewAdapter;
-import cn.bingoogolapple.androidcommon.adapter.BGAViewHolderHelper;
+import cn.bingoogolapple.baseadapter.BGAAdapterViewAdapter;
+import cn.bingoogolapple.baseadapter.BGAViewHolderHelper;
+
 
 /**
  * 最近搜索

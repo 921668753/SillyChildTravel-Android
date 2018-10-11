@@ -1,4 +1,4 @@
-package com.sillykid.app.entity.homepage.boutiqueline;
+package com.yinglan.sct.entity.homepage.boutiqueline;
 
 import com.common.cklibrary.entity.BaseResult;
 

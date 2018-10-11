@@ -1,14 +1,15 @@
-package com.sillykid.app.adapter.homepage.boutiqueline.selectcity;
+package com.yinglan.sct.adapter.homepage.boutiqueline.selectcity;
 
 import android.content.Context;
 import android.view.View;
 
-import com.sillykid.app.R;
-import com.sillykid.app.entity.homepage.boutiqueline.selectcity.SelectCityBean.DataBean;
-import com.sillykid.app.utils.GlideImageLoader;
+import com.yinglan.sct.R;
+import com.yinglan.sct.entity.homepage.boutiqueline.selectcity.SelectCityBean.DataBean;
+import com.yinglan.sct.utils.GlideImageLoader;
 
-import cn.bingoogolapple.androidcommon.adapter.BGAAdapterViewAdapter;
-import cn.bingoogolapple.androidcommon.adapter.BGAViewHolderHelper;
+import cn.bingoogolapple.baseadapter.BGAAdapterViewAdapter;
+import cn.bingoogolapple.baseadapter.BGAViewHolderHelper;
+
 
 /**
  * 接送机分类---GridView

@@ -14,12 +14,12 @@ import com.common.cklibrary.utils.JsonUtil;
 import com.common.cklibrary.utils.MathUtil;
 import com.common.cklibrary.utils.TimeCount;
 import com.kymjs.common.StringUtils;
-import com.sillykid.app.R;
-import com.sillykid.app.entity.mine.mywallet.recharge.AlipayBean;
-import com.sillykid.app.entity.mine.mywallet.recharge.WeChatPayBean;
-import com.sillykid.app.homepage.airporttransportation.paymentorder.payresult.PayTravelCompleteActivity;
-import com.sillykid.app.loginregister.LoginActivity;
-import com.sillykid.app.utils.PayUtils;
+import com.yinglan.sct.R;
+import com.yinglan.sct.entity.mine.mywallet.recharge.AlipayBean;
+import com.yinglan.sct.entity.mine.mywallet.recharge.WeChatPayBean;
+import com.yinglan.sct.homepage.airporttransportation.paymentorder.payresult.PayTravelCompleteActivity;
+import com.yinglan.sct.loginregister.LoginActivity;
+import com.yinglan.sct.utils.PayUtils;
 
 /**
  * 支付订单

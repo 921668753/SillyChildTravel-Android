@@ -1,4 +1,4 @@
-package com.sillykid.app.adapter.homepage.privatecustom;
+package com.yinglan.sct.adapter.homepage.privatecustom;
 
 public class privatecustom {
 }

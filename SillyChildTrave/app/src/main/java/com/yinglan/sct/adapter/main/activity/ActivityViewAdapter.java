@@ -2,10 +2,10 @@ package com.yinglan.sct.adapter.main.activity;
 
 import android.content.Context;
 
+import com.common.cklibrary.utils.DataUtil;
 import com.kymjs.common.StringUtils;
 import com.yinglan.sct.R;
 import com.yinglan.sct.entity.main.ActivityBean.DataBean.ActivityListBean;
-import com.yinglan.sct.utils.DataUtil;
 import com.yinglan.sct.utils.GlideImageLoader;
 
 import cn.bingoogolapple.baseadapter.BGAAdapterViewAdapter;

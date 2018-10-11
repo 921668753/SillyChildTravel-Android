@@ -12,11 +12,11 @@ import com.common.cklibrary.common.BindView;
 import com.common.cklibrary.utils.ActivityTitleUtils;
 import com.luck.picture.lib.rxbus2.Subscribe;
 import com.luck.picture.lib.rxbus2.ThreadMode;
-import com.sillykid.app.R;
-import com.sillykid.app.utils.custompicker.adapter.MonthTimeAdapter;
-import com.sillykid.app.utils.custompicker.bean.DayTimeEntity;
-import com.sillykid.app.utils.custompicker.bean.MonthTimeEntity;
-import com.sillykid.app.utils.custompicker.bean.UpdataCalendar;
+import com.yinglan.sct.R;
+import com.yinglan.sct.utils.custompicker.adapter.MonthTimeAdapter;
+import com.yinglan.sct.utils.custompicker.bean.DayTimeEntity;
+import com.yinglan.sct.utils.custompicker.bean.MonthTimeEntity;
+import com.yinglan.sct.utils.custompicker.bean.UpdataCalendar;
 
 import java.util.ArrayList;
 import java.util.Calendar;

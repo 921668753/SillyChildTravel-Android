@@ -17,17 +17,17 @@ import com.common.cklibrary.utils.JsonUtil;
 import com.common.cklibrary.utils.RefreshLayoutUtil;
 import com.common.cklibrary.utils.rx.MsgEvent;
 import com.kymjs.common.StringUtils;
-import com.sillykid.app.R;
-import com.sillykid.app.adapter.community.dynamic.dynamiccomments.DynamicCommentsViewAdapter;
-import com.sillykid.app.community.DisplayPageActivity;
-import com.sillykid.app.constant.NumericConstants;
-import com.sillykid.app.entity.community.dynamic.dynamiccomments.DynamicCommentsBean;
-import com.sillykid.app.loginregister.LoginActivity;
+import com.yinglan.sct.R;
+import com.yinglan.sct.adapter.community.dynamic.dynamiccomments.DynamicCommentsViewAdapter;
+import com.yinglan.sct.community.DisplayPageActivity;
+import com.yinglan.sct.constant.NumericConstants;
+import com.yinglan.sct.entity.community.dynamic.dynamiccomments.DynamicCommentsBean;
+import com.yinglan.sct.loginregister.LoginActivity;
 
-import cn.bingoogolapple.androidcommon.adapter.BGAOnItemChildClickListener;
+import cn.bingoogolapple.baseadapter.BGAOnItemChildClickListener;
 import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
 
-import static com.sillykid.app.constant.NumericConstants.REQUEST_CODE;
+import static com.yinglan.sct.constant.NumericConstants.REQUEST_CODE;
 
 /**
  * 动态评论

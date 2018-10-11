@@ -1,6 +1,5 @@
 package com.yinglan.sct.community;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -11,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.common.cklibrary.common.BaseActivity;
@@ -19,28 +17,28 @@ import com.common.cklibrary.common.BindView;
 import com.common.cklibrary.common.ViewInject;
 import com.common.cklibrary.utils.JsonUtil;
 import com.common.cklibrary.utils.RefreshLayoutUtil;
-import com.sillykid.app.R;
-import com.sillykid.app.adapter.community.DisplayPageViewAdapter;
-import com.sillykid.app.community.dynamic.DynamicDetailsActivity;
-import com.sillykid.app.constant.NumericConstants;
-import com.sillykid.app.entity.community.OtherUserInfoBean;
-import com.sillykid.app.entity.community.OtherUserPostBean;
-import com.sillykid.app.homepage.hotvideo.VideoDetailsActivity;
-import com.sillykid.app.loginregister.LoginActivity;
-import com.sillykid.app.utils.GlideImageLoader;
-import com.sillykid.app.utils.SpacesItemDecoration;
+import com.common.cklibrary.utils.myview.ScrollInterceptScrollView;
+import com.yinglan.sct.R;
+import com.yinglan.sct.adapter.community.DisplayPageViewAdapter;
+import com.yinglan.sct.community.dynamic.DynamicDetailsActivity;
+import com.yinglan.sct.community.dynamic.DynamicVideoDetailsActivity;
+import com.yinglan.sct.constant.NumericConstants;
+import com.yinglan.sct.entity.community.OtherUserInfoBean;
+import com.yinglan.sct.entity.community.OtherUserPostBean;
+import com.yinglan.sct.loginregister.LoginActivity;
+import com.yinglan.sct.utils.GlideImageLoader;
+import com.yinglan.sct.utils.SpacesItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.bingoogolapple.androidcommon.adapter.BGAOnRVItemClickListener;
+import cn.bingoogolapple.baseadapter.BGAOnRVItemClickListener;
 import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
 
 /**
  * 个人发布展示页面
  */
-@SuppressLint("NewApi")
-public class DisplayPageActivity extends BaseActivity implements DisplayPageContract.View, View.OnScrollChangeListener, BGARefreshLayout.BGARefreshLayoutDelegate, BGAOnRVItemClickListener {
+public class DisplayPageActivity extends BaseActivity implements DisplayPageContract.View, ScrollInterceptScrollView.ScrollViewListener, BGARefreshLayout.BGARefreshLayoutDelegate, BGAOnRVItemClickListener {
 
     @BindView(id = R.id.img_back, click = true)
     private ImageView img_back;
@@ -85,7 +83,7 @@ public class DisplayPageActivity extends BaseActivity implements DisplayPageCont
     private BGARefreshLayout mRefreshLayout;
 
     @BindView(id = R.id.sv_displayPage)
-    private ScrollView sv_displayPage;
+    private ScrollInterceptScrollView sv_displayPage;
 
 
     @BindView(id = R.id.rl_title)
@@ -160,7 +158,7 @@ public class DisplayPageActivity extends BaseActivity implements DisplayPageCont
         super.initWidget();
         RefreshLayoutUtil.initRefreshLayout(mRefreshLayout, this, aty, true);
         initRecyclerView();
-        sv_displayPage.setOnScrollChangeListener(this);
+        sv_displayPage.setScrollViewListener(this);
         showLoadingDialog(getString(R.string.dataLoad));
         ((DisplayPageContract.Presenter) mPresenter).getOtherUserInfo(user_id);
     }
@@ -235,7 +233,7 @@ public class DisplayPageActivity extends BaseActivity implements DisplayPageCont
             intent.putExtra("title", mAdapter.getItem(position).getPost_title());
             showActivity(aty, intent);
         } else if (mAdapter.getItem(position).getType() == 2) {//视频
-            Intent intent = new Intent(aty, VideoDetailsActivity.class);
+            Intent intent = new Intent(aty, DynamicVideoDetailsActivity.class);
             intent.putExtra("id", mAdapter.getItem(position).getId());
             intent.putExtra("title", mAdapter.getItem(position).getPost_title());
             showActivity(aty, intent);
@@ -433,8 +431,9 @@ public class DisplayPageActivity extends BaseActivity implements DisplayPageCont
         mAdapter = null;
     }
 
+
     @Override
-    public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+    public void onScrollChanged(ScrollInterceptScrollView scrollView, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
         if (scrollY <= 0) {
             img_back.setImageDrawable(null);
             rl_title.setBackgroundColor(Color.TRANSPARENT);
@@ -458,6 +457,5 @@ public class DisplayPageActivity extends BaseActivity implements DisplayPageCont
             tv_title.setTextColor(Color.argb((int) 255, 0, 0, 0));
             img_back.setImageResource(R.mipmap.back);
         }
-
     }
 }

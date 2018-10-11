@@ -18,9 +18,9 @@ import com.common.cklibrary.common.BaseDialog;
 import com.common.cklibrary.common.ViewInject;
 import com.common.cklibrary.utils.myview.TextEditTextView;
 import com.kymjs.common.StringUtils;
-import com.sillykid.app.R;
-import com.sillykid.app.loginregister.LoginActivity;
-import com.sillykid.app.utils.SoftKeyboardUtils;
+import com.yinglan.sct.R;
+import com.yinglan.sct.loginregister.LoginActivity;
+import com.yinglan.sct.utils.SoftKeyboardUtils;
 
 /**
  * 动态评价/回复

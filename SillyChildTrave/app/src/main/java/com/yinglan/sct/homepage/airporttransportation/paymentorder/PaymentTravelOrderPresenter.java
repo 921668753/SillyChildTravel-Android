@@ -9,8 +9,8 @@ import com.common.cklibrary.utils.httputil.ResponseListener;
 import com.kymjs.common.PreferenceHelper;
 import com.kymjs.common.StringUtils;
 import com.kymjs.rxvolley.client.HttpParams;
-import com.sillykid.app.entity.mine.mywallet.MyWalletBean;
-import com.sillykid.app.retrofit.RequestClient;
+import com.yinglan.sct.entity.mine.mywallet.MyWalletBean;
+import com.yinglan.sct.retrofit.RequestClient;
 
 /**
  * Created by Administrator on 2018/5/15.

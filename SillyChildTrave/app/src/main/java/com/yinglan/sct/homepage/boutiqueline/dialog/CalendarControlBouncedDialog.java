@@ -8,13 +8,13 @@ import android.widget.TextView;
 
 import com.common.cklibrary.common.BaseDialog;
 import com.common.cklibrary.common.ViewInject;
+import com.common.cklibrary.utils.DataUtil;
 import com.kymjs.common.StringUtils;
 import com.othershe.calendarview.bean.DateBean;
 import com.othershe.calendarview.listener.OnPagerChangeListener;
 import com.othershe.calendarview.listener.OnSingleChooseListener;
 import com.othershe.calendarview.weiget.CalendarView;
-import com.sillykid.app.R;
-import com.sillykid.app.utils.DataUtil;
+import com.yinglan.sct.R;
 
 
 /**

@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/MatchMatch"
+    android:background="@color/background"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context="com.yinglan.sct.homepage.boutiqueline.LineDetailsActivity">
+
+    <RelativeLayout
+        style="@style/Match45"
+        android:background="@color/whiteColors"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_width="@dimen/dimen45"
+            android:layout_height="@dimen/dimen45"
+            android:padding="@dimen/dimen15"
+            android:src="@mipmap/back" />
+
+        <TextView
+            style="@style/WrapWrap"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/detailsLine"
+            android:textColor="@color/titletextcolors"
+            android:textSize="@dimen/textsize17" />
+
+        <ImageView
+            android:id="@+id/img_customerService"
+            android:layout_width="@dimen/dimen55"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dimen45"
+            android:paddingLeft="@dimen/dimen23"
+            android:paddingTop="@dimen/dimen13"
+            android:paddingRight="@dimen/dimen13"
+            android:paddingBottom="@dimen/dimen13"
+            android:scaleType="fitXY"
+            android:src="@mipmap/kefu" />
+
+        <ImageView
+            android:id="@+id/img_collection"
+            android:layout_width="@dimen/dimen45"
+            android:layout_height="@dimen/dimen45"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dimen45"
+            android:padding="@dimen/dimen14"
+            android:src="@mipmap/dynamicdetails_collection1"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/img_share"
+            android:layout_width="@dimen/dimen45"
+            android:layout_height="@dimen/dimen45"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dimen5"
+            android:padding="@dimen/dimen14"
+            android:src="@mipmap/product_details_share" />
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        style="@style/MatchAuto"
+        android:scrollbars="none">
+
+        <LinearLayout
+            style="@style/MatchMatch"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/img_picture"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen147"
+                android:layout_marginTop="@dimen/dimen6"
+                android:background="@color/whiteColors"
+                android:scaleType="centerInside"
+                android:src="@mipmap/placeholderfigure" />
+
+            <LinearLayout
+                style="@style/MatchWrap"
+                android:background="@color/whiteColors"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    style="@style/AutoMatch"
+                    android:layout_marginLeft="@dimen/dimen15"
+                    android:paddingTop="@dimen/dimen9"
+                    android:text="【芭提雅三天六晚自由行】"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/textsize15" />
+
+                <LinearLayout
+                    style="@style/WrapMatch"
+                    android:layout_marginRight="@dimen/dimen21"
+                    android:gravity="right"
+                    android:orientation="vertical">
+
+                    <!--<ImageView-->
+                    <!--android:id="@+id/img_recommended"-->
+                    <!--android:layout_width="@dimen/dimen100"-->
+                    <!--android:layout_height="@dimen/dimen13"-->
+                    <!--android:layout_marginLeft="@dimen/dimen10"-->
+                    <!--android:layout_marginTop="@dimen/dimen13"-->
+                    <!--android:scaleType="fitXY"-->
+                    <!--android:src="@mipmap/comment_star_one" />-->
+
+                    <!--<com.hedgehog.ratingbar.RatingBar-->
+                    <!--android:id="@+id/ratingbar"-->
+                    <!--style="@style/WrapWrap"-->
+                    <!--android:layout_marginTop="@dimen/dimen10"-->
+                    <!--hedgehog:clickable="false"-->
+                    <!--hedgehog:starCount="5"-->
+                    <!--hedgehog:starImageSize="@dimen/dimen13"-->
+                    <!--hedgehog:starEmpty="@mipmap/img_empty_stars"-->
+                    <!--hedgehog:starFill="@mipmap/img_real_stars"-->
+                    <!--hedgehog:starHalf="@mipmap/half_star"-->
+                    <!--hedgehog:starImageHeight="@dimen/dimen21"-->
+                    <!--hedgehog:starImagePadding="@dimen/dimen8"-->
+                    <!--hedgehog:starImageWidth="@dimen/dimen21" />-->
+
+                    <com.klavor.widget.RatingBar
+                        android:id="@+id/ratingbar"
+                        android:layout_width="@dimen/dimen112"
+                        android:layout_height="@dimen/dimen17"
+                        android:layout_marginTop="@dimen/dimen11"
+                        app:isIndicator="true"
+                        app:numStars="5"
+                        app:progress="@mipmap/img_empty_stars"
+                        app:progressed="@mipmap/img_real_stars"
+                        app:spacing="@dimen/dimen5"
+                        app:stepSize="0.1" />
+
+                    <!--<com.azhong.ratingbar.RatingBar-->
+                    <!--android:id="@+id/rb_recommended"-->
+                    <!--style="@style/WrapWrap"-->
+                    <!--android:background="@color/whiteColors"-->
+                    <!--android:paddingLeft="@dimen/dimen10"-->
+                    <!--android:layout_marginTop="@dimen/dimen9"-->
+                    <!--android:stepSize="0.1"-->
+                    <!--a_zhon:clickable="false"-->
+                    <!--a_zhon:image_height="@dimen/dimen24"-->
+                    <!--a_zhon:image_padding="@dimen/dimen5"-->
+                    <!--a_zhon:image_width="@dimen/dimen24"-->
+                    <!--a_zhon:star="0"-->
+                    <!--a_zhon:star_count="5"-->
+                    <!--a_zhon:star_img="@mipmap/img_real_stars"-->
+                    <!--a_zhon:unstar_img="@mipmap/img_empty_stars" />-->
+
+                    <TextView
+                        android:id="@+id/tv_ratingbar"
+                        style="@style/WrapWrap"
+                        android:layout_marginTop="@dimen/dimen8"
+                        android:layout_marginBottom="@dimen/dimen8"
+                        android:text="4.8分"
+                        android:textColor="@color/fF5656Colors"
+                        android:textSize="@dimen/textsize12" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/MatchWrap"
+                android:layout_marginTop="@dimen/dimen6"
+                android:background="@color/whiteColors"
+                android:paddingLeft="@dimen/dimen17"
+                android:paddingTop="@dimen/dimen10"
+                android:paddingBottom="@dimen/dimen10"
+                android:text="@string/experienceBrightSpot"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/textsize15" />
+
+            <TextView
+                android:id="@+id/tv_experienceBrightSpot"
+                style="@style/MatchWrap"
+                android:background="@color/whiteColors"
+                android:paddingLeft="@dimen/dimen17"
+                android:paddingRight="@dimen/dimen17"
+                android:paddingBottom="@dimen/dimen13"
+                android:text="--"
+                android:textColor="@color/hintColors"
+                android:textSize="@dimen/textsize13" />
+
+            <!--<TextView-->
+            <!--style="@style/Match45"-->
+            <!--android:layout_marginTop="@dimen/dimen6"-->
+            <!--android:background="@color/whiteColors"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:paddingLeft="@dimen/dimen17"-->
+            <!--android:text="@string/detailsLine"-->
+            <!--android:textColor="@color/textColor"-->
+            <!--android:textSize="@dimen/textsize15" />-->
+
+            <com.common.cklibrary.utils.myview.WebViewLayout
+                android:id="@+id/web_view"
+                style="@style/MatchWrap"
+                android:layout_marginTop="@dimen/dimen6" />
+
+            <LinearLayout
+                android:id="@+id/ll_userEvaluation"
+                style="@style/MatchWrap"
+                android:layout_marginTop="@dimen/dimen6"
+                android:layout_marginBottom="@dimen/dimen6"
+                android:background="@color/whiteColors"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dimen24">
+
+                <TextView
+                    style="@style/WrapWrap"
+                    android:layout_marginTop="@dimen/dimen10"
+                    android:layout_marginBottom="@dimen/dimen10"
+                    android:text="@string/userEvaluation"
+                    android:textColor="@color/tabColors"
+                    android:textSize="@dimen/textsize13" />
+
+                <LinearLayout
+                    style="@style/AutoMatch"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_userEvaluationNum"
+                        style="@style/AutoMatch"
+                        android:gravity="right|center_vertical"
+                        android:paddingRight="@dimen/dimen3"
+                        android:text="0条评价"
+                        android:textColor="@color/tabColors"
+                        android:textSize="@dimen/textsize12" />
+
+                    <ImageView
+                        style="@style/Image610"
+                        android:layout_marginRight="@dimen/dimen31"
+                        android:src="@mipmap/arrow1" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <include layout="@layout/item_userevaluation" />
+
+            <!--<com.common.cklibrary.utils.myview.ChildListView-->
+            <!--android:id="@+id/clv_dynamicDetails"-->
+            <!--style="@style/MatchWrap"-->
+            <!--android:layout_marginBottom="@dimen/dimen20"-->
+            <!--android:layout_marginTop="@dimen/dimen6"-->
+            <!--android:divider="@android:color/transparent"-->
+            <!--android:overScrollMode="never"-->
+            <!--android:scrollbars="none"-->
+            <!--tools:listitem="@layout/item_dynamicdetails" />-->
+
+
+            <LinearLayout
+                style="@style/Match45"
+                android:layout_marginTop="@dimen/dimen6"
+                android:background="@color/whiteColors"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    style="@style/MatchMatch"
+                    android:layout_marginLeft="@dimen/dimen60"
+                    android:layout_marginTop="@dimen/dimen6"
+                    android:layout_marginRight="@dimen/dimen60"
+                    android:layout_marginBottom="@dimen/dimen6"
+                    android:background="@drawable/shape_selecttraveldate"
+                    android:gravity="center"
+                    android:text="@string/selectTravelDate"
+                    android:textColor="@color/greenColors"
+                    android:textSize="@dimen/textsize14" />
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/MatchWrap"
+                android:paddingLeft="@dimen/dimen21"
+                android:paddingTop="@dimen/dimen13"
+                android:paddingBottom="@dimen/dimen13"
+                android:text="@string/servicePolicy"
+                android:textColor="@color/tabColors"
+                android:textSize="@dimen/textsize14" />
+
+            <LinearLayout
+                android:id="@+id/ll_compensationChangeBack"
+                style="@style/Match45"
+                android:layout_marginTop="@dimen/dimen1"
+                android:background="@color/whiteColors"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/dimen25"
+                    android:layout_height="@dimen/dimen19"
+                    android:layout_marginLeft="@dimen/dimen17"
+                    android:src="@mipmap/img_compensationchangeback" />
+
+                <TextView
+                    style="@style/WrapWrap"
+                    android:layout_marginLeft="@dimen/dimen11"
+                    android:text="@string/compensationChangeBack"
+                    android:textSize="@dimen/textsize14" />
+
+                <TextView
+                    android:id="@+id/tv_compensationChangeBack"
+                    style="@style/AutoWrap"
+                    android:gravity="right"
+                    android:paddingRight="@dimen/dimen26"
+                    android:text="不支持退订"
+                    android:textColor="@color/fF4848Colors"
+                    android:textSize="@dimen/textsize14" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                style="@style/MatchWrap"
+                android:layout_marginTop="@dimen/dimen6"
+                android:background="@color/whiteColors"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/dimen12">
+
+                <ImageView
+                    android:layout_width="@dimen/dimen8"
+                    android:layout_height="@dimen/dimen8"
+                    android:layout_marginLeft="@dimen/dimen17"
+                    android:src="@mipmap/xingimg" />
+
+                <TextView
+                    style="@style/WrapWrap"
+                    android:layout_marginRight="@dimen/dimen6"
+                    android:text="@string/contact"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/textsize15" />
+
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/et_contact"
+                style="@style/MatchWrap"
+                android:background="@color/whiteColors"
+                android:hint="@string/ContactName"
+                android:paddingLeft="@dimen/dimen17"
+                android:paddingTop="@dimen/dimen12"
+                android:paddingRight="@dimen/dimen17"
+                android:paddingBottom="@dimen/dimen10"
+                android:singleLine="true"
+                android:textColor="@color/textColor"
+                android:textColorHint="@color/hintColors"
+                android:textCursorDrawable="@drawable/shape_cursor"
+                android:textSize="@dimen/textsize13" />
+
+
+            <LinearLayout
+                style="@style/MatchWrap"
+                android:layout_marginTop="@dimen/dimen1"
+                android:background="@color/whiteColors"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/dimen12">
+
+                <ImageView
+                    android:layout_width="@dimen/dimen8"
+                    android:layout_height="@dimen/dimen8"
+                    android:layout_marginLeft="@dimen/dimen17"
+                    android:src="@mipmap/xingimg" />
+
+                <TextView
+                    style="@style/WrapWrap"
+                    android:layout_marginRight="@dimen/dimen6"
+                    android:text="@string/contactWay3"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/textsize15" />
+
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/et_contactWay"
+                style="@style/MatchWrap"
+                android:background="@color/whiteColors"
+                android:hint="@string/ContactNumber"
+                android:inputType="phone"
+                android:paddingLeft="@dimen/dimen17"
+                android:paddingTop="@dimen/dimen12"
+                android:paddingRight="@dimen/dimen17"
+                android:paddingBottom="@dimen/dimen10"
+                android:singleLine="true"
+                android:textColor="@color/textColor"
+                android:textColorHint="@color/hintColors"
+                android:textCursorDrawable="@drawable/shape_cursor"
+                android:textSize="@dimen/textsize13" />
+
+
+            <LinearLayout
+                style="@style/MatchWrap"
+                android:layout_marginTop="@dimen/dimen1"
+                android:background="@color/whiteColors"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/dimen12">
+
+                <ImageView
+                    android:layout_width="@dimen/dimen8"
+                    android:layout_height="@dimen/dimen8"
+                    android:layout_marginLeft="@dimen/dimen17"
+                    android:src="@mipmap/xingimg" />
+
+                <TextView
+                    style="@style/WrapWrap"
+                    android:layout_marginRight="@dimen/dimen6"
+                    android:text="@string/dueDemand"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/textsize15" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                style="@style/MatchWrap"
+                android:background="@color/whiteColors"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/dimen17"
+                android:paddingBottom="@dimen/dimen17">
+
+                <LinearLayout
+                    android:id="@+id/ll_adult"
+                    style="@style/AutoWrap"
+                    android:layout_marginLeft="@dimen/dimen17"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/WrapWrap"
+                        android:text="@string/adult1"
+                        android:textColor="@color/hintColors"
+                        android:textSize="@dimen/textsize13" />
+
+                    <LinearLayout
+                        style="@style/AutoWrap"
+                        android:layout_height="@dimen/dimen23"
+                        android:background="@drawable/shape_adult"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_adult"
+                            style="@style/AutoMatch"
+                            android:background="@android:color/transparent"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="@string/pleaseSelect"
+                            android:textColor="@color/textColor"
+                            android:textSize="@dimen/textsize14" />
+
+                        <ImageView
+                            android:layout_width="@dimen/dimen11"
+                            android:layout_height="@dimen/dimen7"
+                            android:layout_marginRight="@dimen/dimen10"
+                            android:src="@mipmap/downarrow" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_luggage"
+                    style="@style/AutoWrap"
+                    android:layout_marginLeft="@dimen/dimen52"
+                    android:layout_marginRight="@dimen/dimen40"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/WrapWrap"
+                        android:text="@string/luggage1"
+                        android:textColor="@color/hintColors"
+                        android:textSize="@dimen/textsize13" />
+
+
+                    <LinearLayout
+                        style="@style/AutoWrap"
+                        android:layout_height="@dimen/dimen23"
+                        android:background="@drawable/shape_adult"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_luggage"
+                            style="@style/AutoMatch"
+                            android:background="@android:color/transparent"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="@string/pleaseSelect"
+                            android:textColor="@color/textColor"
+                            android:textSize="@dimen/textsize14" />
+
+                        <ImageView
+                            android:layout_width="@dimen/dimen11"
+                            android:layout_height="@dimen/dimen7"
+                            android:layout_marginRight="@dimen/dimen10"
+                            android:src="@mipmap/downarrow" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                style="@style/Match45"
+                android:layout_marginTop="@dimen/dimen6"
+                android:background="@color/whiteColors"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/WrapWrap"
+                    android:layout_marginLeft="@dimen/dimen17"
+                    android:text="@string/packagePrice"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/textsize13" />
+
+                <TextView
+                    android:id="@+id/tv_packagePrice"
+                    style="@style/AutoWrap"
+                    android:gravity="right"
+                    android:paddingLeft="@dimen/dimen10"
+                    android:paddingRight="@dimen/dimen17"
+                    android:singleLine="true"
+                    android:text="0.00元/人"
+                    android:textColor="@color/fF5656Colors"
+                    android:textSize="@dimen/textsize13" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                style="@style/Match45"
+                android:layout_marginTop="@dimen/dimen1"
+                android:background="@color/whiteColors"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/WrapWrap"
+                    android:layout_marginLeft="@dimen/dimen17"
+                    android:text="@string/orderPriceNoSign"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/textsize13" />
+
+
+                <TextView
+                    android:id="@+id/tv_orderPriceNoSign"
+                    style="@style/AutoWrap"
+                    android:gravity="right"
+                    android:paddingLeft="@dimen/dimen10"
+                    android:paddingRight="@dimen/dimen17"
+                    android:singleLine="true"
+                    android:text="0.00元"
+                    android:textColor="@color/fF5656Colors"
+                    android:textSize="@dimen/textsize13" />
+
+
+            </LinearLayout>
+
+
+            <EditText
+                android:id="@+id/et_remark"
+                style="@style/MatchWrap"
+                android:layout_marginTop="@dimen/dimen2"
+                android:background="@color/whiteColors"
+                android:gravity="left"
+                android:hint="@string/remark1"
+                android:minHeight="@dimen/dimen133"
+                android:paddingLeft="@dimen/dimen17"
+                android:paddingTop="@dimen/dimen12"
+                android:paddingRight="@dimen/dimen17"
+                android:paddingBottom="@dimen/dimen12"
+                android:textColor="@color/textColor"
+                android:textColorHint="@color/hintColors"
+                android:textCursorDrawable="@drawable/shape_cursor"
+                android:textSize="@dimen/textsize15" />
+
+
+            <TextView
+                android:id="@+id/tv_paymentOrder"
+                style="@style/Match40"
+                android:layout_marginLeft="@dimen/dimen93"
+                android:layout_marginTop="@dimen/dimen39"
+                android:layout_marginRight="@dimen/dimen93"
+                android:layout_marginBottom="@dimen/dimen25"
+                android:background="@drawable/shape_paymentorder"
+                android:gravity="center"
+                android:text="@string/paymentOrder"
+                android:textColor="@color/whiteColors"
+                android:textSize="@dimen/textsize16" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

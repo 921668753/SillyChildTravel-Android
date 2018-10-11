@@ -1,4 +1,4 @@
-package com.sillykid.app.adapter.homepage.airporttransportation.search;
+package com.yinglan.sct.adapter.homepage.airporttransportation.search;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -6,9 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.sillykid.app.R;
-import com.sillykid.app.adapter.mall.search.TagNewAdapter;
-import com.sillykid.app.entity.community.search.RecentSearchBean.DataBean;
+import com.yinglan.sct.R;
+import com.yinglan.sct.entity.community.search.RecentSearchBean.DataBean;
 import com.zhy.view.flowlayout.FlowLayout;
 import com.zhy.view.flowlayout.TagFlowLayout;
 

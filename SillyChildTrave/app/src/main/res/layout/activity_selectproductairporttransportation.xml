@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/MatchMatch"
+    android:background="@color/background"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_title" />
+
+    <TextView
+        android:id="@+id/tv_selectProductName"
+        style="@style/Match45"
+        android:layout_marginTop="@dimen/dimen6"
+        android:background="@color/whiteColors"
+        android:gravity="center"
+        android:paddingRight="@dimen/dimen22"
+        android:text="日本东京成田机场接机"
+        android:textColor="@color/textColor"
+        android:textSize="@dimen/textsize14" />
+
+    <ScrollView
+        style="@style/MatchMatch"
+        android:scrollbars="none">
+
+        <LinearLayout
+            style="@style/MatchMatch"
+            android:orientation="vertical">
+
+            <com.common.cklibrary.utils.myview.NoScrollGridView
+                android:id="@+id/gv_productAirportTransportation"
+                style="@style/MatchMatch"
+                android:layout_marginBottom="@dimen/dimen6"
+                android:layout_marginLeft="@dimen/dimen13"
+                android:layout_marginRight="@dimen/dimen13"
+                android:layout_marginTop="@dimen/dimen6"
+                android:horizontalSpacing="@dimen/dimen13"
+                android:numColumns="2"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                android:verticalSpacing="@dimen/dimen6"
+                tools:listitem="@layout/item_productairporttransportation" />
+
+            <include layout="@layout/common_error" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

@@ -1,12 +1,13 @@
-package com.sillykid.app.adapter.homepage.airporttransportation;
+package com.yinglan.sct.adapter.homepage.airporttransportation;
 
 import android.content.Context;
 
-import com.sillykid.app.R;
-import com.sillykid.app.entity.homepage.airporttransportation.AirportCountryListBean.DataBean;
+import com.yinglan.sct.R;
+import com.yinglan.sct.entity.homepage.airporttransportation.AirportCountryListBean.DataBean;
 
-import cn.bingoogolapple.androidcommon.adapter.BGAAdapterViewAdapter;
-import cn.bingoogolapple.androidcommon.adapter.BGAViewHolderHelper;
+import cn.bingoogolapple.baseadapter.BGAAdapterViewAdapter;
+import cn.bingoogolapple.baseadapter.BGAViewHolderHelper;
+
 
 /**
  * 接送机分类---ListView

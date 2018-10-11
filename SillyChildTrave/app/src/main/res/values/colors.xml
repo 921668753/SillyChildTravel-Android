@@ -53,6 +53,16 @@
     <color name="eBF1F6Colors">#EBF1F6</color>
     <color name="d0a4fcColors">#d0a4fc</color>
     <color name="fF9955Colors">#FF9955</color>
+    <color name="fF4848Colors">#FF4848</color>
+    <color name="lightRedColors">#ff4e4e</color>
+    <color name="searchTextColors">#767676</color>
+    <color name="dFFDE6Colors">#DFFDE6</color>
+
+
+    <!--按天包车游-->
+    <color name="fF5050Colors">#FF5050</color>
+    <color name="eCF2F6Colors">#ECF2F6</color>
+
 
     <!--我的-->
     <color name="darkGreen">#129130</color>

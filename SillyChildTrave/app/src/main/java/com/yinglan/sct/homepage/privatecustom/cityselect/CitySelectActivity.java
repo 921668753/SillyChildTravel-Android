@@ -16,10 +16,13 @@ import com.common.cklibrary.utils.JsonUtil;
 import com.common.cklibrary.utils.rx.MsgEvent;
 import com.kymjs.common.PreferenceHelper;
 import com.kymjs.common.StringUtils;
-import com.sillykid.app.R;
-import com.sillykid.app.entity.homepage.privatecustom.cityselect.CitySelectListBean.DataBean;
-import com.sillykid.app.homepage.privatecustom.cityselect.fragment.CityClassificationFragment;
-import com.sillykid.app.homepage.privatecustom.cityselect.fragment.RecommendedFragment;
+import com.yinglan.sct.R;
+import com.yinglan.sct.adapter.homepage.privatecustom.cityselect.CitySelectClassificationListViewAdapter;
+
+import com.yinglan.sct.entity.homepage.privatecustom.cityselect.CitySelectListBean;
+import com.yinglan.sct.entity.homepage.privatecustom.cityselect.CitySelectListBean.DataBean;
+import com.yinglan.sct.homepage.privatecustom.cityselect.fragment.CityClassificationFragment;
+import com.yinglan.sct.homepage.privatecustom.cityselect.fragment.RecommendedFragment;
 
 import java.util.ArrayList;
 
@@ -37,7 +40,7 @@ public class CitySelectActivity extends BaseActivity implements CitySelectContra
     @BindView(id = R.id.lv_classification)
     private ListView lv_classification;
 
-    private com.sillykid.app.adapter.homepage.privatecustom.cityselect.CitySelectClassificationListViewAdapter mAdapter;
+    private CitySelectClassificationListViewAdapter mAdapter;
     private ArrayList<CityClassificationFragment> list;
 
     private RecommendedFragment recommendedFragment;
@@ -52,7 +55,7 @@ public class CitySelectActivity extends BaseActivity implements CitySelectContra
     public void initData() {
         super.initData();
         mPresenter = new CitySelectPresenter(this);
-        mAdapter = new com.sillykid.app.adapter.homepage.privatecustom.cityselect.CitySelectClassificationListViewAdapter(this);
+        mAdapter = new CitySelectClassificationListViewAdapter(this);
         list = new ArrayList<CityClassificationFragment>();
         showLoadingDialog(getString(R.string.dataLoad));
         ((CitySelectContract.Presenter) mPresenter).getCountryAreaList();
@@ -91,7 +94,7 @@ public class CitySelectActivity extends BaseActivity implements CitySelectContra
     @Override
     public void getSuccess(String success, int flag) {
         dismissLoadingDialog();
-        com.sillykid.app.entity.homepage.privatecustom.cityselect.CitySelectListBean citySelectListBean = (com.sillykid.app.entity.homepage.privatecustom.cityselect.CitySelectListBean) JsonUtil.getInstance().json2Obj(success, com.sillykid.app.entity.homepage.privatecustom.cityselect.CitySelectListBean.class);
+        CitySelectListBean citySelectListBean = (CitySelectListBean) JsonUtil.getInstance().json2Obj(success, CitySelectListBean.class);
         if (citySelectListBean == null || citySelectListBean.getData() == null || citySelectListBean.getData().size() <= 0) {
             return;
         }

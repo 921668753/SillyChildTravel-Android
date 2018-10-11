@@ -12,10 +12,9 @@ import com.common.cklibrary.common.KJActivityStack;
 import com.common.cklibrary.utils.ActivityTitleUtils;
 import com.common.cklibrary.utils.rx.MsgEvent;
 import com.common.cklibrary.utils.rx.RxBus;
-import com.sillykid.app.R;
-import com.sillykid.app.homepage.airporttransportation.paymentorder.PaymentTravelOrderActivity;
-import com.sillykid.app.main.MainActivity;
-import com.sillykid.app.mine.myorder.MyOrderActivity;
+import com.yinglan.sct.R;
+import com.yinglan.sct.homepage.airporttransportation.paymentorder.PaymentTravelOrderActivity;
+import com.yinglan.sct.main.MainActivity;
 
 /**
  * 支付完成/支付失败
@@ -78,7 +77,7 @@ public class PayTravelCompleteActivity extends BaseActivity {
         ll_deliveryAddress.setVisibility(View.GONE);
         if (getIntent().getIntExtra("order_status", 0) == 1) {
             img_pay.setImageResource(R.mipmap.pay_success_icon);
-            initTitle(getString(R.string.paySuccess));
+            initTitle(getString(R.string.alipay_succeed));
             tv_payStatus.setText(getString(R.string.alipay_succeed));
             KJActivityStack.create().finishActivity(PaymentTravelOrderActivity.class);
             /**
@@ -108,13 +107,13 @@ public class PayTravelCompleteActivity extends BaseActivity {
         super.widgetClick(v);
         switch (v.getId()) {
             case R.id.tv_checkOrder:
-                Intent intent = new Intent(aty, MyOrderActivity.class);
-                if (getIntent().getIntExtra("order_status", 0) == 1) {
-                    intent.putExtra("newChageIcon", 1);
-                    intent.putExtra("chageIcon", 1);
-                    intent.putExtra("chageCharterIcon", 21);
-                }
-                skipActivity(aty, intent);
+//                Intent intent = new Intent(aty, MyOrderActivity.class);
+//                if (getIntent().getIntExtra("order_status", 0) == 1) {
+//                    intent.putExtra("newChageIcon", 1);
+//                    intent.putExtra("chageIcon", 1);
+//                    intent.putExtra("chageCharterIcon", 21);
+//                }
+//                skipActivity(aty, intent);
                 break;
             case R.id.tv_returnHomePage:
                 if (getIntent().getIntExtra("order_status", 0) != 1) {

@@ -12,9 +12,9 @@ import com.common.cklibrary.common.BaseFragment;
 import com.common.cklibrary.common.BindView;
 import com.common.cklibrary.utils.ActivityTitleUtils;
 import com.kymjs.common.Log;
-import com.sillykid.app.R;
-import com.sillykid.app.homepage.boutiqueline.fragment.CitySelectionFragment;
-import com.sillykid.app.homepage.boutiqueline.fragment.HotRecommendedFragment;
+import com.yinglan.sct.R;
+import com.yinglan.sct.homepage.boutiqueline.fragment.CitySelectionFragment;
+import com.yinglan.sct.homepage.boutiqueline.fragment.HotRecommendedFragment;
 
 /**
  * 精品线路

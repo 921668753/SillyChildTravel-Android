@@ -15,9 +15,12 @@ import com.common.cklibrary.common.BaseFragment;
 import com.common.cklibrary.common.BindView;
 import com.common.cklibrary.common.ViewInject;
 import com.common.cklibrary.utils.JsonUtil;
-import com.sillykid.app.R;
-import com.sillykid.app.entity.homepage.privatecustom.cityselect.fragment.CityClassificationBean.DataBean;
-import com.sillykid.app.homepage.privatecustom.cityselect.CitySelectActivity;
+import com.yinglan.sct.R;
+import com.yinglan.sct.adapter.homepage.privatecustom.cityselect.fragment.CityClassificationViewAdapter;
+import com.yinglan.sct.adapter.homepage.privatecustom.cityselect.fragment.CountryClassificationViewAdapter;
+import com.yinglan.sct.entity.homepage.privatecustom.cityselect.fragment.CityClassificationBean;
+import com.yinglan.sct.entity.homepage.privatecustom.cityselect.fragment.CityClassificationBean.DataBean;
+import com.yinglan.sct.homepage.privatecustom.cityselect.CitySelectActivity;
 
 import java.util.List;
 
@@ -54,10 +57,10 @@ public class CityClassificationFragment extends BaseFragment implements CityClas
 
     private int classification_id = 0;
 
-    private com.sillykid.app.adapter.homepage.privatecustom.cityselect.fragment.CountryClassificationViewAdapter mCountryAdapter;
+    private CountryClassificationViewAdapter mCountryAdapter;
     private List<DataBean> countryClassificationList;
     private DataBean countryBean;
-    private com.sillykid.app.adapter.homepage.privatecustom.cityselect.fragment.CityClassificationViewAdapter mCityAdapter;
+    private CityClassificationViewAdapter mCityAdapter;
     private List<DataBean> cityClassificationList;
     private DataBean cityBean;
 
@@ -73,8 +76,8 @@ public class CityClassificationFragment extends BaseFragment implements CityClas
     protected void initData() {
         super.initData();
         mPresenter = new CityClassificationPresenter(this);
-        mCountryAdapter = new com.sillykid.app.adapter.homepage.privatecustom.cityselect.fragment.CountryClassificationViewAdapter(aty);
-        mCityAdapter = new com.sillykid.app.adapter.homepage.privatecustom.cityselect.fragment.CityClassificationViewAdapter(aty);
+        mCountryAdapter = new CountryClassificationViewAdapter(aty);
+        mCityAdapter = new CityClassificationViewAdapter(aty);
         showLoadingDialog(getString(R.string.dataLoad));
         ((CityClassificationContract.Presenter) mPresenter).getCountryAreaListByParentid(aty, classification_id, 0);
     }
@@ -135,7 +138,7 @@ public class CityClassificationFragment extends BaseFragment implements CityClas
     @Override
     public void getSuccess(String success, int flag) {
         if (flag == 0) {
-            com.sillykid.app.entity.homepage.privatecustom.cityselect.fragment.CityClassificationBean cityClassificationBean = (com.sillykid.app.entity.homepage.privatecustom.cityselect.fragment.CityClassificationBean) JsonUtil.getInstance().json2Obj(success, com.sillykid.app.entity.homepage.privatecustom.cityselect.fragment.CityClassificationBean.class);
+            CityClassificationBean cityClassificationBean = (CityClassificationBean) JsonUtil.getInstance().json2Obj(success, CityClassificationBean.class);
             if (cityClassificationBean == null || cityClassificationBean.getData() == null || cityClassificationBean.getData().size() <= 0) {
                 errorMsg(getString(R.string.noData), 0);
                 return;
@@ -144,7 +147,7 @@ public class CityClassificationFragment extends BaseFragment implements CityClas
             countryClassificationList = cityClassificationBean.getData();
             selectCountryClassification(0);
         } else if (flag == 1) {
-            com.sillykid.app.entity.homepage.privatecustom.cityselect.fragment.CityClassificationBean cityClassificationBean = (com.sillykid.app.entity.homepage.privatecustom.cityselect.fragment.CityClassificationBean) JsonUtil.getInstance().json2Obj(success, com.sillykid.app.entity.homepage.privatecustom.cityselect.fragment.CityClassificationBean.class);
+            CityClassificationBean cityClassificationBean = (CityClassificationBean) JsonUtil.getInstance().json2Obj(success, CityClassificationBean.class);
             if (cityClassificationBean == null || cityClassificationBean.getData() == null || cityClassificationBean.getData().size() <= 0) {
                 lv_city.setVisibility(View.INVISIBLE);
                 dismissLoadingDialog();

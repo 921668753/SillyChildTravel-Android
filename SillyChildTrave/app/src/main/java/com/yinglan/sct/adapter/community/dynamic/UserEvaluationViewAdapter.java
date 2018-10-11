@@ -4,12 +4,13 @@ package com.yinglan.sct.adapter.community.dynamic;
 import android.content.Context;
 import android.view.View;
 
-import com.sillykid.app.R;
-import com.sillykid.app.entity.community.dynamic.DynamicDetailsBean.DataBean.CommentBean;
-import com.sillykid.app.utils.GlideImageLoader;
+import com.yinglan.sct.R;
+import com.yinglan.sct.entity.community.dynamic.DynamicDetailsBean.DataBean.CommentBean;
+import com.yinglan.sct.utils.GlideImageLoader;
 
-import cn.bingoogolapple.androidcommon.adapter.BGAAdapterViewAdapter;
-import cn.bingoogolapple.androidcommon.adapter.BGAViewHolderHelper;
+import cn.bingoogolapple.baseadapter.BGAAdapterViewAdapter;
+import cn.bingoogolapple.baseadapter.BGAViewHolderHelper;
+
 
 /**
  * 动态详情   用户评价

@@ -11,14 +11,13 @@ import com.common.cklibrary.common.BindView;
 import com.common.cklibrary.common.KJActivityStack;
 import com.common.cklibrary.common.ViewInject;
 import com.common.cklibrary.utils.ActivityTitleUtils;
+import com.common.cklibrary.utils.DataUtil;
 import com.common.cklibrary.utils.JsonUtil;
 import com.common.cklibrary.utils.MathUtil;
 import com.common.cklibrary.utils.myview.WebViewLayout;
 import com.kymjs.common.StringUtils;
 import com.yinglan.sct.R;
 import com.yinglan.sct.homepage.airporttransportation.paymentorder.PaymentTravelOrderActivity;
-import com.yinglan.sct.mine.mywallet.coupons.CouponsActivity;
-import com.yinglan.sct.utils.DataUtil;
 import com.yinglan.sct.utils.GlideImageLoader;
 
 import static com.yinglan.sct.constant.NumericConstants.RESULT_CODE_GET;
@@ -108,10 +107,10 @@ public class LineDetailsPayOrderActivity extends BaseActivity implements LineDet
         super.widgetClick(v);
         switch (v.getId()) {
             case R.id.tv_vouchers:
-                Intent intent1 = new Intent(aty, CouponsActivity.class);
-                intent1.putExtra("type", -1);
-                intent1.putExtra("money", totalPrice);
-                startActivityForResult(intent1, RESULT_CODE_GET);
+//                Intent intent1 = new Intent(aty, CouponsActivity.class);
+//                intent1.putExtra("type", -1);
+//                intent1.putExtra("money", totalPrice);
+//                startActivityForResult(intent1, RESULT_CODE_GET);
                 break;
             case R.id.tv_confirmPayment:
                 showLoadingDialog(getString(R.string.submissionLoad));
@@ -165,7 +164,6 @@ public class LineDetailsPayOrderActivity extends BaseActivity implements LineDet
             product_id = lineDetailsPayOrderBean.getData().getProduct_id();
         } else if (flag == 1) {
             KJActivityStack.create().finishActivity(BoutiqueLineActivity.class);
-            KJActivityStack.create().finishActivity(DueDemandActivity.class);
             KJActivityStack.create().finishActivity(LineDetailsActivity.class);
             com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.CreateTravelOrderBean createTravelOrderBean = (com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.CreateTravelOrderBean) JsonUtil.getInstance().json2Obj(success, com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.CreateTravelOrderBean.class);
             Intent intent = new Intent(aty, PaymentTravelOrderActivity.class);

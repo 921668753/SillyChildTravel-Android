@@ -1,20 +1,21 @@
-package com.sillykid.app.adapter.homepage.airporttransportation.comments;
+package com.yinglan.sct.adapter.homepage.airporttransportation.comments;
 
 import android.content.Context;
 import android.widget.ImageView;
 
-import com.lzy.imagepicker.bean.ImageItem;
-import com.sillykid.app.R;
-import com.sillykid.app.utils.GlideImageLoader;
+import com.luck.picture.lib.entity.LocalMedia;
+import com.yinglan.sct.R;
+import com.yinglan.sct.utils.GlideImageLoader;
 
-import cn.bingoogolapple.androidcommon.adapter.BGAAdapterViewAdapter;
-import cn.bingoogolapple.androidcommon.adapter.BGAViewHolderHelper;
+import cn.bingoogolapple.baseadapter.BGAAdapterViewAdapter;
+import cn.bingoogolapple.baseadapter.BGAViewHolderHelper;
+
 
 /**
  * Created by Admin on 2017/9/29.
  */
 
-public class CharterCommentsGridViewAdapter extends BGAAdapterViewAdapter<ImageItem> {
+public class CharterCommentsGridViewAdapter extends BGAAdapterViewAdapter<LocalMedia> {
 
 
     public CharterCommentsGridViewAdapter(Context context) {
@@ -23,12 +24,12 @@ public class CharterCommentsGridViewAdapter extends BGAAdapterViewAdapter<ImageI
 
 
     @Override
-    protected void fillData(BGAViewHolderHelper helper, int position, ImageItem model) {
+    protected void fillData(BGAViewHolderHelper helper, int position, LocalMedia model) {
 
         /**
          * 图片
          */
-        GlideImageLoader.glideOrdinaryLoader(mContext, model.path, (ImageView) helper.getView(R.id.img_comment), R.mipmap.placeholderfigure);
+        GlideImageLoader.glideOrdinaryLoader(mContext, model.getPath(), (ImageView) helper.getView(R.id.img_comment), R.mipmap.placeholderfigure);
     }
 
 

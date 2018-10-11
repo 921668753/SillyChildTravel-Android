@@ -1,4 +1,4 @@
-package com.sillykid.app.entity.homepage.boutiqueline.selectcity;
+package com.yinglan.sct.entity.homepage.boutiqueline.selectcity;
 
 import com.common.cklibrary.entity.BaseResult;
 

@@ -1,14 +1,13 @@
-package com.sillykid.app.adapter.homepage.airporttransportation;
+package com.yinglan.sct.adapter.homepage.airporttransportation;
 
 import android.content.Context;
 
-import com.sillykid.app.R;
-import com.sillykid.app.entity.homepage.airporttransportation.SelectProductAirportTransportationBean.DataBean;
-import com.sillykid.app.utils.GlideImageLoader;
+import com.yinglan.sct.R;
+import com.yinglan.sct.entity.homepage.airporttransportation.SelectProductAirportTransportationBean.DataBean;
+import com.yinglan.sct.utils.GlideImageLoader;
 
-
-import cn.bingoogolapple.androidcommon.adapter.BGAAdapterViewAdapter;
-import cn.bingoogolapple.androidcommon.adapter.BGAViewHolderHelper;
+import cn.bingoogolapple.baseadapter.BGAAdapterViewAdapter;
+import cn.bingoogolapple.baseadapter.BGAViewHolderHelper;
 
 
 /**

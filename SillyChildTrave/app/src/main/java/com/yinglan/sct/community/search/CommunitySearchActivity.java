@@ -17,11 +17,11 @@ import com.common.cklibrary.entity.BaseResult;
 import com.common.cklibrary.utils.JsonUtil;
 import com.kymjs.common.PreferenceHelper;
 import com.kymjs.common.StringUtils;
-import com.sillykid.app.R;
-import com.sillykid.app.adapter.community.search.RecentSearchViewAdapter;
-import com.sillykid.app.community.search.dialog.ClearSearchDialog;
-import com.sillykid.app.entity.community.search.RecentSearchBean;
-import com.sillykid.app.utils.SoftKeyboardUtils;
+import com.yinglan.sct.R;
+import com.yinglan.sct.adapter.community.search.RecentSearchViewAdapter;
+import com.yinglan.sct.community.search.dialog.ClearSearchDialog;
+import com.yinglan.sct.entity.community.search.RecentSearchBean;
+import com.yinglan.sct.utils.SoftKeyboardUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;

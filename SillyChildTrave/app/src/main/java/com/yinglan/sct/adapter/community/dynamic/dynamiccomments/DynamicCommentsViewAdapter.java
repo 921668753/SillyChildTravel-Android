@@ -4,12 +4,13 @@ package com.yinglan.sct.adapter.community.dynamic.dynamiccomments;
 import android.content.Context;
 import android.view.View;
 
-import com.sillykid.app.R;
-import com.sillykid.app.entity.community.dynamic.dynamiccomments.DynamicCommentsBean.DataBean.ListBean;
-import com.sillykid.app.utils.GlideImageLoader;
+import com.yinglan.sct.R;
+import com.yinglan.sct.entity.community.dynamic.dynamiccomments.DynamicCommentsBean.DataBean.ListBean;
+import com.yinglan.sct.utils.GlideImageLoader;
 
-import cn.bingoogolapple.androidcommon.adapter.BGAAdapterViewAdapter;
-import cn.bingoogolapple.androidcommon.adapter.BGAViewHolderHelper;
+import cn.bingoogolapple.baseadapter.BGAAdapterViewAdapter;
+import cn.bingoogolapple.baseadapter.BGAViewHolderHelper;
+
 
 /**
  * 动态评论

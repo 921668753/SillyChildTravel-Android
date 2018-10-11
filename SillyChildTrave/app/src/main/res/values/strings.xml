@@ -135,6 +135,267 @@
     <string name="mine">我的</string>
     <string name="clickAgainExitProgram">再按一次退出程序</string>
 
+    <!--首页-->
+    <string name="sillyChild">傻孩子</string>
+    <string name="airportPickup">接机</string>
+    <string name="boutiqueLine">精品线路</string>
+    <string name="privateOrdering">私人定制</string>
+    <string name="byTheDay">按天包车</string>
+    <string name="airportDropOff">送机</string>
+    <string name="selectLine">精选线路</string>
+    <string name="moreLines">更多线路</string>
+    <string name="sillyChildCustomerService">傻孩子客服</string>
+    <string name="notOpenPositionSwitch">未打开位置开关，可能导致定位失败或定位不准，请打开GPS</string>
+    <string name="openPositionSwitch">定位需要以下权限:\n\n1.访问设备上的gps\n\n2.读写权限</string>
+
+    <!--首页   接机-->
+    <string name="flightNumber">航班号</string>
+    <string name="inputFlightNumber">填写航班号</string>
+    <string name="alphanumeric2">ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789</string>
+    <string name="deliveredSite">送达地点</string>
+    <string name="fillDestination">填写目的地</string>
+    <string name="flightArrivalTime">航班到达时间</string>
+    <string name="selectEstimatedArrivalTimeFlight">请选择航班预计到达时间</string>
+    <string name="pleaseEnterFlightNumber">请填写航班号</string>
+    <string name="pleaseDeliveredSite">请填写送达地点</string>
+    <string name="selectEstimatedArrivalTimeFlight1">航班预计到达时间应大于当前时间</string>
+    <string name="giveLike">点赞</string>
+
+
+    <!--首页   送机-->
+    <string name="people">人</string>
+    <string name="jian">件</string>
+    <string name="numberSendMachine">送机人数</string>
+    <string name="baggageNumber1">行李件数</string>
+    <string name="pickUpNumber">接机人数</string>
+    <string name="customerInformation">客户信息</string>
+    <string name="deliveredAirport">送达机场</string>
+    <string name="fillServiceAirport">填写送达机场</string>
+    <string name="placeDeparture">出发地点</string>
+    <string name="placeDeparture2">填写出发地</string>
+    <string name="timeDeparture">出发时间</string>
+    <string name="selectDepartureTime">请选择出发时间</string>
+    <string name="contact">联系人</string>
+    <string name="ContactName">联系人姓名</string>
+    <string name="contactWay3">联系方式</string>
+    <string name="ContactNumber">联系人电话</string>
+    <string name="ContactNumber1">请填写联系人电话</string>
+    <string name="dueDemand">预定需求</string>
+    <string name="adult1">成人：</string>
+    <string name="children1">儿童：</string>
+    <string name="luggage1">行李：</string>
+    <string name="pleaseSelect">请选择</string>
+    <string name="remark1">备注</string>
+    <string name="submitOrder">提交订单</string>
+    <string name="fillPlaceDeparture1">请填写出发地点</string>
+    <string name="selectDepartureTime1">出发时间应大于当前时间</string>
+    <string name="ContactName1">请填写联系人姓名</string>
+    <string name="adult3">请选择成人数</string>
+    <string name="adult4">成人和儿童总人数超过乘客人数</string>
+    <string name="luggage2">行李数超过汽车所能携带行李数</string>
+
+    <!--首页   价格说明-->
+    <string name="compensationChangeBack">退订政策</string>
+    <string name="noExplanation">暂无相关说明，敬请期待！</string>
+    <string name="priceInformation">价格信息</string>
+    <string name="modelCar">车型</string>
+    <string name="canTakeNumber">可乘人数</string>
+    <string name="carPrices">车型价格</string>
+    <string name="containsService">包含服务</string>
+    <string name="servicePolicy">服务政策</string>
+    <string name="serviceDescription">服务说明</string>
+    <string name="serviceNote">服务备注</string>
+    <string name="particularRequirement">您还有什么特别需求</string>
+    <string name="userEvaluation">用户评价</string>
+    <string name="nextStep">下一步</string>
+
+    <!--首页   选择产品-->
+    <string name="selectProduct">选择产品</string>
+    <string name="optionDate1">请选择服务日期</string>
+
+
+    <!--首页   支付完成-->
+    <string name="payAgain">重新支付</string>
+    <string name="buyingSillyChildren">感谢您在傻孩子购买商品！</string>
+    <string name="orderNumber1">订单号：</string>
+    <string name="consignee2">收货人：</string>
+    <string name="deliveryAddress1">收货地址：</string>
+    <string name="amount1">金额：</string>
+    <string name="checkOrder">查看订单</string>
+    <string name="returnHomePage">返回首页</string>
+    <string name="choosePaymentMethod">选择支付方式</string>
+
+
+    <!--首页   送机支付订单-->
+    <string name="noRemark">暂无备注</string>
+    <string name="renminbi">¥</string>
+    <string name="usable1">张优惠券</string>
+    <string name="priceDescription">价格说明</string>
+    <string name="dueThat">预定说明</string>
+    <string name="orderPriceNoSign">订单价格</string>
+    <string name="vouchers">抵用券</string>
+    <string name="actualPayment1">实际支付：</string>
+
+    <!--首页   支付订单-->
+    <string name="paymentOrder">支付订单</string>
+    <string name="lateCancelled">请在</string>
+    <string name="lateCancelled1">内付款，逾期订单将被取消</string>
+    <string name="payParseError">支付失败！解析数据错误，您可以移步至客服！</string>
+    <string name="tradingClosed">交易关闭</string>
+    <string name="waitingPayment">等待买家付款</string>
+    <string name="weChatPay">微信支付</string>
+    <string name="alipayToPay">支付宝支付</string>
+    <string name="unionpayPay">银联支付</string>
+    <string name="balancePay">余额支付</string>
+    <string name="currentBalance">当前余额：</string>
+    <string name="confirmPayment">确认支付</string>
+    <string name="lackOfBalance">余额不足，请选择其它方式支付</string>
+    <string name="exceptionYuE">获取余额异常</string>
+    <string name="exceptionOrderMoney">解析订单金额异常</string>
+    <string name="actualPaymentInCart">实付款：</string>
+
+
+    <!--首页   搜索界面-->
+    <string name="clearSearch">确定清空搜索</string>
+    <string name="enterSearchContent">请输入您要搜索的内容</string>
+    <string name="cityDoWantGoTo">您想要去哪座城市</string>
+    <string name="recentSearch">最近搜索</string>
+    <string name="noProduct">亲，还没有任何产品哟~</string>
+
+    <!--首页   精品线路-->
+    <string name="hotRecommended">热门推荐</string>
+    <string name="selectCity">选择城市</string>
+    <string name="selectTravelDate">选择行程日期</string>
+    <string name="selectTravelDate1">请选择行程日期</string>
+    <string name="chosecity">城市选择</string>
+
+    <!--首页   线路详情-->
+    <string name="detailsLine">线路详情</string>
+    <string name="yuanPerson">元/人</string>
+    <string name="yuan">元</string>
+    <string name="experienceBrightSpot">体验亮点</string>
+    <string name="packagePrice">套餐价格：</string>
+    <string name="travelTime3">行程时间</string>
+
+    <!--首页   按天包车-->
+    <string name="fillYourInformation">填写您的信息</string>
+    <string name="travelTime2">行程时间：</string>
+    <string name="selectDate">选择日期</string>
+    <string name="journeyBegins">行程出发开始地</string>
+    <string name="journeyBegins1">请填写行程出发开始地</string>
+    <string name="fillPlaceDeparture">填写出发地点</string>
+    <string name="journeyEnds">行程结束送达地</string>
+    <string name="journeyEnds1">请填写行程结束送达地</string>
+    <string name="fillPlaceService">填写送达地点</string>
+    <string name="selectedLines">已选线路</string>
+    <string name="serviceVehicle">服务车辆</string>
+    <string name="travelTime4">请选择行程时间</string>
+    <string name="travelTime5">行程时间开始时间应大于当前时间</string>
+
+    <!--首页   按天包车价格信息-->
+    <string name="serviceTime1">服务时间</string>
+    <string name="serviceHours">服务时长（时/天）</string>
+    <string name="serviceMileage">服务里程（公里/天）</string>
+
+
+    <!--首页   按天包车支付订单-->
+    <string name="orderNumber2">订单数量</string>
+    <string name="totalOrder">订单总额</string>
+
+    <!--首页   私人定制-->
+    <string name="travelTime">出行时间</string>
+    <string name="destination">目的地</string>
+    <string name="selectTravelTime">选择出行时间</string>
+    <string name="selectTravelTime1">请选择出行时间</string>
+    <string name="origin1">请填写出发地</string>
+    <string name="pleaseFillDestination">请填写目的地</string>
+    <string name="playNumberDays">游玩天数</string>
+    <string name="day1">天</string>
+    <string name="playNumberDays1">请填写游玩天数</string>
+    <string name="touristNumber">游客人数</string>
+    <string name="touristNumber1">请选择游客人数</string>
+    <string name="travelPreferences">出行偏好</string>
+    <string name="recommendRestaurant">餐馆偏好</string>
+    <string name="recommendedAccommodation">住宿偏好</string>
+
+    <string name="addNotes">添加备注</string>
+    <string name="strokeModels">行程车型</string>
+    <string name="customizedItinerary">定制行程</string>
+    <string name="customizedItineraryS">定制行程成功</string>
+
+    <!--首页   私人定制   城市选择-->
+    <string name="recommended">推荐</string>
+    <string name="popularDestination">热门目的地</string>
+
+
+    <!--首页   动态详情-->
+    <string name="attention">+ 关注</string>
+    <string name="followed">已关注</string>
+    <string name="attention1">取消关注</string>
+    <string name="published">发表</string>
+    <string name="dynamicComments">动态评论</string>
+    <string name="attentionSuccess">关注成功</string>
+    <string name="focusSuccess">取消关注成功</string>
+    <string name="cancelZanSuccess">取消赞成功</string>
+    <string name="zanSuccess">点赞成功</string>
+    <string name="hasPraised">已赞</string>
+    <string name="comment">评论</string>
+    <string name="commentSuccess">评论成功</string>
+    <string name="alreadyCollected">已收藏</string>
+    <string name="dynamicCollection">收藏</string>
+    <string name="writeComment">写评论...</string>
+    <string name="writeComment1">请填写评论</string>
+    <string name="notRespondYourComments">不能回复自己的评论</string>
+    <string name="general">共</string>
+    <string name="comments1">条评论</string>
+    <string name="reply">条回复</string>
+    <string name="notFillEvaluation">此用户没有填写评价。</string>
+    <string name="thankReport">感谢您的举报，我们将更加努力净化社区，给大家带来良好的环境</string>
+    <string name="fullScreen">全屏</string>
+    <string name="more">更多</string>
+
+    <!--首页   评论-->
+    <string name="dynamicNotCommented">亲，该动态还没有评论哟~</string>
+    <string name="notCommented">亲，还没有评论哟~</string>
+    <string name="allAeservationNumber">全部</string>
+    <string name="figure">有图</string>
+    <string name="noImages">无图</string>
+    <string name="additionalReview">用户当天追评</string>
+    <string name="revert1">回复&#160;&#160;·</string>
+
+
+
+    <!--社区-->
+    <string name="search">搜索</string>
+    <string name="newTrends">发布新动态</string>
+    <string name="lookForSomeone">找人</string>
+    <string name="findArticle">找文章</string>
+    <string name="noMovement">亲，还没有任何动态哟~</string>
+    <string name="noSearchArticle">亲，还没有搜索到任何动态哟~</string>
+    <string name="noSearchPeople">亲，还没有搜索到任何人哟~</string>
+    <string name="noBoutiqueLine">亲，还没有任何线路哟~</string>
+
+    <!--社区   动态详情-->
+    <string name="follow">关注</string>
+    <string name="uncollectible">取消收藏成功</string>
+    <string name="collectionSuccess">收藏成功</string>
+    <string name="evaluation1">条评价</string>
+    <string name="zan">赞</string>
+    <string name="collection">收藏</string>
+    <string name="loginOrRegister">登录/注册 ></string>
+
+
+    <!--社区   举报弹框-->
+    <string name="report">举报</string>
+
+    <!--社区   单条动态评论详情-->
+    <string name="revert">回复</string>
+    <string name="commentDetails">评论详情</string>
+
+    <!--社区   动态评论-->
+    <string name="commentList">评论列表</string>
+
+
     <!--消息-->
     <string name="interactiveMessage">互动消息</string>
     <string name="systemMessage">系统消息</string>
@@ -164,6 +425,67 @@
     <string name="minute">分</string>
     <string name="seconds">秒</string>
 
+
+    <!--活动-->
+    <string name="pastWonderful">往期精彩</string>
+    <string name="bargain">热门活动</string>
+    <string name="productl">往期活动</string>
+    <string name="noActivity">暂时没有活动哟~</string>
+
+
+
+    <!-- 个人中心 -->
+    <string name="fans">粉丝</string>
+    <string name="beCollected">被收藏</string>
+    <string name="setUp">设置</string>
+    <string name="sharePolite">分享有礼</string>
+
+
+    <!-- 个人中心 我的关注-->
+    <string name="myFocus">我的关注</string>
+    <string name="user">用户</string>
+    <string name="companyGuide">司导</string>
+    <string name="merchants">商家</string>
+    <string name="diary">篇日记</string>
+    <string name="fan">个粉丝</string>
+    <string name="noFollow">亲，您还没有关注任何人哟~</string>
+
+    <!-- 个人中心 我的粉丝-->
+    <string name="myFans">我的粉丝</string>
+    <string name="noFans">亲，您还没有粉丝哟~</string>
+
+    <!--  个人中心  分享有礼-->
+    <string name="welcomSilly">你的朋友邀请你使用傻孩子并给你发了一个大红包  </string>
+    <string name="sillyChildMyHands">傻孩子在手天下我有</string>
+    <string name="notInstalled">没有安装应用</string>
+    <string name="notInstalled1">您还没有安装应用，请安装应用</string>
+
+    <!--弹框    分享-->
+    <string name="shareTo">分享给好友</string>
+    <string name="weChatFriends">微信好友</string>
+    <string name="circleFriends">朋友圈</string>
+    <string name="QQFriends">QQ好友</string>
+    <string name="qzone">QQ空间</string>
+    <string name="sina">新浪微博</string>
+    <string name="shareSuccess">分享成功啦</string>
+    <string name="shareError">分享失败啦</string>
+    <string name="shareCancel">分享取消了</string>
+    <string name="share">分享</string>
+    <string name="cancel">取消</string>
+
+    <!-- 个人中心 设置-->
+    <string name="versionNumber">版本号</string>
+    <string name="versionNumberNo">没有发现版本号</string>
+    <string name="clearCache">清除缓存</string>
+    <string name="clearSuccess">清除成功</string>
+    <string name="helpCenter">帮助中心</string>
+    <string name="feedback">意见反馈</string>
+    <string name="aboutUs">关于我们</string>
+    <string name="logOut">退出登录</string>
+    <string name="latestVersion">已是最新版本</string>
+    <string name="newVersion">有新版本</string>
+    <string name="updateVersion">有新版本是否更新</string>
+    <string name="update">&#160;&#160;&#160;更&#160;&#160;&#160;&#160;&#160;&#160;&#160;新&#160;&#160;&#160;</string>
 
     <!-- 个人中心 设置  清除缓存弹框-->
     <string name="prompting">提示</string>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/MatchMatch"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/Match44"
+        android:background="@color/whiteColors"
+        android:gravity="center"
+        android:text="@string/community"
+        android:textColor="@color/textColor"
+        android:textSize="@dimen/textsize17" />
+
+
+    <LinearLayout
+        android:id="@+id/ll_search"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen54"
+        android:layout_marginTop="@dimen/dimen3"
+        android:background="@color/whiteColors"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen36"
+            android:layout_marginLeft="@dimen/dimen19"
+            android:layout_marginRight="@dimen/dimen19"
+            android:background="@drawable/shape_communitysearch"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/dimen16"
+                android:layout_height="@dimen/dimen14"
+                android:layout_marginLeft="@dimen/dimen14"
+                android:src="@mipmap/community_search" />
+
+            <TextView
+                style="@style/WrapWrap"
+                android:layout_marginLeft="@dimen/dimen5"
+                android:text="@string/search"
+                android:textColor="@color/hintColors"
+                android:textSize="@dimen/textsize13" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen35"
+        android:layout_marginTop="@dimen/dimen5">
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen35"
+            android:layout_marginRight="@dimen/dimen41"
+            android:background="@color/whiteColors"
+            app:tabBackground="@drawable/tab_backgroud"
+            app:tabGravity="center"
+            app:tabIndicatorColor="@color/greenColors"
+            app:tabMode="scrollable"
+            app:tabSelectedTextColor="@color/greenColors"
+            app:tabTextAppearance="@style/TabLayout.TabText"
+            app:tabTextColor="@color/hintColors" />
+
+
+        <ImageView
+            android:id="@+id/img_search"
+            android:layout_width="@dimen/dimen51"
+            android:layout_height="@dimen/dimen41"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/community_search1" />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/main_content"
+        style="@style/MatchMatch" />
+
+    <include layout="@layout/common_error" />
+
+</LinearLayout>

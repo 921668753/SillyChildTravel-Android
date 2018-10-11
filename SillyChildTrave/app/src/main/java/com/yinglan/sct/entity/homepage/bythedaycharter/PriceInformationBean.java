@@ -1,4 +1,4 @@
-package com.sillykid.app.entity.homepage.bythedaycharter;
+package com.yinglan.sct.entity.homepage.bythedaycharter;
 
 import com.common.cklibrary.entity.BaseResult;
 

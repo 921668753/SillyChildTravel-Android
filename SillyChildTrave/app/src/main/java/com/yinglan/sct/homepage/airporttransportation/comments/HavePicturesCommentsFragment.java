@@ -16,12 +16,9 @@ import com.common.cklibrary.common.ViewInject;
 import com.common.cklibrary.utils.JsonUtil;
 import com.common.cklibrary.utils.RefreshLayoutUtil;
 import com.kymjs.common.StringUtils;
-import com.sillykid.app.R;
-import com.sillykid.app.adapter.mall.goodslist.evaluation.CommentsViewAdapter;
-import com.sillykid.app.constant.NumericConstants;
-import com.sillykid.app.entity.mall.goodslist.goodsdetails.comments.CommentsBean;
-import com.sillykid.app.loginregister.LoginActivity;
-import com.sillykid.app.mall.goodslist.goodsdetails.comments.CommentsActivity;
+import com.yinglan.sct.R;
+import com.yinglan.sct.constant.NumericConstants;
+import com.yinglan.sct.loginregister.LoginActivity;
 
 import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
 
@@ -33,7 +30,7 @@ public class HavePicturesCommentsFragment extends BaseFragment implements Charte
     @BindView(id = R.id.mRefreshLayout)
     private BGARefreshLayout mRefreshLayout;
 
-    private CommentsActivity aty;
+    private CharterCommentsActivity aty;
 
     @BindView(id = R.id.lv_comments)
     private ListView lv_comments;
@@ -63,7 +60,7 @@ public class HavePicturesCommentsFragment extends BaseFragment implements Charte
      */
     private boolean isShowLoadingMore = false;
 
-    private CommentsViewAdapter mAdapter = null;
+  //  private CommentsViewAdapter mAdapter = null;
 
     private int goodsid = 0;
 
@@ -71,7 +68,7 @@ public class HavePicturesCommentsFragment extends BaseFragment implements Charte
 
     @Override
     protected View inflaterView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
-        aty = (CommentsActivity) getActivity();
+        aty = (CharterCommentsActivity) getActivity();
         return View.inflate(aty, R.layout.fragment_comments, null);
     }
 
@@ -79,7 +76,7 @@ public class HavePicturesCommentsFragment extends BaseFragment implements Charte
     protected void initData() {
         super.initData();
         mPresenter = new CharterCommentsPresenter(this);
-        mAdapter = new CommentsViewAdapter(getActivity());
+     //   mAdapter = new CommentsViewAdapter(getActivity());
         goodsid = aty.getIntent().getIntExtra("goodsid", 0);
     }
 
@@ -87,7 +84,7 @@ public class HavePicturesCommentsFragment extends BaseFragment implements Charte
     protected void initWidget(View parentView) {
         super.initWidget(parentView);
         RefreshLayoutUtil.initRefreshLayout(mRefreshLayout, this, aty, true);
-        lv_comments.setAdapter(mAdapter);
+       // lv_comments.setAdapter(mAdapter);
         lv_comments.setOnItemClickListener(this);
         mRefreshLayout.beginRefreshing();
     }
@@ -149,9 +146,9 @@ public class HavePicturesCommentsFragment extends BaseFragment implements Charte
     @Override
     public void onDestroy() {
         super.onDestroy();
-        mAdapter.cancelAllComments();
-        mAdapter.clear();
-        mAdapter = null;
+//        mAdapter.cancelAllComments();
+//        mAdapter.clear();
+//        mAdapter = null;
     }
 
     @Override
@@ -164,43 +161,43 @@ public class HavePicturesCommentsFragment extends BaseFragment implements Charte
         isShowLoadingMore = true;
         ll_commonError.setVisibility(View.GONE);
         mRefreshLayout.setVisibility(View.VISIBLE);
-        CommentsBean commentsBean = (CommentsBean) JsonUtil.getInstance().json2Obj(success, CommentsBean.class);
-        if (commentsBean.getData() == null && mMorePageNumber == NumericConstants.START_PAGE_NUMBER || commentsBean.getData().getCommentList().size() <= 0 &&
-                mMorePageNumber == NumericConstants.START_PAGE_NUMBER) {
-            errorMsg(getString(R.string.goodsNotCommented), 1);
-            return;
-        } else if (commentsBean.getData() == null && mMorePageNumber > NumericConstants.START_PAGE_NUMBER ||
-                commentsBean.getData().getCommentList().size() <= 0 && mMorePageNumber > NumericConstants.START_PAGE_NUMBER) {
-            ViewInject.toast(getString(R.string.noMoreData));
-            isShowLoadingMore = false;
-            dismissLoadingDialog();
-            mRefreshLayout.endLoadingMore();
-            return;
-        }
-        if (mMorePageNumber == NumericConstants.START_PAGE_NUMBER) {
-            mRefreshLayout.endRefreshing();
-            mAdapter.clear();
-            mAdapter.addNewData(commentsBean.getData().getCommentList());
-        } else {
-            mRefreshLayout.endLoadingMore();
-            mAdapter.addMoreData(commentsBean.getData().getCommentList());
-        }
-        if (StringUtils.isEmpty(commentsBean.getData().getCommentCount())) {
-            //   aty.setAll("(0)");
-        } else {
-            aty.setAll("(" + commentsBean.getData().getCommentCount() + ")");
-        }
-        if (StringUtils.isEmpty(commentsBean.getData().getImageCount())) {
-            // aty.setHavePictures("0");
-        } else {
-            aty.setHavePictures("(" + commentsBean.getData().getImageCount() + ")");
-        }
-        int num = StringUtils.toInt(commentsBean.getData().getCommentCount(), 0) - StringUtils.toInt(commentsBean.getData().getImageCount(), 0);
-        if (num <= 0) {
-            // aty.setAdditionalReview("0");
-        } else {
-            aty.setAdditionalReview("(" + num + ")");
-        }
+//        CommentsBean commentsBean = (CommentsBean) JsonUtil.getInstance().json2Obj(success, CommentsBean.class);
+//        if (commentsBean.getData() == null && mMorePageNumber == NumericConstants.START_PAGE_NUMBER || commentsBean.getData().getCommentList().size() <= 0 &&
+//                mMorePageNumber == NumericConstants.START_PAGE_NUMBER) {
+//            errorMsg(getString(R.string.goodsNotCommented), 1);
+//            return;
+//        } else if (commentsBean.getData() == null && mMorePageNumber > NumericConstants.START_PAGE_NUMBER ||
+//                commentsBean.getData().getCommentList().size() <= 0 && mMorePageNumber > NumericConstants.START_PAGE_NUMBER) {
+//            ViewInject.toast(getString(R.string.noMoreData));
+//            isShowLoadingMore = false;
+//            dismissLoadingDialog();
+//            mRefreshLayout.endLoadingMore();
+//            return;
+//        }
+//        if (mMorePageNumber == NumericConstants.START_PAGE_NUMBER) {
+//            mRefreshLayout.endRefreshing();
+//            mAdapter.clear();
+//            mAdapter.addNewData(commentsBean.getData().getCommentList());
+//        } else {
+//            mRefreshLayout.endLoadingMore();
+//            mAdapter.addMoreData(commentsBean.getData().getCommentList());
+//        }
+//        if (StringUtils.isEmpty(commentsBean.getData().getCommentCount())) {
+//            //   aty.setAll("(0)");
+//        } else {
+//            aty.setAll("(" + commentsBean.getData().getCommentCount() + ")");
+//        }
+//        if (StringUtils.isEmpty(commentsBean.getData().getImageCount())) {
+//            // aty.setHavePictures("0");
+//        } else {
+//            aty.setHavePictures("(" + commentsBean.getData().getImageCount() + ")");
+//        }
+//        int num = StringUtils.toInt(commentsBean.getData().getCommentCount(), 0) - StringUtils.toInt(commentsBean.getData().getImageCount(), 0);
+//        if (num <= 0) {
+//            // aty.setAdditionalReview("0");
+//        } else {
+//            aty.setAdditionalReview("(" + num + ")");
+//        }
         dismissLoadingDialog();
     }
 
@@ -229,10 +226,10 @@ public class HavePicturesCommentsFragment extends BaseFragment implements Charte
             img_err.setImageResource(R.mipmap.no_network);
             tv_hintText.setText(msg);
             tv_button.setText(getString(R.string.retry));
-        } else if (msg.contains(getString(R.string.goodsNotCommented))) {
-            img_err.setImageResource(R.mipmap.no_data);
-            tv_hintText.setText(msg);
-            tv_button.setVisibility(View.GONE);
+//        } else if (msg.contains(getString(R.string.goodsNotCommented))) {
+//            img_err.setImageResource(R.mipmap.no_data);
+//            tv_hintText.setText(msg);
+//            tv_button.setVisibility(View.GONE);
         } else {
             img_err.setImageResource(R.mipmap.no_data);
             tv_hintText.setText(msg);

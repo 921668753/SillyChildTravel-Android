@@ -14,19 +14,21 @@ import com.common.cklibrary.common.BaseActivity;
 import com.common.cklibrary.common.BindView;
 import com.common.cklibrary.common.ViewInject;
 import com.common.cklibrary.utils.ActivityTitleUtils;
+import com.common.cklibrary.utils.DataUtil;
 import com.common.cklibrary.utils.JsonUtil;
 import com.kymjs.common.StringUtils;
-import com.sillykid.app.R;
-import com.sillykid.app.entity.homepage.privatecustom.CategoryListBean.DataBean.RepastListBean;
-import com.sillykid.app.entity.homepage.privatecustom.CategoryListBean.DataBean.StayListBean;
-import com.sillykid.app.entity.homepage.privatecustom.CategoryListBean.DataBean.TravelListBean;
-import com.sillykid.app.homepage.boutiqueline.dialog.CalendarControlBouncedDialog;
-import com.sillykid.app.homepage.message.interactivemessage.imuitl.RongIMUtil;
-import com.sillykid.app.homepage.privatecustom.cityselect.CitySelectActivity;
-import com.sillykid.app.loginregister.LoginActivity;
-import com.sillykid.app.utils.DataUtil;
-import com.sillykid.app.utils.GlideImageLoader;
-import com.sillykid.app.utils.SoftKeyboardUtils;
+import com.yinglan.sct.R;
+
+import com.yinglan.sct.entity.homepage.privatecustom.CategoryListBean;
+import com.yinglan.sct.entity.homepage.privatecustom.CategoryListBean.DataBean.RepastListBean;
+import com.yinglan.sct.entity.homepage.privatecustom.CategoryListBean.DataBean.StayListBean;
+import com.yinglan.sct.entity.homepage.privatecustom.CategoryListBean.DataBean.TravelListBean;
+import com.yinglan.sct.homepage.boutiqueline.dialog.CalendarControlBouncedDialog;
+import com.yinglan.sct.homepage.privatecustom.cityselect.CitySelectActivity;
+import com.yinglan.sct.loginregister.LoginActivity;
+import com.yinglan.sct.message.interactivemessage.imuitl.RongIMUtil;
+import com.yinglan.sct.utils.GlideImageLoader;
+import com.yinglan.sct.utils.SoftKeyboardUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +36,7 @@ import java.util.List;
 import io.rong.imkit.RongIM;
 import io.rong.imlib.model.CSCustomServiceInfo;
 
-import static com.sillykid.app.constant.NumericConstants.RESULT_CODE_GET;
+import static com.yinglan.sct.constant.NumericConstants.RESULT_CODE_GET;
 
 
 /**
@@ -214,9 +216,9 @@ public class PrivateCustomActivity extends BaseActivity implements PrivateCustom
      */
     @SuppressWarnings("unchecked")
     private void selectPlayNumberDays() {
-        List<com.sillykid.app.entity.homepage.airporttransportation.airportpickup.PeopleBean> list = new ArrayList<com.sillykid.app.entity.homepage.airporttransportation.airportpickup.PeopleBean>();
+        List<com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.PeopleBean> list = new ArrayList<com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.PeopleBean>();
         for (int i = 0; i < 30; i++) {
-            com.sillykid.app.entity.homepage.airporttransportation.airportpickup.PeopleBean peopleBean = new com.sillykid.app.entity.homepage.airporttransportation.airportpickup.PeopleBean();
+            com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.PeopleBean peopleBean = new com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.PeopleBean();
             peopleBean.setNum(i + 1);
             peopleBean.setName(i + 1 + getString(R.string.day1));
             list.add(peopleBean);
@@ -291,7 +293,7 @@ public class PrivateCustomActivity extends BaseActivity implements PrivateCustom
     @Override
     public void getSuccess(String success, int flag) {
         if (flag == 0) {
-            com.sillykid.app.entity.homepage.privatecustom.CategoryListBean categoryListBean = (com.sillykid.app.entity.homepage.privatecustom.CategoryListBean) JsonUtil.getInstance().json2Obj(success, com.sillykid.app.entity.homepage.privatecustom.CategoryListBean.class);
+            CategoryListBean categoryListBean = (CategoryListBean) JsonUtil.getInstance().json2Obj(success, CategoryListBean.class);
             GlideImageLoader.glideOrdinaryLoader(this, categoryListBean.getData().getPicture(), img_picture, R.mipmap.placeholderfigure);
             tv_content.setText(categoryListBean.getData().getContent());
             service_id = categoryListBean.getData().getService_id();

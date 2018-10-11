@@ -19,7 +19,6 @@ import static com.yinglan.sct.constant.StringNewConstants.MainServiceAction;
  */
 public class RongIMPushMessageReceiver extends PushMessageReceiver {
 
-
     @Override
     public boolean onNotificationMessageArrived(Context context, PushNotificationMessage pushNotificationMessage) {
         return false;

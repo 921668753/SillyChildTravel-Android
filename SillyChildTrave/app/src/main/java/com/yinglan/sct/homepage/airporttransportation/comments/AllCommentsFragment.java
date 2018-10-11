@@ -15,11 +15,11 @@ import com.common.cklibrary.common.BindView;
 import com.common.cklibrary.common.ViewInject;
 import com.common.cklibrary.utils.JsonUtil;
 import com.common.cklibrary.utils.RefreshLayoutUtil;
-import com.sillykid.app.R;
-import com.sillykid.app.constant.NumericConstants;
-import com.sillykid.app.loginregister.LoginActivity;
+import com.yinglan.sct.R;
+import com.yinglan.sct.constant.NumericConstants;
+import com.yinglan.sct.loginregister.LoginActivity;
 
-import cn.bingoogolapple.androidcommon.adapter.BGAOnItemChildClickListener;
+import cn.bingoogolapple.baseadapter.BGAOnItemChildClickListener;
 import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
 
 /**
@@ -66,7 +66,7 @@ public class AllCommentsFragment extends BaseFragment implements CharterComments
      */
     private boolean isShowLoadingMore = false;
 
-    private com.sillykid.app.adapter.homepage.airporttransportation.comments.CharterCommentsViewAdapter mAdapter = null;
+    private com.yinglan.sct.adapter.homepage.airporttransportation.comments.CharterCommentsViewAdapter mAdapter = null;
 
     private int product_id = 0;
 
@@ -83,7 +83,7 @@ public class AllCommentsFragment extends BaseFragment implements CharterComments
     protected void initData() {
         super.initData();
         mPresenter = new CharterCommentsPresenter(this);
-        mAdapter = new com.sillykid.app.adapter.homepage.airporttransportation.comments.CharterCommentsViewAdapter(getActivity());
+        mAdapter = new com.yinglan.sct.adapter.homepage.airporttransportation.comments.CharterCommentsViewAdapter(getActivity());
         product_id = aty.getIntent().getIntExtra("product_id", 0);
     }
 
@@ -178,10 +178,10 @@ public class AllCommentsFragment extends BaseFragment implements CharterComments
             isShowLoadingMore = true;
             ll_commonError.setVisibility(View.GONE);
             mRefreshLayout.setVisibility(View.VISIBLE);
-            com.sillykid.app.entity.homepage.airporttransportation.comments.CharterCommentsBean charterCommentsBean = (com.sillykid.app.entity.homepage.airporttransportation.comments.CharterCommentsBean) JsonUtil.getInstance().json2Obj(success, com.sillykid.app.entity.homepage.airporttransportation.comments.CharterCommentsBean.class);
+            com.yinglan.sct.entity.homepage.airporttransportation.comments.CharterCommentsBean charterCommentsBean = (com.yinglan.sct.entity.homepage.airporttransportation.comments.CharterCommentsBean) JsonUtil.getInstance().json2Obj(success, com.yinglan.sct.entity.homepage.airporttransportation.comments.CharterCommentsBean.class);
             if (charterCommentsBean.getData() == null && mMorePageNumber == NumericConstants.START_PAGE_NUMBER || charterCommentsBean.getData().getResultX().size() <= 0 &&
                     mMorePageNumber == NumericConstants.START_PAGE_NUMBER) {
-                errorMsg(getString(R.string.goodsNotCommented), 0);
+                errorMsg(getString(R.string.notCommented), 0);
                 return;
             } else if (charterCommentsBean.getData() == null && mMorePageNumber > NumericConstants.START_PAGE_NUMBER ||
                     charterCommentsBean.getData().getResultX().size() <= 0 && mMorePageNumber > NumericConstants.START_PAGE_NUMBER) {
@@ -258,7 +258,7 @@ public class AllCommentsFragment extends BaseFragment implements CharterComments
                 img_err.setImageResource(R.mipmap.no_network);
                 tv_hintText.setText(msg);
                 tv_button.setText(getString(R.string.retry));
-            } else if (msg.contains(getString(R.string.goodsNotCommented))) {
+            } else if (msg.contains(getString(R.string.notCommented))) {
                 img_err.setImageResource(R.mipmap.no_data);
                 tv_hintText.setText(msg);
                 tv_button.setVisibility(View.GONE);

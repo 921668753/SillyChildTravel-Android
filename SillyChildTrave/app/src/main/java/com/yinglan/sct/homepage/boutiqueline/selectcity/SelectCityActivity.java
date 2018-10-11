@@ -14,8 +14,11 @@ import com.common.cklibrary.common.BindView;
 import com.common.cklibrary.common.ViewInject;
 import com.common.cklibrary.utils.ActivityTitleUtils;
 import com.common.cklibrary.utils.JsonUtil;
-import com.sillykid.app.R;
-import com.sillykid.app.entity.homepage.airporttransportation.AirportCountryListBean;
+import com.yinglan.sct.R;
+import com.yinglan.sct.adapter.homepage.airporttransportation.AirportTransportationClassificationListViewAdapter;
+import com.yinglan.sct.adapter.homepage.boutiqueline.selectcity.SelectCityGridViewAdapter;
+import com.yinglan.sct.entity.homepage.airporttransportation.AirportCountryListBean;
+import com.yinglan.sct.entity.homepage.boutiqueline.selectcity.SelectCityBean;
 
 import java.util.List;
 
@@ -45,13 +48,13 @@ public class SelectCityActivity extends BaseActivity implements SelectCityContra
     @BindView(id = R.id.tv_button, click = true)
     private TextView tv_button;
 
-    private com.sillykid.app.adapter.homepage.airporttransportation.AirportTransportationClassificationListViewAdapter mListViewAdapter = null;
+    private AirportTransportationClassificationListViewAdapter mListViewAdapter = null;
 
-    private com.sillykid.app.adapter.homepage.boutiqueline.selectcity.SelectCityGridViewAdapter mGridViewAdapter = null;
+    private SelectCityGridViewAdapter mGridViewAdapter = null;
 
     private List<AirportCountryListBean.DataBean> airportCountryList;
 
-    private com.sillykid.app.entity.homepage.airporttransportation.AirportCountryListBean.DataBean airportCountryBean = null;
+    private AirportCountryListBean.DataBean airportCountryBean = null;
 
     private String title = "";
     private int type = 0;
@@ -65,8 +68,8 @@ public class SelectCityActivity extends BaseActivity implements SelectCityContra
     public void initData() {
         super.initData();
         mPresenter = new SelectCityPresenter(this);
-        mListViewAdapter = new com.sillykid.app.adapter.homepage.airporttransportation.AirportTransportationClassificationListViewAdapter(this);
-        mGridViewAdapter = new com.sillykid.app.adapter.homepage.boutiqueline.selectcity.SelectCityGridViewAdapter(this);
+        mListViewAdapter = new AirportTransportationClassificationListViewAdapter(this);
+        mGridViewAdapter = new SelectCityGridViewAdapter(this);
         // title = getIntent().getStringExtra("title");
         type = getIntent().getIntExtra("type", 0);
     }
@@ -118,13 +121,13 @@ public class SelectCityActivity extends BaseActivity implements SelectCityContra
     @Override
     public void getSuccess(String success, int flag) {
         if (flag == 0) {
-            com.sillykid.app.entity.homepage.airporttransportation.AirportCountryListBean airportCountryListBean = (com.sillykid.app.entity.homepage.airporttransportation.AirportCountryListBean) JsonUtil.getInstance().json2Obj(success, com.sillykid.app.entity.homepage.airporttransportation.AirportCountryListBean.class);
+            AirportCountryListBean airportCountryListBean = (AirportCountryListBean) JsonUtil.getInstance().json2Obj(success, AirportCountryListBean.class);
             airportCountryList = airportCountryListBean.getData();
             if (airportCountryListBean != null && airportCountryList.size() > 0) {
                 selectClassification(0);
             }
         } else if (flag == 1) {
-            com.sillykid.app.entity.homepage.boutiqueline.selectcity.SelectCityBean selectCityBean = (com.sillykid.app.entity.homepage.boutiqueline.selectcity.SelectCityBean) JsonUtil.getInstance().json2Obj(success, com.sillykid.app.entity.homepage.boutiqueline.selectcity.SelectCityBean.class);
+            SelectCityBean selectCityBean = (SelectCityBean) JsonUtil.getInstance().json2Obj(success, SelectCityBean.class);
             if (selectCityBean.getData() == null || selectCityBean.getData().size() <= 0) {
                 errorMsg(getString(R.string.noData), 1);
                 return;

@@ -15,13 +15,16 @@ import com.common.cklibrary.utils.JsonUtil;
 import com.common.cklibrary.utils.rx.MsgEvent;
 import com.common.cklibrary.utils.rx.RxBus;
 import com.kymjs.common.PreferenceHelper;
-import com.sillykid.app.R;
-import com.sillykid.app.entity.homepage.privatecustom.cityselect.CitySearchRListBean.DataBean;
-import com.sillykid.app.loginregister.LoginActivity;
+import com.yinglan.sct.R;
+import com.yinglan.sct.adapter.homepage.privatecustom.cityselect.CitySearchListViewAdapter;
+import com.yinglan.sct.entity.homepage.privatecustom.cityselect.CitySearchRListBean.DataBean;
+
+import com.yinglan.sct.entity.homepage.privatecustom.cityselect.CitySearchRListBean;
+import com.yinglan.sct.loginregister.LoginActivity;
 
 import java.util.List;
 
-import static com.sillykid.app.constant.NumericConstants.REQUEST_CODE;
+import static com.yinglan.sct.constant.NumericConstants.REQUEST_CODE;
 
 /**
  * 城市搜索---搜索结果
@@ -41,7 +44,7 @@ public class CitySearchListActivity extends BaseActivity implements CitySearchLi
     @BindView(id = R.id.gv_productAirportTransportation)
     private GridView gv_productAirportTransportation;
 
-    private com.sillykid.app.adapter.homepage.privatecustom.cityselect.CitySearchListViewAdapter mAdapter;
+    private CitySearchListViewAdapter mAdapter;
 
     /**
      * 错误提示页
@@ -69,7 +72,7 @@ public class CitySearchListActivity extends BaseActivity implements CitySearchLi
     public void initData() {
         super.initData();
         mPresenter = new CitySearchListPresenter(this);
-        mAdapter = new com.sillykid.app.adapter.homepage.privatecustom.cityselect.CitySearchListViewAdapter(this);
+        mAdapter = new CitySearchListViewAdapter(this);
         name = getIntent().getStringExtra("name");
         showLoadingDialog(getString(R.string.dataLoad));
         ((CitySearchListContract.Presenter) mPresenter).getAreaByName(name);
@@ -135,7 +138,7 @@ public class CitySearchListActivity extends BaseActivity implements CitySearchLi
 
     @Override
     public void getSuccess(String success, int flag) {
-        com.sillykid.app.entity.homepage.privatecustom.cityselect.CitySearchRListBean citySearchRListBean = (com.sillykid.app.entity.homepage.privatecustom.cityselect.CitySearchRListBean) JsonUtil.getInstance().json2Obj(success, com.sillykid.app.entity.homepage.privatecustom.cityselect.CitySearchRListBean.class);
+        CitySearchRListBean citySearchRListBean = (CitySearchRListBean) JsonUtil.getInstance().json2Obj(success, CitySearchRListBean.class);
         List<DataBean> citySearchRList = citySearchRListBean.getData();
         if (citySearchRList == null || citySearchRList.size() <= 0) {
             errorMsg(getString(R.string.noData), 0);

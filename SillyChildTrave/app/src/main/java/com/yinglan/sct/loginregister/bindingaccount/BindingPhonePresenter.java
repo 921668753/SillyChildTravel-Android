@@ -70,7 +70,7 @@ public class BindingPhonePresenter implements BindingPhoneContract.Presenter {
 
 
     @Override
-    public void postBindingPhone(String openid, String from, String phone, String code, String recommendcode) {
+    public void postBindingPhone(String openid,String face, String from, String phone, String code, String recommendcode) {
         if (StringUtils.isEmpty(phone)) {
             mView.errorMsg(KJActivityStack.create().topActivity().getString(R.string.hintPhoneText), 0);
             return;
@@ -90,6 +90,7 @@ public class BindingPhonePresenter implements BindingPhoneContract.Presenter {
         httpParams.put("open_id", openid);
         httpParams.put("type", from);
         httpParams.put("phone", phone);
+        httpParams.put("face", face);
         httpParams.put("code", code);
         httpParams.put("registration_id", JPushInterface.getRegistrationID(KJActivityStack.create().topActivity()));
         RequestClient.postBindingPhone(KJActivityStack.create().topActivity(), httpParams, new ResponseListener<String>() {

@@ -1,14 +1,15 @@
-package com.sillykid.app.adapter.homepage.privatecustom.cityselect;
+package com.yinglan.sct.adapter.homepage.privatecustom.cityselect;
 
 import android.content.Context;
 import android.view.View;
 
-import com.sillykid.app.R;
-import com.sillykid.app.entity.homepage.airporttransportation.AirportByCountryIdBean.DataBean;
-import com.sillykid.app.utils.GlideImageLoader;
+import com.yinglan.sct.R;
+import com.yinglan.sct.entity.homepage.airporttransportation.AirportByCountryIdBean.DataBean;
+import com.yinglan.sct.utils.GlideImageLoader;
 
-import cn.bingoogolapple.androidcommon.adapter.BGAAdapterViewAdapter;
-import cn.bingoogolapple.androidcommon.adapter.BGAViewHolderHelper;
+import cn.bingoogolapple.baseadapter.BGAAdapterViewAdapter;
+import cn.bingoogolapple.baseadapter.BGAViewHolderHelper;
+
 
 /**
  * 城市选择分类---GridView

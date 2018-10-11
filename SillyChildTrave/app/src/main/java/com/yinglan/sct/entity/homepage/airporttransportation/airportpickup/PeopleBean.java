@@ -1,4 +1,4 @@
-package com.sillykid.app.entity.homepage.airporttransportation.airportpickup;
+package com.yinglan.sct.entity.homepage.airporttransportation.airportpickup;
 
 import com.contrarywind.interfaces.IPickerViewData;
 

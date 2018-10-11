@@ -1,12 +1,13 @@
-package com.sillykid.app.adapter.homepage.boutiqueline;
+package com.yinglan.sct.adapter.homepage.boutiqueline;
 
 import android.content.Context;
 
-import com.sillykid.app.R;
-import com.sillykid.app.entity.homepage.boutiqueline.DueDemandBean.DataBean.ServiceBean;
+import com.yinglan.sct.R;
+import com.yinglan.sct.entity.homepage.boutiqueline.DueDemandBean.DataBean.ServiceBean;
 
-import cn.bingoogolapple.androidcommon.adapter.BGAAdapterViewAdapter;
-import cn.bingoogolapple.androidcommon.adapter.BGAViewHolderHelper;
+import cn.bingoogolapple.baseadapter.BGAAdapterViewAdapter;
+import cn.bingoogolapple.baseadapter.BGAViewHolderHelper;
+
 
 public class DueDemandViewAdapter extends BGAAdapterViewAdapter<ServiceBean> {
 

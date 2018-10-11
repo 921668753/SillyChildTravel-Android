@@ -14,16 +14,16 @@ import com.common.cklibrary.common.ViewInject;
 import com.common.cklibrary.utils.ActivityTitleUtils;
 import com.common.cklibrary.utils.JsonUtil;
 import com.common.cklibrary.utils.RefreshLayoutUtil;
-import com.sillykid.app.R;
-import com.sillykid.app.adapter.community.search.SearchPeopleViewAdapter;
-import com.sillykid.app.community.DisplayPageActivity;
-import com.sillykid.app.constant.NumericConstants;
-import com.sillykid.app.entity.community.search.SearchPeopleBean;
-import com.sillykid.app.loginregister.LoginActivity;
+import com.yinglan.sct.R;
+import com.yinglan.sct.adapter.community.search.SearchPeopleViewAdapter;
+import com.yinglan.sct.community.DisplayPageActivity;
+import com.yinglan.sct.constant.NumericConstants;
+import com.yinglan.sct.entity.community.search.SearchPeopleBean;
+import com.yinglan.sct.loginregister.LoginActivity;
 
 import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
 
-import static com.sillykid.app.constant.NumericConstants.REQUEST_CODE;
+import static com.yinglan.sct.constant.NumericConstants.REQUEST_CODE;
 
 /**
  * 找人

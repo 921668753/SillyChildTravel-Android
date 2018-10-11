@@ -52,6 +52,7 @@ public class LoginPresenter implements LoginContract.Presenter {
         }
         HttpParams httpParams = HttpUtilParams.getInstance().getHttpParams();
         httpParams.put("phone", phone);
+        httpParams.put("country_code", countryCode);
         httpParams.put("password", pwd);
         httpParams.put("registration_id", JPushInterface.getRegistrationID(KJActivityStack.create().topActivity()));
         RequestClient.postLogin(KJActivityStack.create().topActivity(), httpParams, new ResponseListener<String>() {
@@ -153,6 +154,9 @@ public class LoginPresenter implements LoginContract.Presenter {
         HttpParams httpParams = HttpUtilParams.getInstance().getHttpParams();
         httpParams.put("open_id", openid);
         httpParams.put("type", from);
+        httpParams.put("nickname", nickname);
+        httpParams.put("face", head_pic);
+        httpParams.put("sex", sex);
         httpParams.put("registration_id", JPushInterface.getRegistrationID(KJActivityStack.create().topActivity()));
         RequestClient.postThirdLogin(KJActivityStack.create().topActivity(), httpParams, new ResponseListener<String>() {
             @Override

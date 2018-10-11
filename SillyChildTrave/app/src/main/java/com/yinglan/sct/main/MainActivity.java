@@ -298,7 +298,7 @@ public class MainActivity extends BaseActivity implements MainContract.View, Mai
                 break;
             case 2:
                 img_message.setImageResource(R.mipmap.tab_message_selected);
-                tv_message.setTextColor(getResources().getColor(R.color.d0a4fcColors));
+                tv_message.setTextColor(getResources().getColor(R.color.ff9955Colors));
                 changeFragment(contentFragment2);
                 break;
             case 3:

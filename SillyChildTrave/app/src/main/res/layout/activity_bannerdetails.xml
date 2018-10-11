@@ -5,7 +5,7 @@
     style="@style/MatchMatch"
     android:background="@color/background"
     android:fitsSystemWindows="true"
-    tools:context="com.yinglan.sct.loginregister.register.RegistrationAgreementActivity">
+    tools:context="com.yinglan.sct.homepage.BannerDetailsActivity">
 
 
     <com.common.cklibrary.utils.myview.WebViewLayout

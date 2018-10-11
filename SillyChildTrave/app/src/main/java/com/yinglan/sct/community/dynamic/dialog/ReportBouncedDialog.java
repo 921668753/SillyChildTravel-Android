@@ -11,8 +11,8 @@ import android.widget.TextView;
 
 import com.common.cklibrary.common.BaseDialog;
 import com.common.cklibrary.common.ViewInject;
-import com.sillykid.app.R;
-import com.sillykid.app.loginregister.LoginActivity;
+import com.yinglan.sct.R;
+import com.yinglan.sct.loginregister.LoginActivity;
 
 /**
  * 举报弹框

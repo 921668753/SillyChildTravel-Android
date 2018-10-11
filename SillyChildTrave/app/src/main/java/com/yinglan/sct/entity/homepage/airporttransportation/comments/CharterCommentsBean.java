@@ -1,4 +1,4 @@
-package com.sillykid.app.entity.homepage.airporttransportation.comments;
+package com.yinglan.sct.entity.homepage.airporttransportation.comments;
 
 import com.common.cklibrary.entity.BaseResult;
 import com.google.gson.annotations.SerializedName;

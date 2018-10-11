@@ -9,12 +9,12 @@ import com.common.cklibrary.common.BindView;
 import com.common.cklibrary.common.ViewInject;
 import com.common.cklibrary.utils.JsonUtil;
 import com.kymjs.common.Log;
-import com.sillykid.app.R;
-import com.sillykid.app.adapter.community.videolist.VideoListViewAdapter;
-import com.sillykid.app.entity.main.community.CommunityBean;
-import com.sillykid.app.loginregister.LoginActivity;
-import com.sillykid.app.utils.layoutmanager.MyLayoutManager;
-import com.sillykid.app.utils.layoutmanager.OnViewPagerListener;
+import com.yinglan.sct.R;
+import com.yinglan.sct.adapter.community.videolist.VideoListViewAdapter;
+import com.yinglan.sct.entity.main.community.CommunityBean;
+import com.yinglan.sct.loginregister.LoginActivity;
+import com.yinglan.sct.utils.layoutmanager.MyLayoutManager;
+import com.yinglan.sct.utils.layoutmanager.OnViewPagerListener;
 
 import cn.jzvd.Jzvd;
 import cn.jzvd.JzvdStd;

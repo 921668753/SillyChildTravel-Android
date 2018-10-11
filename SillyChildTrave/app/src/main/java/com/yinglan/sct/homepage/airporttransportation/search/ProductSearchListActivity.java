@@ -11,14 +11,14 @@ import android.widget.TextView;
 import com.common.cklibrary.common.BaseActivity;
 import com.common.cklibrary.common.BindView;
 import com.common.cklibrary.utils.JsonUtil;
-import com.sillykid.app.R;
-import com.sillykid.app.entity.homepage.airporttransportation.SelectProductAirportTransportationBean;
-import com.sillykid.app.homepage.airporttransportation.PriceInformationActivity;
-import com.sillykid.app.loginregister.LoginActivity;
+import com.yinglan.sct.R;
+import com.yinglan.sct.entity.homepage.airporttransportation.SelectProductAirportTransportationBean;
+import com.yinglan.sct.homepage.airporttransportation.PriceInformationActivity;
+import com.yinglan.sct.loginregister.LoginActivity;
 
 import java.util.List;
 
-import static com.sillykid.app.constant.NumericConstants.REQUEST_CODE;
+import static com.yinglan.sct.constant.NumericConstants.REQUEST_CODE;
 
 /**
  * 产品搜索---搜索结果
@@ -38,7 +38,7 @@ public class ProductSearchListActivity extends BaseActivity implements ProductSe
     @BindView(id = R.id.gv_productAirportTransportation)
     private GridView gv_productAirportTransportation;
 
-    private com.sillykid.app.adapter.homepage.airporttransportation.SelectProductAirportTransportationViewAdapter mAdapter;
+    private com.yinglan.sct.adapter.homepage.airporttransportation.SelectProductAirportTransportationViewAdapter mAdapter;
 
     /**
      * 错误提示页
@@ -67,7 +67,7 @@ public class ProductSearchListActivity extends BaseActivity implements ProductSe
     public void initData() {
         super.initData();
         mPresenter = new ProductSearchListPresenter(this);
-        mAdapter = new com.sillykid.app.adapter.homepage.airporttransportation.SelectProductAirportTransportationViewAdapter(this);
+        mAdapter = new com.yinglan.sct.adapter.homepage.airporttransportation.SelectProductAirportTransportationViewAdapter(this);
         name = getIntent().getStringExtra("name");
         type = getIntent().getIntExtra("type", 0);
         showLoadingDialog(getString(R.string.dataLoad));
@@ -133,7 +133,7 @@ public class ProductSearchListActivity extends BaseActivity implements ProductSe
 
     @Override
     public void getSuccess(String success, int flag) {
-        com.sillykid.app.entity.homepage.airporttransportation.SelectProductAirportTransportationBean selectProductAirportTransportationBean = (com.sillykid.app.entity.homepage.airporttransportation.SelectProductAirportTransportationBean) JsonUtil.getInstance().json2Obj(success, com.sillykid.app.entity.homepage.airporttransportation.SelectProductAirportTransportationBean.class);
+        com.yinglan.sct.entity.homepage.airporttransportation.SelectProductAirportTransportationBean selectProductAirportTransportationBean = (com.yinglan.sct.entity.homepage.airporttransportation.SelectProductAirportTransportationBean) JsonUtil.getInstance().json2Obj(success, com.yinglan.sct.entity.homepage.airporttransportation.SelectProductAirportTransportationBean.class);
         List<SelectProductAirportTransportationBean.DataBean> selectProductAirportTransportationList = selectProductAirportTransportationBean.getData();
         if (selectProductAirportTransportationList == null || selectProductAirportTransportationList.size() <= 0) {
             errorMsg(getString(R.string.noProduct), 0);

@@ -1,4 +1,4 @@
-package com.sillykid.app.adapter.homepage.boutiqueline;
+package com.yinglan.sct.adapter.homepage.boutiqueline;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -6,12 +6,13 @@ import android.view.View;
 import com.klavor.widget.RatingBar;
 import com.kymjs.common.Log;
 import com.kymjs.common.StringUtils;
-import com.sillykid.app.R;
-import com.sillykid.app.entity.homepage.boutiqueline.fragment.BoutiqueLineBean.DataBean.ResultBean;
-import com.sillykid.app.utils.GlideImageLoader;
+import com.yinglan.sct.R;
+import com.yinglan.sct.entity.homepage.boutiqueline.fragment.BoutiqueLineBean.DataBean.ResultBean;
+import com.yinglan.sct.utils.GlideImageLoader;
 
-import cn.bingoogolapple.androidcommon.adapter.BGARecyclerViewAdapter;
-import cn.bingoogolapple.androidcommon.adapter.BGAViewHolderHelper;
+import cn.bingoogolapple.baseadapter.BGARecyclerViewAdapter;
+import cn.bingoogolapple.baseadapter.BGAViewHolderHelper;
+
 
 /**
  * 包车定制---精品路线 适配器

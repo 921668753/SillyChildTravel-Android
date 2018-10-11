@@ -1,4 +1,4 @@
-package com.sillykid.app.adapter.homepage.airporttransportation.comments;
+package com.yinglan.sct.adapter.homepage.airporttransportation.comments;
 
 import android.content.Context;
 import android.content.Intent;
@@ -6,22 +6,21 @@ import android.util.SparseArray;
 import android.view.View;
 import android.widget.AdapterView;
 
-import com.common.cklibrary.common.ImagePreviewNoDelActivity;
+import com.common.cklibrary.utils.DataUtil;
 import com.common.cklibrary.utils.myview.NoScrollGridView;
 import com.kymjs.common.Log;
 import com.kymjs.common.StringUtils;
-import com.lzy.imagepicker.ImagePicker;
-import com.lzy.imagepicker.bean.ImageItem;
-import com.sillykid.app.R;
-import com.sillykid.app.entity.homepage.airporttransportation.comments.CharterCommentsBean.DataBean.ResultBean;
-import com.sillykid.app.utils.DataUtil;
-import com.sillykid.app.utils.GlideImageLoader;
+import com.luck.picture.lib.entity.LocalMedia;
+import com.yinglan.sct.R;
+import com.yinglan.sct.entity.homepage.airporttransportation.comments.CharterCommentsBean.DataBean.ResultBean;
+import com.yinglan.sct.utils.GlideImageLoader;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.bingoogolapple.androidcommon.adapter.BGAAdapterViewAdapter;
-import cn.bingoogolapple.androidcommon.adapter.BGAViewHolderHelper;
+import cn.bingoogolapple.baseadapter.BGAAdapterViewAdapter;
+import cn.bingoogolapple.baseadapter.BGAViewHolderHelper;
+
 
 /**
  * 产品信息---评论
@@ -30,7 +29,7 @@ public class CharterCommentsViewAdapter extends BGAAdapterViewAdapter<ResultBean
 
     //用于退出 Activity,避免 Countdown，造成资源浪费。
     private SparseArray<CharterCommentsGridViewAdapter> commentsCounters;
-    private SparseArray<List<ImageItem>> selImageListCounters;
+    private SparseArray<List<LocalMedia>> selImageListCounters;
 
 
     public CharterCommentsViewAdapter(Context context) {
@@ -72,7 +71,7 @@ public class CharterCommentsViewAdapter extends BGAAdapterViewAdapter<ResultBean
         /**
          * 图片
          */
-        List<ImageItem> selImageList = null;
+        List<LocalMedia> selImageList = null;
         NoScrollGridView gv_imgComments = (NoScrollGridView) helper.getView(R.id.gv_imgComments);
         if (selImageListCounters.get(gv_imgComments.hashCode()) != null) {
             selImageListCounters.get(gv_imgComments.hashCode()).clear();
@@ -94,12 +93,12 @@ public class CharterCommentsViewAdapter extends BGAAdapterViewAdapter<ResultBean
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                     //打开预览
                     //  onStatusListener.onSetStatusListener(adapterView, view, finalCommentsGridViewAdapter, position, i);
-                    Intent intentPreview = new Intent(mContext, ImagePreviewNoDelActivity.class);
-                    intentPreview.putExtra(ImagePicker.EXTRA_IMAGE_ITEMS, (ArrayList<ImageItem>) finalCommentsGridViewAdapter.getData());
-                    intentPreview.putExtra(ImagePicker.EXTRA_SELECTED_IMAGE_POSITION, i);
-                    intentPreview.putExtra(ImagePicker.EXTRA_FROM_ITEMS, true);
+//                    Intent intentPreview = new Intent(mContext, ImagePreviewDelActivity.class);
+//                    intentPreview.putExtra(ImagePicker.EXTRA_IMAGE_ITEMS, (ArrayList<LocalMedia>) finalCommentsGridViewAdapter.getData());
+//                    intentPreview.putExtra(ImagePicker.EXTRA_SELECTED_IMAGE_POSITION, i);
+//                    intentPreview.putExtra(ImagePicker.EXTRA_FROM_ITEMS, true);
 //                    // startActivityForResult(intentPreview, NumericConstants.REQUEST_CODE_PREVIEW);
-                    mContext.startActivity(intentPreview);
+                //    mContext.startActivity(intentPreview);
                 }
             });
         }
@@ -108,9 +107,9 @@ public class CharterCommentsViewAdapter extends BGAAdapterViewAdapter<ResultBean
             helper.setVisibility(R.id.gv_imgComments, View.VISIBLE);
             selImageList.clear();
             for (int i = 0; i < model.getPicture().size(); i++) {
-                ImageItem imageItem = new ImageItem();
-                imageItem.path = model.getPicture().get(i);
-                selImageList.add(imageItem);
+//                ImageItem imageItem = new ImageItem();
+//                imageItem.path = model.getPicture().get(i);
+//                selImageList.add(imageItem);
             }
             commentsGridViewAdapter.clear();
             commentsGridViewAdapter.addNewData(selImageList);
@@ -118,16 +117,16 @@ public class CharterCommentsViewAdapter extends BGAAdapterViewAdapter<ResultBean
             helper.setVisibility(R.id.gv_imgComments, View.GONE);
         }
 
-        helper.setText(R.id.tv_time, DataUtil.formatData(StringUtils.toLong(model.getCreate_time()), "yyyy.MM.dd"));
-        helper.setText(R.id.tv_zanNum, model.getLike_number() + "");
-        if (model.isIs_like()) {
-            helper.setImageResource(R.id.img_giveLike, R.mipmap.dynamic_zan1);
-            helper.setTextColorRes(R.id.tv_zanNum, R.color.greenColors);
-        } else {
-            helper.setImageResource(R.id.img_giveLike, R.mipmap.dynamic_zan);
-            //       tv_zanNum.setText(getString(R.string.giveLike));
-            helper.setTextColorRes(R.id.tv_zanNum, R.color.tabColors);
-        }
+//        helper.setText(R.id.tv_time, DataUtil.formatData(StringUtils.toLong(model.getCreate_time()), "yyyy.MM.dd"));
+//        helper.setText(R.id.tv_zanNum, model.getLike_number() + "");
+//        if (model.isIs_like()) {
+//            helper.setImageResource(R.id.img_giveLike, R.mipmap.dynamic_zan1);
+//            helper.setTextColorRes(R.id.tv_zanNum, R.color.greenColors);
+//        } else {
+//            helper.setImageResource(R.id.img_giveLike, R.mipmap.dynamic_zan);
+//            //       tv_zanNum.setText(getString(R.string.giveLike));
+//            helper.setTextColorRes(R.id.tv_zanNum, R.color.tabColors);
+//        }
     }
 
 
@@ -149,7 +148,7 @@ public class CharterCommentsViewAdapter extends BGAAdapterViewAdapter<ResultBean
         if (selImageListCounters != null) {
             Log.e("TAG", "size :  " + selImageListCounters.size());
             for (int i = 0, length = selImageListCounters.size(); i < length; i++) {
-                List<ImageItem> selImageList = selImageListCounters.get(selImageListCounters.keyAt(i));
+                List<LocalMedia> selImageList = selImageListCounters.get(selImageListCounters.keyAt(i));
                 if (selImageList != null) {
                     selImageList.clear();
                     selImageList = null;
