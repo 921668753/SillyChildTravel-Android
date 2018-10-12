@@ -336,7 +336,7 @@ public class URLConstants {
     /**
      * 获取个人信息
      */
-    public static String MEMBERINFO = APIURL + "member/get.do";
+    public static String MEMBERINFO = APIURL + "member/info.do";
 
     /**
      * 根据父id获取地址列表
