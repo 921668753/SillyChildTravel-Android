@@ -4,456 +4,401 @@
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
-    <!--<cn.bingoogolapple.refreshlayout.BGARefreshLayout-->
-        <!--android:id="@+id/mRefreshLayout"-->
-        <!--style="@style/MatchMatch"-->
-        <!--android:background="@color/background">-->
-
-        <!--<com.common.cklibrary.utils.myview.ObservableScrollView-->
-            <!--android:id="@+id/sv_mine"-->
-            <!--style="@style/MatchMatch"-->
-            <!--android:scrollbars="none">-->
-
-            <!--<LinearLayout-->
-                <!--style="@style/MatchMatch"-->
-                <!--android:orientation="vertical">-->
-
-                <!--<RelativeLayout-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="@dimen/dimen245"-->
-                    <!--android:background="@mipmap/mine_background">-->
-
-                    <!--<TextView-->
-                        <!--android:id="@+id/tv_editData"-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="@dimen/dimen44"-->
-                        <!--android:layout_alignParentRight="true"-->
-                        <!--android:gravity="center_vertical|right"-->
-                        <!--android:paddingRight="@dimen/dimen15"-->
-                        <!--android:text="@string/editData"-->
-                        <!--android:textColor="@color/whiteColors"-->
-                        <!--android:textSize="@dimen/textsize13"-->
-                        <!--android:visibility="gone" />-->
-
-                    <!--<TextView-->
-                        <!--android:id="@+id/tv_minetouxiang"-->
-                        <!--android:layout_width="@dimen/dimen71"-->
-                        <!--android:layout_height="@dimen/dimen71"-->
-                        <!--android:layout_centerHorizontal="true"-->
-                        <!--android:layout_marginTop="@dimen/dimen29"-->
-                        <!--android:background="@drawable/shape_mine_dot"-->
-                        <!--android:visibility="gone" />-->
-
-                    <!--<ImageView-->
-                        <!--android:id="@+id/iv_minetouxiang"-->
-                        <!--android:layout_width="@dimen/dimen69"-->
-                        <!--android:layout_height="@dimen/dimen69"-->
-                        <!--android:layout_centerHorizontal="true"-->
-                        <!--android:layout_marginTop="@dimen/dimen30"-->
-                        <!--android:src="@mipmap/avatar"-->
-                        <!--android:visibility="gone" />-->
-
-                    <!--<TextView-->
-                        <!--android:id="@+id/tv_nickname"-->
-                        <!--style="@style/WrapWrap"-->
-                        <!--android:layout_below="@id/iv_minetouxiang"-->
-                        <!--android:layout_centerHorizontal="true"-->
-                        <!--android:layout_marginTop="@dimen/dimen9"-->
-                        <!--android:text="@string/loginOrRegister"-->
-                        <!--android:textColor="@color/whiteColors"-->
-                        <!--android:textSize="@dimen/textsize15"-->
-                        <!--android:visibility="gone" />-->
-
-                    <!--<TextView-->
-                        <!--android:id="@+id/tv_serialNumber"-->
-                        <!--style="@style/WrapWrap"-->
-                        <!--android:layout_below="@id/tv_nickname"-->
-                        <!--android:layout_centerHorizontal="true"-->
-                        <!--android:layout_marginTop="@dimen/dimen7"-->
-                        <!--android:text="SHZ0427"-->
-                        <!--android:textColor="@color/whiteColors"-->
-                        <!--android:textSize="@dimen/textsize10"-->
-                        <!--android:visibility="gone" />-->
-
-                    <!--<TextView-->
-                        <!--android:id="@+id/tv_synopsis"-->
-                        <!--style="@style/MatchWrap"-->
-                        <!--android:layout_below="@id/tv_serialNumber"-->
-                        <!--android:layout_centerHorizontal="true"-->
-                        <!--android:layout_marginTop="@dimen/dimen25"-->
-                        <!--android:gravity="center"-->
-                        <!--android:paddingLeft="@dimen/dimen24"-->
-                        <!--android:paddingRight="@dimen/dimen24"-->
-                        <!--android:singleLine="true"-->
-                        <!--android:text="简介:某年某月某日，下午某时，天气晴，我在某地，想念你。 "-->
-                        <!--android:textColor="@color/whiteColors"-->
-                        <!--android:textSize="@dimen/textsize11"-->
-                        <!--android:visibility="gone" />-->
-
-                    <!--<LinearLayout-->
-                        <!--style="@style/MatchWrap"-->
-                        <!--android:layout_alignParentBottom="true"-->
-                        <!--android:layout_marginBottom="@dimen/dimen13"-->
-                        <!--android:layout_marginLeft="@dimen/dimen50"-->
-                        <!--android:layout_marginRight="@dimen/dimen50"-->
-                        <!--android:gravity="center"-->
-                        <!--android:orientation="horizontal">-->
-
-                        <!--<LinearLayout-->
-                            <!--android:id="@+id/ll_follow"-->
-                            <!--style="@style/AutoWrap"-->
-                            <!--android:gravity="center"-->
-                            <!--android:orientation="vertical">-->
-
-                            <!--<TextView-->
-                                <!--android:id="@+id/tv_follow"-->
-                                <!--style="@style/WrapWrap"-->
-                                <!--android:text="0"-->
-                                <!--android:textColor="@color/whiteColors"-->
-                                <!--android:textSize="@dimen/textsize14" />-->
-
-                            <!--<TextView-->
-                                <!--style="@style/WrapWrap"-->
-                                <!--android:text="@string/follow"-->
-                                <!--android:textColor="@color/whiteColors"-->
-                                <!--android:textSize="@dimen/textsize12" />-->
-
-                        <!--</LinearLayout>-->
-
-                        <!--<TextView-->
-                            <!--android:layout_width="@dimen/dimen1"-->
-                            <!--android:layout_height="@dimen/dimen16"-->
-                            <!--android:background="@color/whiteColors" />-->
-
-                        <!--<LinearLayout-->
-                            <!--android:id="@+id/ll_fans"-->
-                            <!--style="@style/AutoWrap"-->
-                            <!--android:gravity="center"-->
-                            <!--android:orientation="vertical">-->
-
-                            <!--<TextView-->
-                                <!--android:id="@+id/tv_fans"-->
-                                <!--style="@style/WrapWrap"-->
-                                <!--android:text="0"-->
-                                <!--android:textColor="@color/whiteColors"-->
-                                <!--android:textSize="@dimen/textsize14" />-->
-
-                            <!--<TextView-->
-                                <!--style="@style/WrapWrap"-->
-                                <!--android:text="@string/fans"-->
-                                <!--android:textColor="@color/whiteColors"-->
-                                <!--android:textSize="@dimen/textsize12" />-->
-
-                        <!--</LinearLayout>-->
-
-                        <!--<TextView-->
-                            <!--android:layout_width="@dimen/dimen1"-->
-                            <!--android:layout_height="@dimen/dimen16"-->
-                            <!--android:background="@color/whiteColors" />-->
-
-
-                        <!--<LinearLayout-->
-                            <!--style="@style/AutoWrap"-->
-                            <!--android:gravity="center"-->
-                            <!--android:orientation="vertical">-->
-
-                            <!--<TextView-->
-                                <!--android:id="@+id/tv_beCollected"-->
-                                <!--style="@style/WrapWrap"-->
-                                <!--android:text="0"-->
-                                <!--android:textColor="@color/whiteColors"-->
-                                <!--android:textSize="@dimen/textsize14" />-->
-
-                            <!--<TextView-->
-                                <!--style="@style/WrapWrap"-->
-                                <!--android:text="@string/beCollected"-->
-                                <!--android:textColor="@color/whiteColors"-->
-                                <!--android:textSize="@dimen/textsize12" />-->
-
-                        <!--</LinearLayout>-->
-
-                        <!--<TextView-->
-                            <!--android:layout_width="@dimen/dimen1"-->
-                            <!--android:layout_height="@dimen/dimen16"-->
-                            <!--android:background="@color/whiteColors" />-->
-
-                        <!--<LinearLayout-->
-                            <!--style="@style/AutoWrap"-->
-                            <!--android:gravity="center"-->
-                            <!--android:orientation="vertical">-->
-
-                            <!--<TextView-->
-                                <!--android:id="@+id/tv_giveLike"-->
-                                <!--style="@style/WrapWrap"-->
-                                <!--android:text="0"-->
-                                <!--android:textColor="@color/whiteColors"-->
-                                <!--android:textSize="@dimen/textsize14" />-->
-
-                            <!--<TextView-->
-                                <!--style="@style/WrapWrap"-->
-                                <!--android:text="@string/giveLike"-->
-                                <!--android:textColor="@color/whiteColors"-->
-                                <!--android:textSize="@dimen/textsize12" />-->
-
-                        <!--</LinearLayout>-->
-
-                    <!--</LinearLayout>-->
-
-
-                    <!--<LinearLayout-->
-                        <!--android:id="@+id/ll_notLogin"-->
-                        <!--style="@style/WrapWrap"-->
-                        <!--android:layout_centerHorizontal="true"-->
-                        <!--android:layout_centerVertical="true"-->
-                        <!--android:gravity="center"-->
-                        <!--android:orientation="vertical"-->
-                        <!--android:visibility="visible">-->
-
-                        <!--<TextView-->
-                            <!--style="@style/WrapWrap"-->
-                            <!--android:text="@string/notLogin"-->
-                            <!--android:textColor="@color/whiteColors"-->
-                            <!--android:textSize="@dimen/textsize14"-->
-                            <!--android:visibility="visible" />-->
-
-                        <!--<TextView-->
-                            <!--android:layout_width="@dimen/dimen130"-->
-                            <!--android:layout_height="@dimen/dimen40"-->
-                            <!--android:layout_marginTop="@dimen/dimen10"-->
-                            <!--android:background="@drawable/shape_login1"-->
-                            <!--android:gravity="center"-->
-                            <!--android:text="@string/loginImmediately"-->
-                            <!--android:textColor="@color/whiteColors"-->
-                            <!--android:textSize="@dimen/textsize16" />-->
-
-                    <!--</LinearLayout>-->
-
-
-                <!--</RelativeLayout>-->
-
-
-                <!--&lt;!&ndash;我的钱包&ndash;&gt;-->
-                <!--<LinearLayout-->
-                    <!--android:id="@+id/ll_minewallet"-->
-                    <!--style="@style/Match45"-->
-                    <!--android:layout_marginTop="@dimen/dimen16"-->
-                    <!--android:background="@color/whiteColors"-->
-                    <!--android:gravity="center_vertical"-->
-                    <!--android:orientation="horizontal"-->
-                    <!--android:paddingLeft="@dimen/dimen22"-->
-                    <!--android:paddingRight="@dimen/dimen22">-->
-
-                    <!--<ImageView-->
-                        <!--style="@style/Image20"-->
-                        <!--android:src="@mipmap/minewalletxxx" />-->
-
-                    <!--<TextView-->
-                        <!--style="@style/AutoWrap"-->
-                        <!--android:layout_marginLeft="@dimen/dimen12"-->
-                        <!--android:text="@string/myWallet"-->
-                        <!--android:textColor="@color/textColor"-->
-                        <!--android:textSize="@dimen/textsize13" />-->
-
-                    <!--<ImageView-->
-                        <!--style="@style/Image610"-->
-                        <!--android:src="@mipmap/arrow1" />-->
-
-                <!--</LinearLayout>-->
-
-                <!--&lt;!&ndash;我的购物车&ndash;&gt;-->
-                <!--<LinearLayout-->
-                    <!--android:id="@+id/ll_mineshopping"-->
-                    <!--style="@style/Match45"-->
-                    <!--android:layout_marginTop="@dimen/dimen16"-->
-                    <!--android:background="@color/whiteColors"-->
-                    <!--android:gravity="center_vertical"-->
-                    <!--android:paddingLeft="@dimen/dimen22"-->
-                    <!--android:paddingRight="@dimen/dimen22">-->
-
-                    <!--<ImageView-->
-                        <!--style="@style/Image20"-->
-                        <!--android:src="@mipmap/mineshoppingxxx" />-->
-
-                    <!--<TextView-->
-                        <!--style="@style/AutoWrap"-->
-                        <!--android:layout_marginLeft="@dimen/dimen12"-->
-                        <!--android:text="@string/shoppingCart"-->
-                        <!--android:textColor="@color/textColor"-->
-                        <!--android:textSize="@dimen/textsize13" />-->
-
-                    <!--<ImageView-->
-                        <!--style="@style/Image610"-->
-                        <!--android:src="@mipmap/arrow1" />-->
-
-                <!--</LinearLayout>-->
-
-                <!--&lt;!&ndash;我的订单&ndash;&gt;-->
-                <!--<LinearLayout-->
-                    <!--android:id="@+id/ll_mineorder"-->
-                    <!--style="@style/Match45"-->
-                    <!--android:layout_marginTop="@dimen/dimen1"-->
-                    <!--android:background="@color/whiteColors"-->
-                    <!--android:gravity="center_vertical"-->
-                    <!--android:paddingLeft="@dimen/dimen24"-->
-                    <!--android:paddingRight="@dimen/dimen24">-->
-
-                    <!--<ImageView-->
-                        <!--style="@style/Image20"-->
-                        <!--android:src="@mipmap/mineorderxxx" />-->
-
-                    <!--<TextView-->
-                        <!--style="@style/AutoWrap"-->
-                        <!--android:layout_marginLeft="@dimen/dimen12"-->
-                        <!--android:text="@string/myOrder"-->
-                        <!--android:textColor="@color/textColor"-->
-                        <!--android:textSize="@dimen/textsize13" />-->
-
-                    <!--<ImageView-->
-                        <!--style="@style/Image610"-->
-                        <!--android:src="@mipmap/arrow1" />-->
-
-                <!--</LinearLayout>-->
-
-                <!--&lt;!&ndash;我的购物车&ndash;&gt;-->
-                <!--<LinearLayout-->
-                    <!--android:id="@+id/ll_myRelease"-->
-                    <!--style="@style/Match45"-->
-                    <!--android:layout_marginTop="@dimen/dimen16"-->
-                    <!--android:background="@color/whiteColors"-->
-                    <!--android:gravity="center_vertical"-->
-                    <!--android:paddingLeft="@dimen/dimen22"-->
-                    <!--android:paddingRight="@dimen/dimen22">-->
-
-                    <!--<ImageView-->
-                        <!--style="@style/Image20"-->
-                        <!--android:src="@mipmap/minemyreleasexxx" />-->
-
-                    <!--<TextView-->
-                        <!--style="@style/AutoWrap"-->
-                        <!--android:layout_marginLeft="@dimen/dimen12"-->
-                        <!--android:text="@string/myRelease"-->
-                        <!--android:textColor="@color/textColor"-->
-                        <!--android:textSize="@dimen/textsize13" />-->
-
-
-                    <!--<ImageView-->
-                        <!--style="@style/Image610"-->
-                        <!--android:src="@mipmap/arrow1" />-->
-
-                <!--</LinearLayout>-->
-                <!--&lt;!&ndash;我的收藏&ndash;&gt;-->
-                <!--<LinearLayout-->
-                    <!--android:id="@+id/ll_minecollection"-->
-                    <!--style="@style/Match45"-->
-                    <!--android:layout_marginTop="@dimen/dimen1"-->
-                    <!--android:background="@color/whiteColors"-->
-                    <!--android:gravity="center_vertical"-->
-                    <!--android:paddingLeft="@dimen/dimen22"-->
-                    <!--android:paddingRight="@dimen/dimen22">-->
-
-                    <!--<ImageView-->
-                        <!--style="@style/Image20"-->
-                        <!--android:src="@mipmap/minecollectionxxx" />-->
-
-                    <!--<TextView-->
-                        <!--style="@style/AutoWrap"-->
-                        <!--android:layout_marginLeft="@dimen/dimen12"-->
-                        <!--android:text="@string/myCollection"-->
-                        <!--android:textColor="@color/textColor"-->
-                        <!--android:textSize="@dimen/textsize13" />-->
-
-
-                    <!--<ImageView-->
-                        <!--style="@style/Image610"-->
-                        <!--android:src="@mipmap/arrow1" />-->
-                <!--</LinearLayout>-->
-
-
-                <!--&lt;!&ndash;分享有礼&ndash;&gt;-->
-                <!--<LinearLayout-->
-                    <!--android:id="@+id/ll_mineshare"-->
-                    <!--style="@style/Match45"-->
-                    <!--android:layout_marginTop="@dimen/dimen1"-->
-                    <!--android:background="@color/whiteColors"-->
-                    <!--android:gravity="center_vertical"-->
-                    <!--android:orientation="horizontal"-->
-                    <!--android:paddingLeft="@dimen/dimen22"-->
-                    <!--android:paddingRight="@dimen/dimen22">-->
-
-                    <!--<ImageView-->
-                        <!--style="@style/Image20"-->
-                        <!--android:src="@mipmap/minesharexxx" />-->
-
-                    <!--<TextView-->
-                        <!--style="@style/AutoWrap"-->
-                        <!--android:layout_marginLeft="@dimen/dimen12"-->
-                        <!--android:text="@string/sharingCeremony"-->
-                        <!--android:textColor="@color/textColor"-->
-                        <!--android:textSize="@dimen/textsize13" />-->
-
-
-                    <!--<ImageView-->
-                        <!--style="@style/Image610"-->
-                        <!--android:src="@mipmap/arrow1" />-->
-                <!--</LinearLayout>-->
-
-
-                <!--&lt;!&ndash;收货地址&ndash;&gt;-->
-                <!--<LinearLayout-->
-                    <!--android:id="@+id/ll_mineaddress"-->
-                    <!--style="@style/Match45"-->
-                    <!--android:layout_marginTop="@dimen/dimen1"-->
-                    <!--android:background="@color/whiteColors"-->
-                    <!--android:gravity="center_vertical"-->
-                    <!--android:paddingLeft="@dimen/dimen22"-->
-                    <!--android:paddingRight="@dimen/dimen22">-->
-
-                    <!--<ImageView-->
-                        <!--style="@style/Image20"-->
-                        <!--android:src="@mipmap/mineaddressxxx" />-->
-
-                    <!--<TextView-->
-                        <!--style="@style/AutoWrap"-->
-                        <!--android:layout_marginLeft="@dimen/dimen12"-->
-                        <!--android:text="@string/deliveryAddress"-->
-                        <!--android:textColor="@color/textColor"-->
-                        <!--android:textSize="@dimen/textsize13" />-->
-
-
-                    <!--<ImageView-->
-                        <!--style="@style/Image610"-->
-                        <!--android:src="@mipmap/arrow1" />-->
-
-                <!--</LinearLayout>-->
-
-
-                <!--&lt;!&ndash;设置&ndash;&gt;-->
-                <!--<LinearLayout-->
-                    <!--android:id="@+id/ll_minesetup"-->
-                    <!--style="@style/Match45"-->
-                    <!--android:layout_marginTop="@dimen/dimen15"-->
-                    <!--android:background="@color/whiteColors"-->
-                    <!--android:gravity="center_vertical"-->
-                    <!--android:paddingLeft="@dimen/dimen22"-->
-                    <!--android:paddingRight="@dimen/dimen22">-->
-
-                    <!--<ImageView-->
-                        <!--style="@style/Image20"-->
-                        <!--android:src="@mipmap/minesetxxx" />-->
-
-                    <!--<TextView-->
-                        <!--style="@style/AutoWrap"-->
-                        <!--android:layout_marginLeft="@dimen/dimen12"-->
-                        <!--android:text="@string/setUp"-->
-                        <!--android:textColor="@color/textColor"-->
-                        <!--android:textSize="@dimen/textsize13" />-->
-
-
-                    <!--<ImageView-->
-                        <!--style="@style/Image610"-->
-                        <!--android:src="@mipmap/arrow1" />-->
-
-                <!--</LinearLayout>-->
+    <cn.bingoogolapple.refreshlayout.BGARefreshLayout
+        android:id="@+id/mRefreshLayout"
+        style="@style/MatchMatch"
+        android:background="@color/background">
+
+        <com.common.cklibrary.utils.myview.ObservableScrollView
+            android:id="@+id/sv_mine"
+            style="@style/MatchMatch"
+            android:scrollbars="none">
+
+            <LinearLayout
+                style="@style/MatchMatch"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen245"
+                    android:background="@mipmap/mine_background">
+
+                    <TextView
+                        android:id="@+id/tv_editData"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dimen44"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical|right"
+                        android:paddingRight="@dimen/dimen15"
+                        android:text="@string/editData"
+                        android:textColor="@color/whiteColors"
+                        android:textSize="@dimen/textsize13"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tv_minetouxiang"
+                        android:layout_width="@dimen/dimen71"
+                        android:layout_height="@dimen/dimen71"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/dimen29"
+                        android:background="@drawable/shape_mine_dot"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/iv_minetouxiang"
+                        android:layout_width="@dimen/dimen69"
+                        android:layout_height="@dimen/dimen69"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/dimen30"
+                        android:src="@mipmap/avatar"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tv_nickname"
+                        style="@style/WrapWrap"
+                        android:layout_below="@id/iv_minetouxiang"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/dimen9"
+                        android:text="@string/loginOrRegister"
+                        android:textColor="@color/whiteColors"
+                        android:textSize="@dimen/textsize15"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tv_serialNumber"
+                        style="@style/WrapWrap"
+                        android:layout_below="@id/tv_nickname"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/dimen7"
+                        android:text="SHZ0427"
+                        android:textColor="@color/whiteColors"
+                        android:textSize="@dimen/textsize10"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tv_synopsis"
+                        style="@style/MatchWrap"
+                        android:layout_below="@id/tv_serialNumber"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/dimen25"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/dimen24"
+                        android:paddingRight="@dimen/dimen24"
+                        android:singleLine="true"
+                        android:text="简介:某年某月某日，下午某时，天气晴，我在某地，想念你。 "
+                        android:textColor="@color/whiteColors"
+                        android:textSize="@dimen/textsize11"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        style="@style/MatchWrap"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="@dimen/dimen13"
+                        android:layout_marginLeft="@dimen/dimen50"
+                        android:layout_marginRight="@dimen/dimen50"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/ll_follow"
+                            style="@style/AutoWrap"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_follow"
+                                style="@style/WrapWrap"
+                                android:text="0"
+                                android:textColor="@color/whiteColors"
+                                android:textSize="@dimen/textsize14" />
+
+                            <TextView
+                                style="@style/WrapWrap"
+                                android:text="@string/follow"
+                                android:textColor="@color/whiteColors"
+                                android:textSize="@dimen/textsize12" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="@dimen/dimen1"
+                            android:layout_height="@dimen/dimen16"
+                            android:background="@color/whiteColors" />
+
+                        <LinearLayout
+                            android:id="@+id/ll_fans"
+                            style="@style/AutoWrap"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_fans"
+                                style="@style/WrapWrap"
+                                android:text="0"
+                                android:textColor="@color/whiteColors"
+                                android:textSize="@dimen/textsize14" />
+
+                            <TextView
+                                style="@style/WrapWrap"
+                                android:text="@string/fans"
+                                android:textColor="@color/whiteColors"
+                                android:textSize="@dimen/textsize12" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="@dimen/dimen1"
+                            android:layout_height="@dimen/dimen16"
+                            android:background="@color/whiteColors" />
+
+
+                        <LinearLayout
+                            style="@style/AutoWrap"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_beCollected"
+                                style="@style/WrapWrap"
+                                android:text="0"
+                                android:textColor="@color/whiteColors"
+                                android:textSize="@dimen/textsize14" />
+
+                            <TextView
+                                style="@style/WrapWrap"
+                                android:text="@string/beCollected"
+                                android:textColor="@color/whiteColors"
+                                android:textSize="@dimen/textsize12" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="@dimen/dimen1"
+                            android:layout_height="@dimen/dimen16"
+                            android:background="@color/whiteColors" />
+
+                        <LinearLayout
+                            style="@style/AutoWrap"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_giveLike"
+                                style="@style/WrapWrap"
+                                android:text="0"
+                                android:textColor="@color/whiteColors"
+                                android:textSize="@dimen/textsize14" />
+
+                            <TextView
+                                style="@style/WrapWrap"
+                                android:text="@string/giveLike"
+                                android:textColor="@color/whiteColors"
+                                android:textSize="@dimen/textsize12" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_notLogin"
+                        style="@style/WrapWrap"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <TextView
+                            style="@style/WrapWrap"
+                            android:text="@string/notLogin"
+                            android:textColor="@color/whiteColors"
+                            android:textSize="@dimen/textsize14"
+                            android:visibility="visible" />
+
+                        <TextView
+                            android:layout_width="@dimen/dimen130"
+                            android:layout_height="@dimen/dimen40"
+                            android:layout_marginTop="@dimen/dimen10"
+                            android:background="@drawable/shape_login1"
+                            android:gravity="center"
+                            android:text="@string/loginImmediately"
+                            android:textColor="@color/whiteColors"
+                            android:textSize="@dimen/textsize16" />
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+                <!--我的钱包-->
+                <LinearLayout
+                    android:id="@+id/ll_minewallet"
+                    style="@style/Match45"
+                    android:layout_marginTop="@dimen/dimen16"
+                    android:background="@color/whiteColors"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/dimen22"
+                    android:paddingRight="@dimen/dimen22">
+
+                    <ImageView
+                        style="@style/Image20"
+                        android:src="@mipmap/minewalletxxx" />
+
+                    <TextView
+                        style="@style/AutoWrap"
+                        android:layout_marginLeft="@dimen/dimen12"
+                        android:text="@string/myWallet"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/textsize13" />
+
+                    <ImageView
+                        style="@style/Image610"
+                        android:src="@mipmap/arrow1" />
+
+                </LinearLayout>
+
+
+                <!--我的订单-->
+                <LinearLayout
+                    android:id="@+id/ll_mineorder"
+                    style="@style/Match45"
+                    android:layout_marginTop="@dimen/dimen16"
+                    android:background="@color/whiteColors"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dimen24"
+                    android:paddingRight="@dimen/dimen24">
+
+                    <ImageView
+                        style="@style/Image20"
+                        android:src="@mipmap/mineorderxxx" />
+
+                    <TextView
+                        style="@style/AutoWrap"
+                        android:layout_marginLeft="@dimen/dimen12"
+                        android:text="@string/myOrder"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/textsize13" />
+
+                    <ImageView
+                        style="@style/Image610"
+                        android:src="@mipmap/arrow1" />
+
+                </LinearLayout>
+
+                <!--我的购物车-->
+                <LinearLayout
+                    android:id="@+id/ll_myRelease"
+                    style="@style/Match45"
+                    android:layout_marginTop="@dimen/dimen16"
+                    android:background="@color/whiteColors"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dimen22"
+                    android:paddingRight="@dimen/dimen22">
+
+                    <ImageView
+                        style="@style/Image20"
+                        android:src="@mipmap/minemyreleasexxx" />
+
+                    <TextView
+                        style="@style/AutoWrap"
+                        android:layout_marginLeft="@dimen/dimen12"
+                        android:text="@string/myRelease"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/textsize13" />
+
+
+                    <ImageView
+                        style="@style/Image610"
+                        android:src="@mipmap/arrow1" />
+
+                </LinearLayout>
+                <!--我的收藏-->
+                <LinearLayout
+                    android:id="@+id/ll_minecollection"
+                    style="@style/Match45"
+                    android:layout_marginTop="@dimen/dimen1"
+                    android:background="@color/whiteColors"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dimen22"
+                    android:paddingRight="@dimen/dimen22">
+
+                    <ImageView
+                        style="@style/Image20"
+                        android:src="@mipmap/minecollectionxxx" />
+
+                    <TextView
+                        style="@style/AutoWrap"
+                        android:layout_marginLeft="@dimen/dimen12"
+                        android:text="@string/myCollection"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/textsize13" />
+
+
+                    <ImageView
+                        style="@style/Image610"
+                        android:src="@mipmap/arrow1" />
+                </LinearLayout>
+
+
+                <!--分享有礼-->
+                <LinearLayout
+                    android:id="@+id/ll_mineshare"
+                    style="@style/Match45"
+                    android:layout_marginTop="@dimen/dimen1"
+                    android:background="@color/whiteColors"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/dimen22"
+                    android:paddingRight="@dimen/dimen22">
+
+                    <ImageView
+                        style="@style/Image20"
+                        android:src="@mipmap/minesharexxx" />
+
+                    <TextView
+                        style="@style/AutoWrap"
+                        android:layout_marginLeft="@dimen/dimen12"
+                        android:text="@string/sharePolite"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/textsize13" />
+
+
+                    <ImageView
+                        style="@style/Image610"
+                        android:src="@mipmap/arrow1" />
+                </LinearLayout>
+
+
+                <!--设置-->
+                <LinearLayout
+                    android:id="@+id/ll_minesetup"
+                    style="@style/Match45"
+                    android:layout_marginTop="@dimen/dimen15"
+                    android:background="@color/whiteColors"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dimen22"
+                    android:paddingRight="@dimen/dimen22">
+
+                    <ImageView
+                        style="@style/Image20"
+                        android:src="@mipmap/minesetxxx" />
+
+                    <TextView
+                        style="@style/AutoWrap"
+                        android:layout_marginLeft="@dimen/dimen12"
+                        android:text="@string/setUp"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/textsize13" />
+
+
+                    <ImageView
+                        style="@style/Image610"
+                        android:src="@mipmap/arrow1" />
+
+                </LinearLayout>
 
 
                 <!--&lt;!&ndash;VIP紧急电话&ndash;&gt;-->
@@ -484,46 +429,46 @@
 
                 <!--</LinearLayout>-->
 
-                <!--<TextView-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="@dimen/dimen20" />-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen20" />
 
-            <!--</LinearLayout>-->
-        <!--</com.common.cklibrary.utils.myview.ObservableScrollView>-->
+            </LinearLayout>
+        </com.common.cklibrary.utils.myview.ObservableScrollView>
 
-    <!--</cn.bingoogolapple.refreshlayout.BGARefreshLayout>-->
+    </cn.bingoogolapple.refreshlayout.BGARefreshLayout>
 
-    <!--<RelativeLayout-->
-        <!--android:id="@+id/rl_title"-->
-        <!--style="@style/Match45"-->
-        <!--android:background="@android:color/transparent"-->
-        <!--android:visibility="visible">-->
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        style="@style/Match45"
+        android:background="@android:color/transparent"
+        android:visibility="visible">
 
-        <!--<TextView-->
-            <!--android:id="@+id/tv_title"-->
-            <!--style="@style/WrapWrap"-->
-            <!--android:layout_centerHorizontal="true"-->
-            <!--android:layout_centerVertical="true"-->
-            <!--android:text="@string/mine"-->
-            <!--android:textColor="@android:color/transparent"-->
-            <!--android:textSize="@dimen/textsize17" />-->
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/WrapWrap"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/mine"
+            android:textColor="@android:color/transparent"
+            android:textSize="@dimen/textsize17" />
 
-        <!--<TextView-->
-            <!--android:id="@+id/tv_editData1"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="@dimen/dimen44"-->
-            <!--android:layout_alignParentRight="true"-->
-            <!--android:gravity="center_vertical|right"-->
-            <!--android:paddingRight="@dimen/dimen15"-->
-            <!--android:text="@string/editData"-->
-            <!--android:textColor="@android:color/transparent"-->
-            <!--android:textSize="@dimen/textsize13"-->
-            <!--android:visibility="gone" />-->
+        <TextView
+            android:id="@+id/tv_editData1"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen44"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical|right"
+            android:paddingRight="@dimen/dimen15"
+            android:text="@string/editData"
+            android:textColor="@android:color/transparent"
+            android:textSize="@dimen/textsize13"
+            android:visibility="gone" />
 
-        <!--<TextView-->
-            <!--android:id="@+id/tv_divider"-->
-            <!--style="@style/DividerWidth"-->
-            <!--android:layout_alignParentBottom="true"-->
-            <!--android:visibility="gone" />-->
-    <!--</RelativeLayout>-->
+        <TextView
+            android:id="@+id/tv_divider"
+            style="@style/DividerWidth"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone" />
+    </RelativeLayout>
 </RelativeLayout>

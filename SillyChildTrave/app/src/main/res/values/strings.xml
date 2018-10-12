@@ -433,6 +433,9 @@
     <string name="noActivity">暂时没有活动哟~</string>
 
     <!-- 个人中心 -->
+    <string name="notLogin">您还没有登录</string>
+    <string name="loginImmediately">立即登录</string>
+    <string name="editData">编辑资料</string>
     <string name="fans">粉丝</string>
     <string name="beCollected">被收藏</string>
     <string name="myOrder">我的订单</string>
