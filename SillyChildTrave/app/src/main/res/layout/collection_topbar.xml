@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Match40"
+    android:layout_marginTop="@dimen/dimen6"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:id="@+id/ll_route"
+        style="@style/AutoMatch"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_route"
+            style="@style/MatchAuto"
+            android:gravity="center"
+            android:text="@string/route"
+            android:textColor="@color/greenColors"
+            android:textSize="@dimen/textsize15" />
+
+        <TextView
+            android:id="@+id/tv_route1"
+            android:layout_width="@dimen/dimen30"
+            android:layout_height="@dimen/dimen1"
+            android:background="@color/greenColors" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_dynamicState"
+        style="@style/AutoMatch"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_dynamicState"
+            style="@style/MatchAuto"
+            android:gravity="center"
+            android:text="@string/dynamicState"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/textsize15" />
+
+        <TextView
+            android:id="@+id/tv_dynamicState1"
+            android:layout_width="@dimen/dimen30"
+            android:layout_height="@dimen/dimen1"
+            android:background="@color/whiteColors" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_all"
+        style="@style/AutoMatch"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_all"
+            style="@style/MatchAuto"
+            android:gravity="center"
+            android:text="@string/all"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/textsize15" />
+
+        <TextView
+            android:id="@+id/tv_all1"
+            android:layout_width="@dimen/dimen30"
+            android:layout_height="@dimen/dimen1"
+            android:background="@color/whiteColors" />
+    </LinearLayout>
+
+</LinearLayout>

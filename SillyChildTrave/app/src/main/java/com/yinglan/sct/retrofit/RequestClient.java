@@ -948,7 +948,7 @@ public class RequestClient {
     }
 
     /**
-     *  活动
+     * 活动
      */
     public static void getProcessingActivity(Context context, HttpParams httpParams, ResponseListener<String> listener) {
         HttpRequest.requestGetHttp(context, URLConstants.PROCESSACTIVITY, httpParams, false, listener);
@@ -980,6 +980,252 @@ public class RequestClient {
         }, listener);
     }
 
+    /**
+     * 根据父id获取地址列表
+     */
+    public static void getAddressRegionList(Context context, HttpParams httpParams, ResponseListener<String> listener) {
+        Log.d("tag", "getAddressRegionList");
+        HttpRequest.requestGetHttp(context, URLConstants.ADDRESSREGIONLIST, httpParams, listener);
+    }
+
+    /**
+     * 根据父id获取地址列表
+     */
+    public static void getRegionList(Context context, HttpParams httpParams, ResponseListener<String> listener) {
+        Log.d("tag", "getRegionList");
+        HttpRequest.requestGetHttp(context, URLConstants.REGIONLIST, httpParams, listener);
+    }
+
+    /**
+     * 更新用户信息时不修改省市区
+     */
+    public static void postSaveInfo(Context context, HttpParams httpParams, final ResponseListener<String> listener) {
+        Log.d("tag", "postSaveInfo");
+        doServer(context, new TokenCallback() {
+            @Override
+            public void execute() {
+                String cookies = PreferenceHelper.readString(context, StringConstants.FILENAME, "Cookie", "");
+                if (StringUtils.isEmpty(cookies)) {
+                    listener.onFailure(NumericConstants.TOLINGIN + "");
+                    return;
+                }
+                httpParams.putHeaders("Cookie", cookies);
+                HttpRequest.requestPostHttp(context, URLConstants.SAVEINFO, httpParams, listener);
+            }
+        }, listener);
+    }
+
+    /**
+     * 获取收藏商品列表
+     */
+    public static void getFavoriteGoodList(Context context, HttpParams httpParams, ResponseListener<String> listener) {
+        Log.d("tag", "getFavoriteGoodList");
+        doServer(context, new TokenCallback() {
+            @Override
+            public void execute() {
+                String cookies = PreferenceHelper.readString(context, StringConstants.FILENAME, "Cookie", "");
+                if (StringUtils.isEmpty(cookies)) {
+                    listener.onFailure(NumericConstants.TOLINGIN + "");
+                    return;
+                }
+                httpParams.putHeaders("Cookie", cookies);
+                HttpRequest.requestGetHttp(context, URLConstants.FAVORITEGOODLIST, httpParams, listener);
+            }
+        }, listener);
+    }
+
+
+    /**
+     * 获取我的粉丝列表
+     */
+    public static void getMyFansList(Context context, HttpParams httpParams, ResponseListener<String> listener) {
+        Log.d("tag", "getMyFansList");
+        doServer(context, new TokenCallback() {
+            @Override
+            public void execute() {
+                String cookies = PreferenceHelper.readString(context, StringConstants.FILENAME, "Cookie", "");
+                if (StringUtils.isEmpty(cookies)) {
+                    listener.onFailure(NumericConstants.TOLINGIN + "");
+                    return;
+                }
+                httpParams.putHeaders("Cookie", cookies);
+                HttpRequest.requestGetHttp(context, URLConstants.MYFANSLIST, httpParams, listener);
+            }
+        }, listener);
+    }
+
+
+    /**
+     * 获取用户发布的帖子
+     */
+    public static void getUserPost(Context context, HttpParams httpParams, ResponseListener<String> listener) {
+        Log.d("tag", "getUserPost");
+        doServer(context, new TokenCallback() {
+            @Override
+            public void execute() {
+                String cookies = PreferenceHelper.readString(context, StringConstants.FILENAME, "Cookie", "");
+                if (StringUtils.isEmpty(cookies)) {
+                    listener.onFailure(NumericConstants.TOLINGIN + "");
+                    return;
+                }
+                httpParams.putHeaders("Cookie", cookies);
+                HttpRequest.requestGetHttp(context, URLConstants.USERPOST, httpParams, listener);
+            }
+        }, listener);
+    }
+
+    /**
+     * 用户发布帖子
+     */
+    public static void postAddPost(Context context, HttpParams httpParams, ResponseListener<String> listener) {
+        Log.d("tag", "postAddPost");
+        doServer(context, new TokenCallback() {
+            @Override
+            public void execute() {
+                String cookies = PreferenceHelper.readString(context, StringConstants.FILENAME, "Cookie", "");
+                if (StringUtils.isEmpty(cookies)) {
+                    listener.onFailure(NumericConstants.TOLINGIN + "");
+                    return;
+                }
+                httpParams.putHeaders("Cookie", cookies);
+                HttpRequest.requestPostHttp(context, URLConstants.ADDPOST, httpParams, listener);
+            }
+        }, listener);
+    }
+
+    /**
+     * 编辑帖子
+     */
+    public static void postEditPost(Context context, HttpParams httpParams, ResponseListener<String> listener) {
+        Log.d("tag", "postEditPost");
+        doServer(context, new TokenCallback() {
+            @Override
+            public void execute() {
+                String cookies = PreferenceHelper.readString(context, StringConstants.FILENAME, "Cookie", "");
+                if (StringUtils.isEmpty(cookies)) {
+                    listener.onFailure(NumericConstants.TOLINGIN + "");
+                    return;
+                }
+                httpParams.putHeaders("Cookie", cookies);
+                HttpRequest.requestPostHttp(context, URLConstants.EDITPOST, httpParams, listener);
+            }
+        }, listener);
+    }
+
+    /**
+     * 用户删除帖子
+     */
+    public static void postDeletePost(Context context, HttpParams httpParams, ResponseListener<String> listener) {
+        Log.d("tag", "postDeletePost");
+        doServer(context, new TokenCallback() {
+            @Override
+            public void execute() {
+                String cookies = PreferenceHelper.readString(context, StringConstants.FILENAME, "Cookie", "");
+                if (StringUtils.isEmpty(cookies)) {
+                    listener.onFailure(NumericConstants.TOLINGIN + "");
+                    return;
+                }
+                httpParams.putHeaders("Cookie", cookies);
+                HttpRequest.requestPostFORMHttp(context, URLConstants.DELETEPOST, httpParams, listener);
+            }
+        }, listener);
+    }
+
+
+    /**
+     * 包车服务 - 分页查询用户提交的订单
+     */
+    public static void getChartOrderList(Context context, HttpParams httpParams, ResponseListener<String> listener) {
+        Log.d("tag", "getChartOrderList");
+        doServer(context, new TokenCallback() {
+            @Override
+            public void execute() {
+                String cookies = PreferenceHelper.readString(context, StringConstants.FILENAME, "Cookie", "");
+                if (StringUtils.isEmpty(cookies)) {
+                    listener.onFailure(NumericConstants.TOLINGIN + "");
+                    return;
+                }
+                httpParams.putHeaders("Cookie", cookies);
+                HttpRequest.requestGetHttp(context, URLConstants.CHARTORDERLIST, httpParams, listener);
+            }
+        }, listener);
+    }
+
+    /**
+     * 订单列表 - 查询订单详细信息
+     */
+    public static void getCharterOrderDetails(Context context, HttpParams httpParams, ResponseListener<String> listener) {
+        Log.d("tag", "getCharterOrderDetails");
+        doServer(context, new TokenCallback() {
+            @Override
+            public void execute() {
+                String cookies = PreferenceHelper.readString(context, StringConstants.FILENAME, "Cookie", "");
+                if (StringUtils.isEmpty(cookies)) {
+                    listener.onFailure(NumericConstants.TOLINGIN + "");
+                    return;
+                }
+                httpParams.putHeaders("Cookie", cookies);
+                HttpRequest.requestGetHttp(context, URLConstants.CHARTERORDERDETAILS, httpParams, listener);
+            }
+        }, listener);
+    }
+
+    /**
+     * 订单列表 - 获取私人定制单的详细信息
+     */
+    public static void getCustomizeOrderDetail(Context context, HttpParams httpParams, ResponseListener<String> listener) {
+        Log.d("tag", "getCustomizeOrderDetail");
+        doServer(context, new TokenCallback() {
+            @Override
+            public void execute() {
+                String cookies = PreferenceHelper.readString(context, StringConstants.FILENAME, "Cookie", "");
+                if (StringUtils.isEmpty(cookies)) {
+                    listener.onFailure(NumericConstants.TOLINGIN + "");
+                    return;
+                }
+                httpParams.putHeaders("Cookie", cookies);
+                HttpRequest.requestGetHttp(context, URLConstants.CUSTOMIZEORDERDETAILS, httpParams, listener);
+            }
+        }, listener);
+    }
+
+    /**
+     * 订单列表 - 获取要评价的商品信息
+     */
+    public static void getReviewProduct(Context context, HttpParams httpParams, ResponseListener<String> listener) {
+        Log.d("tag", "getReviewProduct");
+        doServer(context, new TokenCallback() {
+            @Override
+            public void execute() {
+                String cookies = PreferenceHelper.readString(context, StringConstants.FILENAME, "Cookie", "");
+                if (StringUtils.isEmpty(cookies)) {
+                    listener.onFailure(NumericConstants.TOLINGIN + "");
+                    return;
+                }
+                httpParams.putHeaders("Cookie", cookies);
+                HttpRequest.requestGetHttp(context, URLConstants.REVIEWPRODUCT, httpParams, listener);
+            }
+        }, listener);
+    }
+
+    /**
+     * 订单列表 - 添加商品评价
+     */
+    public static void postAddProductReview(Context context, HttpParams httpParams, ResponseListener<String> listener) {
+        Log.d("tag", "postAddProductReview");
+        doServer(context, new TokenCallback() {
+            @Override
+            public void execute() {
+                String cookies = PreferenceHelper.readString(context, StringConstants.FILENAME, "Cookie", "");
+                if (StringUtils.isEmpty(cookies)) {
+                    listener.onFailure(NumericConstants.TOLINGIN + "");
+                    return;
+                }
+                httpParams.putHeaders("Cookie", cookies);
+                HttpRequest.requestPostHttp(context, URLConstants.ADDPRODUCTREVIEW, httpParams, listener);
+            }
+        }, listener);
+    }
 
     /**
      * 获取钱包余额
@@ -996,6 +1242,180 @@ public class RequestClient {
                 }
                 httpParams.putHeaders("Cookie", cookies);
                 HttpRequest.requestGetHttp(context, URLConstants.PURSEGET, httpParams, listener);
+            }
+        }, listener);
+    }
+
+    /**
+     * 获取账户钱包明细
+     */
+    public static void getAccountDetail(Context context, HttpParams httpParams, ResponseListener<String> listener) {
+        Log.d("tag", "getAccountDetail");
+        doServer(context, new TokenCallback() {
+            @Override
+            public void execute() {
+                String cookies = PreferenceHelper.readString(context, StringConstants.FILENAME, "Cookie", "");
+                if (StringUtils.isEmpty(cookies)) {
+                    listener.onFailure(NumericConstants.TOLINGIN + "");
+                    return;
+                }
+                httpParams.putHeaders("Cookie", cookies);
+                HttpRequest.requestGetHttp(context, URLConstants.PURSEDETAIL, httpParams, listener);
+            }
+        }, listener);
+    }
+
+    /**
+     * 获取优惠券列表
+     */
+    public static void getCouponsList(Context context, HttpParams httpParams, final ResponseListener<String> listener) {
+        Log.d("tag", "getCouponsList");
+        doServer(context, new TokenCallback() {
+            @Override
+            public void execute() {
+                String cookies = PreferenceHelper.readString(context, StringConstants.FILENAME, "Cookie", "");
+                if (StringUtils.isEmpty(cookies)) {
+                    listener.onFailure(NumericConstants.TOLINGIN + "");
+                    return;
+                }
+                httpParams.putHeaders("Cookie", cookies);
+                HttpRequest.requestGetHttp(context, URLConstants.COUPONS, httpParams, listener);
+            }
+        }, listener);
+    }
+
+    /**
+     * 余额提现
+     */
+    public static void postWithdrawal(Context context, HttpParams httpParams, ResponseListener<String> listener) {
+        Log.d("tag", "postWithdrawal");
+        doServer(context, new TokenCallback() {
+            @Override
+            public void execute() {
+                String cookies = PreferenceHelper.readString(context, StringConstants.FILENAME, "Cookie", "");
+                if (StringUtils.isEmpty(cookies)) {
+                    listener.onFailure(NumericConstants.TOLINGIN + "");
+                    return;
+                }
+                httpParams.putHeaders("Cookie", cookies);
+                HttpRequest.requestPostFORMHttp(context, URLConstants.PURSECASH, httpParams, listener);
+            }
+        }, listener);
+    }
+
+    /**
+     * 银行卡列表
+     */
+    public static void getMyBankCard(Context context, HttpParams httpParams, ResponseListener<String> listener) {
+        Log.d("tag", "getMyBankCard");
+        doServer(context, new TokenCallback() {
+            @Override
+            public void execute() {
+                String cookies = PreferenceHelper.readString(context, StringConstants.FILENAME, "Cookie", "");
+                if (StringUtils.isEmpty(cookies)) {
+                    listener.onFailure(NumericConstants.TOLINGIN + "");
+                    return;
+                }
+                httpParams.putHeaders("Cookie", cookies);
+                HttpRequest.requestGetHttp(context, URLConstants.PURSELIST, httpParams, listener);
+            }
+        }, listener);
+    }
+
+
+    /**
+     * 获取银行列表
+     */
+    public static void getBank(Context context, HttpParams httpParams, ResponseListener<String> listener) {
+        Log.d("tag", "getBank");
+        doServer(context, new TokenCallback() {
+            @Override
+            public void execute() {
+                String cookies = PreferenceHelper.readString(context, StringConstants.FILENAME, "Cookie", "");
+                if (StringUtils.isEmpty(cookies)) {
+                    listener.onFailure(NumericConstants.TOLINGIN + "");
+                    return;
+                }
+                httpParams.putHeaders("Cookie", cookies);
+                HttpRequest.requestGetHttp(context, URLConstants.PURSEBANK, httpParams, listener);
+            }
+        }, listener);
+    }
+
+
+    /**
+     * 删除银行卡
+     */
+    public static void postRemoveBank(Context context, HttpParams httpParams, ResponseListener<String> listener) {
+        Log.d("tag", "getMyBankCard");
+        doServer(context, new TokenCallback() {
+            @Override
+            public void execute() {
+                String cookies = PreferenceHelper.readString(context, StringConstants.FILENAME, "Cookie", "");
+                if (StringUtils.isEmpty(cookies)) {
+                    listener.onFailure(NumericConstants.TOLINGIN + "");
+                    return;
+                }
+                httpParams.putHeaders("Cookie", cookies);
+                HttpRequest.requestPostFORMHttp(context, URLConstants.PURSEREMOVE, httpParams, listener);
+            }
+        }, listener);
+    }
+
+
+    /**
+     * 设置默认银行卡
+     */
+    public static void postPurseDefault(Context context, HttpParams httpParams, ResponseListener<String> listener) {
+        Log.d("tag", "postPurseDefault");
+        doServer(context, new TokenCallback() {
+            @Override
+            public void execute() {
+                String cookies = PreferenceHelper.readString(context, StringConstants.FILENAME, "Cookie", "");
+                if (StringUtils.isEmpty(cookies)) {
+                    listener.onFailure(NumericConstants.TOLINGIN + "");
+                    return;
+                }
+                httpParams.putHeaders("Cookie", cookies);
+                HttpRequest.requestPostFORMHttp(context, URLConstants.PURSEDEFAULT, httpParams, listener);
+            }
+        }, listener);
+    }
+
+    /**
+     * 添加银行卡
+     */
+    public static void postAddBankCard(Context context, HttpParams httpParams, ResponseListener<String> listener) {
+        Log.d("tag", "postAddBankCard");
+        doServer(context, new TokenCallback() {
+            @Override
+            public void execute() {
+                String cookies = PreferenceHelper.readString(context, StringConstants.FILENAME, "Cookie", "");
+                if (StringUtils.isEmpty(cookies)) {
+                    listener.onFailure(NumericConstants.TOLINGIN + "");
+                    return;
+                }
+                httpParams.putHeaders("Cookie", cookies);
+                HttpRequest.requestPostFORMHttp(context, URLConstants.PURSEADD, httpParams, listener);
+            }
+        }, listener);
+    }
+
+    /**
+     * 充值
+     */
+    public static void postRecharge(Context context, HttpParams httpParams, final ResponseListener<String> listener) {
+        Log.d("tag", "postRecharge");
+        doServer(context, new TokenCallback() {
+            @Override
+            public void execute() {
+                String cookies = PreferenceHelper.readString(context, StringConstants.FILENAME, "Cookie", "");
+                if (StringUtils.isEmpty(cookies)) {
+                    listener.onFailure(NumericConstants.TOLINGIN + "");
+                    return;
+                }
+                httpParams.putHeaders("Cookie", cookies);
+                HttpRequest.requestPostFORMHttp(context, URLConstants.ONLINEREC, httpParams, listener);
             }
         }, listener);
     }

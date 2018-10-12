@@ -15,13 +15,20 @@ import com.alipay.sdk.app.PayTask;
 import com.common.cklibrary.common.KJActivityStack;
 import com.common.cklibrary.common.ViewInject;
 import com.kymjs.common.StringUtils;
+import com.yinglan.sct.R;
+import com.yinglan.sct.entity.PayResult;
+import com.yinglan.sct.homepage.airporttransportation.paymentorder.PaymentTravelOrderActivity;
+import com.yinglan.sct.mine.mywallet.mybankcard.dialog.SubmitBouncedDialog;
+import com.yinglan.sct.mine.mywallet.recharge.RechargeActivity;
 import com.tencent.mm.opensdk.modelpay.PayReq;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
-import com.yinglan.sct.R;
-import com.yinglan.sct.entity.PayResult;
+import com.unionpay.UPPayAssistEx;
 
 import java.util.Map;
+
+import static com.yinglan.sct.constant.NumericConstants.PLUGIN_NEED_UPGRADE;
+import static com.yinglan.sct.constant.NumericConstants.PLUGIN_NOT_INSTALLED;
 
 /**
  * 支付工具类
@@ -85,13 +92,11 @@ public class PayUtils {
                     String resultStatus = payResult.getResultStatus();
                     if (!StringUtils.isEmpty(result)) {
                         if (TextUtils.equals(resultStatus, "9000")) {// 操作成功
-//                            if (context.getClass().getName().contains("RechargeActivity")) {
-//                                ((RechargeActivity) context).jumpPayComplete(1);
-//                            } else if (context.getClass().getName().contains("PaymentOrderActivity")) {
-//                                ((PaymentOrderActivity) context).jumpPayComplete(1);
-//                            } else if (context.getClass().getName().contains("PaymentTravelOrderActivity")) {
-//                                ((PaymentTravelOrderActivity) context).jumpPayComplete(1);
-//                            }
+                            if (context.getClass().getName().contains("RechargeActivity")) {
+                                ((RechargeActivity) context).jumpPayComplete(1);
+                            } else if (context.getClass().getName().contains("PaymentTravelOrderActivity")) {
+                                ((PaymentTravelOrderActivity) context).jumpPayComplete(1);
+                            }
                         }
 //                        else if (TextUtils.equals(resultStatus, "4000")) {// 系统异常
 //                            ViewInject.toast(KJActivityStack.create().topActivity().getString(R.string.alipay_system_exception));
@@ -122,13 +127,11 @@ public class PayUtils {
 //                        }
                         else {
                             //  ViewInject.toast(KJActivityStack.create().topActivity().getString(R.string.pay_error));
-//                            if (context.getClass().getName().contains("RechargeActivity")) {
-//                                ((RechargeActivity) context).jumpPayComplete(0);
-//                            } else if (context.getClass().getName().contains("PaymentOrderActivity")) {
-//                                ((PaymentOrderActivity) context).jumpPayComplete(0);
-//                            } else if (context.getClass().getName().contains("PaymentTravelOrderActivity")) {
-//                                ((PaymentTravelOrderActivity) context).jumpPayComplete(0);
-//                            }
+                            if (context.getClass().getName().contains("RechargeActivity")) {
+                                ((RechargeActivity) context).jumpPayComplete(0);
+                            } else if (context.getClass().getName().contains("PaymentTravelOrderActivity")) {
+                                ((PaymentTravelOrderActivity) context).jumpPayComplete(0);
+                            }
                         }
                     } else {
                         ViewInject.toast(KJActivityStack.create().topActivity().getString(R.string.alipay_system_exception));
@@ -188,26 +191,26 @@ public class PayUtils {
      * @param tn   流水号
      * @param mode 启动环境
      */
-//    public void doStartUnionPayPlugin(SubmitBouncedDialog submitBouncedDialog, String tn, String mode) {
-//        // mMode参数解释：
-//        // 00 - 启动银联正式环境
-//        // 01 - 连接银联测试环境
-//        int ret = UPPayAssistEx.startPay(context, null, null, tn, mode);
-//        if (ret == PLUGIN_NEED_UPGRADE || ret == PLUGIN_NOT_INSTALLED) {
-//            // 需要重新安装控件
-//            Log.e("UpPayUtils", " plugin not found or need upgrade!!!");
-//            if (submitBouncedDialog == null) {
-//                submitBouncedDialog = new SubmitBouncedDialog(context, context.getString(R.string.installUnionpayControl)) {
-//                    @Override
-//                    public void confirm(int id) {
-//                        this.dismiss();
-//                        UPPayAssistEx.installUPPayPlugin(context);
-//                    }
-//                };
-//            }
-//            submitBouncedDialog.show();
-//        }
-//        Log.e("UpPayUtils", "" + ret);
-//    }
+    public void doStartUnionPayPlugin(SubmitBouncedDialog submitBouncedDialog, String tn, String mode) {
+        // mMode参数解释：
+        // 00 - 启动银联正式环境
+        // 01 - 连接银联测试环境
+        int ret = UPPayAssistEx.startPay(context, null, null, tn, mode);
+        if (ret == PLUGIN_NEED_UPGRADE || ret == PLUGIN_NOT_INSTALLED) {
+            // 需要重新安装控件
+            Log.e("UpPayUtils", " plugin not found or need upgrade!!!");
+            if (submitBouncedDialog == null) {
+                submitBouncedDialog = new SubmitBouncedDialog(context, context.getString(R.string.installUnionpayControl)) {
+                    @Override
+                    public void confirm(int id) {
+                        this.dismiss();
+                        UPPayAssistEx.installUPPayPlugin(context);
+                    }
+                };
+            }
+            submitBouncedDialog.show();
+        }
+        Log.e("UpPayUtils", "" + ret);
+    }
 
 }

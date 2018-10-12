@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MatchMatch"
+    android:background="@color/background"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_title" />
+
+    <include layout="@layout/collection_topbar" />
+
+    <FrameLayout
+        android:id="@+id/fl_mycollection"
+        style="@style/MatchAuto" />
+
+</LinearLayout>

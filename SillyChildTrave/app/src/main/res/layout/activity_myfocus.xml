@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MatchMatch"
+    android:background="@color/background"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen37"
+        android:layout_marginTop="@dimen/dimen6"
+        android:layout_marginBottom="@dimen/dimen4"
+        android:background="@color/whiteColors"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/ll_user"
+            style="@style/AutoMatch"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_user"
+                style="@style/MatchAuto"
+                android:gravity="center"
+                android:text="@string/user"
+                android:textColor="@color/greenColors"
+                android:textSize="@dimen/textsize14" />
+
+            <TextView
+                android:id="@+id/tv_user1"
+                android:layout_width="@dimen/dimen22"
+                android:layout_height="@dimen/dimen1"
+                android:background="@color/greenColors" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_companyGuide"
+            style="@style/AutoMatch"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_companyGuide"
+                style="@style/MatchAuto"
+                android:gravity="center"
+                android:text="@string/companyGuide"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/textsize14" />
+
+            <TextView
+                android:id="@+id/tv_companyGuide1"
+                android:layout_width="@dimen/dimen22"
+                android:layout_height="@dimen/dimen1"
+                android:background="@color/whiteColors" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/focus_content"
+        style="@style/MatchMatch" />
+
+</LinearLayout>

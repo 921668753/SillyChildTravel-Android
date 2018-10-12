@@ -23,6 +23,7 @@ import com.yinglan.sct.homepage.airporttransportation.SelectProductAirportTransp
 import com.yinglan.sct.homepage.airporttransportation.paymentorder.PaymentTravelOrderActivity;
 import com.yinglan.sct.homepage.airporttransportation.search.ProductSearchActivity;
 import com.yinglan.sct.homepage.airporttransportation.search.ProductSearchListActivity;
+import com.yinglan.sct.mine.mywallet.coupons.CouponsActivity;
 import com.yinglan.sct.utils.GlideImageLoader;
 
 import static com.yinglan.sct.constant.NumericConstants.RESULT_CODE_GET;
@@ -128,10 +129,10 @@ public class AirportPickupPayOrderActivity extends BaseActivity implements Airpo
         super.widgetClick(v);
         switch (v.getId()) {
             case R.id.tv_vouchers:
-//                Intent intent1 = new Intent(aty, CouponsActivity.class);
-//                intent1.putExtra("type", -1);
-//                intent1.putExtra("money", totalPrice);
-//                startActivityForResult(intent1, RESULT_CODE_GET);
+                Intent intent1 = new Intent(aty, CouponsActivity.class);
+                intent1.putExtra("type", -1);
+                intent1.putExtra("money", totalPrice);
+                startActivityForResult(intent1, RESULT_CODE_GET);
                 break;
             case R.id.tv_confirmPayment:
                 showLoadingDialog(getString(R.string.submissionLoad));

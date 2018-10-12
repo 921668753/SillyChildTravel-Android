@@ -339,9 +339,130 @@ public class URLConstants {
     public static String MEMBERINFO = APIURL + "member/get.do";
 
     /**
+     * 根据父id获取地址列表
+     */
+    public static String REGIONLIST = APIURL + "address/region-list.do";
+
+    /**
+     * 根据parentid获取所有地区列表
+     */
+    public static String ADDRESSREGIONLIST = APIURL + "address/region-list-all.do";
+
+    /**
+     * 会员资料保存
+     */
+    public static String SAVEINFO = APIURL + "member/save.do";
+
+    /**
+     * 获取收藏商品列表
+     */
+    public static String FAVORITEGOODLIST = APIURL + "favorite/list.do";
+
+    /**
+     * 获取我的粉丝列表
+     */
+    public static String MYFANSLIST = APIURL + "concern/get_my_fans_list.do";
+
+    /**
+     * 获取用户发布的帖子
+     */
+    public static String USERPOST = APIURL + "post/get_user_post.do";
+
+    /**
+     * 用户发布帖子
+     */
+    public static String ADDPOST = APIURL + "post/add_post.do";
+
+    /**
+     * 编辑帖子
+     */
+    public static String EDITPOST = APIURL + "post/edit_post.do";
+
+    /**
+     * 用户删除帖子
+     */
+    public static String DELETEPOST = APIURL + "post/delete_post.do";
+
+    /**
+     * 包车服务 - 分页查询用户提交的订单
+     */
+    public static String CHARTORDERLIST = APIURL + "travelorder/get_member_order_list.do";
+
+    /**
+     * 包车服务 - 分页查询用户提交的订单
+     */
+    public static String CHARTERORDERDETAILS = APIURL + "travelorder/get_travel_order_detail.do";
+
+    /**
+     * 包车服务 - 获取私人定制单的详细信息
+     */
+    public static String CUSTOMIZEORDERDETAILS = APIURL + "travelorder/get_customize_order_detail.do";
+
+    /**
+     * 包车服务 - 获取要评价的商品信息
+     */
+    public static String REVIEWPRODUCT = APIURL + "travelorder/get_review_product.do";
+
+    /**
+     * 包车服务 - 添加商品评价
+     */
+    public static String ADDPRODUCTREVIEW = APIURL + "evaluation/add_product_review.do";
+
+    /**
      * 获取钱包余额
      */
     public static String PURSEGET = APIURL + "purse/get.do";
+
+    /**
+     * 获取账户钱包明细
+     */
+    public static String PURSEDETAIL = APIURL + "purse/detail.do";
+
+    /**
+     * 优惠券列表
+     */
+    public static String COUPONS = APIURL + "member/bonus-main.do";
+
+    /**
+     * 优惠券使用说明
+     */
+    public static String INSTUCTIONS = SERVERURL1 + "dist/pages/instructions.html";
+
+    /**
+     * 提现
+     */
+    public static String PURSECASH = APIURL + "purse/cash.do";
+
+    /**
+     * 银行卡列表
+     */
+    public static String PURSELIST = APIURL + "purse/list.do";
+
+    /**
+     * 银行卡列表
+     */
+    public static String PURSEBANK = APIURL + "purse/banks.do";
+
+    /**
+     * 删除银行卡
+     */
+    public static String PURSEREMOVE = APIURL + "purse/remove.do";
+
+    /**
+     * 设置默认银行卡
+     */
+    public static String PURSEDEFAULT = APIURL + "purse/default.do";
+
+    /**
+     * 添加银行卡(可添加支付宝账号)
+     */
+    public static String PURSEADD = APIURL + "purse/add.do";
+
+
+    /**
+     * 用户充值信息接口
+     */
+    public static String ONLINEREC = APIURL + "online/rec.do";
 
     /**
      * 提交意见反馈

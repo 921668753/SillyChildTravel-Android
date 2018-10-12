@@ -15,6 +15,7 @@ import com.common.cklibrary.utils.rx.RxBus;
 import com.yinglan.sct.R;
 import com.yinglan.sct.homepage.airporttransportation.paymentorder.PaymentTravelOrderActivity;
 import com.yinglan.sct.main.MainActivity;
+import com.yinglan.sct.mine.myorder.MyOrderActivity;
 
 /**
  * 支付完成/支付失败
@@ -57,7 +58,7 @@ public class PayTravelCompleteActivity extends BaseActivity {
     @BindView(id = R.id.tv_returnHomePage, click = true)
     private TextView tv_returnHomePage;
 
-    private int order_id;
+  //  private int order_id;
 
     @Override
     public void setRootView() {
@@ -67,7 +68,7 @@ public class PayTravelCompleteActivity extends BaseActivity {
     @Override
     public void initData() {
         super.initData();
-        order_id = getIntent().getIntExtra("order_id", 0);
+    //    order_id = getIntent().getIntExtra("order_id", 0);
     }
 
     @Override
@@ -107,13 +108,12 @@ public class PayTravelCompleteActivity extends BaseActivity {
         super.widgetClick(v);
         switch (v.getId()) {
             case R.id.tv_checkOrder:
-//                Intent intent = new Intent(aty, MyOrderActivity.class);
-//                if (getIntent().getIntExtra("order_status", 0) == 1) {
-//                    intent.putExtra("newChageIcon", 1);
-//                    intent.putExtra("chageIcon", 1);
-//                    intent.putExtra("chageCharterIcon", 21);
-//                }
-//                skipActivity(aty, intent);
+                Intent intent = new Intent(aty, MyOrderActivity.class);
+                if (getIntent().getIntExtra("order_status", 0) == 1) {
+                    intent.putExtra("newChageIcon", 1);
+                    intent.putExtra("chageIcon", 1);
+                }
+                skipActivity(aty, intent);
                 break;
             case R.id.tv_returnHomePage:
                 if (getIntent().getIntExtra("order_status", 0) != 1) {

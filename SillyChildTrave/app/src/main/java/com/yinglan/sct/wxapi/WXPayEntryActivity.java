@@ -16,20 +16,23 @@
 
 package com.yinglan.sct.wxapi;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.util.Log;
 
 import com.common.cklibrary.common.BaseActivity;
-import com.common.cklibrary.common.StringConstants;
-import com.kymjs.common.PreferenceHelper;
+import com.common.cklibrary.common.KJActivityStack;
+import com.yinglan.sct.BuildConfig;
+import com.yinglan.sct.homepage.airporttransportation.paymentorder.PaymentTravelOrderActivity;
+import com.yinglan.sct.homepage.airporttransportation.paymentorder.payresult.PayTravelCompleteActivity;
+import com.yinglan.sct.mine.mywallet.recharge.RechargeActivity;
+import com.yinglan.sct.mine.mywallet.recharge.rechargeresult.RechargeCompleteActivity;
 import com.tencent.mm.opensdk.constants.ConstantsAPI;
 import com.tencent.mm.opensdk.modelbase.BaseReq;
 import com.tencent.mm.opensdk.modelbase.BaseResp;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.IWXAPIEventHandler;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
-import com.yinglan.sct.BuildConfig;
-
 
 public class WXPayEntryActivity extends BaseActivity implements IWXAPIEventHandler {
 
@@ -60,30 +63,36 @@ public class WXPayEntryActivity extends BaseActivity implements IWXAPIEventHandl
         Log.d("pay", "toString=" + resp.toString());
         if (resp.getType() == ConstantsAPI.COMMAND_PAY_BY_WX) {
             if (resp.errCode == BaseResp.ErrCode.ERR_OK) {
-                PreferenceHelper.write(this, StringConstants.FILENAME, "isRefreshMineFragment", true);
-//                if (KJActivityStack.create().findActivity(RechargeActivity.class)!=null){
-//                    ViewInject.toast(getString(R.string.alipay_succeed));
-//                }else if (KJActivityStack.create().findActivity(CheckstandActivity.class)!=null){
-//                    Intent jumpintent=new Intent(this, PaySuccessActivity.class);
-//                    Activity context= KJActivityStack.create().findActivity(CheckstandActivity.class);
-//                    jumpintent.putExtra("orderid",((CheckstandActivity)context).getOrderid());
-//                    jumpintent.putExtra("paytype",((CheckstandActivity)context).getPaytype());
-//                    jumpintent.putExtra("paymoney",((CheckstandActivity)context).getPaymoney_fmt());
-//                    showActivity(this,jumpintent);
-//                    KJActivityStack.create().finishActivity(CheckstandActivity.class);
-//                }
-                finish();
-                //   skipActivity(aty, PaySuccessActivity.class);
-            } else if (resp.errCode == BaseResp.ErrCode.ERR_USER_CANCEL) {
-//                PreferenceHelper.write(this, StringConstants.FILENAME, "payClass", "");
-//                ViewInject.toast(getString(R.string.alipay_order_cancel));
+                jumpPayComplete(1);
             } else {
-//                PreferenceHelper.write(this, StringConstants.FILENAME, "payClass", "");
-//                ViewInject.toast(getString(R.string.alipay_order_error));
+                jumpPayComplete(0);
             }
             finish();
         }
     }
 
+    /**
+     * 跳转支付完成页面
+     *
+     * @param order_status 1成功 0失败
+     */
+    private void jumpPayComplete(int order_status) {
+        if (KJActivityStack.create().findActivity(RechargeActivity.class) != null) {
+            Intent jumpintent = new Intent(this, RechargeCompleteActivity.class);
+            Activity context = KJActivityStack.create().findActivity(RechargeActivity.class);
+            //    Intent intent = new Intent(aty, PayCompleteActivity.class);
+            jumpintent.putExtra("recharge_status", order_status);
+            jumpintent.putExtra("recharge_money", ((RechargeActivity) context).getRechargeMoney());
+            showActivity(this, jumpintent);
+        } else if (KJActivityStack.create().findActivity(PaymentTravelOrderActivity.class) != null) {
+            Intent jumpintent = new Intent(this, PayTravelCompleteActivity.class);
+            Activity context = KJActivityStack.create().findActivity(PaymentTravelOrderActivity.class);
+            jumpintent.putExtra("order_status", order_status);
+            jumpintent.putExtra("order_id", ((PaymentTravelOrderActivity) context).getOrderId());
+            jumpintent.putExtra("order_number", ((PaymentTravelOrderActivity) context).getOrderNumber());
+            jumpintent.putExtra("pay_amount", ((PaymentTravelOrderActivity) context).getPayAmount());
+            showActivity(this, jumpintent);
+        }
+    }
 
 }

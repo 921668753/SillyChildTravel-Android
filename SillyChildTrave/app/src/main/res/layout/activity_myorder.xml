@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MatchMatch"
+    android:background="@color/background"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_title" />
+
+    <LinearLayout
+        style="@style/Match45"
+        android:layout_marginTop="@dimen/dimen6"
+        android:background="@color/whiteColors"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/ll_obligation"
+            style="@style/AutoMatch"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_obligation"
+                style="@style/MatchAuto"
+                android:gravity="center"
+                android:text="@string/obligation"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/textsize13" />
+
+            <TextView
+                android:id="@+id/tv_obligation1"
+                android:layout_width="@dimen/dimen35"
+                android:layout_height="@dimen/dimen2"
+                android:background="@color/whiteColors" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_ongoing"
+            style="@style/AutoMatch"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_ongoing"
+                style="@style/MatchAuto"
+                android:gravity="center"
+                android:text="@string/ongoing"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/textsize13" />
+
+            <TextView
+                android:id="@+id/tv_ongoing1"
+                android:layout_width="@dimen/dimen35"
+                android:layout_height="@dimen/dimen2"
+                android:background="@color/whiteColors" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_evaluate"
+            style="@style/AutoMatch"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_evaluate"
+                style="@style/MatchAuto"
+                android:gravity="center"
+                android:text="@string/evaluate"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/textsize13" />
+
+            <TextView
+                android:id="@+id/tv_evaluate1"
+                android:layout_width="@dimen/dimen35"
+                android:layout_height="@dimen/dimen2"
+                android:background="@color/whiteColors" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_completed"
+            style="@style/AutoMatch"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_completed"
+                style="@style/MatchAuto"
+                android:gravity="center"
+                android:text="@string/completed"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/textsize13" />
+
+            <TextView
+                android:id="@+id/tv_completed1"
+                android:layout_width="@dimen/dimen35"
+                android:layout_height="@dimen/dimen2"
+                android:background="@color/whiteColors" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_all"
+            style="@style/AutoMatch"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_all"
+                style="@style/MatchAuto"
+                android:gravity="center"
+                android:text="@string/all"
+                android:textColor="@color/greenColors"
+                android:textSize="@dimen/textsize13" />
+
+            <TextView
+                android:id="@+id/tv_all1"
+                android:layout_width="@dimen/dimen21"
+                android:layout_height="@dimen/dimen2"
+                android:background="@color/greenColors" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/order_content"
+        style="@style/MatchMatch"
+        android:layout_marginTop="@dimen/dimen6" />
+
+</LinearLayout>
