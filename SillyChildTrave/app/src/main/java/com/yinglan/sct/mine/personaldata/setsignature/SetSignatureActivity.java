@@ -32,7 +32,6 @@ public class SetSignatureActivity extends BaseActivity implements SetSignatureCo
     @BindView(id = R.id.et_signature)
     private EditText et_signature;
 
-
     @BindView(id = R.id.tv_number)
     private TextView tv_number;
 
@@ -45,18 +44,18 @@ public class SetSignatureActivity extends BaseActivity implements SetSignatureCo
     public void initData() {
         super.initData();
         mPresenter = new SetSignaturePresenter(this);
-        String signature = getIntent().getStringExtra("signature");
-        if (!StringUtils.isEmpty(signature)) {
-            et_signature.setText(signature);
-            et_signature.setSelection(et_signature.getText().length());
-            tv_number.setText(et_signature.getText().length());
-        }
     }
 
     @Override
     public void initWidget() {
         super.initWidget();
         initTitle();
+        String signature = getIntent().getStringExtra("signature");
+        if (!StringUtils.isEmpty(signature)) {
+            et_signature.setText(signature);
+            et_signature.setSelection(signature.length());
+            tv_number.setText(String.valueOf(signature.length()));
+        }
         changeInputView(et_signature, tv_number);
     }
 
