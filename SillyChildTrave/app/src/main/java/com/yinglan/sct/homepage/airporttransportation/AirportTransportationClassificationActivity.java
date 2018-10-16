@@ -16,6 +16,8 @@ import com.common.cklibrary.common.ViewInject;
 import com.common.cklibrary.utils.JsonUtil;
 import com.yinglan.sct.R;
 import com.yinglan.sct.entity.homepage.airporttransportation.AirportCountryListBean;
+
+import com.yinglan.sct.entity.homepage.airporttransportation.AirportByCountryIdBean;
 import com.yinglan.sct.homepage.airporttransportation.search.ProductSearchActivity;
 
 import java.util.List;
@@ -57,7 +59,7 @@ public class AirportTransportationClassificationActivity extends BaseActivity im
 
     private List<AirportCountryListBean.DataBean> airportCountryList;
 
-    private com.yinglan.sct.entity.homepage.airporttransportation.AirportCountryListBean.DataBean airportCountryBean = null;
+    private AirportCountryListBean.DataBean airportCountryBean = null;
 
     private String title = "";
     private int type = 0;
@@ -142,13 +144,13 @@ public class AirportTransportationClassificationActivity extends BaseActivity im
     @Override
     public void getSuccess(String success, int flag) {
         if (flag == 0) {
-            com.yinglan.sct.entity.homepage.airporttransportation.AirportCountryListBean airportCountryListBean = (com.yinglan.sct.entity.homepage.airporttransportation.AirportCountryListBean) JsonUtil.getInstance().json2Obj(success, com.yinglan.sct.entity.homepage.airporttransportation.AirportCountryListBean.class);
+            AirportCountryListBean airportCountryListBean = (AirportCountryListBean) JsonUtil.getInstance().json2Obj(success, AirportCountryListBean.class);
             airportCountryList = airportCountryListBean.getData();
             if (airportCountryListBean != null && airportCountryList.size() > 0) {
                 selectClassification(0);
             }
         } else if (flag == 1) {
-            com.yinglan.sct.entity.homepage.airporttransportation.AirportByCountryIdBean airportByCountryIdBean = (com.yinglan.sct.entity.homepage.airporttransportation.AirportByCountryIdBean) JsonUtil.getInstance().json2Obj(success, com.yinglan.sct.entity.homepage.airporttransportation.AirportByCountryIdBean.class);
+            AirportByCountryIdBean airportByCountryIdBean = (AirportByCountryIdBean) JsonUtil.getInstance().json2Obj(success, AirportByCountryIdBean.class);
             if (airportByCountryIdBean.getData() == null || airportByCountryIdBean.getData().size() <= 0) {
                 errorMsg(getString(R.string.noData), 1);
                 return;

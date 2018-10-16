@@ -15,7 +15,11 @@ import com.common.cklibrary.common.BindView;
 import com.common.cklibrary.common.ViewInject;
 import com.common.cklibrary.utils.JsonUtil;
 import com.yinglan.sct.R;
+import com.yinglan.sct.adapter.homepage.airporttransportation.AirportTransportationClassificationListViewAdapter;
+import com.yinglan.sct.adapter.homepage.bythedaycharter.ByTheDayCharterClassificationGridViewAdapter;
+
 import com.yinglan.sct.entity.homepage.airporttransportation.AirportCountryListBean;
+import com.yinglan.sct.entity.homepage.bythedaycharter.RegionByCountryIdBean;
 import com.yinglan.sct.homepage.airporttransportation.search.ProductSearchActivity;
 
 import java.util.List;
@@ -51,13 +55,13 @@ public class ByTheDayCharterClassificationActivity extends BaseActivity implemen
     @BindView(id = R.id.tv_button, click = true)
     private TextView tv_button;
 
-    private com.yinglan.sct.adapter.homepage.airporttransportation.AirportTransportationClassificationListViewAdapter mListViewAdapter = null;
+    private AirportTransportationClassificationListViewAdapter mListViewAdapter = null;
 
-    private com.yinglan.sct.adapter.homepage.bythedaycharter.ByTheDayCharterClassificationGridViewAdapter mGridViewAdapter = null;
+    private ByTheDayCharterClassificationGridViewAdapter mGridViewAdapter = null;
 
     private List<AirportCountryListBean.DataBean> airportCountryList;
 
-    private com.yinglan.sct.entity.homepage.airporttransportation.AirportCountryListBean.DataBean airportCountryBean = null;
+    private AirportCountryListBean.DataBean airportCountryBean = null;
 
     private String title = "";
     private int type = 0;
@@ -71,8 +75,8 @@ public class ByTheDayCharterClassificationActivity extends BaseActivity implemen
     public void initData() {
         super.initData();
         mPresenter = new ByTheDayCharterClassificationPresenter(this);
-        mListViewAdapter = new com.yinglan.sct.adapter.homepage.airporttransportation.AirportTransportationClassificationListViewAdapter(this);
-        mGridViewAdapter = new com.yinglan.sct.adapter.homepage.bythedaycharter.ByTheDayCharterClassificationGridViewAdapter(this);
+        mListViewAdapter = new AirportTransportationClassificationListViewAdapter(this);
+        mGridViewAdapter = new ByTheDayCharterClassificationGridViewAdapter(this);
         title = getIntent().getStringExtra("title");
         type = getIntent().getIntExtra("type", 0);
     }
@@ -141,13 +145,13 @@ public class ByTheDayCharterClassificationActivity extends BaseActivity implemen
     @Override
     public void getSuccess(String success, int flag) {
         if (flag == 0) {
-            com.yinglan.sct.entity.homepage.airporttransportation.AirportCountryListBean airportCountryListBean = (com.yinglan.sct.entity.homepage.airporttransportation.AirportCountryListBean) JsonUtil.getInstance().json2Obj(success, com.yinglan.sct.entity.homepage.airporttransportation.AirportCountryListBean.class);
+            AirportCountryListBean airportCountryListBean = (AirportCountryListBean) JsonUtil.getInstance().json2Obj(success, AirportCountryListBean.class);
             airportCountryList = airportCountryListBean.getData();
             if (airportCountryListBean != null && airportCountryList.size() > 0) {
                 selectClassification(0);
             }
         } else if (flag == 1) {
-            com.yinglan.sct.entity.homepage.bythedaycharter.RegionByCountryIdBean regionByCountryIdBean = (com.yinglan.sct.entity.homepage.bythedaycharter.RegionByCountryIdBean) JsonUtil.getInstance().json2Obj(success, com.yinglan.sct.entity.homepage.bythedaycharter.RegionByCountryIdBean.class);
+            RegionByCountryIdBean regionByCountryIdBean = (RegionByCountryIdBean) JsonUtil.getInstance().json2Obj(success, RegionByCountryIdBean.class);
             if (regionByCountryIdBean.getData() == null || regionByCountryIdBean.getData().size() <= 0) {
                 errorMsg(getString(R.string.noData), 1);
                 return;

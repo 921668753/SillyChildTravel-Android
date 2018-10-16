@@ -17,6 +17,8 @@ import com.common.cklibrary.utils.MathUtil;
 import com.common.cklibrary.utils.myview.WebViewLayout;
 import com.kymjs.common.StringUtils;
 import com.yinglan.sct.R;
+import com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.CreateTravelOrderBean;
+import com.yinglan.sct.entity.homepage.boutiqueline.LineDetailsPayOrderBean;
 import com.yinglan.sct.homepage.airporttransportation.paymentorder.PaymentTravelOrderActivity;
 import com.yinglan.sct.mine.mywallet.coupons.CouponsActivity;
 import com.yinglan.sct.utils.GlideImageLoader;
@@ -130,7 +132,7 @@ public class LineDetailsPayOrderActivity extends BaseActivity implements LineDet
     public void getSuccess(String success, int flag) {
         dismissLoadingDialog();
         if (flag == 0) {
-            com.yinglan.sct.entity.homepage.boutiqueline.LineDetailsPayOrderBean lineDetailsPayOrderBean = (com.yinglan.sct.entity.homepage.boutiqueline.LineDetailsPayOrderBean) JsonUtil.getInstance().json2Obj(success, com.yinglan.sct.entity.homepage.boutiqueline.LineDetailsPayOrderBean.class);
+            LineDetailsPayOrderBean lineDetailsPayOrderBean = (LineDetailsPayOrderBean) JsonUtil.getInstance().json2Obj(success, LineDetailsPayOrderBean.class);
             GlideImageLoader.glideOrdinaryLoader(aty, lineDetailsPayOrderBean.getData().getMain_picture(), img_lineDetails, R.mipmap.placeholderfigure2);
             String price_description = "<!DOCTYPE html><html lang=\"zh\"><head>\t<meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no\" /><title></title></head><body>" + lineDetailsPayOrderBean.getData().getPrice_description()
                     + "</body></html>";
@@ -166,7 +168,7 @@ public class LineDetailsPayOrderActivity extends BaseActivity implements LineDet
         } else if (flag == 1) {
             KJActivityStack.create().finishActivity(BoutiqueLineActivity.class);
             KJActivityStack.create().finishActivity(LineDetailsActivity.class);
-            com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.CreateTravelOrderBean createTravelOrderBean = (com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.CreateTravelOrderBean) JsonUtil.getInstance().json2Obj(success, com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.CreateTravelOrderBean.class);
+            CreateTravelOrderBean createTravelOrderBean = (CreateTravelOrderBean) JsonUtil.getInstance().json2Obj(success, CreateTravelOrderBean.class);
             Intent intent = new Intent(aty, PaymentTravelOrderActivity.class);
             intent.putExtra("order_id", createTravelOrderBean.getData().getOrder_id());
             intent.putExtra("type", 5);

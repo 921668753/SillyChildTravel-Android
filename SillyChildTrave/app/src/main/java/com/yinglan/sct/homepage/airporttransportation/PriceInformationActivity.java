@@ -15,6 +15,8 @@ import com.common.cklibrary.utils.MathUtil;
 import com.common.cklibrary.utils.myview.NoScrollGridView;
 import com.kymjs.common.StringUtils;
 import com.yinglan.sct.R;
+import com.yinglan.sct.adapter.homepage.airporttransportation.PriceInformationViewAdapter;
+import com.yinglan.sct.entity.homepage.airporttransportation.PriceInformationBean;
 import com.yinglan.sct.homepage.airporttransportation.airportdropoff.AirportDropOffActivity;
 import com.yinglan.sct.homepage.airporttransportation.airportpickup.AirportPickupActivity;
 import com.yinglan.sct.homepage.airporttransportation.comments.CharterCommentsActivity;
@@ -113,9 +115,9 @@ public class PriceInformationActivity extends BaseActivity implements PriceInfor
     private int product_id = 0;
     private int type = 0;
 
-    private com.yinglan.sct.adapter.homepage.airporttransportation.PriceInformationViewAdapter mAdapter;
+    private PriceInformationViewAdapter mAdapter;
 
-    private com.yinglan.sct.entity.homepage.airporttransportation.PriceInformationBean priceInformationBean;
+    private PriceInformationBean priceInformationBean;
     private CompensationChangeBackDialog compensationChangeBackDialog;
 
     @Override
@@ -129,7 +131,7 @@ public class PriceInformationActivity extends BaseActivity implements PriceInfor
         mPresenter = new PriceInformationPresenter(this);
         product_id = getIntent().getIntExtra("product_id", 0);
         type = getIntent().getIntExtra("type", 0);
-        mAdapter = new com.yinglan.sct.adapter.homepage.airporttransportation.PriceInformationViewAdapter(this);
+        mAdapter = new PriceInformationViewAdapter(this);
         showLoadingDialog(getString(R.string.dataLoad));
         ((PriceInformationContract.Presenter) mPresenter).getProductDetails(product_id);
         initDialog();
@@ -267,7 +269,7 @@ public class PriceInformationActivity extends BaseActivity implements PriceInfor
     public void getSuccess(String success, int flag) {
         dismissLoadingDialog();
         if (flag == 0) {
-            priceInformationBean = (com.yinglan.sct.entity.homepage.airporttransportation.PriceInformationBean) JsonUtil.getInstance().json2Obj(success, com.yinglan.sct.entity.homepage.airporttransportation.PriceInformationBean.class);
+            priceInformationBean = (PriceInformationBean) JsonUtil.getInstance().json2Obj(success, PriceInformationBean.class);
             tv_productName.setText(priceInformationBean.getData().getTitle());
             if (priceInformationBean.getData().getPicture() != null && priceInformationBean.getData().getPicture().size() > 0) {
                 mForegroundBanner.setVisibility(View.VISIBLE);

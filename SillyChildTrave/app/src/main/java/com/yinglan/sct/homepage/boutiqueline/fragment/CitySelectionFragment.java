@@ -17,7 +17,9 @@ import com.common.cklibrary.common.ViewInject;
 import com.common.cklibrary.utils.JsonUtil;
 import com.common.cklibrary.utils.RefreshLayoutUtil;
 import com.yinglan.sct.R;
+import com.yinglan.sct.adapter.homepage.boutiqueline.BoutiqueLineViewAdapter;
 import com.yinglan.sct.constant.NumericConstants;
+import com.yinglan.sct.entity.homepage.boutiqueline.fragment.BoutiqueLineBean;
 import com.yinglan.sct.homepage.boutiqueline.BoutiqueLineActivity;
 import com.yinglan.sct.homepage.boutiqueline.LineDetailsActivity;
 import com.yinglan.sct.homepage.boutiqueline.selectcity.SelectCityActivity;
@@ -81,7 +83,7 @@ public class CitySelectionFragment extends BaseFragment implements BoutiqueLineC
 
     private int is_recommand = 1;
 
-    private com.yinglan.sct.adapter.homepage.boutiqueline.BoutiqueLineViewAdapter mAdapter;
+    private BoutiqueLineViewAdapter mAdapter;
 
     private int region_id = 0;
 
@@ -98,7 +100,7 @@ public class CitySelectionFragment extends BaseFragment implements BoutiqueLineC
     protected void initData() {
         super.initData();
         mPresenter = new BoutiqueLinePresenter(this);
-        mAdapter = new com.yinglan.sct.adapter.homepage.boutiqueline.BoutiqueLineViewAdapter(recyclerview);
+        mAdapter = new BoutiqueLineViewAdapter(recyclerview);
     }
 
     @Override
@@ -189,7 +191,7 @@ public class CitySelectionFragment extends BaseFragment implements BoutiqueLineC
         ll_commonError.setVisibility(View.GONE);
         mRefreshLayout.setVisibility(View.VISIBLE);
         mRefreshLayout.setPullDownRefreshEnable(true);
-        com.yinglan.sct.entity.homepage.boutiqueline.fragment.BoutiqueLineBean boutiqueLineBean = (com.yinglan.sct.entity.homepage.boutiqueline.fragment.BoutiqueLineBean) JsonUtil.getInstance().json2Obj(success, com.yinglan.sct.entity.homepage.boutiqueline.fragment.BoutiqueLineBean.class);
+        BoutiqueLineBean boutiqueLineBean = (BoutiqueLineBean) JsonUtil.getInstance().json2Obj(success, BoutiqueLineBean.class);
         if (boutiqueLineBean.getData() == null && mMorePageNumber == NumericConstants.START_PAGE_NUMBER ||
                 boutiqueLineBean.getData().getResultX() == null && mMorePageNumber == NumericConstants.START_PAGE_NUMBER ||
                 boutiqueLineBean.getData().getResultX().size() <= 0 && mMorePageNumber == NumericConstants.START_PAGE_NUMBER) {

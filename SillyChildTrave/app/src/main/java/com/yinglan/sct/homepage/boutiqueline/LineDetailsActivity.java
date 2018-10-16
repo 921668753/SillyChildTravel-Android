@@ -24,6 +24,9 @@ import com.kymjs.common.PreferenceHelper;
 import com.kymjs.common.StringUtils;
 import com.yinglan.sct.R;
 import com.yinglan.sct.constant.URLConstants;
+import com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.AirportPickupBean;
+import com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.PeopleBean;
+import com.yinglan.sct.entity.homepage.boutiqueline.LineDetailsBean;
 import com.yinglan.sct.homepage.airporttransportation.comments.CharterCommentsActivity;
 import com.yinglan.sct.homepage.airporttransportation.dialog.CompensationChangeBackDialog;
 import com.yinglan.sct.homepage.boutiqueline.dialog.CalendarControlBouncedDialog;
@@ -157,7 +160,7 @@ public class LineDetailsActivity extends BaseActivity implements LineDetailsCont
     private String smallImg;
     private String product_name;
     private String subtitle;
-    private com.yinglan.sct.entity.homepage.boutiqueline.LineDetailsBean lineDetailsBean;
+    private LineDetailsBean lineDetailsBean;
 
     private int baggage_number = 0;
     private int passenger_number = 0;
@@ -296,7 +299,7 @@ public class LineDetailsActivity extends BaseActivity implements LineDetailsCont
     @Override
     public void getSuccess(String success, int flag) {
         if (flag == 0) {
-            lineDetailsBean = (com.yinglan.sct.entity.homepage.boutiqueline.LineDetailsBean) JsonUtil.getInstance().json2Obj(success, com.yinglan.sct.entity.homepage.boutiqueline.LineDetailsBean.class);
+            lineDetailsBean = (LineDetailsBean) JsonUtil.getInstance().json2Obj(success, LineDetailsBean.class);
             smallImg = lineDetailsBean.getData().getMain_picture();
             GlideImageLoader.glideOrdinaryLoader(this, smallImg, img_picture, R.mipmap.placeholderfigure);
             product_name = lineDetailsBean.getData().getProduct_name();
@@ -402,7 +405,7 @@ public class LineDetailsActivity extends BaseActivity implements LineDetailsCont
                 ViewInject.toast(getString(R.string.zanSuccess));
             }
         } else if (flag == 2) {
-            com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.AirportPickupBean airportPickupBean = (com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.AirportPickupBean) JsonUtil.getInstance().json2Obj(success, com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.AirportPickupBean.class);
+            AirportPickupBean airportPickupBean = (AirportPickupBean) JsonUtil.getInstance().json2Obj(success, AirportPickupBean.class);
             Intent intent = new Intent(aty, LineDetailsPayOrderActivity.class);
             intent.putExtra("requirement_id", airportPickupBean.getData().getRequirement_id());
             intent.putExtra("baggage_passenger", getString(R.string.pickUpNumber) + "≤" + passenger_number + "  " + getString(R.string.baggageNumber1) + "≤" + baggage_number);
@@ -431,9 +434,9 @@ public class LineDetailsActivity extends BaseActivity implements LineDetailsCont
     }
 
     private void initOptions(int passenger_number, int baggage_number) {
-        List<com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.PeopleBean> list = new ArrayList<com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.PeopleBean>();
+        List<PeopleBean> list = new ArrayList<PeopleBean>();
         for (int i = 0; i < passenger_number; i++) {
-            com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.PeopleBean peopleBean = new com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.PeopleBean();
+            PeopleBean peopleBean = new PeopleBean();
             peopleBean.setNum(i + 1);
             peopleBean.setName(i + 1 + getString(R.string.people));
             list.add(peopleBean);
@@ -448,9 +451,9 @@ public class LineDetailsActivity extends BaseActivity implements LineDetailsCont
             }
         }).build();
         adultOptions.setPicker(list);
-        List<com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.PeopleBean> list1 = new ArrayList<com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.PeopleBean>();
+        List<PeopleBean> list1 = new ArrayList<PeopleBean>();
         for (int i = 0; i < baggage_number; i++) {
-            com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.PeopleBean peopleBean = new com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.PeopleBean();
+            PeopleBean peopleBean = new PeopleBean();
             peopleBean.setNum(i + 1);
             peopleBean.setName(i + 1 + getString(R.string.jian));
             list1.add(peopleBean);

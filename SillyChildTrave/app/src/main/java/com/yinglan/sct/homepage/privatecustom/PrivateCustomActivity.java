@@ -19,6 +19,7 @@ import com.common.cklibrary.utils.JsonUtil;
 import com.kymjs.common.StringUtils;
 import com.yinglan.sct.R;
 
+import com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.PeopleBean;
 import com.yinglan.sct.entity.homepage.privatecustom.CategoryListBean;
 import com.yinglan.sct.entity.homepage.privatecustom.CategoryListBean.DataBean.RepastListBean;
 import com.yinglan.sct.entity.homepage.privatecustom.CategoryListBean.DataBean.StayListBean;
@@ -216,9 +217,9 @@ public class PrivateCustomActivity extends BaseActivity implements PrivateCustom
      */
     @SuppressWarnings("unchecked")
     private void selectPlayNumberDays() {
-        List<com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.PeopleBean> list = new ArrayList<com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.PeopleBean>();
+        List<PeopleBean> list = new ArrayList<PeopleBean>();
         for (int i = 0; i < 30; i++) {
-            com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.PeopleBean peopleBean = new com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.PeopleBean();
+            PeopleBean peopleBean = new PeopleBean();
             peopleBean.setNum(i + 1);
             peopleBean.setName(i + 1 + getString(R.string.day1));
             list.add(peopleBean);

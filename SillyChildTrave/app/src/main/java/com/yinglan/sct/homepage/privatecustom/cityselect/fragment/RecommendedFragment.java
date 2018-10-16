@@ -14,7 +14,9 @@ import com.common.cklibrary.common.ViewInject;
 import com.common.cklibrary.utils.JsonUtil;
 import com.common.cklibrary.utils.myview.IndexNewBar;
 import com.yinglan.sct.R;
+import com.yinglan.sct.adapter.homepage.privatecustom.cityselect.fragment.RecommendedViewAdapter;
 import com.yinglan.sct.entity.homepage.privatecustom.cityselect.fragment.RecommendedBean.DataBean;
+import com.yinglan.sct.entity.homepage.privatecustom.cityselect.fragment.RecommendedBean;
 import com.yinglan.sct.homepage.privatecustom.cityselect.CitySelectActivity;
 import com.yinglan.sct.utils.SpacesItemDecoration;
 
@@ -37,7 +39,7 @@ public class RecommendedFragment extends BaseFragment implements CityClassificat
     @BindView(id = R.id.indexBar)
     private IndexNewBar mIndexBar;
 
-    private com.yinglan.sct.adapter.homepage.privatecustom.cityselect.fragment.RecommendedViewAdapter mAdapter;
+    private RecommendedViewAdapter mAdapter;
 
     private GridLayoutManager mManager;
 
@@ -56,7 +58,7 @@ public class RecommendedFragment extends BaseFragment implements CityClassificat
         super.initData();
         mDatas = new ArrayList<DataBean>();
         mPresenter = new CityClassificationPresenter(this);
-        mAdapter = new com.yinglan.sct.adapter.homepage.privatecustom.cityselect.fragment.RecommendedViewAdapter(aty, mDatas);
+        mAdapter = new RecommendedViewAdapter(aty, mDatas);
         mManager = new GridLayoutManager(aty, 2);
     }
 
@@ -65,7 +67,7 @@ public class RecommendedFragment extends BaseFragment implements CityClassificat
         super.initWidget(parentView);
         mRv.setLayoutManager(mManager);
         mRv.setAdapter(mAdapter);
-        mAdapter.setViewCallBack(new com.yinglan.sct.adapter.homepage.privatecustom.cityselect.fragment.RecommendedViewAdapter.ViewCallBack() {
+        mAdapter.setViewCallBack(new RecommendedViewAdapter.ViewCallBack() {
             @Override
             public void onClickListener(DataBean dataBean) {
                 Intent intent = new Intent();
@@ -107,7 +109,7 @@ public class RecommendedFragment extends BaseFragment implements CityClassificat
 
     @Override
     public void getSuccess(String success, int flag) {
-        com.yinglan.sct.entity.homepage.privatecustom.cityselect.fragment.RecommendedBean selectCountryBean = (com.yinglan.sct.entity.homepage.privatecustom.cityselect.fragment.RecommendedBean) JsonUtil.getInstance().json2Obj(success, com.yinglan.sct.entity.homepage.privatecustom.cityselect.fragment.RecommendedBean.class);
+        RecommendedBean selectCountryBean = (RecommendedBean) JsonUtil.getInstance().json2Obj(success, RecommendedBean.class);
         if (selectCountryBean != null && selectCountryBean.getData() != null && selectCountryBean.getData().size() > 0) {
             //模拟线上加载数据
             mDatas.clear();

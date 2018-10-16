@@ -12,6 +12,7 @@ import com.common.cklibrary.common.BaseActivity;
 import com.common.cklibrary.common.BindView;
 import com.common.cklibrary.utils.JsonUtil;
 import com.yinglan.sct.R;
+import com.yinglan.sct.adapter.homepage.airporttransportation.SelectProductAirportTransportationViewAdapter;
 import com.yinglan.sct.entity.homepage.airporttransportation.SelectProductAirportTransportationBean;
 import com.yinglan.sct.homepage.airporttransportation.PriceInformationActivity;
 import com.yinglan.sct.loginregister.LoginActivity;
@@ -38,7 +39,7 @@ public class ProductSearchListActivity extends BaseActivity implements ProductSe
     @BindView(id = R.id.gv_productAirportTransportation)
     private GridView gv_productAirportTransportation;
 
-    private com.yinglan.sct.adapter.homepage.airporttransportation.SelectProductAirportTransportationViewAdapter mAdapter;
+    private SelectProductAirportTransportationViewAdapter mAdapter;
 
     /**
      * 错误提示页
@@ -67,7 +68,7 @@ public class ProductSearchListActivity extends BaseActivity implements ProductSe
     public void initData() {
         super.initData();
         mPresenter = new ProductSearchListPresenter(this);
-        mAdapter = new com.yinglan.sct.adapter.homepage.airporttransportation.SelectProductAirportTransportationViewAdapter(this);
+        mAdapter = new SelectProductAirportTransportationViewAdapter(this);
         name = getIntent().getStringExtra("name");
         type = getIntent().getIntExtra("type", 0);
         showLoadingDialog(getString(R.string.dataLoad));
@@ -133,7 +134,7 @@ public class ProductSearchListActivity extends BaseActivity implements ProductSe
 
     @Override
     public void getSuccess(String success, int flag) {
-        com.yinglan.sct.entity.homepage.airporttransportation.SelectProductAirportTransportationBean selectProductAirportTransportationBean = (com.yinglan.sct.entity.homepage.airporttransportation.SelectProductAirportTransportationBean) JsonUtil.getInstance().json2Obj(success, com.yinglan.sct.entity.homepage.airporttransportation.SelectProductAirportTransportationBean.class);
+        SelectProductAirportTransportationBean selectProductAirportTransportationBean = (SelectProductAirportTransportationBean) JsonUtil.getInstance().json2Obj(success, SelectProductAirportTransportationBean.class);
         List<SelectProductAirportTransportationBean.DataBean> selectProductAirportTransportationList = selectProductAirportTransportationBean.getData();
         if (selectProductAirportTransportationList == null || selectProductAirportTransportationList.size() <= 0) {
             errorMsg(getString(R.string.noProduct), 0);

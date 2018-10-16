@@ -17,7 +17,9 @@ import com.common.cklibrary.common.ViewInject;
 import com.common.cklibrary.utils.JsonUtil;
 import com.common.cklibrary.utils.RefreshLayoutUtil;
 import com.yinglan.sct.R;
+import com.yinglan.sct.adapter.homepage.boutiqueline.BoutiqueLineViewAdapter;
 import com.yinglan.sct.constant.NumericConstants;
+
 import com.yinglan.sct.entity.homepage.boutiqueline.fragment.BoutiqueLineBean;
 import com.yinglan.sct.homepage.boutiqueline.BoutiqueLineActivity;
 import com.yinglan.sct.homepage.boutiqueline.LineDetailsActivity;
@@ -91,7 +93,7 @@ public class HotRecommendedFragment extends BaseFragment implements BoutiqueLine
 
     private List<BoutiqueLineBean.DataBean.ResultBean> list = null;
 
-    private com.yinglan.sct.adapter.homepage.boutiqueline.BoutiqueLineViewAdapter mAdapter;
+    private BoutiqueLineViewAdapter mAdapter;
 
     private int region_id = 0;
 
@@ -110,7 +112,7 @@ public class HotRecommendedFragment extends BaseFragment implements BoutiqueLine
         list = new ArrayList<BoutiqueLineBean.DataBean.ResultBean>();
         mPresenter = new BoutiqueLinePresenter(this);
         spacesItemDecoration = new SpacesItemDecoration(7, 14);
-        mAdapter = new com.yinglan.sct.adapter.homepage.boutiqueline.BoutiqueLineViewAdapter(recyclerview);
+        mAdapter = new BoutiqueLineViewAdapter(recyclerview);
     }
 
 
@@ -151,8 +153,8 @@ public class HotRecommendedFragment extends BaseFragment implements BoutiqueLine
         switch (v.getId()) {
             case R.id.ll_selectCity:
                 Intent intent = new Intent(aty, SelectCityActivity.class);
-                startActivityForResult(intent,RESULT_CODE_GET);
-             //   showActivityForResult(aty, SelectCityActivity.class, RESULT_CODE_GET);
+                startActivityForResult(intent, RESULT_CODE_GET);
+                //   showActivityForResult(aty, SelectCityActivity.class, RESULT_CODE_GET);
                 break;
             case R.id.tv_button:
                 if (tv_button.getText().toString().contains(getString(R.string.retry))) {
@@ -208,7 +210,7 @@ public class HotRecommendedFragment extends BaseFragment implements BoutiqueLine
         ll_commonError.setVisibility(View.GONE);
         mRefreshLayout.setVisibility(View.VISIBLE);
         mRefreshLayout.setPullDownRefreshEnable(true);
-        com.yinglan.sct.entity.homepage.boutiqueline.fragment.BoutiqueLineBean boutiqueLineBean = (com.yinglan.sct.entity.homepage.boutiqueline.fragment.BoutiqueLineBean) JsonUtil.getInstance().json2Obj(success, com.yinglan.sct.entity.homepage.boutiqueline.fragment.BoutiqueLineBean.class);
+        BoutiqueLineBean boutiqueLineBean = (BoutiqueLineBean) JsonUtil.getInstance().json2Obj(success, BoutiqueLineBean.class);
 //        if (boutiqueLineBean.getData() == null && mMorePageNumber == NumericConstants.START_PAGE_NUMBER ||
 //                boutiqueLineBean.getData().getResult() == null && mMorePageNumber == NumericConstants.START_PAGE_NUMBER ||
 //                boutiqueLineBean.getData().getResult().size() <= 0 && mMorePageNumber == NumericConstants.START_PAGE_NUMBER) {

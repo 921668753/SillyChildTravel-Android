@@ -17,6 +17,8 @@ import com.common.cklibrary.utils.MathUtil;
 import com.common.cklibrary.utils.myview.WebViewLayout;
 import com.kymjs.common.StringUtils;
 import com.yinglan.sct.R;
+import com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.AirportPickupPayOrderBean;
+import com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.CreateTravelOrderBean;
 import com.yinglan.sct.homepage.airporttransportation.AirportTransportationClassificationActivity;
 import com.yinglan.sct.homepage.airporttransportation.PriceInformationActivity;
 import com.yinglan.sct.homepage.airporttransportation.SelectProductAirportTransportationActivity;
@@ -151,7 +153,7 @@ public class AirportPickupPayOrderActivity extends BaseActivity implements Airpo
     public void getSuccess(String success, int flag) {
         dismissLoadingDialog();
         if (flag == 0) {
-            com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.AirportPickupPayOrderBean airportPickupPayOrderBean = (com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.AirportPickupPayOrderBean) JsonUtil.getInstance().json2Obj(success, com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.AirportPickupPayOrderBean.class);
+            AirportPickupPayOrderBean airportPickupPayOrderBean = (AirportPickupPayOrderBean) JsonUtil.getInstance().json2Obj(success, AirportPickupPayOrderBean.class);
             GlideImageLoader.glideOrdinaryLoader(aty, airportPickupPayOrderBean.getData().getMain_picture(), img_airportPickup, R.mipmap.placeholderfigure2);
             tv_airportName.setText(airportPickupPayOrderBean.getData().getTitle());
             tv_travelConfiguration.setText(airportPickupPayOrderBean.getData().getSubtitle_title());
@@ -195,7 +197,7 @@ public class AirportPickupPayOrderActivity extends BaseActivity implements Airpo
             KJActivityStack.create().finishActivity(AirportTransportationClassificationActivity.class);
             KJActivityStack.create().finishActivity(PriceInformationActivity.class);
             KJActivityStack.create().finishActivity(SelectProductAirportTransportationActivity.class);
-            com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.CreateTravelOrderBean createTravelOrderBean = (com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.CreateTravelOrderBean) JsonUtil.getInstance().json2Obj(success, com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.CreateTravelOrderBean.class);
+            CreateTravelOrderBean createTravelOrderBean = (CreateTravelOrderBean) JsonUtil.getInstance().json2Obj(success, CreateTravelOrderBean.class);
             /**
              * 发送消息
              */

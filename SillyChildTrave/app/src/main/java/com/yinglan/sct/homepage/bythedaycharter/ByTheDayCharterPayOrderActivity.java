@@ -18,6 +18,8 @@ import com.common.cklibrary.utils.MathUtil;
 import com.common.cklibrary.utils.myview.WebViewLayout;
 import com.kymjs.common.StringUtils;
 import com.yinglan.sct.R;
+import com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.CreateTravelOrderBean;
+import com.yinglan.sct.entity.homepage.bythedaycharter.ByTheDayCharterPayOrderBean;
 import com.yinglan.sct.homepage.airporttransportation.paymentorder.PaymentTravelOrderActivity;
 import com.yinglan.sct.homepage.airporttransportation.search.ProductSearchActivity;
 import com.yinglan.sct.homepage.airporttransportation.search.ProductSearchListActivity;
@@ -145,7 +147,7 @@ public class ByTheDayCharterPayOrderActivity extends BaseActivity implements ByT
     public void getSuccess(String success, int flag) {
         dismissLoadingDialog();
         if (flag == 0) {
-            com.yinglan.sct.entity.homepage.bythedaycharter.ByTheDayCharterPayOrderBean byTheDayCharterPayOrderBean = (com.yinglan.sct.entity.homepage.bythedaycharter.ByTheDayCharterPayOrderBean) JsonUtil.getInstance().json2Obj(success, com.yinglan.sct.entity.homepage.bythedaycharter.ByTheDayCharterPayOrderBean.class);
+            ByTheDayCharterPayOrderBean byTheDayCharterPayOrderBean = (ByTheDayCharterPayOrderBean) JsonUtil.getInstance().json2Obj(success, ByTheDayCharterPayOrderBean.class);
             GlideImageLoader.glideOrdinaryLoader(aty, byTheDayCharterPayOrderBean.getData().getMain_picture(), img_byTheDayCharter, R.mipmap.placeholderfigure2);
             tv_tourSpots.setText(byTheDayCharterPayOrderBean.getData().getTitle());
             tv_tourSpots1.setText(byTheDayCharterPayOrderBean.getData().getProduct_description());
@@ -191,7 +193,7 @@ public class ByTheDayCharterPayOrderActivity extends BaseActivity implements ByT
             KJActivityStack.create().finishActivity(ProductSearchActivity.class);
             KJActivityStack.create().finishActivity(PriceInformationActivity.class);
             KJActivityStack.create().finishActivity(SelectProductActivity.class);
-            com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.CreateTravelOrderBean createTravelOrderBean = (com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.CreateTravelOrderBean) JsonUtil.getInstance().json2Obj(success, com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.CreateTravelOrderBean.class);
+            CreateTravelOrderBean createTravelOrderBean = (CreateTravelOrderBean) JsonUtil.getInstance().json2Obj(success, CreateTravelOrderBean.class);
             Intent intent = new Intent(aty, PaymentTravelOrderActivity.class);
             intent.putExtra("order_id", createTravelOrderBean.getData().getOrder_id());
             intent.putExtra("type", 1);

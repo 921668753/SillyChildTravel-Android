@@ -18,6 +18,7 @@ import com.common.cklibrary.utils.JsonUtil;
 import com.kymjs.common.PreferenceHelper;
 import com.kymjs.common.StringUtils;
 import com.yinglan.sct.R;
+import com.yinglan.sct.adapter.homepage.airporttransportation.search.RecentSearchTagAdapter;
 import com.yinglan.sct.community.search.dialog.ClearSearchDialog;
 import com.yinglan.sct.entity.community.search.RecentSearchBean;
 import com.yinglan.sct.entity.community.search.RecentSearchBean.DataBean;
@@ -58,7 +59,7 @@ public class ProductSearchActivity extends BaseActivity implements TagFlowLayout
 
     private List<DataBean> recentSearchList = null;
 
-    private com.yinglan.sct.adapter.homepage.airporttransportation.search.RecentSearchTagAdapter recentSearchTagAdapter = null;
+    private RecentSearchTagAdapter recentSearchTagAdapter = null;
 
     private ClearSearchDialog clearSearchDialog = null;
 
@@ -75,7 +76,7 @@ public class ProductSearchActivity extends BaseActivity implements TagFlowLayout
         super.initData();
         recentSearchList = new ArrayList<DataBean>();
         type = getIntent().getIntExtra("type", 0);
-        recentSearchTagAdapter = new com.yinglan.sct.adapter.homepage.airporttransportation.search.RecentSearchTagAdapter(this, recentSearchList);
+        recentSearchTagAdapter = new RecentSearchTagAdapter(this, recentSearchList);
         initClearSearchDialog();
     }
 
