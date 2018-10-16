@@ -27,6 +27,7 @@ import com.yinglan.sct.constant.NumericConstants;
 import com.yinglan.sct.entity.main.community.CommunityBean;
 import com.yinglan.sct.loginregister.LoginActivity;
 import com.yinglan.sct.main.MainActivity;
+import com.yinglan.sct.mine.myrelease.mydynamic.ReleaseDynamicActivity;
 import com.yinglan.sct.utils.GlideImageLoader;
 import com.yinglan.sct.utils.SpacesItemDecoration;
 
@@ -303,7 +304,7 @@ public class CommunityClassificationFragment extends BaseFragment implements Com
             intent.putExtra("title", mAdapter.getItem(selectPosition).getPost_title());
             aty.showActivity(aty, intent);
         } else if (flag == 4) {
-           // aty.showActivity(aty, ReleaseDynamicActivity.class);
+            aty.showActivity(aty, ReleaseDynamicActivity.class);
         }
     }
 

@@ -1,7 +1,7 @@
 package com.yinglan.sct.adapter.homepage.airporttransportation.comments;
 
+import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.util.SparseArray;
 import android.view.View;
 import android.widget.AdapterView;
@@ -10,6 +10,7 @@ import com.common.cklibrary.utils.DataUtil;
 import com.common.cklibrary.utils.myview.NoScrollGridView;
 import com.kymjs.common.Log;
 import com.kymjs.common.StringUtils;
+import com.luck.picture.lib.PictureSelector;
 import com.luck.picture.lib.entity.LocalMedia;
 import com.yinglan.sct.R;
 import com.yinglan.sct.entity.homepage.airporttransportation.comments.CharterCommentsBean.DataBean.ResultBean;
@@ -93,12 +94,13 @@ public class CharterCommentsViewAdapter extends BGAAdapterViewAdapter<ResultBean
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                     //打开预览
                     //  onStatusListener.onSetStatusListener(adapterView, view, finalCommentsGridViewAdapter, position, i);
-//                    Intent intentPreview = new Intent(mContext, ImagePreviewDelActivity.class);
-//                    intentPreview.putExtra(ImagePicker.EXTRA_IMAGE_ITEMS, (ArrayList<LocalMedia>) finalCommentsGridViewAdapter.getData());
+//                    Intent intentPreview = new Intent(mContext, ImagePreviewNoDelActivity.class);
+//                    intentPreview.putExtra(ImagePicker.EXTRA_IMAGE_ITEMS, (ArrayList<ImageItem>) finalCommentsGridViewAdapter.getData());
 //                    intentPreview.putExtra(ImagePicker.EXTRA_SELECTED_IMAGE_POSITION, i);
 //                    intentPreview.putExtra(ImagePicker.EXTRA_FROM_ITEMS, true);
-//                    // startActivityForResult(intentPreview, NumericConstants.REQUEST_CODE_PREVIEW);
-                //    mContext.startActivity(intentPreview);
+////                    // startActivityForResult(intentPreview, NumericConstants.REQUEST_CODE_PREVIEW);
+//                    mContext.startActivity(intentPreview);
+                    PictureSelector.create((Activity) mContext).themeStyle(R.style.picture_default_style).openExternalPreview(i, finalCommentsGridViewAdapter.getData());
                 }
             });
         }
@@ -107,9 +109,10 @@ public class CharterCommentsViewAdapter extends BGAAdapterViewAdapter<ResultBean
             helper.setVisibility(R.id.gv_imgComments, View.VISIBLE);
             selImageList.clear();
             for (int i = 0; i < model.getPicture().size(); i++) {
-//                ImageItem imageItem = new ImageItem();
-//                imageItem.path = model.getPicture().get(i);
-//                selImageList.add(imageItem);
+                LocalMedia imageItem = new LocalMedia();
+                imageItem.setPath(model.getPicture().get(i));
+                imageItem.setPictureType("image/jpeg");
+                selImageList.add(imageItem);
             }
             commentsGridViewAdapter.clear();
             commentsGridViewAdapter.addNewData(selImageList);
@@ -117,16 +120,16 @@ public class CharterCommentsViewAdapter extends BGAAdapterViewAdapter<ResultBean
             helper.setVisibility(R.id.gv_imgComments, View.GONE);
         }
 
-//        helper.setText(R.id.tv_time, DataUtil.formatData(StringUtils.toLong(model.getCreate_time()), "yyyy.MM.dd"));
-//        helper.setText(R.id.tv_zanNum, model.getLike_number() + "");
-//        if (model.isIs_like()) {
-//            helper.setImageResource(R.id.img_giveLike, R.mipmap.dynamic_zan1);
-//            helper.setTextColorRes(R.id.tv_zanNum, R.color.greenColors);
-//        } else {
-//            helper.setImageResource(R.id.img_giveLike, R.mipmap.dynamic_zan);
-//            //       tv_zanNum.setText(getString(R.string.giveLike));
-//            helper.setTextColorRes(R.id.tv_zanNum, R.color.tabColors);
-//        }
+        helper.setText(R.id.tv_time, DataUtil.formatData(StringUtils.toLong(model.getCreate_time()), "yyyy.MM.dd"));
+        helper.setText(R.id.tv_zanNum, model.getLike_number() + "");
+        if (model.isIs_like()) {
+            helper.setImageResource(R.id.img_giveLike, R.mipmap.dynamic_zan1);
+            helper.setTextColorRes(R.id.tv_zanNum, R.color.greenColors);
+        } else {
+            helper.setImageResource(R.id.img_giveLike, R.mipmap.dynamic_zan);
+            //       tv_zanNum.setText(getString(R.string.giveLike));
+            helper.setTextColorRes(R.id.tv_zanNum, R.color.tabColors);
+        }
     }
 
 

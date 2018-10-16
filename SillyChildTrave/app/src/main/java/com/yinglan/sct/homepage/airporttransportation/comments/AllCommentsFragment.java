@@ -16,7 +16,9 @@ import com.common.cklibrary.common.ViewInject;
 import com.common.cklibrary.utils.JsonUtil;
 import com.common.cklibrary.utils.RefreshLayoutUtil;
 import com.yinglan.sct.R;
+import com.yinglan.sct.adapter.homepage.airporttransportation.comments.CharterCommentsViewAdapter;
 import com.yinglan.sct.constant.NumericConstants;
+import com.yinglan.sct.entity.homepage.airporttransportation.comments.CharterCommentsBean;
 import com.yinglan.sct.loginregister.LoginActivity;
 
 import cn.bingoogolapple.baseadapter.BGAOnItemChildClickListener;
@@ -66,7 +68,7 @@ public class AllCommentsFragment extends BaseFragment implements CharterComments
      */
     private boolean isShowLoadingMore = false;
 
-    private com.yinglan.sct.adapter.homepage.airporttransportation.comments.CharterCommentsViewAdapter mAdapter = null;
+    private CharterCommentsViewAdapter mAdapter = null;
 
     private int product_id = 0;
 
@@ -83,7 +85,7 @@ public class AllCommentsFragment extends BaseFragment implements CharterComments
     protected void initData() {
         super.initData();
         mPresenter = new CharterCommentsPresenter(this);
-        mAdapter = new com.yinglan.sct.adapter.homepage.airporttransportation.comments.CharterCommentsViewAdapter(getActivity());
+        mAdapter = new CharterCommentsViewAdapter(getActivity());
         product_id = aty.getIntent().getIntExtra("product_id", 0);
     }
 
@@ -178,7 +180,7 @@ public class AllCommentsFragment extends BaseFragment implements CharterComments
             isShowLoadingMore = true;
             ll_commonError.setVisibility(View.GONE);
             mRefreshLayout.setVisibility(View.VISIBLE);
-            com.yinglan.sct.entity.homepage.airporttransportation.comments.CharterCommentsBean charterCommentsBean = (com.yinglan.sct.entity.homepage.airporttransportation.comments.CharterCommentsBean) JsonUtil.getInstance().json2Obj(success, com.yinglan.sct.entity.homepage.airporttransportation.comments.CharterCommentsBean.class);
+            CharterCommentsBean charterCommentsBean = (CharterCommentsBean) JsonUtil.getInstance().json2Obj(success, CharterCommentsBean.class);
             if (charterCommentsBean.getData() == null && mMorePageNumber == NumericConstants.START_PAGE_NUMBER || charterCommentsBean.getData().getResultX().size() <= 0 &&
                     mMorePageNumber == NumericConstants.START_PAGE_NUMBER) {
                 errorMsg(getString(R.string.notCommented), 0);

@@ -84,7 +84,7 @@ public class AddCommentsFragment extends BaseFragment implements CharterComments
     protected void initWidget(View parentView) {
         super.initWidget(parentView);
         RefreshLayoutUtil.initRefreshLayout(mRefreshLayout, this, aty, true);
-    //    lv_comments.setAdapter(mAdapter);
+      //  lv_comments.setAdapter(mAdapter);
         lv_comments.setOnItemClickListener(this);
         mRefreshLayout.beginRefreshing();
     }
