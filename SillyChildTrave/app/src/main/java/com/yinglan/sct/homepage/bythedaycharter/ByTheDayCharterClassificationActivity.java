@@ -20,7 +20,7 @@ import com.yinglan.sct.adapter.homepage.bythedaycharter.ByTheDayCharterClassific
 
 import com.yinglan.sct.entity.homepage.airporttransportation.AirportCountryListBean;
 import com.yinglan.sct.entity.homepage.bythedaycharter.RegionByCountryIdBean;
-import com.yinglan.sct.homepage.airporttransportation.search.ProductSearchActivity;
+import com.yinglan.sct.homepage.airporttransportation.airportselect.search.ProductSearchActivity;
 
 import java.util.List;
 

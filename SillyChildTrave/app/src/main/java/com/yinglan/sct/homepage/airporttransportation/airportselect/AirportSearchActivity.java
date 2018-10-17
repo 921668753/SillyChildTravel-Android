@@ -1,4 +1,4 @@
-package com.yinglan.sct.homepage.airporttransportation.search;
+package com.yinglan.sct.homepage.airporttransportation.airportselect;
 
 import android.content.Intent;
 import android.view.KeyEvent;
@@ -18,7 +18,7 @@ import com.common.cklibrary.utils.JsonUtil;
 import com.kymjs.common.PreferenceHelper;
 import com.kymjs.common.StringUtils;
 import com.yinglan.sct.R;
-import com.yinglan.sct.adapter.homepage.airporttransportation.search.RecentSearchTagAdapter;
+import com.yinglan.sct.adapter.homepage.hotregion.cityselect.RecentSearchTagAdapter;
 import com.yinglan.sct.community.search.dialog.ClearSearchDialog;
 import com.yinglan.sct.entity.community.search.RecentSearchBean;
 import com.yinglan.sct.entity.community.search.RecentSearchBean.DataBean;
@@ -32,9 +32,9 @@ import java.util.List;
 
 
 /**
- * 产品搜索
+ * 城市搜索
  */
-public class ProductSearchActivity extends BaseActivity implements TagFlowLayout.OnTagClickListener {
+public class AirportSearchActivity extends BaseActivity implements TagFlowLayout.OnTagClickListener {
 
     /**
      * 搜索
@@ -63,19 +63,16 @@ public class ProductSearchActivity extends BaseActivity implements TagFlowLayout
 
     private ClearSearchDialog clearSearchDialog = null;
 
-    private int type = 0;//1.接机2.送机。3包车4.私人定制5.线路
-
 
     @Override
     public void setRootView() {
-        setContentView(R.layout.activity_productsearch);
+        setContentView(R.layout.activity_citysearch);
     }
 
     @Override
     public void initData() {
         super.initData();
         recentSearchList = new ArrayList<DataBean>();
-        type = getIntent().getIntExtra("type", 0);
         recentSearchTagAdapter = new RecentSearchTagAdapter(this, recentSearchList);
         initClearSearchDialog();
     }
@@ -87,17 +84,7 @@ public class ProductSearchActivity extends BaseActivity implements TagFlowLayout
         clearSearchDialog = new ClearSearchDialog(this, getString(R.string.clearSearch)) {
             @Override
             public void deleteCollectionDo(int addressId) {
-                if (type == 1) {
-                    PreferenceHelper.write(aty, StringConstants.FILENAME, "recentSearchAirportPickupHistory", null);
-                } else if (type == 2) {
-                    PreferenceHelper.write(aty, StringConstants.FILENAME, "recentSearchAirportDropOffHistory", null);
-                } else if (type == 3) {
-                    PreferenceHelper.write(aty, StringConstants.FILENAME, "recentSearchByTheDayCharterHistory", null);
-                } else if (type == 4) {
-
-                } else if (type == 5) {
-                    PreferenceHelper.write(aty, StringConstants.FILENAME, "recentSearchBoutiqueLineHistory", null);
-                }
+                PreferenceHelper.write(aty, StringConstants.FILENAME, "recentSearchCityPrivatecustomHistory", null);
                 ll_recentSearch.setVisibility(View.GONE);
                 tfl_recentSearch.setVisibility(View.GONE);
             }
@@ -120,15 +107,14 @@ public class ProductSearchActivity extends BaseActivity implements TagFlowLayout
                         return handled;
                     }
                     SoftKeyboardUtils.packUpKeyboard(aty);
-                    saveRecentSearchHistory(textView.getText().toString().trim(), type);
+                    saveRecentSearchHistory(textView.getText().toString().trim());
                     Intent beautyCareIntent = new Intent();
                     if (getIntent().getIntExtra("tag", 0) == 1) {
                         beautyCareIntent.putExtra("name", textView.getText().toString().trim());
                         setResult(RESULT_OK, beautyCareIntent);
                     } else {
-                        beautyCareIntent.setClass(aty, ProductSearchListActivity.class);
+                        beautyCareIntent.setClass(aty, AirportSearchListActivity.class);
                         beautyCareIntent.putExtra("name", textView.getText().toString().trim());
-                        beautyCareIntent.putExtra("type", type);
                         showActivity(aty, beautyCareIntent);
                     }
                     finish();
@@ -137,14 +123,14 @@ public class ProductSearchActivity extends BaseActivity implements TagFlowLayout
                 return handled;
             }
         });
-        readRecentSearchHistory(type);
+        readRecentSearchHistory();
     }
 
 
     /**
      * 保存历史
      */
-    private void saveRecentSearchHistory(String name, int type) {
+    private void saveRecentSearchHistory(String name) {
         if (recentSearchList.size() > 0) {
             for (int i = 0; i < recentSearchList.size(); i++) {
                 if (recentSearchList.get(i).getName().equals(name)) {
@@ -154,42 +140,22 @@ public class ProductSearchActivity extends BaseActivity implements TagFlowLayout
         }
         DataBean dataBean = new DataBean();
         dataBean.setName(name);
-        dataBean.setType(type);
         recentSearchList.add(dataBean);
         BaseResult<List<DataBean>> baseResult = new BaseResult<>();
         baseResult.setMessage("");
         baseResult.setResult(1);
         Collections.reverse(recentSearchList);
         baseResult.setData(recentSearchList);
-        if (type == 1) {
-            PreferenceHelper.write(aty, StringConstants.FILENAME, "recentSearchAirportPickupHistory", JsonUtil.getInstance().obj2JsonString(baseResult));
-        } else if (type == 2) {
-            PreferenceHelper.write(aty, StringConstants.FILENAME, "recentSearchAirportDropOffHistory", JsonUtil.getInstance().obj2JsonString(baseResult));
-        } else if (type == 3) {
-            PreferenceHelper.write(aty, StringConstants.FILENAME, "recentSearchByTheDayCharterHistory", JsonUtil.getInstance().obj2JsonString(baseResult));
-        } else if (type == 4) {
+        PreferenceHelper.write(aty, StringConstants.FILENAME, "recentSearchCityPrivatecustomHistory", JsonUtil.getInstance().obj2JsonString(baseResult));
 
-        } else if (type == 5) {
-            PreferenceHelper.write(aty, StringConstants.FILENAME, "recentSearchBoutiqueLineHistory", JsonUtil.getInstance().obj2JsonString(baseResult));
-        }
     }
 
     /**
      * 读取历史
      */
-    private void readRecentSearchHistory(int type) {
-        String recentSearch = "";
-        if (type == 1) {
-            recentSearch = PreferenceHelper.readString(aty, StringConstants.FILENAME, "recentSearchAirportPickupHistory", "");
-        } else if (type == 2) {
-            recentSearch = PreferenceHelper.readString(aty, StringConstants.FILENAME, "recentSearchAirportDropOffHistory", "");
-        } else if (type == 3) {
-            recentSearch = PreferenceHelper.readString(aty, StringConstants.FILENAME, "recentSearchByTheDayCharterHistory", "");
-        } else if (type == 4) {
+    private void readRecentSearchHistory() {
+        String recentSearch = PreferenceHelper.readString(aty, StringConstants.FILENAME, "recentSearchCityPrivatecustomHistory", "");
 
-        } else if (type == 5) {
-            recentSearch = PreferenceHelper.readString(aty, StringConstants.FILENAME, "recentSearchBoutiqueLineHistory", "");
-        }
         if (StringUtils.isEmpty(recentSearch)) {
             ll_recentSearch.setVisibility(View.GONE);
             tfl_recentSearch.setVisibility(View.GONE);
@@ -231,12 +197,10 @@ public class ProductSearchActivity extends BaseActivity implements TagFlowLayout
             Intent beautyCareIntent = new Intent();
             if (getIntent().getIntExtra("tag", 0) == 1) {
                 beautyCareIntent.putExtra("name", recentSearchTagAdapter.getItem(position).getName());
-                beautyCareIntent.putExtra("type", recentSearchTagAdapter.getItem(position).getType());
                 setResult(RESULT_OK, beautyCareIntent);
             } else {
-                beautyCareIntent.setClass(aty, ProductSearchListActivity.class);
+                beautyCareIntent.setClass(aty, AirportSearchListActivity.class);
                 beautyCareIntent.putExtra("name", recentSearchTagAdapter.getItem(position).getName());
-                beautyCareIntent.putExtra("type", recentSearchTagAdapter.getItem(position).getType());
                 showActivity(aty, beautyCareIntent);
             }
             finish();

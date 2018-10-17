@@ -1,4 +1,4 @@
-package com.yinglan.sct.homepage.airporttransportation.search;
+package com.yinglan.sct.homepage.airporttransportation.airportselect.search;
 
 import android.content.Intent;
 import android.view.View;

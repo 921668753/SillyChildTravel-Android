@@ -71,10 +71,10 @@
         <TextView
             style="@style/AutoWrap"
             android:paddingBottom="@dimen/dimen5"
-            android:paddingTop="@dimen/dimen10"
+            android:paddingTop="@dimen/dimen15"
             android:text="@string/recentSearch"
             android:textColor="@color/textColor"
-            android:textSize="@dimen/textsize13" />
+            android:textSize="@dimen/textsize12" />
 
         <ImageView
             android:id="@+id/img_delete"

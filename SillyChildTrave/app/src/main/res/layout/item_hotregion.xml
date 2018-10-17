@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MatchWrap"
+    android:background="@color/whiteColors"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen89"
+        android:layout_marginTop="@dimen/dimen7"
+        android:src="@mipmap/placeholderfigure" />
+
+    <TextView
+        style="@style/MatchWrap"
+        android:layout_marginTop="@dimen/dimen10"
+        android:singleLine="true"
+        android:text="大阪"
+        android:textColor="@color/db58Colors"
+        android:textSize="@dimen/textsize10" />
+
+    <TextView
+        style="@style/MatchWrap"
+        android:layout_marginTop="@dimen/dimen5"
+        android:layout_marginBottom="@dimen/dimen7"
+        android:singleLine="true"
+        android:text="当地人的赏风秘境"
+        android:textColor="@color/hintColors"
+        android:textSize="@dimen/textsize10" />
+
+
+</LinearLayout>

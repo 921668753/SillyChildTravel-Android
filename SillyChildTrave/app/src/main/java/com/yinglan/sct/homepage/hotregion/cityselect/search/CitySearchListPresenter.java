@@ -1,30 +1,30 @@
-package com.yinglan.sct.homepage.airporttransportation.search;
+package com.yinglan.sct.homepage.hotregion.cityselect.search;
 
 import com.common.cklibrary.common.KJActivityStack;
 import com.common.cklibrary.utils.httputil.HttpUtilParams;
 import com.common.cklibrary.utils.httputil.ResponseListener;
 import com.kymjs.rxvolley.client.HttpParams;
+import com.yinglan.sct.homepage.hotregion.cityselect.search.CitySearchListContract;
 import com.yinglan.sct.retrofit.RequestClient;
 
 /**
  * Created by ruitu on 2018/9/24.
  */
 
-public class ProductSearchListPresenter implements ProductSearchListContract.Presenter {
+public class CitySearchListPresenter implements CitySearchListContract.Presenter {
 
-    private ProductSearchListContract.View mView;
+    private CitySearchListContract.View mView;
 
-    public ProductSearchListPresenter(ProductSearchListContract.View view) {
+    public CitySearchListPresenter(CitySearchListContract.View view) {
         mView = view;
         mView.setPresenter(this);
     }
 
     @Override
-    public void getProductByAirportId(String name, int category) {
+    public void getAreaByName(String name) {
         HttpParams httpParams = HttpUtilParams.getInstance().getHttpParams();
         httpParams.put("name", name);
-        httpParams.put("category", category);
-        RequestClient.postProductByType(KJActivityStack.create().topActivity(), httpParams, new ResponseListener<String>() {
+        RequestClient.getAreaByName(KJActivityStack.create().topActivity(), httpParams, new ResponseListener<String>() {
             @Override
             public void onSuccess(String response) {
                 mView.getSuccess(response, 0);

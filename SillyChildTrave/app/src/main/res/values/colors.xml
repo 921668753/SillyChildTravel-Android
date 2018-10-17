@@ -39,8 +39,10 @@
 
     <!--主界面-->
     <color name="ea73Colors">#63ea73</color>
+    <color name="db58Colors">#36DB58</color>
     <color name="redColors">#ff2e29</color>
     <color name="blueColors">#3F96F3</color>
+    <color name="eEF3F7Colors">#EEF3F7</color>
     <color name="phonestrColor">#8e8e8e</color>
     <color name="fF4E00Colors">#FF4E00</color>
     <color name="c9FFD2Colors">#C9FFD2</color>
@@ -54,10 +56,11 @@
     <color name="d0a4fcColors">#d0a4fc</color>
     <color name="fF9955Colors">#FF9955</color>
     <color name="fF4848Colors">#FF4848</color>
+    <color name="fF5858Colors">#FF5858</color>
     <color name="lightRedColors">#ff4e4e</color>
     <color name="searchTextColors">#767676</color>
     <color name="dFFDE6Colors">#DFFDE6</color>
-
+    <color name="eAEBEDColors">#EAEBED</color>
 
     <!--按天包车游-->
     <color name="fF5050Colors">#FF5050</color>

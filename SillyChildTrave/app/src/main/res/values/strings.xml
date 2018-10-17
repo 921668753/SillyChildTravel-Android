@@ -144,9 +144,13 @@
     <string name="airportDropOff">送机</string>
     <string name="selectLine">精选线路</string>
     <string name="moreLines">更多线路</string>
+    <string name="hotRegion">热门地区</string>
+    <string name="moreCities">更多城市</string>
     <string name="sillyChildCustomerService">傻孩子客服</string>
     <string name="notOpenPositionSwitch">未打开位置开关，可能导致定位失败或定位不准，请打开GPS</string>
     <string name="openPositionSwitch">定位需要以下权限:\n\n1.访问设备上的gps\n\n2.读写权限</string>
+    <string name="wantGoOutPlay">想出去玩？找傻孩子聊聊吧</string>
+
 
     <!--首页   接机-->
     <string name="flightNumber">航班号</string>
@@ -165,6 +169,9 @@
     <!--首页   送机-->
     <string name="people">人</string>
     <string name="jian">件</string>
+    <string name="canSitUp">最多可坐</string>
+    <string name="ordered">已预定</string>
+    <string name="time">次</string>
     <string name="numberSendMachine">送机人数</string>
     <string name="baggageNumber1">行李件数</string>
     <string name="pickUpNumber">接机人数</string>
@@ -259,7 +266,9 @@
     <string name="clearSearch">确定清空搜索</string>
     <string name="enterSearchContent">请输入您要搜索的内容</string>
     <string name="cityDoWantGoTo">您想要去哪座城市</string>
+    <string name="airportWillLandAt">您将降落在哪座机场</string>
     <string name="recentSearch">最近搜索</string>
+    <string name="hotSearch">热门搜索</string>
     <string name="noProduct">亲，还没有任何产品哟~</string>
 
     <!--首页   精品线路-->
@@ -326,7 +335,7 @@
     <!--首页   私人定制   城市选择-->
     <string name="recommended">推荐</string>
     <string name="popularDestination">热门目的地</string>
-
+    <string name="hitAirport">热门机场</string>
 
     <!--首页   动态详情-->
     <string name="attention">+ 关注</string>

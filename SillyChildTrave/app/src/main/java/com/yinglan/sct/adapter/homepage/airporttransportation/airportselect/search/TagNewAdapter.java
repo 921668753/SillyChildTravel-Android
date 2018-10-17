@@ -1,4 +1,4 @@
-package com.yinglan.sct.adapter.homepage.airporttransportation.search;
+package com.yinglan.sct.adapter.homepage.airporttransportation.airportselect.search;
 
 import com.zhy.view.flowlayout.TagAdapter;
 

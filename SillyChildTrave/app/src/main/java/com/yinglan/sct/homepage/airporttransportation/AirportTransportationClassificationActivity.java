@@ -15,10 +15,12 @@ import com.common.cklibrary.common.BindView;
 import com.common.cklibrary.common.ViewInject;
 import com.common.cklibrary.utils.JsonUtil;
 import com.yinglan.sct.R;
+import com.yinglan.sct.adapter.homepage.airporttransportation.AirportTransportationClassificationGridViewAdapter;
+import com.yinglan.sct.adapter.homepage.airporttransportation.AirportTransportationClassificationListViewAdapter;
 import com.yinglan.sct.entity.homepage.airporttransportation.AirportCountryListBean;
 
 import com.yinglan.sct.entity.homepage.airporttransportation.AirportByCountryIdBean;
-import com.yinglan.sct.homepage.airporttransportation.search.ProductSearchActivity;
+import com.yinglan.sct.homepage.airporttransportation.airportselect.search.ProductSearchActivity;
 
 import java.util.List;
 
@@ -53,9 +55,9 @@ public class AirportTransportationClassificationActivity extends BaseActivity im
     @BindView(id = R.id.tv_button, click = true)
     private TextView tv_button;
 
-    private com.yinglan.sct.adapter.homepage.airporttransportation.AirportTransportationClassificationListViewAdapter mListViewAdapter = null;
+    private AirportTransportationClassificationListViewAdapter mListViewAdapter = null;
 
-    private com.yinglan.sct.adapter.homepage.airporttransportation.AirportTransportationClassificationGridViewAdapter mGridViewAdapter = null;
+    private AirportTransportationClassificationGridViewAdapter mGridViewAdapter = null;
 
     private List<AirportCountryListBean.DataBean> airportCountryList;
 
@@ -74,8 +76,8 @@ public class AirportTransportationClassificationActivity extends BaseActivity im
     public void initData() {
         super.initData();
         mPresenter = new AirportTransportationClassificationPresenter(this);
-        mListViewAdapter = new com.yinglan.sct.adapter.homepage.airporttransportation.AirportTransportationClassificationListViewAdapter(this);
-        mGridViewAdapter = new com.yinglan.sct.adapter.homepage.airporttransportation.AirportTransportationClassificationGridViewAdapter(this);
+        mListViewAdapter = new AirportTransportationClassificationListViewAdapter(this);
+        mGridViewAdapter = new AirportTransportationClassificationGridViewAdapter(this);
         title = getIntent().getStringExtra("title");
         type = getIntent().getIntExtra("type", 0);
     }

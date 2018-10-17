@@ -23,8 +23,8 @@ import com.yinglan.sct.homepage.airporttransportation.AirportTransportationClass
 import com.yinglan.sct.homepage.airporttransportation.PriceInformationActivity;
 import com.yinglan.sct.homepage.airporttransportation.SelectProductAirportTransportationActivity;
 import com.yinglan.sct.homepage.airporttransportation.paymentorder.PaymentTravelOrderActivity;
-import com.yinglan.sct.homepage.airporttransportation.search.ProductSearchActivity;
-import com.yinglan.sct.homepage.airporttransportation.search.ProductSearchListActivity;
+import com.yinglan.sct.homepage.airporttransportation.airportselect.search.ProductSearchActivity;
+import com.yinglan.sct.homepage.airporttransportation.airportselect.search.ProductSearchListActivity;
 import com.yinglan.sct.mine.mywallet.coupons.CouponsActivity;
 import com.yinglan.sct.utils.GlideImageLoader;
 

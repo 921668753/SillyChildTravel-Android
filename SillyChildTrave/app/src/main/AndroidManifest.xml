@@ -149,12 +149,12 @@
 
         <!--首页   产品搜索-->
         <activity
-            android:name=".homepage.airporttransportation.search.ProductSearchActivity"
+            android:name=".homepage.airporttransportation.airportselect.search.ProductSearchActivity"
             android:screenOrientation="portrait" />
 
         <!--首页   产品搜索  搜索结果-->
         <activity
-            android:name=".homepage.airporttransportation.search.ProductSearchListActivity"
+            android:name=".homepage.airporttransportation.airportselect.search.ProductSearchListActivity"
             android:screenOrientation="portrait" />
 
         <!--首页   选择产品-->

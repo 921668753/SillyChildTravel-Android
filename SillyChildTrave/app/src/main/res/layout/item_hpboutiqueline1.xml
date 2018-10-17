@@ -3,56 +3,56 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/MatchWrap"
     android:background="@color/whiteColors"
-    android:gravity="center_vertical"
     android:orientation="horizontal"
-    android:paddingLeft="@dimen/dimen15"
-    android:paddingRight="@dimen/dimen15">
+    android:paddingLeft="@dimen/dimen28"
+    android:paddingTop="@dimen/dimen5"
+    android:paddingRight="@dimen/dimen39"
+    android:paddingBottom="@dimen/dimen5">
 
     <ImageView
         android:id="@+id/img_boutiQueLine"
-        android:layout_width="@dimen/dimen117"
-        android:layout_height="@dimen/dimen97"
-        android:layout_marginBottom="@dimen/dimen16"
-        android:layout_marginTop="@dimen/dimen16"
+        android:layout_width="@dimen/dimen153"
+        android:layout_height="@dimen/dimen106"
+
         android:scaleType="fitXY"
         android:src="@mipmap/placeholderfigure" />
 
     <LinearLayout
-        style="@style/MatchWrap"
+        style="@style/MatchMatch"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/tv_boutiQueLine"
             style="@style/MatchWrap"
-            android:paddingLeft="@dimen/dimen12"
+            android:layout_marginTop="@dimen/dimen20"
+            android:paddingLeft="@dimen/dimen13"
             android:singleLine="true"
-            android:text="【芭提雅三天六晚自由行】"
-            android:textColor="@color/textColor"
-            android:textSize="@dimen/textsize15" />
+            android:text="芭提雅三天六晚自由行"
+            android:textColor="@color/db58Colors"
+            android:textSize="@dimen/textsize10" />
 
         <TextView
             android:id="@+id/tv_synopsis"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen30"
+            android:layout_height="@dimen/dimen25"
+            android:layout_marginTop="@dimen/dimen9"
             android:maxLines="2"
             android:paddingLeft="@dimen/dimen12"
             android:text="美丽的东南亚海岛风情，给你带来不一样的体验。"
             android:textColor="@color/hintColors"
-            android:textSize="@dimen/textsize12" />
-
+            android:textSize="@dimen/textsize10" />
 
         <LinearLayout
-            style="@style/MatchWrap"
-            android:gravity="right"
+            style="@style/MatchAuto"
+            android:gravity="bottom"
             android:orientation="horizontal">
 
             <LinearLayout
                 android:id="@+id/ll_attentionNum"
-                android:layout_width="@dimen/dimen37"
-                android:layout_height="match_parent"
+                style="@style/WrapWrap"
                 android:gravity="center"
-                android:orientation="vertical"
-                android:visibility="gone">
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dimen13">
 
                 <!--<ImageView-->
                 <!--android:layout_width="@dimen/dimen13"-->
@@ -62,16 +62,17 @@
 
                 <ImageView
                     android:id="@+id/img_collection"
-                    android:layout_width="@dimen/dimen13"
-                    android:layout_height="@dimen/dimen13"
-                    android:layout_marginTop="@dimen/dimen3"
-                    android:src="@mipmap/hp_collection" />
+                    android:layout_width="@dimen/dimen7"
+                    android:layout_height="@dimen/dimen7"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/hmpg_collection" />
 
 
                 <TextView
                     android:id="@+id/tv_attentionNum"
                     style="@style/WrapWrap"
-                    android:layout_marginTop="@dimen/dimen2"
+                    android:layout_marginLeft="@dimen/dimen2"
+                    android:maxWidth="@dimen/dimen150"
                     android:singleLine="true"
                     android:text="200"
                     android:textColor="@color/fF5656Colors"
@@ -79,18 +80,22 @@
 
             </LinearLayout>
 
+
+            <TextView
+                style="@style/AutoWrap"
+                android:gravity="right"
+                android:text="¥2000起/人"
+                android:textColor="@color/fF5858Colors"
+                android:textSize="@dimen/textsize10"
+                android:textStyle="bold" />
+
             <LinearLayout
                 android:id="@+id/ll_collection"
                 style="@style/WrapMatch"
                 android:gravity="center|right"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:visibility="gone">
 
-                <!--<ImageView-->
-                <!--android:id="@+id/img_collection"-->
-                <!--android:layout_width="@dimen/dimen13"-->
-                <!--android:layout_height="@dimen/dimen13"-->
-                <!--android:layout_marginTop="@dimen/dimen3"-->
-                <!--android:src="@mipmap/hp_collection" />-->
 
                 <com.klavor.widget.RatingBar
                     android:id="@+id/ratingbar"

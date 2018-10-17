@@ -1,4 +1,4 @@
-package com.yinglan.sct.adapter.homepage.airporttransportation.search;
+package com.yinglan.sct.adapter.homepage.hotregion.cityselect;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.yinglan.sct.R;
+import com.yinglan.sct.adapter.homepage.airporttransportation.airportselect.search.TagNewAdapter;
 import com.yinglan.sct.entity.community.search.RecentSearchBean.DataBean;
 import com.zhy.view.flowlayout.FlowLayout;
 import com.zhy.view.flowlayout.TagFlowLayout;
@@ -29,7 +30,7 @@ public class RecentSearchTagAdapter extends TagNewAdapter<DataBean> {
 
     @Override
     public View getView(FlowLayout parent, int position, DataBean s) {
-        TextView tv = (TextView) mInflater.inflate(R.layout.item_productrecentsearch, parent, false);
+        TextView tv = (TextView) mInflater.inflate(R.layout.item_cityrecentsearch, parent, false);
         tv.setText(s.getName());
         ViewGroup.MarginLayoutParams lp = new ViewGroup.MarginLayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT,

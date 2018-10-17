@@ -7,12 +7,13 @@
     android:paddingLeft="@dimen/dimen4">
 
     <TextView
+        android:id="@+id/tv_popularDestination"
         style="@style/MatchWrap"
         android:background="@color/whiteColors"
         android:paddingLeft="@dimen/dimen13"
         android:paddingTop="@dimen/dimen11"
         android:text="@string/popularDestination"
-        android:textColor="@color/textColor"
+        android:textColor="@color/fF4A4AColors"
         android:textSize="@dimen/textsize14" />
 
     <FrameLayout

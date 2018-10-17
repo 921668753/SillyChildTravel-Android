@@ -42,7 +42,7 @@ public class BoutiqueLineViewAdapter extends BGARecyclerViewAdapter<GoodsListBea
         /**
          * 图片
          */
-        GlideImageLoader.glideOrdinaryLoader(mContext, listBean.getMain_picture(), viewHolderHelper.getImageView(R.id.img_boutiQueLine), R.mipmap.placeholderfigure);
+        GlideImageLoader.glideLoaderRaudio(mContext, listBean.getMain_picture(), viewHolderHelper.getImageView(R.id.img_boutiQueLine), 5, R.mipmap.placeholderfigure);
 
         /**
          * 标题

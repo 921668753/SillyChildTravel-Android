@@ -22,6 +22,7 @@ import com.common.cklibrary.common.StringConstants;
 import com.common.cklibrary.common.ViewInject;
 import com.common.cklibrary.utils.JsonUtil;
 import com.common.cklibrary.utils.RefreshLayoutUtil;
+import com.common.cklibrary.utils.myview.NoScrollGridView;
 import com.kymjs.common.PreferenceHelper;
 import com.kymjs.common.StringUtils;
 import com.yinglan.sct.BuildConfig;
@@ -63,8 +64,8 @@ public class HomePageFragment extends BaseFragment implements EasyPermissions.Pe
     /**
      * 客服
      */
-//    @BindView(id = R.id.img_customerService, click = true)
-//    private ImageView img_customerService;
+    @BindView(id = R.id.ll_customerService, click = true)
+    private LinearLayout ll_customerService;
 
     /**
      * 消息
@@ -115,14 +116,14 @@ public class HomePageFragment extends BaseFragment implements EasyPermissions.Pe
     private LinearLayout ll_airportDropOff;
 
     /**
-     * 热门视频  更多视频
+     * 热门地区  更多地区
      */
-//    @BindView(id = R.id.ll_hotVideo, click = true)
-//    private LinearLayout ll_hotVideo;
-//
-//    @BindView(id = R.id.hlv_hotVideo)
-//    private HorizontalListView hlv_hotVideo;
-//
+    @BindView(id = R.id.ll_hotRegion, click = true)
+    private LinearLayout ll_hotRegion;
+
+    @BindView(id = R.id.gv_hotRegion)
+    private NoScrollGridView gv_hotRegion;
+
 //    private HotVideoViewAdapter hotVideoViewAdapter;
 
     /**
@@ -178,7 +179,7 @@ public class HomePageFragment extends BaseFragment implements EasyPermissions.Pe
         //设置item之间的间隔
         recyclerView.addItemDecoration(BGADivider.newShapeDivider()
                 .setStartSkipCount(1)
-                .setSizeDp(1)
+                .setSizeDp(6)
                 .setColorResource(R.color.background, false));
         recyclerView.setNestedScrollingEnabled(false);
         recyclerView.setAdapter(boutiqueLineViewAdapter);
@@ -193,9 +194,14 @@ public class HomePageFragment extends BaseFragment implements EasyPermissions.Pe
     protected void widgetClick(View v) {
         super.widgetClick(v);
         switch (v.getId()) {
-
             case R.id.rl_message:
                 ((HomePageContract.Presenter) mPresenter).getIsLogin(aty, 1);
+                break;
+            case R.id.ll_customerService:
+                ((HomePageContract.Presenter) mPresenter).getIsLogin(aty, 2);
+                break;
+            case R.id.ll_hotRegion:
+                ((HomePageContract.Presenter) mPresenter).getIsLogin(aty, 3);
                 break;
             case R.id.ll_airportPickup:
                 ((HomePageContract.Presenter) mPresenter).getIsLogin(aty, 5);
