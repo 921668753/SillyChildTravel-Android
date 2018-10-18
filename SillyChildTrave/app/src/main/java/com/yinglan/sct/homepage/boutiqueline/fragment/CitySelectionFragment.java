@@ -21,6 +21,8 @@ import com.yinglan.sct.adapter.homepage.boutiqueline.BoutiqueLineViewAdapter;
 import com.yinglan.sct.constant.NumericConstants;
 import com.yinglan.sct.entity.homepage.boutiqueline.fragment.BoutiqueLineBean;
 import com.yinglan.sct.homepage.boutiqueline.BoutiqueLineActivity;
+import com.yinglan.sct.homepage.boutiqueline.BoutiqueLineContract;
+import com.yinglan.sct.homepage.boutiqueline.BoutiqueLinePresenter;
 import com.yinglan.sct.homepage.boutiqueline.LineDetailsActivity;
 import com.yinglan.sct.homepage.boutiqueline.selectcity.SelectCityActivity;
 import com.yinglan.sct.loginregister.LoginActivity;

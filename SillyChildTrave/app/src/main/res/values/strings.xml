@@ -280,6 +280,9 @@
     <string name="selectTravelDate">选择行程日期</string>
     <string name="selectTravelDate1">请选择行程日期</string>
     <string name="chosecity">城市选择</string>
+    <string name="visitCity">城市选择</string>
+    <string name="travelPreferences2">游玩偏好</string>
+
 
     <!--首页   线路详情-->
     <string name="detailsLine">线路详情</string>

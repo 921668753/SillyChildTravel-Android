@@ -8,57 +8,72 @@
         android:id="@+id/img_boutiqueLine"
         style="@style/MatchWrap"
         android:adjustViewBounds="true"
-        android:paddingLeft="@dimen/dimen1"
-        android:paddingRight="@dimen/dimen1"
-        android:paddingTop="@dimen/dimen1"
+        android:scaleType="fitXY"
         android:src="@mipmap/placeholderfigure" />
-
 
     <TextView
         android:id="@+id/tv_boutiqueLineTitle"
         style="@style/MatchWrap"
-        android:paddingBottom="@dimen/dimen6"
-        android:paddingLeft="@dimen/dimen7"
-        android:paddingRight="@dimen/dimen7"
-        android:paddingTop="@dimen/dimen10"
-        android:text="意大利豪华10日游意大利豪华10日游意大利豪华10日游意大利豪华10日游意大利豪华10日游意大利豪华10日游"
-        android:textColor="@color/textColor"
-        android:textSize="@dimen/textsize11" />
+        android:paddingLeft="@dimen/dimen8"
+        android:paddingTop="@dimen/dimen15"
+        android:paddingRight="@dimen/dimen8"
+        android:paddingBottom="@dimen/dimen16"
+        android:singleLine="true"
+        android:text="京都3天2晚文化游"
+        android:textColor="@color/greenColors"
+        android:textSize="@dimen/textsize11"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tv_subtitle"
         style="@style/MatchWrap"
-        android:paddingBottom="@dimen/dimen10"
-        android:paddingLeft="@dimen/dimen7"
-        android:paddingRight="@dimen/dimen7"
+        android:maxLines="2"
+        android:paddingLeft="@dimen/dimen8"
+        android:paddingRight="@dimen/dimen8"
+        android:paddingBottom="@dimen/dimen12"
         android:text="线路简介线路简介线路简介线路简介线路简介"
-        android:textColor="@color/hintColors"
-        android:textSize="@dimen/textsize11" />
-
+        android:textColor="@color/tabColors"
+        android:textSize="@dimen/textsize10" />
 
     <LinearLayout
         style="@style/MatchWrap"
         android:gravity="center_vertical"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/dimen9">
 
         <TextView
             android:id="@+id/tv_money"
             style="@style/AutoWrap"
-            android:paddingBottom="@dimen/dimen10"
+            android:paddingLeft="@dimen/dimen8"
+            android:singleLine="true"
+            android:text="￥2450.00/人"
+            android:textColor="@color/fF4848Colors"
+            android:textSize="@dimen/textsize10"
+            android:textStyle="bold" />
+
+        <TextView
+            style="@style/AutoWrap"
+            android:gravity="right"
             android:paddingLeft="@dimen/dimen7"
-            android:text="--"
-            android:textColor="@color/lightRedColors"
-            android:textSize="@dimen/textsize11" />
+            android:text="@string/ordered"
+            android:textColor="@color/hintColors"
+            android:textSize="@dimen/textsize9" />
 
         <TextView
             android:id="@+id/tv_score"
             style="@style/WrapWrap"
-            android:paddingBottom="@dimen/dimen8"
-            android:paddingRight="@dimen/dimen7"
+            android:maxWidth="@dimen/dimen40"
             android:singleLine="true"
-            android:text="--"
-            android:textColor="@color/lightRedColors"
-            android:textSize="@dimen/textsize11" />
+            android:text="0"
+            android:textColor="@color/fF4848Colors"
+            android:textSize="@dimen/textsize9" />
+
+        <TextView
+            style="@style/WrapWrap"
+            android:paddingRight="@dimen/dimen8"
+            android:text="@string/time"
+            android:textColor="@color/hintColors"
+            android:textSize="@dimen/textsize9" />
 
     </LinearLayout>
 

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     style="@style/MatchMatch"
     android:background="@color/background"
     android:fitsSystemWindows="true"
@@ -7,65 +9,253 @@
 
     <include layout="@layout/common_title" />
 
-    <LinearLayout
-        style="@style/Match45"
-        android:layout_marginTop="@dimen/dimen6"
-        android:visibility="gone"
-        android:background="@color/whiteColors"
-        android:orientation="horizontal">
+    <cn.bingoogolapple.refreshlayout.BGARefreshLayout
+        android:id="@+id/mRefreshLayout"
+        style="@style/MatchMatch">
 
-        <LinearLayout
-            android:id="@+id/ll_chosecity"
-            style="@style/AutoMatch"
-            android:gravity="center"
-            android:orientation="vertical">
+        <ScrollView
+            style="@style/MatchMatch"
+            android:scrollbars="none">
 
-            <TextView
-                android:id="@+id/tv_chosecity"
-                style="@style/MatchAuto"
-                android:gravity="center"
-                android:text="@string/chosecity"
-                android:textColor="@color/textColor"
-                android:textSize="@dimen/textsize15" />
+            <RelativeLayout
+                style="@style/MatchMatch"
+                android:descendantFocusability="blocksDescendants">
+
+                <cn.bingoogolapple.bgabanner.BGABanner
+                    android:id="@+id/banner_ad"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen172"
+                    android:background="@mipmap/placeholderfigure2"
+                    android:scaleType="centerInside"
+                    app:banner_pageChangeDuration="2000"
+                    app:banner_pointAutoPlayAble="false"
+                    app:banner_pointContainerBackground="@android:color/transparent"
+                    app:banner_pointDrawable="@drawable/bga_banner_selector_point"
+                    app:banner_pointTopBottomMargin="@dimen/dimen6"
+                    app:banner_transitionEffect="alpha" />
+
+                <LinearLayout
+                    android:id="@+id/ll_topbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen36"
+                    android:layout_below="@id/banner_ad"
+                    android:layout_marginTop="@dimen/dimen6"
+                    android:layout_marginBottom="@dimen/dimen6"
+                    android:background="@color/whiteColors"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:id="@+id/ll_visitCity"
+                        style="@style/AutoMatch"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_visitCity"
+                            style="@style/AutoMatch"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/dimen17"
+                            android:paddingRight="@dimen/dimen17"
+                            android:singleLine="true"
+                            android:text="@string/visitCity"
+                            android:textColor="@color/greenColors"
+                            android:textSize="@dimen/textsize12" />
+
+                        <ImageView
+                            android:layout_width="@dimen/dimen8"
+                            android:layout_height="@dimen/dimen7"
+                            android:layout_marginRight="@dimen/dimen20"
+                            android:src="@mipmap/arrow" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="@dimen/dimen1"
+                        android:layout_height="@dimen/dimen13"
+                        android:background="@color/hintColors" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_playNumberDays"
+                        style="@style/AutoMatch"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_playNumberDays"
+                            style="@style/AutoMatch"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/dimen17"
+                            android:paddingRight="@dimen/dimen17"
+                            android:singleLine="true"
+                            android:text="@string/playNumberDays"
+                            android:textColor="@color/greenColors"
+                            android:textSize="@dimen/textsize12" />
+
+                        <ImageView
+                            android:layout_width="@dimen/dimen8"
+                            android:layout_height="@dimen/dimen7"
+                            android:layout_marginRight="@dimen/dimen20"
+                            android:src="@mipmap/arrow" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="@dimen/dimen1"
+                        android:layout_height="@dimen/dimen13"
+                        android:background="@color/hintColors" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_travelPreferences"
+                        style="@style/AutoMatch"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_travelPreferences"
+                            style="@style/AutoMatch"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/dimen17"
+                            android:paddingRight="@dimen/dimen17"
+                            android:singleLine="true"
+                            android:text="@string/travelPreferences2"
+                            android:textColor="@color/greenColors"
+                            android:textSize="@dimen/textsize12" />
+
+                        <ImageView
+                            android:layout_width="@dimen/dimen8"
+                            android:layout_height="@dimen/dimen7"
+                            android:layout_marginRight="@dimen/dimen17"
+                            android:src="@mipmap/arrow" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_boutiqueLine"
+                    style="@style/MatchMatch"
+                    android:layout_below="@id/ll_topbar"
+                    android:overScrollMode="never"
+                    android:paddingLeft="@dimen/dimen4"
+                    android:paddingRight="@dimen/dimen4"
+                    android:scrollbars="none"
+                    tools:listitem="@layout/item_boutiqueline" />
+
+                <LinearLayout
+                    android:id="@+id/ll_bottom"
+                    style="@style/MatchMatch"
+                    android:layout_below="@id/ll_topbar"
+                    android:visibility="gone">
+
+                    <include layout="@layout/common_error" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_topbar1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen36"
+                    android:layout_marginTop="@dimen/dimen6"
+                    android:layout_marginBottom="@dimen/dimen6"
+                    android:background="@color/whiteColors"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:id="@+id/ll_visitCity1"
+                        style="@style/AutoMatch"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_visitCity1"
+                            style="@style/AutoMatch"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/dimen17"
+                            android:paddingRight="@dimen/dimen17"
+                            android:singleLine="true"
+                            android:text="@string/visitCity"
+                            android:textColor="@color/greenColors"
+                            android:textSize="@dimen/textsize12" />
+
+                        <ImageView
+                            android:layout_width="@dimen/dimen8"
+                            android:layout_height="@dimen/dimen7"
+                            android:layout_marginRight="@dimen/dimen20"
+                            android:src="@mipmap/arrow" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="@dimen/dimen1"
+                        android:layout_height="@dimen/dimen13"
+                        android:background="@color/hintColors" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_playNumberDays1"
+                        style="@style/AutoMatch"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_playNumberDays1"
+                            style="@style/AutoMatch"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/dimen17"
+                            android:paddingRight="@dimen/dimen17"
+                            android:singleLine="true"
+                            android:text="@string/playNumberDays"
+                            android:textColor="@color/greenColors"
+                            android:textSize="@dimen/textsize12" />
+
+                        <ImageView
+                            android:layout_width="@dimen/dimen8"
+                            android:layout_height="@dimen/dimen7"
+                            android:layout_marginRight="@dimen/dimen20"
+                            android:src="@mipmap/arrow" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="@dimen/dimen1"
+                        android:layout_height="@dimen/dimen13"
+                        android:background="@color/hintColors" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_travelPreferences1"
+                        style="@style/AutoMatch"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_travelPreferences1"
+                            style="@style/AutoMatch"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/dimen17"
+                            android:paddingRight="@dimen/dimen17"
+                            android:singleLine="true"
+                            android:text="@string/travelPreferences2"
+                            android:textColor="@color/greenColors"
+                            android:textSize="@dimen/textsize12" />
+
+                        <ImageView
+                            android:layout_width="@dimen/dimen8"
+                            android:layout_height="@dimen/dimen7"
+                            android:layout_marginRight="@dimen/dimen17"
+                            android:src="@mipmap/arrow" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
 
 
-            <TextView
-                android:id="@+id/tv_chosecity1"
-                android:layout_width="@dimen/dimen38"
-                android:layout_height="@dimen/dimen2"
-                android:background="@color/whiteColors" />
+            </RelativeLayout>
 
-        </LinearLayout>
+        </ScrollView>
 
-
-        <LinearLayout
-            android:id="@+id/ll_hotRecommended"
-            style="@style/AutoMatch"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/tv_hotRecommended"
-                style="@style/MatchAuto"
-                android:gravity="center"
-                android:text="@string/hotRecommended"
-                android:textColor="@color/greenColors"
-                android:textSize="@dimen/textsize15" />
-
-
-            <TextView
-                android:id="@+id/tv_hotRecommended1"
-                android:layout_width="@dimen/dimen38"
-                android:layout_height="@dimen/dimen2"
-                android:background="@color/greenColors" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-
-    <FrameLayout
-        android:id="@+id/main_content"
-        style="@style/MatchMatch" />
+    </cn.bingoogolapple.refreshlayout.BGARefreshLayout>
 
 </LinearLayout>

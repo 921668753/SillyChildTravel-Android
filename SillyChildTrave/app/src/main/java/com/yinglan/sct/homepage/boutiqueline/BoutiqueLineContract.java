@@ -1,4 +1,4 @@
-package com.yinglan.sct.homepage.boutiqueline.fragment;
+package com.yinglan.sct.homepage.boutiqueline;
 
 import android.content.Context;
 
