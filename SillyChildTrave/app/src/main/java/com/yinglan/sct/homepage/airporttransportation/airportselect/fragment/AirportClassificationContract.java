@@ -12,7 +12,12 @@ public interface AirportClassificationContract {
         /**
          * 获取大洲下面的数据
          */
-        void getCountryAreaListByParentid(Context context, int id, int flag);
+        void getCountryAreaListByParentid(Context context, int id, int type, int flag);
+
+        /**
+         * 获取分类
+         */
+        void getAirportByCountryId(Context context, int country_id);
 
     }
 

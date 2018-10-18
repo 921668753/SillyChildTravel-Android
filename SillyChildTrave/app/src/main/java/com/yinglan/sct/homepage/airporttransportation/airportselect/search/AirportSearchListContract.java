@@ -1,4 +1,4 @@
-package com.yinglan.sct.homepage.airporttransportation.airportselect;
+package com.yinglan.sct.homepage.airporttransportation.airportselect.search;
 
 import com.common.cklibrary.common.BasePresenter;
 import com.common.cklibrary.common.BaseView;

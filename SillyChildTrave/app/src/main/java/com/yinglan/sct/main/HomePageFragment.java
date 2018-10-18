@@ -32,10 +32,12 @@ import com.yinglan.sct.constant.NumericConstants;
 import com.yinglan.sct.entity.main.HomePageBean;
 import com.yinglan.sct.entity.main.HomePageBean.DataBean.BannerListBean;
 import com.yinglan.sct.homepage.BannerDetailsActivity;
-import com.yinglan.sct.homepage.airporttransportation.AirportTransportationClassificationActivity;
+import com.yinglan.sct.homepage.airporttransportation.airportselect.AirportSelectActivity;
 import com.yinglan.sct.homepage.boutiqueline.BoutiqueLineActivity;
 import com.yinglan.sct.homepage.boutiqueline.LineDetailsActivity;
 import com.yinglan.sct.homepage.bythedaycharter.ByTheDayCharterClassificationActivity;
+import com.yinglan.sct.homepage.hotregion.HotRegionActivity;
+import com.yinglan.sct.homepage.hotregion.cityselect.CitySelectActivity;
 import com.yinglan.sct.homepage.privatecustom.PrivateCustomActivity;
 import com.yinglan.sct.loginregister.LoginActivity;
 import com.yinglan.sct.message.interactivemessage.imuitl.RongIMUtil;
@@ -253,7 +255,7 @@ public class HomePageFragment extends BaseFragment implements EasyPermissions.Pe
                 boutiqueLineViewAdapter.clear();
                 boutiqueLineViewAdapter.addNewData(homePageBean.getData().getGoods_list());
             }
-        }  else if (flag == 2) {
+        } else if (flag == 2) {
             RongIMUtil.connectRongIM(aty);
             dismissLoadingDialog();
             //首先需要构造使用客服者的用户信息
@@ -271,10 +273,10 @@ public class HomePageFragment extends BaseFragment implements EasyPermissions.Pe
             RongIMClient.getInstance().setConversationToTop(Conversation.ConversationType.CUSTOMER_SERVICE, BuildConfig.RONGYUN_KEFU, true);
             // RongIMClient.getInstance().onModeChanged("426ddc2714964b5f8e2062eac7946904", "b60d3ba1c2534c27af40a1f49fe929f9");
         } else if (flag == 3) {
-//            Intent intent = new Intent(aty, VideoDetailsActivity.class);
+            Intent intent = new Intent(aty, CitySelectActivity.class);
 //            intent.putExtra("id", hotVideoViewAdapter.getItem(videoPosition).getId());
 //            intent.putExtra("title", hotVideoViewAdapter.getItem(videoPosition).getVideo_title());
-//            aty.showActivity(aty, intent);
+            aty.showActivity(aty, intent);
         } else if (flag == 4) {
 //            Intent intent = new Intent(aty, GoodsDetailsActivity.class);
 //            intent.putExtra("goodName", boutiqueLineViewAdapter.getItem(goodsPosition).getName());
@@ -287,7 +289,7 @@ public class HomePageFragment extends BaseFragment implements EasyPermissions.Pe
 
 
         } else if (flag == 5) {
-            Intent intent = new Intent(aty, AirportTransportationClassificationActivity.class);
+            Intent intent = new Intent(aty, AirportSelectActivity.class);
             intent.putExtra("title", getString(R.string.airportPickup));
             intent.putExtra("type", 1);
             aty.showActivity(aty, intent);
@@ -301,12 +303,12 @@ public class HomePageFragment extends BaseFragment implements EasyPermissions.Pe
             //   intent1.putExtra("newChageIcon", 2);
             aty.showActivity(aty, intent2);
         } else if (flag == 8) {
-            Intent intent3 = new Intent(aty, AirportTransportationClassificationActivity.class);
+            Intent intent3 = new Intent(aty, AirportSelectActivity.class);
             intent3.putExtra("title", getString(R.string.airportDropOff));
             intent3.putExtra("type", 2);
             aty.showActivity(aty, intent3);
         } else if (flag == 9) {
-          //  aty.showActivity(aty, HotVideoActivity.class);
+            //  aty.showActivity(aty, HotVideoActivity.class);
         } else if (flag == 10) {
             Intent intent4 = new Intent(aty, BoutiqueLineActivity.class);
             // intent4.putExtra("cat", 484);

@@ -20,33 +20,22 @@
         android:textColor="@color/textColor"
         android:textSize="@dimen/textsize16" />
 
-    <ScrollView
+    <cn.bingoogolapple.refreshlayout.BGARefreshLayout
+        android:id="@+id/mRefreshLayout"
         style="@style/MatchMatch"
-        android:scrollbars="none">
+        android:paddingTop="@dimen/dimen4">
 
-        <LinearLayout
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_productAirportTransportation"
             style="@style/MatchMatch"
-            android:orientation="vertical">
+            android:overScrollMode="never"
+            android:paddingLeft="@dimen/dimen4"
+            android:paddingRight="@dimen/dimen4"
+            android:scrollbars="none"
+            tools:listitem="@layout/item_productairporttransportation" />
 
-            <com.common.cklibrary.utils.myview.NoScrollGridView
-                android:id="@+id/gv_productAirportTransportation"
-                style="@style/MatchMatch"
-                android:layout_marginLeft="@dimen/dimen13"
-                android:layout_marginRight="@dimen/dimen13"
-                android:horizontalSpacing="@dimen/dimen13"
-                android:numColumns="2"
-                android:overScrollMode="never"
-                android:paddingTop="@dimen/dimen6"
-                android:paddingBottom="@dimen/dimen6"
-                android:scrollbars="none"
-                android:verticalSpacing="@dimen/dimen13"
-                tools:listitem="@layout/item_productairporttransportation" />
+    </cn.bingoogolapple.refreshlayout.BGARefreshLayout>
 
-            <include layout="@layout/common_error" />
-
-        </LinearLayout>
-
-    </ScrollView>
-
+    <include layout="@layout/common_error" />
 
 </LinearLayout>

@@ -23,6 +23,7 @@ import com.yinglan.sct.entity.homepage.privatecustom.cityselect.CitySelectListBe
 import com.yinglan.sct.entity.homepage.privatecustom.cityselect.CitySelectListBean.DataBean;
 import com.yinglan.sct.homepage.privatecustom.cityselect.fragment.CityClassificationFragment;
 import com.yinglan.sct.homepage.privatecustom.cityselect.fragment.RecommendedFragment;
+import com.yinglan.sct.homepage.privatecustom.cityselect.search.CitySearchActivity;
 
 import java.util.ArrayList;
 

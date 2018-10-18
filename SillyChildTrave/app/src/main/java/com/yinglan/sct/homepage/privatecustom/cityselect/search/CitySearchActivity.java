@@ -1,4 +1,4 @@
-package com.yinglan.sct.homepage.airporttransportation.airportselect;
+package com.yinglan.sct.homepage.privatecustom.cityselect.search;
 
 import android.content.Intent;
 import android.view.KeyEvent;
@@ -18,7 +18,7 @@ import com.common.cklibrary.utils.JsonUtil;
 import com.kymjs.common.PreferenceHelper;
 import com.kymjs.common.StringUtils;
 import com.yinglan.sct.R;
-import com.yinglan.sct.adapter.homepage.hotregion.cityselect.RecentSearchTagAdapter;
+import com.yinglan.sct.adapter.homepage.airporttransportation.airportselect.search.RecentSearchTagAdapter;
 import com.yinglan.sct.community.search.dialog.ClearSearchDialog;
 import com.yinglan.sct.entity.community.search.RecentSearchBean;
 import com.yinglan.sct.entity.community.search.RecentSearchBean.DataBean;
@@ -34,7 +34,7 @@ import java.util.List;
 /**
  * 城市搜索
  */
-public class AirportSearchActivity extends BaseActivity implements TagFlowLayout.OnTagClickListener {
+public class CitySearchActivity extends BaseActivity implements TagFlowLayout.OnTagClickListener {
 
     /**
      * 搜索
@@ -66,7 +66,7 @@ public class AirportSearchActivity extends BaseActivity implements TagFlowLayout
 
     @Override
     public void setRootView() {
-        setContentView(R.layout.activity_citysearch);
+        setContentView(R.layout.activity_productsearch);
     }
 
     @Override
@@ -113,7 +113,7 @@ public class AirportSearchActivity extends BaseActivity implements TagFlowLayout
                         beautyCareIntent.putExtra("name", textView.getText().toString().trim());
                         setResult(RESULT_OK, beautyCareIntent);
                     } else {
-                        beautyCareIntent.setClass(aty, AirportSearchListActivity.class);
+                        beautyCareIntent.setClass(aty, CitySearchListActivity.class);
                         beautyCareIntent.putExtra("name", textView.getText().toString().trim());
                         showActivity(aty, beautyCareIntent);
                     }
@@ -199,7 +199,7 @@ public class AirportSearchActivity extends BaseActivity implements TagFlowLayout
                 beautyCareIntent.putExtra("name", recentSearchTagAdapter.getItem(position).getName());
                 setResult(RESULT_OK, beautyCareIntent);
             } else {
-                beautyCareIntent.setClass(aty, AirportSearchListActivity.class);
+                beautyCareIntent.setClass(aty, CitySearchListActivity.class);
                 beautyCareIntent.putExtra("name", recentSearchTagAdapter.getItem(position).getName());
                 showActivity(aty, beautyCareIntent);
             }

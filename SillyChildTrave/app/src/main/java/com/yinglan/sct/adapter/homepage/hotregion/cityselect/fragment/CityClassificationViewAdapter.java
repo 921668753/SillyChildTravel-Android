@@ -1,4 +1,4 @@
-package com.yinglan.sct.adapter.homepage.privatecustom.cityselect.fragment;
+package com.yinglan.sct.adapter.homepage.hotregion.cityselect.fragment;
 
 import android.content.Context;
 
@@ -13,7 +13,6 @@ import cn.bingoogolapple.baseadapter.BGAViewHolderHelper;
  * 城市分类
  */
 public class CityClassificationViewAdapter extends BGAAdapterViewAdapter<DataBean> {
-
 
     public CityClassificationViewAdapter(Context context) {
         super(context, R.layout.item_city);

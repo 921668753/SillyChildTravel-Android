@@ -143,7 +143,7 @@ public class IndexNewBar extends View {
         mPaint.setAntiAlias(true);
         mPaint.setTextSize(textSize);
 
-        mPaint.setColor(getResources().getColor(R.color.dialogLoadingColor));
+        mPaint.setColor(getResources().getColor(R.color.indexBarTextColor));
 
         //设置index触摸监听器
         setmOnIndexPressedListener(new IndexBar.onIndexPressedListener() {

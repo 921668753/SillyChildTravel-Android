@@ -18,13 +18,13 @@ import com.common.cklibrary.utils.JsonUtil;
 import com.yinglan.sct.R;
 import com.yinglan.sct.adapter.homepage.airporttransportation.airportselect.fragment.AirportClassificationViewAdapter;
 import com.yinglan.sct.adapter.homepage.airporttransportation.airportselect.fragment.CountryClassificationViewAdapter;
+import com.yinglan.sct.entity.homepage.airporttransportation.AirportByCountryIdBean;
 import com.yinglan.sct.entity.homepage.privatecustom.cityselect.fragment.CityClassificationBean;
 import com.yinglan.sct.entity.homepage.privatecustom.cityselect.fragment.CityClassificationBean.DataBean;
+import com.yinglan.sct.homepage.airporttransportation.SelectProductAirportTransportationActivity;
 import com.yinglan.sct.homepage.airporttransportation.airportselect.AirportSelectActivity;
 
 import java.util.List;
-
-import static android.app.Activity.RESULT_OK;
 
 /**
  * 城市分类列表
@@ -60,10 +60,11 @@ public class AirportClassificationFragment extends BaseFragment implements Airpo
     private CountryClassificationViewAdapter mCountryAdapter;
     private List<DataBean> countryClassificationList;
     private DataBean countryBean;
-    private AirportClassificationViewAdapter mCityAdapter;
-    private List<DataBean> cityClassificationList;
-    private DataBean cityBean;
-
+    private AirportClassificationViewAdapter mAirportAdapter;
+    private List<AirportByCountryIdBean.DataBean> airportClassificationList;
+    private AirportByCountryIdBean.DataBean airportBean;
+    private String title = "";
+    private int type = 0;
 
     @Override
     protected View inflaterView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
@@ -77,9 +78,11 @@ public class AirportClassificationFragment extends BaseFragment implements Airpo
         super.initData();
         mPresenter = new AirportClassificationPresenter(this);
         mCountryAdapter = new CountryClassificationViewAdapter(aty);
-        mCityAdapter = new AirportClassificationViewAdapter(aty);
+        mAirportAdapter = new AirportClassificationViewAdapter(aty);
+        title = aty.getIntent().getStringExtra("title");
+        type = aty.getIntent().getIntExtra("type", 0);
         showLoadingDialog(getString(R.string.dataLoad));
-        ((AirportClassificationContract.Presenter) mPresenter).getCountryAreaListByParentid(aty, classification_id, 0);
+        ((AirportClassificationContract.Presenter) mPresenter).getCountryAreaListByParentid(aty, classification_id, type, 0);
     }
 
 
@@ -88,7 +91,7 @@ public class AirportClassificationFragment extends BaseFragment implements Airpo
         super.initWidget(parentView);
         lv_country.setAdapter(mCountryAdapter);
         lv_country.setOnItemClickListener(this);
-        lv_city.setAdapter(mCityAdapter);
+        lv_city.setAdapter(mAirportAdapter);
         lv_city.setOnItemClickListener(this);
     }
 
@@ -98,7 +101,7 @@ public class AirportClassificationFragment extends BaseFragment implements Airpo
         switch (v.getId()) {
             case R.id.tv_button:
                 if (tv_button.getText().toString().contains(getString(R.string.retry))) {
-                    ((AirportClassificationContract.Presenter) mPresenter).getCountryAreaListByParentid(aty, countryBean.getId(), 0);
+                    ((AirportClassificationContract.Presenter) mPresenter).getCountryAreaListByParentid(aty, countryBean.getId(), type, 0);
                 }
                 break;
         }
@@ -111,14 +114,18 @@ public class AirportClassificationFragment extends BaseFragment implements Airpo
             selectCountryClassification(position);
         } else if (parent.getId() == R.id.lv_city) {
             selectCityClassification(position);
-            Intent intent = new Intent();
-            intent.putExtra("country_id", countryBean.getId());
-            intent.putExtra("country_name", countryBean.getName());
-            intent.putExtra("city_id", cityBean.getId());
-            intent.putExtra("city_name", cityBean.getName());
+            Intent intent = new Intent(aty, SelectProductAirportTransportationActivity.class);
+            intent.putExtra("country_id", airportBean.getCountry_id());
+            intent.putExtra("country_name", airportBean.getCountry_name());
+            intent.putExtra("airport_id", airportBean.getAirport_id());
+            intent.putExtra("airport_name", airportBean.getAirport_name());
+            intent.putExtra("title", title);
+            intent.putExtra("name", airportBean.getCountry_name() + airportBean.getAirport_name() + title);
+            intent.putExtra("type", type);
             // 设置结果 结果码，一个数据
-            aty.setResult(RESULT_OK, intent);
-            aty.finish();
+//            aty.setResult(RESULT_OK, intent);
+//            aty.finish();
+            aty.showActivity(aty, intent);
         }
     }
 
@@ -147,14 +154,20 @@ public class AirportClassificationFragment extends BaseFragment implements Airpo
             countryClassificationList = cityClassificationBean.getData();
             selectCountryClassification(0);
         } else if (flag == 1) {
-            CityClassificationBean cityClassificationBean = (CityClassificationBean) JsonUtil.getInstance().json2Obj(success, CityClassificationBean.class);
-            if (cityClassificationBean == null || cityClassificationBean.getData() == null || cityClassificationBean.getData().size() <= 0) {
+            AirportByCountryIdBean airportByCountryIdBean = (AirportByCountryIdBean) JsonUtil.getInstance().json2Obj(success, AirportByCountryIdBean.class);
+
+//            gv_countriesClassification.setVisibility(View.VISIBLE);
+//            mGridViewAdapter.clear();
+//            mGridViewAdapter.addNewData(airportByCountryIdBean.getData());
+//            dismissLoadingDialog();
+
+            if (airportByCountryIdBean == null || airportByCountryIdBean.getData() == null || airportByCountryIdBean.getData().size() <= 0) {
                 lv_city.setVisibility(View.INVISIBLE);
                 dismissLoadingDialog();
                 return;
             }
             lv_city.setVisibility(View.VISIBLE);
-            cityClassificationList = cityClassificationBean.getData();
+            airportClassificationList = airportByCountryIdBean.getData();
             selectCityClassification(0);
         }
         dismissLoadingDialog();
@@ -171,7 +184,7 @@ public class AirportClassificationFragment extends BaseFragment implements Airpo
             if (position == i || position == i && position == 0) {
                 countryBean = countryClassificationList.get(i);
                 countryBean.setIsSelected(1);
-                ((AirportClassificationContract.Presenter) mPresenter).getCountryAreaListByParentid(aty, countryBean.getId(), 1);
+                ((AirportClassificationContract.Presenter) mPresenter).getAirportByCountryId(aty, countryBean.getId());
             } else {
                 countryClassificationList.get(i).setIsSelected(0);
             }
@@ -187,16 +200,16 @@ public class AirportClassificationFragment extends BaseFragment implements Airpo
      * @param position
      */
     private void selectCityClassification(int position) {
-        for (int i = 0; i < cityClassificationList.size(); i++) {
+        for (int i = 0; i < airportClassificationList.size(); i++) {
             if (position == i || position == i && position == 0) {
-                cityBean = cityClassificationList.get(i);
-                cityBean.setIsSelected(1);
+                airportBean = airportClassificationList.get(i);
+                airportBean.setIsSelected(1);
             } else {
-                cityClassificationList.get(i).setIsSelected(0);
+                airportClassificationList.get(i).setIsSelected(0);
             }
         }
-        mCityAdapter.clear();
-        mCityAdapter.addNewData(cityClassificationList);
+        mAirportAdapter.clear();
+        mAirportAdapter.addNewData(airportClassificationList);
     }
 
 
@@ -230,8 +243,8 @@ public class AirportClassificationFragment extends BaseFragment implements Airpo
         super.onDestroy();
         mCountryAdapter.clear();
         mCountryAdapter = null;
-        mCityAdapter.clear();
-        mCityAdapter = null;
+        mAirportAdapter.clear();
+        mAirportAdapter = null;
     }
 
 }

@@ -25,7 +25,7 @@
             android:layout_marginLeft="@dimen/dimen6"
             android:text="--"
             android:textColor="@color/textColor"
-            android:textSize="@dimen/textsize10" />
+            android:textSize="@dimen/textsize11" />
 
 
         <ImageView
@@ -40,20 +40,20 @@
     <TextView
         android:id="@+id/tv_content"
         style="@style/MatchWrap"
-        android:paddingBottom="@dimen/dimen10"
         android:paddingLeft="@dimen/dimen30"
-        android:paddingRight="@dimen/dimen30"
         android:paddingTop="@dimen/dimen10"
+        android:paddingRight="@dimen/dimen30"
+        android:paddingBottom="@dimen/dimen10"
         android:text="--"
-        android:textColor="@color/tabColors"
+        android:textColor="@color/hintColors"
         android:textSize="@dimen/textsize12" />
 
     <com.common.cklibrary.utils.myview.NoScrollGridView
         android:id="@+id/gv_imgComments"
         style="@style/MatchWrap"
-        android:layout_marginBottom="@dimen/dimen10"
         android:layout_marginLeft="@dimen/dimen29"
         android:layout_marginRight="@dimen/dimen29"
+        android:layout_marginBottom="@dimen/dimen10"
         android:background="@color/whiteColors"
         android:horizontalSpacing="@dimen/dimen15"
         android:numColumns="3"
@@ -71,8 +71,9 @@
             android:id="@+id/tv_time"
             style="@style/AutoWrap"
             android:paddingLeft="@dimen/dimen30"
+            android:paddingBottom="@dimen/dimen12"
             android:text="2018.03.06"
-            android:textColor="@color/hintColors"
+            android:textColor="@color/tabColors"
             android:textSize="@dimen/textsize9" />
 
         <LinearLayout
@@ -80,8 +81,9 @@
             style="@style/WrapWrap"
             android:gravity="center_vertical"
             android:orientation="horizontal"
+            android:paddingLeft="@dimen/dimen10"
             android:paddingBottom="@dimen/dimen10"
-            android:paddingLeft="@dimen/dimen10">
+            android:visibility="gone">
 
             <ImageView
                 android:id="@+id/img_giveLike"

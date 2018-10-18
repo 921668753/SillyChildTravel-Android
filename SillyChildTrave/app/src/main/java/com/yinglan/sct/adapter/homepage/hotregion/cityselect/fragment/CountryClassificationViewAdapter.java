@@ -1,4 +1,4 @@
-package com.yinglan.sct.adapter.homepage.privatecustom.cityselect.fragment;
+package com.yinglan.sct.adapter.homepage.hotregion.cityselect.fragment;
 
 import android.content.Context;
 

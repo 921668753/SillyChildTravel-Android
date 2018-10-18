@@ -152,7 +152,7 @@ public class GlideImageLoader {
         RequestOptions options = new RequestOptions();
         options.error(defaultimage)
                 .fallback(defaultimage)//当url为空时，显示图片
-                //  .override(width, height)
+                  .override(width, height)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)//缓存全尺寸
                 .transform(new RoundCornersTransformation(context, raudio, RoundCornersTransformation.CornerType.TOP))
                 .dontAnimate();//没有任何淡入淡出效果
@@ -235,8 +235,8 @@ public class GlideImageLoader {
      */
     public static void glideLoader(Context context, Object url, ImageView imageView, int radius, int bottom, int defaultimage) {
         RequestOptions options = new RequestOptions();
-        options.error(com.common.cklibrary.R.mipmap.default_image)
-                .fallback(com.common.cklibrary.R.mipmap.default_image)
+        options.error(defaultimage)
+                .fallback(defaultimage)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .transform(new RoundCornersTransformation(context, radius, RoundCornersTransformation.CornerType.TOP))
                 //   .skipMemoryCache(true)//设置跳过内存缓存

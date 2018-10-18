@@ -68,7 +68,7 @@ public class ProductSearchListActivity extends BaseActivity implements ProductSe
     public void initData() {
         super.initData();
         mPresenter = new ProductSearchListPresenter(this);
-        mAdapter = new SelectProductAirportTransportationViewAdapter(this);
+       // mAdapter = new SelectProductAirportTransportationViewAdapter(this);
         name = getIntent().getStringExtra("name");
         type = getIntent().getIntExtra("type", 0);
         showLoadingDialog(getString(R.string.dataLoad));
@@ -80,7 +80,7 @@ public class ProductSearchListActivity extends BaseActivity implements ProductSe
     public void initWidget() {
         super.initWidget();
         tv_search.setText(getIntent().getStringExtra("name"));
-        gv_productAirportTransportation.setAdapter(mAdapter);
+       // gv_productAirportTransportation.setAdapter(mAdapter);
         gv_productAirportTransportation.setOnItemClickListener(this);
     }
 

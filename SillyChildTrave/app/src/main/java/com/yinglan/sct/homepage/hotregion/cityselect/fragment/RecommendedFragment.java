@@ -14,7 +14,7 @@ import com.common.cklibrary.common.ViewInject;
 import com.common.cklibrary.utils.JsonUtil;
 import com.common.cklibrary.utils.myview.IndexNewBar;
 import com.yinglan.sct.R;
-import com.yinglan.sct.adapter.homepage.privatecustom.cityselect.fragment.RecommendedViewAdapter;
+import com.yinglan.sct.adapter.homepage.hotregion.cityselect.fragment.RecommendedViewAdapter;
 import com.yinglan.sct.entity.homepage.privatecustom.cityselect.fragment.RecommendedBean;
 import com.yinglan.sct.entity.homepage.privatecustom.cityselect.fragment.RecommendedBean.DataBean;
 import com.yinglan.sct.homepage.hotregion.cityselect.CitySelectActivity;
@@ -84,7 +84,7 @@ public class RecommendedFragment extends BaseFragment implements CityClassificat
         });
         //   mRv.addItemDecoration(mDecoration);
         //如果add两个，那么按照先后顺序，依次渲染。
-        SpacesItemDecoration spacesItemDecoration = new SpacesItemDecoration(8, 10);
+        SpacesItemDecoration spacesItemDecoration = new SpacesItemDecoration(17, 10);
         mRv.addItemDecoration(spacesItemDecoration);
         mIndexBar.setmPressedShowTextView(null)//设置HintTextView
                 .setNeedRealIndex(true)//设置需要真实的索引

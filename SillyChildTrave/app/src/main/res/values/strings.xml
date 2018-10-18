@@ -176,6 +176,8 @@
     <string name="baggageNumber1">行李件数</string>
     <string name="pickUpNumber">接机人数</string>
     <string name="customerInformation">客户信息</string>
+    <string name="flightInformation">航班信息</string>
+    <string name="contactInformation">联系人信息</string>
     <string name="deliveredAirport">送达机场</string>
     <string name="fillServiceAirport">填写送达机场</string>
     <string name="placeDeparture">出发地点</string>
@@ -219,7 +221,7 @@
     <!--首页   选择产品-->
     <string name="selectProduct">选择产品</string>
     <string name="optionDate1">请选择服务日期</string>
-
+    <string name="product">产品</string>
 
     <!--首页   支付完成-->
     <string name="payAgain">重新支付</string>
@@ -244,6 +246,7 @@
     <string name="actualPayment1">实际支付：</string>
 
     <!--首页   支付订单-->
+    <string name="fillInformation">填写信息</string>
     <string name="paymentOrder">支付订单</string>
     <string name="lateCancelled">请在</string>
     <string name="lateCancelled1">内付款，逾期订单将被取消</string>

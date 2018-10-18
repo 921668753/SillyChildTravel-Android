@@ -19,8 +19,9 @@ public class AirportSelectPresenter implements AirportSelectContract.Presenter {
 
 
     @Override
-    public void getCountryAreaList() {
+    public void getCountryAreaList(int type) {
         HttpParams httpParams = HttpUtilParams.getInstance().getHttpParams();
+        httpParams.put("category", type);
         RequestClient.getCountryAreaList(KJActivityStack.create().topActivity(), httpParams, new ResponseListener<String>() {
             @Override
             public void onSuccess(String response) {

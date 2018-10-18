@@ -17,7 +17,7 @@ import com.common.cklibrary.utils.rx.MsgEvent;
 import com.kymjs.common.PreferenceHelper;
 import com.kymjs.common.StringUtils;
 import com.yinglan.sct.R;
-import com.yinglan.sct.adapter.homepage.privatecustom.cityselect.CitySelectClassificationListViewAdapter;
+import com.yinglan.sct.adapter.homepage.hotregion.cityselect.CitySelectClassificationListViewAdapter;
 import com.yinglan.sct.entity.homepage.privatecustom.cityselect.CitySelectListBean;
 import com.yinglan.sct.entity.homepage.privatecustom.cityselect.CitySelectListBean.DataBean;
 import com.yinglan.sct.homepage.hotregion.cityselect.fragment.CityClassificationFragment;

@@ -1,4 +1,4 @@
-package com.yinglan.sct.homepage.privatecustom.cityselect;
+package com.yinglan.sct.homepage.privatecustom.cityselect.search;
 
 import com.common.cklibrary.common.KJActivityStack;
 import com.common.cklibrary.utils.httputil.HttpUtilParams;

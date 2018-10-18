@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/MatchMatch"
     android:background="@color/background"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/dimen6">
 
     <ListView
         android:id="@+id/lv_country"
@@ -27,8 +28,8 @@
         android:dividerHeight="@dimen/dimen20"
         android:listSelector="@android:color/transparent"
         android:paddingTop="@dimen/dimen10"
+        android:paddingBottom="@dimen/dimen10"
         android:scrollbars="none"
-        android:visibility="visible"
         tools:listitem="@layout/item_city" />
 
     <LinearLayout

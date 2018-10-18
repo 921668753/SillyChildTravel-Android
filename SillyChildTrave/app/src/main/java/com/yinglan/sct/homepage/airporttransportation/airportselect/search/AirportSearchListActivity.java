@@ -1,4 +1,4 @@
-package com.yinglan.sct.homepage.airporttransportation.airportselect;
+package com.yinglan.sct.homepage.airporttransportation.airportselect.search;
 
 import android.content.Intent;
 import android.view.View;
@@ -26,7 +26,7 @@ import java.util.List;
 import static com.yinglan.sct.constant.NumericConstants.REQUEST_CODE;
 
 /**
- * 城市搜索---搜索结果
+ * 机场搜索---搜索结果
  */
 public class AirportSearchListActivity extends BaseActivity implements AirportSearchListContract.View, AdapterView.OnItemClickListener {
 
@@ -60,6 +60,7 @@ public class AirportSearchListActivity extends BaseActivity implements AirportSe
     private TextView tv_button;
 
     private String name = "";
+    private int type = 0;
 
     @Override
     public void setRootView() {
@@ -72,6 +73,7 @@ public class AirportSearchListActivity extends BaseActivity implements AirportSe
         mPresenter = new AirportSearchListPresenter(this);
         mAdapter = new CitySearchListViewAdapter(this);
         name = getIntent().getStringExtra("name");
+        type = getIntent().getIntExtra("type", 0);
         showLoadingDialog(getString(R.string.dataLoad));
         ((AirportSearchListContract.Presenter) mPresenter).getAreaByName(name);
     }
@@ -92,6 +94,7 @@ public class AirportSearchListActivity extends BaseActivity implements AirportSe
             case R.id.ll_search:
                 Intent intent = new Intent(aty, AirportSearchActivity.class);
                 intent.putExtra("tag", 1);
+                intent.putExtra("type", type);
                 startActivityForResult(intent, REQUEST_CODE);
                 break;
             case R.id.tv_cancel:

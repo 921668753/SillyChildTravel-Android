@@ -1,4 +1,4 @@
-package com.yinglan.sct.homepage.privatecustom.cityselect;
+package com.yinglan.sct.homepage.privatecustom.cityselect.search;
 
 import android.content.Intent;
 import android.view.View;

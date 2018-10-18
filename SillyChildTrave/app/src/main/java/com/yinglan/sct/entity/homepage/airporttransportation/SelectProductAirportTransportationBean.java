@@ -24,6 +24,8 @@ public class SelectProductAirportTransportationBean extends BaseResult<List<Sele
         private String order_number;
         private String passenger_number;
         private String product_name;
+        private int height;
+        private int width;
 
         public int getId() {
             return id;
@@ -71,6 +73,22 @@ public class SelectProductAirportTransportationBean extends BaseResult<List<Sele
 
         public void setProduct_name(String product_name) {
             this.product_name = product_name;
+        }
+
+        public int getHeight() {
+            return height;
+        }
+
+        public void setHeight(int height) {
+            this.height = height;
+        }
+
+        public int getWidth() {
+            return width;
+        }
+
+        public void setWidth(int width) {
+            this.width = width;
         }
     }
 }

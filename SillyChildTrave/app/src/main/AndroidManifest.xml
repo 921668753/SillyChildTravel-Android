@@ -116,9 +116,34 @@
         <!--主界面的后台-->
         <service android:name=".main.service.MainService" />
 
+        <!--首页  热门地区 城市选择-->
+        <activity
+            android:name=".homepage.hotregion.cityselect.CitySelectActivity"
+            android:screenOrientation="portrait" />
+
+        <!--首页  热门地区 城市选择 城市搜索-->
+        <activity
+            android:name=".homepage.hotregion.cityselect.search.CitySearchActivity"
+            android:screenOrientation="portrait" />
+
+        <!--首页  热门地区 城市选择 城市搜索 搜索结果-->
+        <activity
+            android:name=".homepage.hotregion.cityselect.search.CitySearchListActivity"
+            android:screenOrientation="portrait" />
+
         <!--首页   接送机分类-->
         <activity
-            android:name=".homepage.airporttransportation.AirportTransportationClassificationActivity"
+            android:name=".homepage.airporttransportation.airportselect.AirportSelectActivity"
+            android:screenOrientation="portrait" />
+
+        <!--首页   接送机分类 机场搜索-->
+        <activity
+            android:name=".homepage.airporttransportation.airportselect.search.AirportSearchActivity"
+            android:screenOrientation="portrait" />
+
+        <!--首页   接送机分类 机场搜索 搜索结果-->
+        <activity
+            android:name=".homepage.airporttransportation.airportselect.search.AirportSearchListActivity"
             android:screenOrientation="portrait" />
 
         <!--首页   按天包车分类-->
@@ -247,12 +272,12 @@
 
         <!--首页   私人定制   城市搜索-->
         <activity
-            android:name=".homepage.privatecustom.cityselect.CitySearchActivity"
+            android:name=".homepage.privatecustom.cityselect.search.CitySearchActivity"
             android:screenOrientation="portrait" />
 
         <!--首页   私人定制   城市搜索   搜索结果-->
         <activity
-            android:name=".homepage.privatecustom.cityselect.CitySearchListActivity"
+            android:name=".homepage.privatecustom.cityselect.search.CitySearchListActivity"
             android:screenOrientation="portrait" />
 
         <!--社区   动态详情-->

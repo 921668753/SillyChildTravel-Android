@@ -8,7 +8,9 @@ import com.yinglan.sct.entity.homepage.airporttransportation.PriceInformationBea
 import cn.bingoogolapple.baseadapter.BGAAdapterViewAdapter;
 import cn.bingoogolapple.baseadapter.BGAViewHolderHelper;
 
-
+/**
+ * 包含服务
+ */
 public class PriceInformationViewAdapter extends BGAAdapterViewAdapter<ServiceBean> {
 
     public PriceInformationViewAdapter(Context context) {

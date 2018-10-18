@@ -5,7 +5,5 @@
     <!-- 圆角 -->
     <corners android:radius="@dimen/dimen20" />
 
-    <stroke
-        android:width="@dimen/dimen1"
-        android:color="@color/hintColors" />
+    <solid android:color="@color/eEEEEEColors" />
 </shape>

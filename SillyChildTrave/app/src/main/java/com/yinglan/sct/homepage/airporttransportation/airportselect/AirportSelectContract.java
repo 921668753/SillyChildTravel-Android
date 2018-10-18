@@ -14,7 +14,7 @@ public interface AirportSelectContract {
         /**
          * 大洲与国家 - 获取大洲信息
          */
-        void getCountryAreaList();
+        void getCountryAreaList(int type);
 
     }
 

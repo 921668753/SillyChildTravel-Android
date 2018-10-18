@@ -7,6 +7,7 @@
     android:orientation="horizontal">
 
     <ImageView
+        android:id="@+id/img_citySelect"
         android:layout_width="@dimen/dimen3"
         android:layout_height="@dimen/dimen16"
         android:layout_marginLeft="@dimen/dimen22"

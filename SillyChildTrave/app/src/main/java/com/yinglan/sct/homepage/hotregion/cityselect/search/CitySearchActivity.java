@@ -84,7 +84,7 @@ public class CitySearchActivity extends BaseActivity implements TagFlowLayout.On
         clearSearchDialog = new ClearSearchDialog(this, getString(R.string.clearSearch)) {
             @Override
             public void deleteCollectionDo(int addressId) {
-                PreferenceHelper.write(aty, StringConstants.FILENAME, "recentSearchCityPrivatecustomHistory", null);
+                PreferenceHelper.write(aty, StringConstants.FILENAME, "recentSearchCityHotRegionHistory", null);
                 ll_recentSearch.setVisibility(View.GONE);
                 tfl_recentSearch.setVisibility(View.GONE);
             }
@@ -146,7 +146,7 @@ public class CitySearchActivity extends BaseActivity implements TagFlowLayout.On
         baseResult.setResult(1);
         Collections.reverse(recentSearchList);
         baseResult.setData(recentSearchList);
-        PreferenceHelper.write(aty, StringConstants.FILENAME, "recentSearchCityPrivatecustomHistory", JsonUtil.getInstance().obj2JsonString(baseResult));
+        PreferenceHelper.write(aty, StringConstants.FILENAME, "recentSearchCityHotRegionHistory", JsonUtil.getInstance().obj2JsonString(baseResult));
 
     }
 
@@ -154,7 +154,7 @@ public class CitySearchActivity extends BaseActivity implements TagFlowLayout.On
      * 读取历史
      */
     private void readRecentSearchHistory() {
-        String recentSearch = PreferenceHelper.readString(aty, StringConstants.FILENAME, "recentSearchCityPrivatecustomHistory", "");
+        String recentSearch = PreferenceHelper.readString(aty, StringConstants.FILENAME, "recentSearchCityHotRegionHistory", "");
 
         if (StringUtils.isEmpty(recentSearch)) {
             ll_recentSearch.setVisibility(View.GONE);

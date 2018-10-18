@@ -22,11 +22,12 @@ import com.yinglan.sct.entity.homepage.privatecustom.cityselect.CitySelectListBe
 import com.yinglan.sct.entity.homepage.privatecustom.cityselect.CitySelectListBean.DataBean;
 import com.yinglan.sct.homepage.airporttransportation.airportselect.fragment.AirportClassificationFragment;
 import com.yinglan.sct.homepage.airporttransportation.airportselect.fragment.RecommendedFragment;
+import com.yinglan.sct.homepage.airporttransportation.airportselect.search.AirportSearchActivity;
 
 import java.util.ArrayList;
 
 /**
- * 城市选择
+ * 机场选择
  */
 public class AirportSelectActivity extends BaseActivity implements AirportSelectContract.View, AdapterView.OnItemClickListener {
 
@@ -47,6 +48,9 @@ public class AirportSelectActivity extends BaseActivity implements AirportSelect
 
     private RecommendedFragment recommendedFragment;
 
+    private String title = "";
+    private int type = 0;
+
     @Override
     public void setRootView() {
         setContentView(R.layout.activity_cityselect);
@@ -59,8 +63,10 @@ public class AirportSelectActivity extends BaseActivity implements AirportSelect
         mPresenter = new AirportSelectPresenter(this);
         mAdapter = new AirportSelectClassificationListViewAdapter(this);
         list = new ArrayList<AirportClassificationFragment>();
+        title = getIntent().getStringExtra("title");
+        type = getIntent().getIntExtra("type", 0);
         showLoadingDialog(getString(R.string.dataLoad));
-        ((AirportSelectContract.Presenter) mPresenter).getCountryAreaList();
+        ((AirportSelectContract.Presenter) mPresenter).getCountryAreaList(type);
     }
 
     @Override
@@ -76,7 +82,9 @@ public class AirportSelectActivity extends BaseActivity implements AirportSelect
         super.widgetClick(v);
         switch (v.getId()) {
             case R.id.ll_search:
-                showActivity(aty, AirportSearchActivity.class);
+                Intent intent = new Intent(aty, AirportSearchActivity.class);
+                intent.putExtra("type", type);
+                showActivity(aty, intent);
                 break;
             case R.id.tv_cancel:
                 finish();

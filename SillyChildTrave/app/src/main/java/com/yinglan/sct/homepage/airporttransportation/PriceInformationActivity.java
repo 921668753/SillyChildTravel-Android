@@ -68,8 +68,8 @@ public class PriceInformationActivity extends BaseActivity implements PriceInfor
     @BindView(id = R.id.tv_serviceDescription)
     private TextView tv_serviceDescription;
 
-    @BindView(id = R.id.tv_remark)
-    private TextView tv_remark;
+//    @BindView(id = R.id.tv_remark)
+//    private TextView tv_remark;
 
     @BindView(id = R.id.ll_compensationChangeBack, click = true)
     private LinearLayout ll_compensationChangeBack;
@@ -290,7 +290,7 @@ public class PriceInformationActivity extends BaseActivity implements PriceInfor
                 gv_containsService.setVisibility(View.GONE);
             }
             tv_serviceDescription.setText(priceInformationBean.getData().getService_description());
-            tv_remark.setText(priceInformationBean.getData().getService_note());
+         //   tv_remark.setText(priceInformationBean.getData().getService_note());
             tv_compensationChangeBack.setText(priceInformationBean.getData().getService_policy());
             tv_userEvaluationNum.setText(priceInformationBean.getData().getReview_count() + getString(R.string.comments1));
             if (priceInformationBean.getData().getReview_list() != null && priceInformationBean.getData().getReview_list().size() > 0) {

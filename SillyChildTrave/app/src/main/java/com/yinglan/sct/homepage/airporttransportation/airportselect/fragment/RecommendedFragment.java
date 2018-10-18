@@ -18,13 +18,12 @@ import com.yinglan.sct.R;
 import com.yinglan.sct.adapter.homepage.airporttransportation.airportselect.fragment.RecommendedViewAdapter;
 import com.yinglan.sct.entity.homepage.privatecustom.cityselect.fragment.RecommendedBean;
 import com.yinglan.sct.entity.homepage.privatecustom.cityselect.fragment.RecommendedBean.DataBean;
+import com.yinglan.sct.homepage.airporttransportation.SelectProductAirportTransportationActivity;
 import com.yinglan.sct.homepage.airporttransportation.airportselect.AirportSelectActivity;
 import com.yinglan.sct.utils.SpacesItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static android.app.Activity.RESULT_OK;
 
 /**
  * 热门目的地
@@ -49,6 +48,8 @@ public class RecommendedFragment extends BaseFragment implements AirportClassifi
     private List<DataBean> mDatas;
 
     private int classification_id = 0;
+    private String title = "";
+    private int type = 0;
 
     @Override
     protected View inflaterView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
@@ -62,6 +63,8 @@ public class RecommendedFragment extends BaseFragment implements AirportClassifi
         mDatas = new ArrayList<DataBean>();
         mPresenter = new AirportClassificationPresenter(this);
         mAdapter = new RecommendedViewAdapter(aty, mDatas);
+        title = aty.getIntent().getStringExtra("title");
+        type = aty.getIntent().getIntExtra("type", 0);
         mManager = new GridLayoutManager(aty, 2);
     }
 
@@ -74,27 +77,29 @@ public class RecommendedFragment extends BaseFragment implements AirportClassifi
         mAdapter.setViewCallBack(new RecommendedViewAdapter.ViewCallBack() {
             @Override
             public void onClickListener(DataBean dataBean) {
-                Intent intent = new Intent();
-                // 获取内容
+                Intent intent = new Intent(aty, SelectProductAirportTransportationActivity.class);
                 intent.putExtra("country_id", dataBean.getCountry_id());
                 intent.putExtra("country_name", dataBean.getCountry_name());
-                intent.putExtra("city_id", dataBean.getCity_id());
-                intent.putExtra("city_name", dataBean.getCity_name());
+//                intent.putExtra("airport_id", dataBean.getAirport_id());
+//                intent.putExtra("airport_name", dataBean.getAirport_name());
+//                intent.putExtra("name", dataBean.getCountry_name() + dataBean.getAirport_name() + title);
+                intent.putExtra("title", title);
+                intent.putExtra("type", type);
                 // 设置结果 结果码，一个数据
-                aty.setResult(RESULT_OK, intent);
-                // 结束该activity 结束之后，前面的activity才可以处理结果
-                aty.finish();
+//            aty.setResult(RESULT_OK, intent);
+//            aty.finish();
+                aty.showActivity(aty, intent);
             }
         });
         //   mRv.addItemDecoration(mDecoration);
         //如果add两个，那么按照先后顺序，依次渲染。
-        SpacesItemDecoration spacesItemDecoration = new SpacesItemDecoration(8, 10);
+        SpacesItemDecoration spacesItemDecoration = new SpacesItemDecoration(17, 10);
         mRv.addItemDecoration(spacesItemDecoration);
         mIndexBar.setmPressedShowTextView(null)//设置HintTextView
                 .setNeedRealIndex(true)//设置需要真实的索引
                 .setmLayoutManager(mManager);//设置RecyclerView的LayoutManager
         showLoadingDialog(getString(R.string.dataLoad));
-        ((AirportClassificationContract.Presenter) mPresenter).getCountryAreaListByParentid(aty, classification_id, 0);
+        ((AirportClassificationContract.Presenter) mPresenter).getCountryAreaListByParentid(aty, classification_id, type, 0);
     }
 
 

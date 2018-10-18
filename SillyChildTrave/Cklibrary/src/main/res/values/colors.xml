@@ -7,6 +7,7 @@
     <!--BaseActivity-->
     <color name="textColor1">#333333</color>
     <color name="dialogLoadingColor">#2cd052</color>
+    <color name="indexBarTextColor">#050505</color>
     <!--&lt;!&ndash;登录&ndash;&gt;-->
     <!--<color name="lonincolors">#ff6243</color>-->
 

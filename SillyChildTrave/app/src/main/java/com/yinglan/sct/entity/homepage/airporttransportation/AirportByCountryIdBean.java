@@ -23,8 +23,17 @@ public class AirportByCountryIdBean extends BaseResult<List<AirportByCountryIdBe
         private int region_id;
         private String region_name;
         private int airport_id;
+        private int isSelected;
         private String airport_name;
         private String airport_picture;
+
+        public int getIsSelected() {
+            return isSelected;
+        }
+
+        public void setIsSelected(int isSelected) {
+            this.isSelected = isSelected;
+        }
 
         public int getCountry_id() {
             return country_id;

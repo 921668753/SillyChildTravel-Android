@@ -67,7 +67,9 @@
         <TextView
             android:id="@+id/tv_people"
             style="@style/WrapWrap"
-            android:text="6"
+            android:text="0000"
+            android:singleLine="true"
+            android:maxWidth="@dimen/dimen20"
             android:textColor="@color/greenColors"
             android:textSize="@dimen/textsize9" />
 
@@ -88,7 +90,9 @@
         <TextView
             android:id="@+id/tv_bookingNum"
             style="@style/WrapWrap"
-            android:text="126"
+            android:text="0"
+            android:singleLine="true"
+            android:maxWidth="@dimen/dimen40"
             android:textColor="@color/fF4848Colors"
             android:textSize="@dimen/textsize9" />
 

@@ -19,9 +19,9 @@ import com.kymjs.common.StringUtils;
 import com.yinglan.sct.R;
 import com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.AirportPickupPayOrderBean;
 import com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.CreateTravelOrderBean;
-import com.yinglan.sct.homepage.airporttransportation.AirportTransportationClassificationActivity;
 import com.yinglan.sct.homepage.airporttransportation.PriceInformationActivity;
 import com.yinglan.sct.homepage.airporttransportation.SelectProductAirportTransportationActivity;
+import com.yinglan.sct.homepage.airporttransportation.airportselect.AirportSelectActivity;
 import com.yinglan.sct.homepage.airporttransportation.paymentorder.PaymentTravelOrderActivity;
 import com.yinglan.sct.homepage.airporttransportation.airportselect.search.ProductSearchActivity;
 import com.yinglan.sct.homepage.airporttransportation.airportselect.search.ProductSearchListActivity;
@@ -183,7 +183,7 @@ public class AirportDropOffPayOrderActivity extends BaseActivity implements Airp
             product_id = airportPickupPayOrderBean.getData().getProduct_id();
         } else if (flag == 1) {
             KJActivityStack.create().finishActivity(AirportDropOffActivity.class);
-            KJActivityStack.create().finishActivity(AirportTransportationClassificationActivity.class);
+            KJActivityStack.create().finishActivity(AirportSelectActivity.class);
             KJActivityStack.create().finishActivity(ProductSearchListActivity.class);
             KJActivityStack.create().finishActivity(ProductSearchActivity.class);
             KJActivityStack.create().finishActivity(PriceInformationActivity.class);

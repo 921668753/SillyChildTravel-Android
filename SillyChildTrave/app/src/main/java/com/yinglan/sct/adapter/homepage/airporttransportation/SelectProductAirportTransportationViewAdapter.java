@@ -1,22 +1,24 @@
 package com.yinglan.sct.adapter.homepage.airporttransportation;
 
-import android.content.Context;
+import android.support.v7.widget.RecyclerView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
+import com.kymjs.common.DensityUtils;
 import com.yinglan.sct.R;
 import com.yinglan.sct.entity.homepage.airporttransportation.SelectProductAirportTransportationBean.DataBean;
 import com.yinglan.sct.utils.GlideImageLoader;
 
-import cn.bingoogolapple.baseadapter.BGAAdapterViewAdapter;
+import cn.bingoogolapple.baseadapter.BGARecyclerViewAdapter;
 import cn.bingoogolapple.baseadapter.BGAViewHolderHelper;
-
 
 /**
  * 选择产品----接送机
  */
-public class SelectProductAirportTransportationViewAdapter extends BGAAdapterViewAdapter<DataBean> {
+public class SelectProductAirportTransportationViewAdapter extends BGARecyclerViewAdapter<DataBean> {
 
-    public SelectProductAirportTransportationViewAdapter(Context context) {
-        super(context, R.layout.item_productairporttransportation);
+    public SelectProductAirportTransportationViewAdapter(RecyclerView recyclerView) {
+        super(recyclerView, R.layout.item_productairporttransportation);
     }
 
     @Override
@@ -25,7 +27,21 @@ public class SelectProductAirportTransportationViewAdapter extends BGAAdapterVie
         /**
          * 图片
          */
-        GlideImageLoader.glideLoader(mContext, model.getMain_picture(), helper.getImageView(R.id.img_selectProductAirport), 10, 0, R.mipmap.placeholderfigure);
+        ImageView imageView = helper.getImageView(R.id.img_selectProductAirport);
+        LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) imageView.getLayoutParams();
+        float width1 = (DensityUtils.getScreenW() - DensityUtils.dip2px(8) * 3) / 2;
+        lp.width = (int) width1;
+        float scale = 0;
+        float tempHeight = 0;
+        if (model.getWidth() <= 0 || model.getHeight() <= 0) {
+            tempHeight = width1;
+        } else {
+            scale = (width1 + 0f) / model.getWidth();
+            tempHeight = model.getHeight() * scale;
+        }
+        lp.height = (int) tempHeight;
+        imageView.setLayoutParams(lp);
+        GlideImageLoader.glideLoader(mContext, model.getMain_picture() + "?imageView2/0/w/" + lp.width + "/h/" + lp.height, helper.getImageView(R.id.img_selectProductAirport), 10, 0, R.mipmap.placeholderfigure);
 
         /**
          * 名字

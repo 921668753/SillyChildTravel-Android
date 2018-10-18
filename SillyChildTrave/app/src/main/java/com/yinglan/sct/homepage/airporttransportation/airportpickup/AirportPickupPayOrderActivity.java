@@ -19,9 +19,9 @@ import com.kymjs.common.StringUtils;
 import com.yinglan.sct.R;
 import com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.AirportPickupPayOrderBean;
 import com.yinglan.sct.entity.homepage.airporttransportation.airportpickup.CreateTravelOrderBean;
-import com.yinglan.sct.homepage.airporttransportation.AirportTransportationClassificationActivity;
 import com.yinglan.sct.homepage.airporttransportation.PriceInformationActivity;
 import com.yinglan.sct.homepage.airporttransportation.SelectProductAirportTransportationActivity;
+import com.yinglan.sct.homepage.airporttransportation.airportselect.AirportSelectActivity;
 import com.yinglan.sct.homepage.airporttransportation.paymentorder.PaymentTravelOrderActivity;
 import com.yinglan.sct.homepage.airporttransportation.airportselect.search.ProductSearchActivity;
 import com.yinglan.sct.homepage.airporttransportation.airportselect.search.ProductSearchListActivity;
@@ -121,7 +121,7 @@ public class AirportPickupPayOrderActivity extends BaseActivity implements Airpo
     @Override
     public void initWidget() {
         super.initWidget();
-        ActivityTitleUtils.initToolbar(aty, getString(R.string.airportPickup), true, R.id.titlebar);
+        ActivityTitleUtils.initToolbar(aty, getString(R.string.paymentOrder), true, R.id.titlebar);
         web_priceDescription.setTitleVisibility(false);
         web_dueThat.setTitleVisibility(false);
     }
@@ -194,7 +194,7 @@ public class AirportPickupPayOrderActivity extends BaseActivity implements Airpo
             KJActivityStack.create().finishActivity(AirportPickupActivity.class);
             KJActivityStack.create().finishActivity(ProductSearchListActivity.class);
             KJActivityStack.create().finishActivity(ProductSearchActivity.class);
-            KJActivityStack.create().finishActivity(AirportTransportationClassificationActivity.class);
+            KJActivityStack.create().finishActivity(AirportSelectActivity.class);
             KJActivityStack.create().finishActivity(PriceInformationActivity.class);
             KJActivityStack.create().finishActivity(SelectProductAirportTransportationActivity.class);
             CreateTravelOrderBean createTravelOrderBean = (CreateTravelOrderBean) JsonUtil.getInstance().json2Obj(success, CreateTravelOrderBean.class);

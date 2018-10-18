@@ -1,4 +1,4 @@
-package com.yinglan.sct.adapter.homepage.airporttransportation.airportselect;
+package com.yinglan.sct.adapter.homepage.hotregion.cityselect;
 
 import android.content.Context;
 import android.view.View;
@@ -14,10 +14,9 @@ import cn.bingoogolapple.baseadapter.BGAViewHolderHelper;
 /**
  * 城市选择分类---ListView
  */
-public class AirportSelectClassificationListViewAdapter extends BGAAdapterViewAdapter<DataBean> {
+public class CitySelectClassificationListViewAdapter extends BGAAdapterViewAdapter<DataBean> {
 
-
-    public AirportSelectClassificationListViewAdapter(Context context) {
+    public CitySelectClassificationListViewAdapter(Context context) {
         super(context, R.layout.item_countries);
     }
 
