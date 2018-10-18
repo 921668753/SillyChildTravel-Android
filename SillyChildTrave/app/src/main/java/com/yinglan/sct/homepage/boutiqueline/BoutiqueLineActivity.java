@@ -1,7 +1,5 @@
 package com.yinglan.sct.homepage.boutiqueline;
 
-import android.content.Intent;
-import android.os.SystemClock;
 import android.support.v7.widget.RecyclerView;
 import android.view.MotionEvent;
 import android.view.View;
@@ -10,14 +8,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.common.cklibrary.common.BaseActivity;
-import com.common.cklibrary.common.BaseFragment;
 import com.common.cklibrary.common.BindView;
 import com.common.cklibrary.utils.ActivityTitleUtils;
-import com.kymjs.common.Log;
 import com.yinglan.sct.R;
 import com.yinglan.sct.constant.NumericConstants;
-import com.yinglan.sct.homepage.boutiqueline.fragment.CitySelectionFragment;
-import com.yinglan.sct.homepage.boutiqueline.fragment.HotRecommendedFragment;
 
 import cn.bingoogolapple.bgabanner.BGABanner;
 
