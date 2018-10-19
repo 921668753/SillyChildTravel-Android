@@ -4,11 +4,13 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.common.cklibrary.common.BaseActivity;
 import com.common.cklibrary.common.BindView;
+import com.common.cklibrary.common.ViewInject;
 import com.common.cklibrary.utils.ActivityTitleUtils;
 import com.luck.picture.lib.rxbus2.Subscribe;
 import com.luck.picture.lib.rxbus2.ThreadMode;
@@ -34,6 +36,9 @@ public class SelectDateActivity extends BaseActivity {
     @BindView(id = R.id.recyclerView)
     private RecyclerView recyclerView;
 
+    @BindView(id = R.id.tv_determine, click = true)
+    private TextView tv_determine;
+
     private MonthTimeAdapter adapter;
     private ArrayList<MonthTimeEntity> datas;
     public static DayTimeEntity startDay;
@@ -43,7 +48,6 @@ public class SelectDateActivity extends BaseActivity {
     public void setRootView() {
         setContentView(R.layout.activity_selectdate);
     }
-
 
     @Override
     public void initData() {
@@ -84,6 +88,32 @@ public class SelectDateActivity extends BaseActivity {
         recyclerView.scrollToPosition(startDay.getMonthPosition());
     }
 
+    @Override
+    public void widgetClick(View v) {
+        super.widgetClick(v);
+        switch (v.getId()) {
+            case R.id.tv_determine:
+                if (startDay.getDay() == 0) {
+                    ViewInject.toast(getString(R.string.desiredStartTimeService));
+                    return;
+                }
+                if (stopDay.getDay() == -1) {
+                    ViewInject.toast(getString(R.string.desiredEndTimeService));
+                    return;
+                }
+                Intent intent = new Intent();
+                // 获取内容
+                intent.putExtra("startDay", startDay.getYear() + getString(R.string.year) + startDay.getMonth() + getString(R.string.month) + startDay.getDay() + getString(R.string.day));
+                intent.putExtra("stopDay", stopDay.getYear() + getString(R.string.year) + stopDay.getMonth() + getString(R.string.month) + stopDay.getDay() + getString(R.string.day));
+                intent.putExtra("startDayBean", startDay);
+                intent.putExtra("stopDayBean", stopDay);
+                // 设置结果 结果码，一个数据
+                setResult(RESULT_OK, intent);
+                finish();
+                break;
+        }
+    }
+
     @SuppressLint("SetTextI18n")
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEventMainThread(UpdataCalendar event) {
@@ -93,15 +123,6 @@ public class SelectDateActivity extends BaseActivity {
         if (stopDay.getDay() != -1) {
             tv_chooseTimeNeedServe.setText(tv_chooseTimeNeedServe.getText().toString() + "   " +
                     getString(R.string.endTime) + stopDay.getYear() + getString(R.string.year) + stopDay.getMonth() + getString(R.string.month) + stopDay.getDay() + getString(R.string.day));
-            Intent intent = new Intent();
-            // 获取内容
-            intent.putExtra("startDay", startDay.getYear() + getString(R.string.year) + startDay.getMonth() + getString(R.string.month) + startDay.getDay() + getString(R.string.day));
-            intent.putExtra("stopDay", stopDay.getYear() + getString(R.string.year) + stopDay.getMonth() + getString(R.string.month) + stopDay.getDay() + getString(R.string.day));
-            intent.putExtra("startDayBean", startDay);
-            intent.putExtra("stopDayBean", stopDay);
-            // 设置结果 结果码，一个数据
-            setResult(RESULT_OK, intent);
-            finish();
         }
     }
 

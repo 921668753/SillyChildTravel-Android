@@ -35,8 +35,7 @@ import com.yinglan.sct.homepage.BannerDetailsActivity;
 import com.yinglan.sct.homepage.airporttransportation.airportselect.AirportSelectActivity;
 import com.yinglan.sct.homepage.boutiqueline.BoutiqueLineActivity;
 import com.yinglan.sct.homepage.boutiqueline.LineDetailsActivity;
-import com.yinglan.sct.homepage.bythedaycharter.ByTheDayCharterClassificationActivity;
-import com.yinglan.sct.homepage.hotregion.HotRegionActivity;
+import com.yinglan.sct.homepage.bythedaycharter.cityselect.CharterCitySelectActivity;
 import com.yinglan.sct.homepage.hotregion.cityselect.CitySelectActivity;
 import com.yinglan.sct.homepage.privatecustom.PrivateCustomActivity;
 import com.yinglan.sct.loginregister.LoginActivity;
@@ -294,7 +293,7 @@ public class HomePageFragment extends BaseFragment implements EasyPermissions.Pe
             intent.putExtra("type", 1);
             aty.showActivity(aty, intent);
         } else if (flag == 6) {
-            Intent intent1 = new Intent(aty, ByTheDayCharterClassificationActivity.class);
+            Intent intent1 = new Intent(aty, CharterCitySelectActivity.class);
             intent1.putExtra("title", getString(R.string.byTheDay));
             intent1.putExtra("type", 3);
             aty.showActivity(aty, intent1);

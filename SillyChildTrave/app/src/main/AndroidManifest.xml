@@ -147,8 +147,20 @@
             android:screenOrientation="portrait" />
 
         <!--首页   按天包车分类-->
+
+        <!--首页  按天包车分类 城市选择-->
         <activity
-            android:name=".homepage.bythedaycharter.ByTheDayCharterClassificationActivity"
+            android:name=".homepage.bythedaycharter.cityselect.CharterCitySelectActivity"
+            android:screenOrientation="portrait" />
+
+        <!--首页  按天包车分类 城市选择 城市搜索-->
+        <activity
+            android:name=".homepage.bythedaycharter.cityselect.search.CitySearchActivity"
+            android:screenOrientation="portrait" />
+
+        <!--首页  按天包车分类 城市选择 城市搜索 搜索结果-->
+        <activity
+            android:name=".homepage.bythedaycharter.cityselect.search.CitySearchListActivity"
             android:screenOrientation="portrait" />
 
         <!--首页   精品线路分类-->

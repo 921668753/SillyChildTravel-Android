@@ -92,6 +92,8 @@ public class BoutiqueLineBean extends BaseResult<BoutiqueLineBean.DataBean> {
             private String price;
             private String recommended;
             private boolean size;
+            private int height;
+            private int width;
 
             public int getId() {
                 return id;
@@ -147,6 +149,22 @@ public class BoutiqueLineBean extends BaseResult<BoutiqueLineBean.DataBean> {
 
             public void setSize(boolean size) {
                 this.size = size;
+            }
+
+            public int getHeight() {
+                return height;
+            }
+
+            public void setHeight(int height) {
+                this.height = height;
+            }
+
+            public int getWidth() {
+                return width;
+            }
+
+            public void setWidth(int width) {
+                this.width = width;
             }
         }
     }

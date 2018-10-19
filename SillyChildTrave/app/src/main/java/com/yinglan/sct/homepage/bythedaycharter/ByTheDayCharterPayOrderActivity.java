@@ -23,6 +23,7 @@ import com.yinglan.sct.entity.homepage.bythedaycharter.ByTheDayCharterPayOrderBe
 import com.yinglan.sct.homepage.airporttransportation.paymentorder.PaymentTravelOrderActivity;
 import com.yinglan.sct.homepage.airporttransportation.airportselect.search.ProductSearchActivity;
 import com.yinglan.sct.homepage.airporttransportation.airportselect.search.ProductSearchListActivity;
+import com.yinglan.sct.homepage.bythedaycharter.cityselect.CharterCitySelectActivity;
 import com.yinglan.sct.mine.mywallet.coupons.CouponsActivity;
 import com.yinglan.sct.utils.GlideImageLoader;
 
@@ -188,7 +189,7 @@ public class ByTheDayCharterPayOrderActivity extends BaseActivity implements ByT
             product_id = byTheDayCharterPayOrderBean.getData().getProduct_id();
         } else if (flag == 1) {
             KJActivityStack.create().finishActivity(ByTheDayCharterActivity.class);
-            KJActivityStack.create().finishActivity(ByTheDayCharterClassificationActivity.class);
+            KJActivityStack.create().finishActivity(CharterCitySelectActivity.class);
             KJActivityStack.create().finishActivity(ProductSearchListActivity.class);
             KJActivityStack.create().finishActivity(ProductSearchActivity.class);
             KJActivityStack.create().finishActivity(PriceInformationActivity.class);

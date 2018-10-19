@@ -41,7 +41,6 @@ dependencies {
     //网络请求框架
     api 'com.kymjs.rxvolley:okhttp3:latest.release'
 
-
     //SweetAlertDialog弹框  https://github.com/F0RIS/sweet-alert-dialog
     api 'com.github.f0ris.sweetalert:library:1.5.3'
 
@@ -105,6 +104,12 @@ dependencies {
      */
     api 'com.github.mcxtzhang:SuspensionIndexBar:V1.0.0'
 
+
+    /**
+     *  https://github.com/Sugarya/SpinnerLayout
+     * SpinnerLayout
+     */
+//    api 'com.sugarya:spinnerlayout:0.2.23'
 
     /**
      * https://github.com/Othershe/CalendarView

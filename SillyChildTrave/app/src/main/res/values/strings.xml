@@ -191,6 +191,8 @@
     <string name="ContactNumber1">请填写联系人电话</string>
     <string name="dueDemand">预定需求</string>
     <string name="adult1">成人：</string>
+    <string name="numberPeople">人数：</string>
+    <string name="notesSpecialRequirements">有特别要求您可以在此填写备注</string>
     <string name="children1">儿童：</string>
     <string name="luggage1">行李：</string>
     <string name="pleaseSelect">请选择</string>
@@ -242,6 +244,7 @@
     <string name="priceDescription">价格说明</string>
     <string name="dueThat">预定说明</string>
     <string name="orderPriceNoSign">订单价格</string>
+    <string name="orderPriceNoSign1">订单总价</string>
     <string name="vouchers">抵用券</string>
     <string name="actualPayment1">实际支付：</string>
 
@@ -277,6 +280,7 @@
     <!--首页   精品线路-->
     <string name="hotRecommended">热门推荐</string>
     <string name="selectCity">选择城市</string>
+    <string name="travelDate">行程日期</string>
     <string name="selectTravelDate">选择行程日期</string>
     <string name="selectTravelDate1">请选择行程日期</string>
     <string name="chosecity">城市选择</string>
@@ -290,7 +294,11 @@
     <string name="yuan">元</string>
     <string name="experienceBrightSpot">体验亮点</string>
     <string name="packagePrice">套餐价格：</string>
+    <string name="productPrice">产品价格：</string>
     <string name="travelTime3">行程时间</string>
+    <string name="linePaper">线路摘要</string>
+    <string name="specificItineraryAdjustedFlexibly">（线路具体行程可根据您的需求灵活调整)</string>
+
 
     <!--首页   按天包车-->
     <string name="fillYourInformation">填写您的信息</string>
@@ -379,7 +387,6 @@
     <string name="revert1">回复&#160;&#160;·</string>
 
 
-
     <!--社区-->
     <string name="search">搜索</string>
     <string name="newTrends">发布新动态</string>
@@ -423,7 +430,9 @@
     <string name="noMessage">亲，您还没有消息哟~</string>
 
     <!--选择日期-->
-    <string name="chooseTimeNeedServe">被圈中的日期说明您有待执行的行程哦</string>
+    <string name="chooseTimeNeedServe">选择你需要服务的时间</string>
+    <string name="desiredStartTimeService">请选择需要服务的开始时间</string>
+    <string name="desiredEndTimeService">请选择需要服务的结束时间</string>
     <string name="startTime">开始时间：</string>
     <string name="endTime">结束时间：</string>
     <string name="today">今天</string>

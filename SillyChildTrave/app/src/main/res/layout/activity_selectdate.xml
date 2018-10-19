@@ -77,8 +77,21 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
-        style="@style/MatchMatch"
+        style="@style/MatchAuto"
         android:layout_marginTop="@dimen/dimen6"
         android:background="@color/whiteColors" />
+
+    <TextView
+        android:id="@+id/tv_determine"
+        style="@style/Match40"
+        android:layout_marginLeft="@dimen/dimen100"
+        android:layout_marginTop="@dimen/dimen10"
+        android:layout_marginRight="@dimen/dimen100"
+        android:layout_marginBottom="@dimen/dimen10"
+        android:background="@drawable/shape_charter1"
+        android:gravity="center"
+        android:text="@string/determine"
+        android:textColor="@color/whiteColors"
+        android:textSize="@dimen/textsize16" />
 
 </LinearLayout>
